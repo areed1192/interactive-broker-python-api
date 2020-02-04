@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+credentials/configAlex.py
 
 # C extensions
 *.so
