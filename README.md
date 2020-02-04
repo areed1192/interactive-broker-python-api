@@ -16,9 +16,9 @@ The unofficial Python API client library for Interactive Broker Client Portal We
 
 Interactive Broker offers multiple APIs for their clients. If you would like to learn more about their API offerings click on the links below:
 
-To learn more about the TradeStation API, please refer to the [official documentation](http://interactivebrokers.github.io/tws-api/)
-To learn more about the Client Portal API, please refer to the [official documentation](https://interactivebrokers.github.io/cpwebapi/)
-To learn more about the Third Party API, plesfe refer to the [official documentation](https://www.interactivebrokers.com/webtradingapi/)
+- TradeStation API, please refer to the [official documentation](http://interactivebrokers.github.io/tws-api/)
+- Client Portal API, please refer to the [official documentation](https://interactivebrokers.github.io/cpwebapi/)
+- Third Party API, plesfe refer to the [official documentation](https://www.interactivebrokers.com/webtradingapi/)
 
 ## What's in the API
 
