@@ -1,15 +1,17 @@
 import os
+import sys
 import json
+import time
+import pathlib
 import urllib
 import requests
 import subprocess
 import certifi
 import urllib3
-from urllib3.exceptions import InsecureRequestWarning
 
+from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(category=InsecureRequestWarning)
 http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',ca_certs=certifi.where())
-
 
 class IBClient():
 
@@ -19,29 +21,105 @@ class IBClient():
             Initalizes a new IBClient Object with the username and password of the
             account holder.
         '''
-
-        # Initalize Client Attributes.
+        
+        self.ACCOUNT = account
         self.USERNAME = username
         self.PASSWORD = password
-        self.ACCOUNT = account
-        self.CLIENT_PORTAL_FOLDER = os.path.join(os.getcwd(), r'clientportal.gw')
+        self.CLIENT_PORTAL_FOLDER = pathlib.Path.cwd().joinpath('clientportal.gw').resolve()
         self.API_VERSION = 'v1/'
+        self.TESTING_FLAG = False
+        self._operating_system = sys.platform
 
         # Define URL Components
-        self.IB_GATEWAY_HOST = r"https://localhost"
-        self.IB_GATEWAY_PORT = r"5000"
+        IB_GATEWAY_HOST = r"https://localhost"
+        IB_GATEWAY_PORT = r"5000"
+        self.IB_GATEWAY_PATH = IB_GATEWAY_HOST + ":" + IB_GATEWAY_PORT
 
-        # Build the gate way url.
-        self.IB_GATEWAY_PATH = self.IB_GATEWAY_HOST + ":" + self.IB_GATEWAY_PORT
+    def create_session(self):
+        '''
+            Creates a new session with Interactive Broker using the credentials
+            passed through when the Robot was initalized.
+        '''
 
+        # Assuming the Server is Running, try and grab the Auth Status Endpoint.
+        try:
+            auth_response = self.is_authenticated()
+        except requests.exceptions.SSLError:
+            auth_response = False
+        except requests.exceptions.ConnectionError:
+            auth_response = False
+
+        # Scenario 1, Is_Authenticated endpoint return a bad status code so we need to connect again.  
+        if auth_response == False:
+
+            # If it isn't then connect.
+            self.connect()
+
+            # finall exit the script.
+            sys.exit()
+
+        # Scenario 2, we got a successful response from the server but we aren't authenticated..
+        elif auth_response != False and 'authenticated' not in auth_response.keys():
+
+            # Before I can reauthenticate, I need to validate the session.
+            self.validate()
+
+            # Then reauthenticate.
+            self.reauthenticate()
+
+            # Then see if we are validated.
+            re_auth_response = self.is_authenticated()
+            
+            # if reauthenticaton was successful then proceed to update accounts.
+            if re_auth_response['authenticated'] == True:
+
+                # Update the Account for the Session, so it uses the account passed through during initalization.
+                update_account_status = self.update_server_account(account_id=self.ACCOUNT)
+
+                # if that was successful, then let the User know we are good at this stage and proceed to next step.
+                if update_account_status == True:
+                    print('Session is connected and authenticated and account has been posted to server. Requests will not be limited.')
+                    return True
+
+        # Scenario 3, we got a successful response from the server and we are authenticated.
+        elif auth_response != False and 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
+
+            # To be safe I just validate the session.
+            self.validate()
+
+            # Then I update the Account for the Session, so it uses the account passed through during initalization.
+            update_account_status = self.update_server_account(account_id=self.ACCOUNT)
+
+            # if that was successful, then let the User know we are good at this stage and proceed to next step.
+            if update_account_status == True:
+                print('Session is connected and authenticated and account has been posted to server. Requests will not be limited.')
+                return True
+
+        # Scenario 3, we got a successful response from the server and we are authenticated.
+        elif auth_response != False and 'authenticated' in auth_response.keys() and auth_response['authenticated'] == False:
+
+            # To be safe I just validate the session.
+            self.validate()
+
+            # Then reauthenticate.
+            self.reauthenticate()
+
+            # Then I update the Account for the Session, so it uses the account passed through during initalization.
+            update_account_status = self.update_server_account(account_id=self.ACCOUNT)
+
+            # if that was successful, then let the User know we are good at this stage and proceed to next step.
+            if update_account_status == True:
+                print('Session is connected and authenticated and account has been posted to server. Requests will not be limited.')
+                return True
 
     def connect(self):
 
-        # Define components to start server.
-        IB_WEB_API_PROC = [r"bin\run.bat", r"root\conf.yaml"]
-
-        # Start the server.
-        subprocess.Popen(args = IB_WEB_API_PROC, shell = True, cwd = self.CLIENT_PORTAL_FOLDER, creationflags = subprocess.CREATE_NEW_CONSOLE)
+        if self._operating_system == 'win32':
+            IB_WEB_API_PROC = ["cmd", "/k", r"bin\run.bat", r"root\conf.yaml"]
+            subprocess.Popen(args = IB_WEB_API_PROC, cwd = self.CLIENT_PORTAL_FOLDER, creationflags = subprocess.CREATE_NEW_CONSOLE)
+        elif self._operating_system == 'darwin':
+            IB_WEB_API_PROC = ["open", "-F", "-a", "Terminal", r"bin/run.sh", r"root/conf.yaml"]
+            subprocess.Popen(args = IB_WEB_API_PROC, cwd = self.CLIENT_PORTAL_FOLDER)
 
         # redirect to the local host auth window.
         self._auth_redirect()
@@ -113,6 +191,8 @@ class IBClient():
             
             # make sure it's a JSON String
             headers = self._headers(mode = 'json')
+            # headers['accept'] = 'application/json'
+            # headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 
             # grab the response.
             response = requests.post(url, headers = headers, verify = False, data = json.dumps(params))
@@ -133,8 +213,17 @@ class IBClient():
         elif req_type == 'GET' and params is not None:
 
             # grab the response.
-            response = requests.get(url, headers = self._headers(mode = 'json'), verify = False, params = params)
+            headers = self._headers(mode = 'json')
+            # headers['accept'] = 'application/json'
+            response = requests.get(url, headers = headers, verify = False, params = params)
 
+        # grab the status code
+        if response.status_code != 200:
+            print(response.url)
+            print(response.headers)
+            print(response.content)
+            print(response.status_code)
+            
         return response 
 
 
@@ -145,27 +234,24 @@ class IBClient():
             needs to go to in order to authenticate the newly started session.
         '''
 
+        print('\n')
+        print('-'*80)
+        print("The Interactive Broker server is not currently running, so we cannot authenticate the session.")
+        print("The server will startup, and the browser will redirect you to the Local Host you specified in your config file.")
+        print("Please login to your account with your username and password and rerun the script to begin the session.")
+        print("You'll be redirected in 3 seconds.")
+        print('-'*80)
+        print('\n')
+
+        time.sleep(3)
+
         # Redirect to the URL.
-        subprocess.run(["start", self.IB_GATEWAY_PATH], shell=True)
-
-        # wait till they tell us it was successful.
-        self._login_success()
-
+        if self._operating_system:
+            subprocess.Popen(["cmd", "/k", "start", self.IB_GATEWAY_PATH], shell=False)
+        elif self._operating_system:
+            subprocess.run(["open", self.IB_GATEWAY_PATH], shell=False)
+        
         return True
-
-
-    def _login_success(self):
-        '''
-            Waits for the user to let the client know that authentication was successful.
-        '''
-
-        # Ask the User if the Login was successful.
-        login_success = input("If login was successful, please say 'Yes': ")
-
-        if login_success == 'Yes':
-            return True
-        else:
-            return False
 
 
     def _prepare_arguments_list(self, parameter_list = None):
@@ -250,10 +336,15 @@ class IBClient():
         # define request components
         endpoint = r'iserver/reauthenticate'
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
 
-        return content
+        # this is special, I don't want the JSON content right away.
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
+        if content.status_code != 200:
+            return False
+        else:
+            return content.json()
+            
 
     def is_authenticated(self):
         '''
@@ -312,11 +403,16 @@ class IBClient():
             fields_joined = ""
 
         # define the parameters
-        params = {'conids':conids_joined,
-                  'since':since,
-                  'fields':fields_joined}
+        if since is None:
+            params = {'conids':conids_joined,
+                      'fields':fields_joined}
+        else:
+            params = {'conids':conids_joined,
+                      'since':since,
+                      'fields':fields_joined}       
 
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
         return content
 
 
@@ -367,7 +463,7 @@ class IBClient():
         '''
 
         # define request components
-        endpoint = 'iserver​/accounts'
+        endpoint = 'iserver/accounts'
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
@@ -393,10 +489,11 @@ class IBClient():
         req_type = 'POST'
         params = {'acctId':account_id}
 
-        if check == False:
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        if 'status_code' in content.keys():
+            time.sleep(1)
             content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
-        else:
-            content = self._make_request(endpoint = endpoint, req_type = 'GET', params = params).json()
 
         return content
 
