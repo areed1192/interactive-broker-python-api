@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 configAlex.py
+clientportal.gw/
 
 # C extensions
 *.so
