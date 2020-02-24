@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 configAlex.py
 clientportal.gw/
+alex/
 
 # C extensions
 *.so

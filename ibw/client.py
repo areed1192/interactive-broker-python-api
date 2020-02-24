@@ -6,12 +6,14 @@ import pathlib
 import urllib
 import requests
 import subprocess
-import certifi
-import urllib3
 
+import urllib3
+import certifi
 from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(category=InsecureRequestWarning)
 http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',ca_certs=certifi.where())
+
+TESTING_FLAG_ALEX = True
 
 class IBClient():
 
@@ -29,101 +31,159 @@ class IBClient():
         self.API_VERSION = 'v1/'
         self.TESTING_FLAG = False
         self._operating_system = sys.platform
+        self.server_process = self._server_state(action ='load')
+        self.authenticated = False
 
         # Define URL Components
         IB_GATEWAY_HOST = r"https://localhost"
         IB_GATEWAY_PORT = r"5000"
         self.IB_GATEWAY_PATH = IB_GATEWAY_HOST + ":" + IB_GATEWAY_PORT
 
+    def _check_server_update(self):
+
+        server_update_content = self.update_server_account(account_id = self.ACCOUNT, check = False)
+
+        if 'set' in server_update_content.keys() and server_update_content['set'] == True:
+            print('')
+            print('New session has been created and authenticated. Requests will not be limited.'.upper())
+            print('')
+            return True
+        elif ('message' in server_update_content.keys()) and (server_update_content['message'] == 'Account already set'):
+            print('')
+            print('New session has been created and authenticated. Requests will not be limited.'.upper())
+            print('')
+            return True      
+        else:
+            print('')
+            print('Could not create a new session that was authenticated, exiting script.'.upper())
+            print('')
+            sys.exit()
+
     def create_session(self):
         '''
             Creates a new session with Interactive Broker using the credentials
             passed through when the Robot was initalized.
         '''
-
-        # Assuming the Server is Running, try and grab the Auth Status Endpoint.
-        try:
-            auth_response = self.is_authenticated()
-        except requests.exceptions.SSLError:
-            auth_response = False
-        except requests.exceptions.ConnectionError:
-            auth_response = False
-
-        # Scenario 1, Is_Authenticated endpoint return a bad status code so we need to connect again.  
-        if auth_response == False:
-
-            # If it isn't then connect.
-            self.connect()
-
-            # finall exit the script.
-            sys.exit()
-
-        # Scenario 2, we got a successful response from the server but we aren't authenticated..
-        elif auth_response != False and 'authenticated' not in auth_response.keys():
-
-            # Before I can reauthenticate, I need to validate the session.
-            self.validate()
-
-            # Then reauthenticate.
-            self.reauthenticate()
-
-            # Then see if we are validated.
-            re_auth_response = self.is_authenticated()
+           
+        # first let's check if the server is running, if it's not then we can start up.
+        if self.server_process == None and self.connect():
             
-            # if reauthenticaton was successful then proceed to update accounts.
-            if re_auth_response['authenticated'] == True:
-
-                # Update the Account for the Session, so it uses the account passed through during initalization.
-                update_account_status = self.update_server_account(account_id=self.ACCOUNT)
-
-                # if that was successful, then let the User know we are good at this stage and proceed to next step.
-                if update_account_status == True:
-                    print('Session is connected and authenticated and account has been posted to server. Requests will not be limited.')
-                    return True
-
-        # Scenario 3, we got a successful response from the server and we are authenticated.
-        elif auth_response != False and 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
-
-            # To be safe I just validate the session.
-            self.validate()
-
-            # Then I update the Account for the Session, so it uses the account passed through during initalization.
-            update_account_status = self.update_server_account(account_id=self.ACCOUNT)
-
-            # if that was successful, then let the User know we are good at this stage and proceed to next step.
-            if update_account_status == True:
-                print('Session is connected and authenticated and account has been posted to server. Requests will not be limited.')
+            # then make sture the server is updated.
+            if self._check_server_update():
                 return True
 
-        # Scenario 3, we got a successful response from the server and we are authenticated.
-        elif auth_response != False and 'authenticated' in auth_response.keys() and auth_response['authenticated'] == False:
+        # more than likely it's running let's try and see if we can authenticate.
+        auth_response = self.is_authenticated()
 
-            # To be safe I just validate the session.
-            self.validate()
+        if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
+            
+            self.authenticated == True
 
-            # Then reauthenticate.
-            self.reauthenticate()
-
-            # Then I update the Account for the Session, so it uses the account passed through during initalization.
-            update_account_status = self.update_server_account(account_id=self.ACCOUNT)
-
-            # if that was successful, then let the User know we are good at this stage and proceed to next step.
-            if update_account_status == True:
-                print('Session is connected and authenticated and account has been posted to server. Requests will not be limited.')
+            if self._check_server_update():
                 return True
 
-    def connect(self):
+        else:
+                 
+            # in this case don't connect, but prompt the user to log in again.
+            self.connect(start_server=False)
 
-        if self._operating_system == 'win32':
-            IB_WEB_API_PROC = ["cmd", "/k", r"bin\run.bat", r"root\conf.yaml"]
-            subprocess.Popen(args = IB_WEB_API_PROC, cwd = self.CLIENT_PORTAL_FOLDER, creationflags = subprocess.CREATE_NEW_CONSOLE)
-        elif self._operating_system == 'darwin':
-            IB_WEB_API_PROC = ["open", "-F", "-a", "Terminal", r"bin/run.sh", r"root/conf.yaml"]
-            subprocess.Popen(args = IB_WEB_API_PROC, cwd = self.CLIENT_PORTAL_FOLDER)
+            if self._check_server_update():
+                return True
 
-        # redirect to the local host auth window.
-        self._auth_redirect()
+    def _server_state(self, action = 'save'):
+        '''
+            Maintains the server state, so we can easily load a previous session,
+            save a new session, or delete a closed session.
 
+            NAME: action
+            DESC: The action you wish to take to the `json` file. Can be one of the following options:
+                    1. save - saves the current state and overwrites the old one.
+                    2. load - loads the previous state from a session that has a server still running.
+                    3. delete - deletes the state because the server has been closed.
+            TYPE: String
+
+            RTYPE: None | Integer
+        '''
+
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        filename = 'server_session.json'
+        file_path = os.path.join(dir_path, filename)
+        file_exists = os.path.exists(file_path)
+
+        if action == 'save':
+            with open(file_path, 'w') as server_file:
+                json.dump({'server_process_id':self.server_process},server_file)
+
+        elif action == 'load' and file_exists:
+
+            with open(file_path, 'r') as server_file:
+                server_state = json.load(server_file)
+
+            try:
+                os.kill(server_state['server_process_id'], 0)
+            except SystemError:
+                return server_state['server_process_id']
+            else:
+               return None
+
+        elif action == 'delete' and file_exists:
+            os.remove(file_path)
+        else:
+            return None
+
+    def connect(self, start_server = True):
+        '''
+            Connects the session to the Interactive Broker API by, starting up the Client Portal Gateway,
+            prompting the user to log in and then returns the results back to the `create_session` method.
+
+            RTYPE: BOOLEAN
+        '''
+
+        if start_server:
+            # windows will use the command line application.
+            if self._operating_system == 'win32':
+                IB_WEB_API_PROC = ["cmd", "/k", r"bin\run.bat", r"root\conf.yaml"]
+                self.server_process = subprocess.Popen(args = IB_WEB_API_PROC, cwd = self.CLIENT_PORTAL_FOLDER, creationflags = subprocess.CREATE_NEW_CONSOLE).pid
+
+            # mac will use the terminal.
+            elif self._operating_system == 'darwin':
+                IB_WEB_API_PROC = ["open", "-F", "-a", "Terminal", r"bin/run.sh", r"root/conf.yaml"]
+                self.server_process = subprocess.Popen(args = IB_WEB_API_PROC, cwd = self.CLIENT_PORTAL_FOLDER).pid
+
+        self._server_state(action='save')
+
+        print('''{}
+        The Interactive Broker server is currently starting up, so we can authenticate your session.
+            STEP 1: GO TO THE FOLLOWING URL: {}
+            STEP 2: LOGIN TO YOUR ACCOUNT WITH YOUR USERNAME AND PASSWORD.
+            STEP 3: WHEN YOU SEE `Client login succeeds` RETURN BACK TO THE TERMINAL AND TYPE `YES` TO CHECK IF THE SESSION IS AUTHENTICATED.
+            SERVER IS RUNNING ON PROCESS ID: {}
+        {}
+        '''.format('-'*80, self.IB_GATEWAY_PATH, self.server_process, '-'*80)
+        )
+
+        while self.authenticated == False:
+
+            user_input = input('Would you like to make an authenticated request (Yes/No)? ').upper()
+
+            if user_input == 'NO':
+                self.close_session
+            else:
+                auth_response = self.is_authenticated()
+
+            if 'statusCode' in auth_response.keys() and auth_response['statusCode'] == 401:
+                self.authenticated = False
+            elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
+                self.authenticated = True
+
+        return True
+
+    def close_session(self):
+
+        print('\nCLOSING SERVER AND EXITING SCRIPT.')
+        return_code = subprocess.call("TASKKILL /F /PID {} /T".format(self.server_process), creationflags=subprocess.DETACHED_PROCESS)
+        self._server_state(action ='delete')
+        sys.exit()
 
     def _headers(self, mode = 'json'):
         ''' 
@@ -225,33 +285,6 @@ class IBClient():
             print(response.status_code)
             
         return response 
-
-
-    def _auth_redirect(self):
-        '''
-            Opens a new Browser window with the default one specified by the
-            operating system. From there will redirect to the URL that the user 
-            needs to go to in order to authenticate the newly started session.
-        '''
-
-        print('\n')
-        print('-'*80)
-        print("The Interactive Broker server is not currently running, so we cannot authenticate the session.")
-        print("The server will startup, and the browser will redirect you to the Local Host you specified in your config file.")
-        print("Please login to your account with your username and password and rerun the script to begin the session.")
-        print("You'll be redirected in 3 seconds.")
-        print('-'*80)
-        print('\n')
-
-        time.sleep(3)
-
-        # Redirect to the URL.
-        if self._operating_system:
-            subprocess.Popen(["cmd", "/k", "start", self.IB_GATEWAY_PATH], shell=False)
-        elif self._operating_system:
-            subprocess.run(["open", self.IB_GATEWAY_PATH], shell=False)
-        
-        return True
 
 
     def _prepare_arguments_list(self, parameter_list = None):
