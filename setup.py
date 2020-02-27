@@ -1,4 +1,5 @@
 from distutils.core import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -36,7 +37,7 @@ setup(
       ],
 
       # here are the packages I want "build."
-      packages=['ibw'],
+      packages=find_packages(),
 
       # additional classifiers that give some characteristics about the package.
       classifiers=[
