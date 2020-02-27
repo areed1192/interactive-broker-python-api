@@ -36,14 +36,12 @@ Interactive Broker offers multiple APIs for their clients. If you would like to 
 The following requirements must be met to use this API:
 
 - A Interactive Broker account, you'll need your account password and account number to use the API.
-- Java 8 update 192 or higher installed (gateway is compatible with higher Java versions including OpenJDK 11).
+- [Java 8](https://developers.redhat.com/products/openjdk/download) update 192 or higher installed (gateway is compatible with higher Java versions including OpenJDK 11).
 - Download the [Client Portal Gateway](https://www.interactivebrokers.com/en/index.php?f=45185)
 
 ## API Key and Credentials
 
 The API does not require any API keys to use it, all of the authentication is handled by the Client Portal Gateway. Everytime a user starts a new session with the API they will need to proivde their login credentials for the account they wish to use. The Interactive Broker Web API does offer the ability to use the API using a paper account.
-
-Additionally, to authenticate yourself using this library, you will need to provide your account number and password for your main TD Ameritrade account.
 
 **Important:** Your account number and account password should be kept secret.
 
@@ -57,10 +55,13 @@ This example demonstrates how to login to the API and demonstrates sending a req
 
 ```python
 from ibw.client import IBClient
-from ibw.config import REGULAR_ACCOUNT, REGULAR_PASSWORD, REGULAR_USERNAME, PAPER_ACCOUNT, PAPER_PASSWORD, PAPER_USERNAME
+
+REGULAR_ACCOUNT = 'MY_ACCOUNT_NUMBER'
+REGULAR_PASSWORD = 'MY_ACCOUNT_PASSWORD'
+REGULAR_USERNAME = 'MY_ACCOUNT_USERNAME'
 
 # Create a new session of the IB Web API.
-ib_session = IBClient(username = REGULAR_USERNAME, password = REGULAR_PASSWORD)
+ib_session = IBClient(username = REGULAR_USERNAME, password = REGULAR_PASSWORD, account = REGULAR_ACCOUNT)
 
 # create a new session.
 ib_client.create_session()
