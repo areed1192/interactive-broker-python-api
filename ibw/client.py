@@ -121,6 +121,8 @@ class IBClient():
 
             try:
                 os.kill(server_state['server_process_id'], 0)
+            except OSError:
+                return server_state['server_process_id']
             except SystemError:
                 return server_state['server_process_id']
             else:
