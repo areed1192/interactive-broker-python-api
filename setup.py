@@ -37,7 +37,7 @@ setup(
       ],
 
       # here are the packages I want "build."
-      packages=['ibw'],
+      packages=find_packages(include = ['ibw']),
 
       # additional classifiers that give some characteristics about the package.
       classifiers=[

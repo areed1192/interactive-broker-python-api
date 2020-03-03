@@ -13,8 +13,6 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(category=InsecureRequestWarning)
 http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',ca_certs=certifi.where())
 
-TESTING_FLAG_ALEX = True
-
 class IBClient():
 
 
@@ -38,6 +36,7 @@ class IBClient():
         IB_GATEWAY_HOST = r"https://localhost"
         IB_GATEWAY_PORT = r"5000"
         self.IB_GATEWAY_PATH = IB_GATEWAY_HOST + ":" + IB_GATEWAY_PORT
+        self.BACKUP_GATEWAY_PATH = r"https://cdcdyn.interactivebrokers.com/portal.proxy"
 
     def _check_server_update(self):
 
@@ -119,14 +118,16 @@ class IBClient():
             with open(file_path, 'r') as server_file:
                 server_state = json.load(server_file)
 
+            proc_id = server_state['server_process_id']              
+
             try:
-                os.kill(server_state['server_process_id'], 0)
+              os.kill(proc_id, 0)
             except OSError:
-                return server_state['server_process_id']
+                return None
             except SystemError:
-                return server_state['server_process_id']
+                return None
             else:
-               return None
+               return proc_id
 
         elif action == 'delete' and file_exists:
             os.remove(file_path)
@@ -169,7 +170,7 @@ class IBClient():
             user_input = input('Would you like to make an authenticated request (Yes/No)? ').upper()
 
             if user_input == 'NO':
-                self.close_session
+                self.close_session()
             else:
                 auth_response = self.is_authenticated()
 
@@ -220,6 +221,7 @@ class IBClient():
 
         # otherwise build the URL
         return urllib.parse.unquote(urllib.parse.urljoin(self.IB_GATEWAY_PATH, self.API_VERSION) + r'portal/' + endpoint)
+        # return urllib.parse.unquote(urllib.parse.urljoin(self.BACKUP_GATEWAY_PATH,  r"portal.proxy/" + self.API_VERSION + r"/portal/")  + endpoint)
 
 
     def _make_request(self, endpoint = None, req_type = None, params = None):
@@ -253,8 +255,6 @@ class IBClient():
             
             # make sure it's a JSON String
             headers = self._headers(mode = 'json')
-            # headers['accept'] = 'application/json'
-            # headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 
             # grab the response.
             response = requests.post(url, headers = headers, verify = False, data = json.dumps(params))
@@ -275,8 +275,6 @@ class IBClient():
         elif req_type == 'GET' and params is not None:
 
             # grab the response.
-            headers = self._headers(mode = 'json')
-            # headers['accept'] = 'application/json'
             response = requests.get(url, headers = headers, verify = False, params = params)
 
         # grab the status code
