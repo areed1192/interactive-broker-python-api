@@ -1,0 +1,887 @@
+{
+    "generalInfo": [
+        {
+            "name": "Cash from Op. Act.",
+            "value": "69.39B",
+            "valueChange": -10.39,
+            "date": "20190928",
+            "previousValue": "77.43B",
+            "previousDate": "20180929"
+        },
+        {
+            "name": "Cash from Investing Activities",
+            "value": "45.9B",
+            "valueChange": 185.67,
+            "date": "20190928",
+            "previousValue": "16.07B",
+            "previousDate": "20180929"
+        },
+        {
+            "name": "Cash from Financing Activities",
+            "value": "-90.98B",
+            "valueChange": -3.53,
+            "date": "20190928",
+            "previousValue": "-87.88B",
+            "previousDate": "20180929"
+        },
+        {
+            "name": "Total Cash Dividends Paid",
+            "value": "-14.12B",
+            "valueChange": -2.97,
+            "date": "20190928",
+            "previousValue": "-13.71B",
+            "previousDate": "20180929"
+        },
+        {
+            "name": "Net Change in Cash",
+            "value": "24.31B",
+            "valueChange": 332.27,
+            "date": "20190928",
+            "previousValue": "5.62B",
+            "previousDate": "20180929"
+        }
+    ],
+    "table": {
+        "columns": [
+            {
+                "name": "metric_name",
+                "value": "IN MILLIONS OF USD",
+                "secondaryValue": "(except per share item)"
+            },
+            {
+                "name": "interim_date",
+                "value": "Sep 28, 19"
+            },
+            {
+                "name": "change",
+                "value": "Y/Y %Change"
+            },
+            {
+                "name": "trend",
+                "value": "TREND"
+            },
+            {
+                "name": "20150926",
+                "value": "Sep 26, 15"
+            },
+            {
+                "name": "20160924",
+                "value": "Sep 24, 16"
+            },
+            {
+                "name": "20170930",
+                "value": "Sep 30, 17"
+            },
+            {
+                "name": "20180929",
+                "value": "Sep 29, 18"
+            }
+        ],
+        "rows": [
+            {
+                "search_id": "cash_ONET",
+                "metric_name": "Net Income/Starting Line",
+                "interim_date": "55.26K",
+                "20150926": "53.39K",
+                "20160924": "45.69K",
+                "20170930": "48.35K",
+                "20180929": "59.53K",
+                "trend": [
+                    {
+                        "value": 5.3394E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "53.39K"
+                    },
+                    {
+                        "value": 4.5687E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "45.69K"
+                    },
+                    {
+                        "value": 4.8351E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "48.35K"
+                    },
+                    {
+                        "value": 5.9531E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "59.53K"
+                    },
+                    {
+                        "value": 5.5256E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "55.26K"
+                    }
+                ],
+                "change": -7.18
+            },
+            {
+                "search_id": "cash_SDED",
+                "metric_name": "Depreciation/Depletion",
+                "interim_date": "12.55K",
+                "20150926": "11.26K",
+                "20160924": "10.51K",
+                "20170930": "10.16K",
+                "20180929": "10.9K",
+                "trend": [
+                    {
+                        "value": 1.1257E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "11.26K"
+                    },
+                    {
+                        "value": 1.0505E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "10.51K"
+                    },
+                    {
+                        "value": 1.0157E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "10.16K"
+                    },
+                    {
+                        "value": 1.0903E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "10.9K"
+                    },
+                    {
+                        "value": 1.2547E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "12.55K"
+                    }
+                ],
+                "change": 15.08
+            },
+            {
+                "search_id": "cash_OBDT",
+                "metric_name": "Deferred Taxes",
+                "interim_date": "-340",
+                "20150926": "1.38K",
+                "20160924": "4.94K",
+                "20170930": "5.97K",
+                "20180929": "-32.59K",
+                "trend": [
+                    {
+                        "value": 1.382E15,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "1.38K"
+                    },
+                    {
+                        "value": 4.938E15,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "4.94K"
+                    },
+                    {
+                        "value": 5.966E15,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "5.97K"
+                    },
+                    {
+                        "value": -3.259E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "-32.59K"
+                    },
+                    {
+                        "value": -3.4E14,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-340"
+                    }
+                ],
+                "change": 98.96
+            },
+            {
+                "search_id": "cash_SNCI",
+                "metric_name": "Non-Cash Items",
+                "interim_date": "5.42K",
+                "20150926": "3.59K",
+                "20160924": "4.7K",
+                "20170930": "4.67K",
+                "20180929": "4.9K",
+                "trend": [
+                    {
+                        "value": 3.586E15,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "3.59K"
+                    },
+                    {
+                        "value": 4.696E15,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "4.7K"
+                    },
+                    {
+                        "value": 4.674E15,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "4.67K"
+                    },
+                    {
+                        "value": 4.896E15,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "4.9K"
+                    },
+                    {
+                        "value": 5.416E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "5.42K"
+                    }
+                ],
+                "change": 10.62
+            },
+            {
+                "search_id": "cash_SCTP",
+                "metric_name": "Cash Taxes Paid, Supplemental",
+                "interim_date": "15.26K",
+                "20150926": "13.25K",
+                "20160924": "10.44K",
+                "20170930": "11.59K",
+                "20180929": "10.42K",
+                "trend": [
+                    {
+                        "value": 1.3252E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "13.25K"
+                    },
+                    {
+                        "value": 1.0444E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "10.44K"
+                    },
+                    {
+                        "value": 1.1591E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "11.59K"
+                    },
+                    {
+                        "value": 1.0417E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "10.42K"
+                    },
+                    {
+                        "value": 1.5263E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "15.26K"
+                    }
+                ],
+                "change": 46.52
+            },
+            {
+                "search_id": "cash_SCIP",
+                "metric_name": "Cash Interest Paid, Supplemental",
+                "interim_date": "3.42K",
+                "20150926": "514",
+                "20160924": "1.32K",
+                "20170930": "2.09K",
+                "20180929": "3.02K",
+                "trend": [
+                    {
+                        "value": 5.14E14,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "514"
+                    },
+                    {
+                        "value": 1.316E15,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "1.32K"
+                    },
+                    {
+                        "value": 2.092E15,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "2.09K"
+                    },
+                    {
+                        "value": 3.022E15,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "3.02K"
+                    },
+                    {
+                        "value": 3.423E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "3.42K"
+                    }
+                ],
+                "change": 13.27
+            },
+            {
+                "search_id": "cash_SOCF",
+                "metric_name": "Changes in Working Capital",
+                "interim_date": "-3.49K",
+                "20150926": "11.65K",
+                "20160924": "405",
+                "20170930": "-4.92K",
+                "20180929": "34.69K",
+                "trend": [
+                    {
+                        "value": 1.1647E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "11.65K"
+                    },
+                    {
+                        "value": 4.05E14,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "405"
+                    },
+                    {
+                        "value": -4.923E15,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-4.92K"
+                    },
+                    {
+                        "value": 3.4694E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "34.69K"
+                    },
+                    {
+                        "value": -3.488E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-3.49K"
+                    }
+                ],
+                "change": -110.05
+            },
+            {
+                "search_id": "cash_OTLO",
+                "metric_name": "Cash from Op. Act.",
+                "interim_date": "69.39K",
+                "20150926": "81.27K",
+                "20160924": "66.23K",
+                "20170930": "64.22K",
+                "20180929": "77.43K",
+                "trend": [
+                    {
+                        "value": 8.1266E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "81.27K"
+                    },
+                    {
+                        "value": 6.6231E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "66.23K"
+                    },
+                    {
+                        "value": 6.4225E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "64.22K"
+                    },
+                    {
+                        "value": 7.7434E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "77.43K"
+                    },
+                    {
+                        "value": 6.9391E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "69.39K"
+                    }
+                ],
+                "change": -10.39,
+                "isSummary": true
+            },
+            {
+                "search_id": "cash_SCEX",
+                "metric_name": "Capital Expenditures",
+                "interim_date": "-10.49K",
+                "20150926": "-11.49K",
+                "20160924": "-12.73K",
+                "20170930": "-12.45K",
+                "20180929": "-13.31K",
+                "trend": [
+                    {
+                        "value": -1.1488E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-11.49K"
+                    },
+                    {
+                        "value": -1.2734E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-12.73K"
+                    },
+                    {
+                        "value": -1.2451E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-12.45K"
+                    },
+                    {
+                        "value": -1.3313E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "-13.31K"
+                    },
+                    {
+                        "value": -1.0495E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-10.49K"
+                    }
+                ],
+                "change": 21.17,
+                "hasEsimates": true
+            },
+            {
+                "search_id": "cash_SICF",
+                "metric_name": "Other Investing Cash Flow Items, Total",
+                "interim_date": "56.39K",
+                "20150926": "-44.79K",
+                "20160924": "-33.24K",
+                "20170930": "-33.99K",
+                "20180929": "29.38K",
+                "trend": [
+                    {
+                        "value": -4.4786E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-44.79K"
+                    },
+                    {
+                        "value": -3.3243E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-33.24K"
+                    },
+                    {
+                        "value": -3.3995E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-33.99K"
+                    },
+                    {
+                        "value": 2.9379E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "29.38K"
+                    },
+                    {
+                        "value": 5.6391E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "56.39K"
+                    }
+                ],
+                "change": 91.94
+            },
+            {
+                "search_id": "cash_ITLI",
+                "metric_name": "Cash from Investing Activities",
+                "interim_date": "45.9K",
+                "20150926": "-56.27K",
+                "20160924": "-45.98K",
+                "20170930": "-46.45K",
+                "20180929": "16.07K",
+                "trend": [
+                    {
+                        "value": -5.6274E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-56.27K"
+                    },
+                    {
+                        "value": -4.5977E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-45.98K"
+                    },
+                    {
+                        "value": -4.6446E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-46.45K"
+                    },
+                    {
+                        "value": 1.6066E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "16.07K"
+                    },
+                    {
+                        "value": 4.5896E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "45.9K"
+                    }
+                ],
+                "change": 185.67,
+                "isSummary": true
+            },
+            {
+                "search_id": "cash_SFCF",
+                "metric_name": "Financing Cash Flow Items",
+                "interim_date": "-2.92K",
+                "20150926": "-750",
+                "20160924": "-1.57K",
+                "20170930": "-1.87K",
+                "20180929": "-2.53K",
+                "trend": [
+                    {
+                        "value": -7.5E14,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-750"
+                    },
+                    {
+                        "value": -1.57E15,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-1.57K"
+                    },
+                    {
+                        "value": -1.874E15,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-1.87K"
+                    },
+                    {
+                        "value": -2.527E15,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "-2.53K"
+                    },
+                    {
+                        "value": -2.922E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-2.92K"
+                    }
+                ],
+                "change": -15.63
+            },
+            {
+                "search_id": "cash_FCDP",
+                "metric_name": "Total Cash Dividends Paid",
+                "interim_date": "-14.12K",
+                "20150926": "-11.56K",
+                "20160924": "-12.15K",
+                "20170930": "-12.77K",
+                "20180929": "-13.71K",
+                "trend": [
+                    {
+                        "value": -1.1561E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-11.56K"
+                    },
+                    {
+                        "value": -1.215E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-12.15K"
+                    },
+                    {
+                        "value": -1.2769E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-12.77K"
+                    },
+                    {
+                        "value": -1.3712E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "-13.71K"
+                    },
+                    {
+                        "value": -1.4119E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-14.12K"
+                    }
+                ],
+                "change": -2.97
+            },
+            {
+                "search_id": "cash_FPSS",
+                "metric_name": "Issuance (Retirement) of Stock, Net",
+                "interim_date": "-66.12K",
+                "20150926": "-34.71K",
+                "20160924": "-29.23K",
+                "20170930": "-32.34K",
+                "20180929": "-72.07K",
+                "trend": [
+                    {
+                        "value": -3.471E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-34.71K"
+                    },
+                    {
+                        "value": -2.9227E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-29.23K"
+                    },
+                    {
+                        "value": -3.2345E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-32.34K"
+                    },
+                    {
+                        "value": -7.2069E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "-72.07K"
+                    },
+                    {
+                        "value": -6.6116E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-66.12K"
+                    }
+                ],
+                "change": 8.26
+            },
+            {
+                "search_id": "cash_FPRD",
+                "metric_name": "Issuance (Retirement) of Debt, Net",
+                "interim_date": "-7.82K",
+                "20150926": "29.3K",
+                "20160924": "22.06K",
+                "20170930": "29.01K",
+                "20180929": "432",
+                "trend": [
+                    {
+                        "value": 2.9305E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "29.3K"
+                    },
+                    {
+                        "value": 2.2057E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "22.06K"
+                    },
+                    {
+                        "value": 2.9014E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "29.01K"
+                    },
+                    {
+                        "value": 4.32E14,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "432"
+                    },
+                    {
+                        "value": -7.819E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-7.82K"
+                    }
+                ],
+                "change": -1909.95
+            },
+            {
+                "search_id": "cash_FTLF",
+                "metric_name": "Cash from Financing Activities",
+                "interim_date": "-90.98K",
+                "20150926": "-17.72K",
+                "20160924": "-20.89K",
+                "20170930": "-17.97K",
+                "20180929": "-87.88K",
+                "trend": [
+                    {
+                        "value": -1.7716E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "-17.72K"
+                    },
+                    {
+                        "value": -2.089E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-20.89K"
+                    },
+                    {
+                        "value": -1.7974E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-17.97K"
+                    },
+                    {
+                        "value": -8.7876E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "-87.88K"
+                    },
+                    {
+                        "value": -9.0976E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-90.98K"
+                    }
+                ],
+                "change": -3.53,
+                "isSummary": true
+            },
+            {
+                "search_id": "cash_SNCC",
+                "metric_name": "Net Change in Cash",
+                "interim_date": "24.31K",
+                "20150926": "7.28K",
+                "20160924": "-636",
+                "20170930": "-195",
+                "20180929": "5.62K",
+                "trend": [
+                    {
+                        "value": 7.276E15,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "7.28K"
+                    },
+                    {
+                        "value": -6.36E14,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "-636"
+                    },
+                    {
+                        "value": -1.95E14,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "-195"
+                    },
+                    {
+                        "value": 5.624E15,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "5.62K"
+                    },
+                    {
+                        "value": 2.4311E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "24.31K"
+                    }
+                ],
+                "change": 332.27,
+                "isSummary": true
+            },
+            {
+                "search_id": "cash_SCIP",
+                "metric_name": "Cash Interest Paid, Supplemental",
+                "interim_date": "3.42K",
+                "20150926": "514",
+                "20160924": "1.32K",
+                "20170930": "2.09K",
+                "20180929": "3.02K",
+                "trend": [
+                    {
+                        "value": 5.14E14,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "514"
+                    },
+                    {
+                        "value": 1.316E15,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "1.32K"
+                    },
+                    {
+                        "value": 2.092E15,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "2.09K"
+                    },
+                    {
+                        "value": 3.022E15,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "3.02K"
+                    },
+                    {
+                        "value": 3.423E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "3.42K"
+                    }
+                ],
+                "change": 13.27
+            },
+            {
+                "search_id": "cash_SCTP",
+                "metric_name": "Cash Taxes Paid, Supplemental",
+                "interim_date": "15.26K",
+                "20150926": "13.25K",
+                "20160924": "10.44K",
+                "20170930": "11.59K",
+                "20180929": "10.42K",
+                "trend": [
+                    {
+                        "value": 1.3252E16,
+                        "year": "2015",
+                        "date": "20150926",
+                        "formatted_value": "13.25K"
+                    },
+                    {
+                        "value": 1.0444E16,
+                        "year": "2016",
+                        "date": "20160924",
+                        "formatted_value": "10.44K"
+                    },
+                    {
+                        "value": 1.1591E16,
+                        "year": "2017",
+                        "date": "20170930",
+                        "formatted_value": "11.59K"
+                    },
+                    {
+                        "value": 1.0417E16,
+                        "year": "2018",
+                        "date": "20180929",
+                        "formatted_value": "10.42K"
+                    },
+                    {
+                        "value": 1.5263E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "15.26K"
+                    }
+                ],
+                "change": 46.52
+            }
+        ]
+    },
+    "currency": "USD"
+}

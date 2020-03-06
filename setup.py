@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 setup(
 
       # this will be my Library name.
-      name='Interactive Broker Unofficial Web API',
+      name='interactive-broker-python-web-api',
 
       # Want to make sure people know who made it.
       author='Alex Reed',

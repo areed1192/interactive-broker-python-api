@@ -1,0 +1,1462 @@
+{
+    "generalInfo": [
+        {
+            "name": "Total Assets",
+            "value": "340.62B",
+            "valueChange": -8.86,
+            "date": "20191228",
+            "previousValue": "373.72B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Accounts Payable",
+            "value": "45.11B",
+            "valueChange": 1.85,
+            "date": "20191228",
+            "previousValue": "44.29B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Total Liabilities",
+            "value": "251.09B",
+            "valueChange": -1.85,
+            "date": "20191228",
+            "previousValue": "255.83B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Total Equity",
+            "value": "89.53B",
+            "valueChange": -24.06,
+            "date": "20191228",
+            "previousValue": "117.89B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Shares Outstanding",
+            "value": "4.38B",
+            "valueChange": -7.29,
+            "date": "20191228",
+            "previousValue": "4.73B",
+            "previousDate": "20181229"
+        }
+    ],
+    "table": {
+        "columns": [
+            {
+                "name": "metric_name",
+                "value": "IN MILLIONS OF USD",
+                "secondaryValue": "(except per share item)"
+            },
+            {
+                "name": "interim_date",
+                "value": "Dec 28, 19"
+            },
+            {
+                "name": "change",
+                "value": "Y/Y %Change"
+            },
+            {
+                "name": "trend",
+                "value": "TREND"
+            },
+            {
+                "name": "20181229",
+                "value": "Dec 29, 18"
+            },
+            {
+                "name": "20190330",
+                "value": "Mar 30, 19"
+            },
+            {
+                "name": "20190629",
+                "value": "Jun 29, 19"
+            },
+            {
+                "name": "20190928",
+                "value": "Sep 28, 19"
+            }
+        ],
+        "rows": [
+            {
+                "search_id": "balance_ACSH",
+                "metric_name": "Cash",
+                "interim_date": "11.38K",
+                "20181229": "9.49K",
+                "20190330": "11.75K",
+                "20190629": "12.07K",
+                "20190928": "12.2K",
+                "trend": [
+                    {
+                        "value": 9.489E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "9.49K"
+                    },
+                    {
+                        "value": 1.1751E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.75K"
+                    },
+                    {
+                        "value": 1.2075E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "12.07K"
+                    },
+                    {
+                        "value": 1.2204E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "12.2K"
+                    },
+                    {
+                        "value": 1.1383E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "11.38K"
+                    }
+                ],
+                "change": 19.96
+            },
+            {
+                "search_id": "balance_ACAE",
+                "metric_name": "Cash & Equivalents",
+                "interim_date": "28.39K",
+                "20181229": "35.28K",
+                "20190330": "26.24K",
+                "20190629": "38.45K",
+                "20190928": "36.64K",
+                "trend": [
+                    {
+                        "value": 3.5282E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "35.28K"
+                    },
+                    {
+                        "value": 2.6237E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "26.24K"
+                    },
+                    {
+                        "value": 3.8455E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "38.45K"
+                    },
+                    {
+                        "value": 3.664E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "36.64K"
+                    },
+                    {
+                        "value": 2.8388E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "28.39K"
+                    }
+                ],
+                "change": -19.54
+            },
+            {
+                "search_id": "balance_ASTI",
+                "metric_name": "Short Term Investments",
+                "interim_date": "67.39K",
+                "20181229": "41.66K",
+                "20190330": "42.1K",
+                "20190629": "44.08K",
+                "20190928": "51.71K",
+                "trend": [
+                    {
+                        "value": 4.1656E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "41.66K"
+                    },
+                    {
+                        "value": 4.2104E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "42.1K"
+                    },
+                    {
+                        "value": 4.4084E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "44.08K"
+                    },
+                    {
+                        "value": 5.1713E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "51.71K"
+                    },
+                    {
+                        "value": 6.7391E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "67.39K"
+                    }
+                ],
+                "change": 61.78
+            },
+            {
+                "search_id": "balance_SCSI",
+                "metric_name": "Cash And Equivalents",
+                "interim_date": "107.16K",
+                "20181229": "86.43K",
+                "20190330": "80.09K",
+                "20190629": "94.61K",
+                "20190928": "100.56K",
+                "trend": [
+                    {
+                        "value": 8.6427E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "86.43K"
+                    },
+                    {
+                        "value": 8.0092E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "80.09K"
+                    },
+                    {
+                        "value": 9.4614E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "94.61K"
+                    },
+                    {
+                        "value": 1.00557E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "100.56K"
+                    },
+                    {
+                        "value": 1.07162E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "107.16K"
+                    }
+                ],
+                "change": 23.99
+            },
+            {
+                "search_id": "balance_AACR",
+                "metric_name": "Accounts Receivable - Trade, Net",
+                "interim_date": "20.97K",
+                "20181229": "18.08K",
+                "20190330": "15.09K",
+                "20190629": "14.15K",
+                "20190928": "22.93K",
+                "trend": [
+                    {
+                        "value": 1.8077E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "18.08K"
+                    },
+                    {
+                        "value": 1.5085E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "15.09K"
+                    },
+                    {
+                        "value": 1.4148E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "14.15K"
+                    },
+                    {
+                        "value": 2.2926E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "22.93K"
+                    },
+                    {
+                        "value": 2.097E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "20.97K"
+                    }
+                ],
+                "change": 16.0
+            },
+            {
+                "search_id": "balance_ATRC",
+                "metric_name": "Total Receivables, Net",
+                "interim_date": "39.95K",
+                "20181229": "36.98K",
+                "20190330": "26.28K",
+                "20190629": "26.47K",
+                "20190928": "45.8K",
+                "trend": [
+                    {
+                        "value": 3.6981E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "36.98K"
+                    },
+                    {
+                        "value": 2.6278E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "26.28K"
+                    },
+                    {
+                        "value": 2.6474E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "26.47K"
+                    },
+                    {
+                        "value": 4.5804E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "45.8K"
+                    },
+                    {
+                        "value": 3.9946E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "39.95K"
+                    }
+                ],
+                "change": 8.02
+            },
+            {
+                "search_id": "balance_AITL",
+                "metric_name": "Total Inventory",
+                "interim_date": "4.1K",
+                "20181229": "4.99K",
+                "20190330": "4.88K",
+                "20190629": "3.35K",
+                "20190928": "4.11K",
+                "trend": [
+                    {
+                        "value": 4.988E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "4.99K"
+                    },
+                    {
+                        "value": 4.884E15,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "4.88K"
+                    },
+                    {
+                        "value": 3.355E15,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "3.35K"
+                    },
+                    {
+                        "value": 4.106E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "4.11K"
+                    },
+                    {
+                        "value": 4.097E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.1K"
+                    }
+                ],
+                "change": -17.86
+            },
+            {
+                "search_id": "balance_SOCA",
+                "metric_name": "Other Current Assets, Total",
+                "interim_date": "12.03K",
+                "20181229": "12.43K",
+                "20190330": "12.09K",
+                "20190629": "10.53K",
+                "20190928": "12.35K",
+                "trend": [
+                    {
+                        "value": 1.2432E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "12.43K"
+                    },
+                    {
+                        "value": 1.2092E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "12.09K"
+                    },
+                    {
+                        "value": 1.053E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.53K"
+                    },
+                    {
+                        "value": 1.2352E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "12.35K"
+                    },
+                    {
+                        "value": 1.2026E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "12.03K"
+                    }
+                ],
+                "change": -3.27
+            },
+            {
+                "search_id": "balance_ATCA",
+                "metric_name": "Total Current Assets",
+                "interim_date": "163.23K",
+                "20181229": "140.83K",
+                "20190330": "123.35K",
+                "20190629": "134.97K",
+                "20190928": "162.82K",
+                "trend": [
+                    {
+                        "value": 1.40828E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "140.83K"
+                    },
+                    {
+                        "value": 1.23346E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "123.35K"
+                    },
+                    {
+                        "value": 1.34973E17,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "134.97K"
+                    },
+                    {
+                        "value": 1.62819E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "162.82K"
+                    },
+                    {
+                        "value": 1.63231E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "163.23K"
+                    }
+                ],
+                "change": 15.91,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_APTC",
+                "metric_name": "Property/Plant/Equipment, Total - Gross",
+                "interim_date": "105.25K",
+                "20181229": "91.53K",
+                "20190330": "93.04K",
+                "20190629": "93.98K",
+                "20190928": "95.96K",
+                "trend": [
+                    {
+                        "value": 9.1526E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "91.53K"
+                    },
+                    {
+                        "value": 9.3036E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "93.04K"
+                    },
+                    {
+                        "value": 9.3984E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "93.98K"
+                    },
+                    {
+                        "value": 9.5957E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "95.96K"
+                    },
+                    {
+                        "value": 1.05252E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "105.25K"
+                    }
+                ],
+                "change": 15.0
+            },
+            {
+                "search_id": "balance_ADEP",
+                "metric_name": "Accumulated Depreciation, Total",
+                "interim_date": "-60.96K",
+                "20181229": "-51.93K",
+                "20190330": "-54.29K",
+                "20190629": "-56.35K",
+                "20190928": "-58.58K",
+                "trend": [
+                    {
+                        "value": -5.1929E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "-51.93K"
+                    },
+                    {
+                        "value": -5.429E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "-54.29K"
+                    },
+                    {
+                        "value": -5.6348E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "-56.35K"
+                    },
+                    {
+                        "value": -5.8579E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-58.58K"
+                    },
+                    {
+                        "value": -6.0959E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "-60.96K"
+                    }
+                ],
+                "change": -17.39
+            },
+            {
+                "search_id": "balance_APPN",
+                "metric_name": "Property/Plant/Equipment, Total - Net",
+                "interim_date": "44.29K",
+                "20181229": "39.6K",
+                "20190330": "38.75K",
+                "20190629": "37.64K",
+                "20190928": "37.38K",
+                "trend": [
+                    {
+                        "value": 3.9597E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "39.6K"
+                    },
+                    {
+                        "value": 3.8746E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "38.75K"
+                    },
+                    {
+                        "value": 3.7636E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "37.64K"
+                    },
+                    {
+                        "value": 3.7378E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "37.38K"
+                    },
+                    {
+                        "value": 4.4293E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "44.29K"
+                    }
+                ],
+                "change": 11.86
+            },
+            {
+                "search_id": "balance_SINV",
+                "metric_name": "Long Term Investments",
+                "interim_date": "99.9K",
+                "20181229": "158.61K",
+                "20190330": "145.32K",
+                "20190629": "116K",
+                "20190928": "105.34K",
+                "trend": [
+                    {
+                        "value": 1.58608E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "158.61K"
+                    },
+                    {
+                        "value": 1.45319E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "145.32K"
+                    },
+                    {
+                        "value": 1.15996E17,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "116K"
+                    },
+                    {
+                        "value": 1.05341E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "105.34K"
+                    },
+                    {
+                        "value": 9.9899E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "99.9K"
+                    }
+                ],
+                "change": -37.02
+            },
+            {
+                "search_id": "balance_SOLA",
+                "metric_name": "Other Long Term Assets, Total",
+                "interim_date": "33.2K",
+                "20181229": "34.69K",
+                "20190330": "34.59K",
+                "20190629": "33.63K",
+                "20190928": "32.98K",
+                "trend": [
+                    {
+                        "value": 3.4686E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "34.69K"
+                    },
+                    {
+                        "value": 3.4587E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "34.59K"
+                    },
+                    {
+                        "value": 3.3634E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "33.63K"
+                    },
+                    {
+                        "value": 3.2978E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "32.98K"
+                    },
+                    {
+                        "value": 3.3195E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "33.2K"
+                    }
+                ],
+                "change": -4.3
+            },
+            {
+                "search_id": "balance_ATOT",
+                "metric_name": "Total Assets",
+                "interim_date": "340.62K",
+                "20181229": "373.72K",
+                "20190330": "342K",
+                "20190629": "322.24K",
+                "20190928": "338.52K",
+                "trend": [
+                    {
+                        "value": 3.73719E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "373.72K"
+                    },
+                    {
+                        "value": 3.41998E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "342K"
+                    },
+                    {
+                        "value": 3.22239E17,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "322.24K"
+                    },
+                    {
+                        "value": 3.38516E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "338.52K"
+                    },
+                    {
+                        "value": 3.40618E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "340.62K"
+                    }
+                ],
+                "change": -8.86,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_LAPB",
+                "metric_name": "Accounts Payable",
+                "interim_date": "45.11K",
+                "20181229": "44.29K",
+                "20190330": "30.44K",
+                "20190629": "29.11K",
+                "20190928": "46.24K",
+                "trend": [
+                    {
+                        "value": 4.4293E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "44.29K"
+                    },
+                    {
+                        "value": 3.0443E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "30.44K"
+                    },
+                    {
+                        "value": 2.9115E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "29.11K"
+                    },
+                    {
+                        "value": 4.6236E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "46.24K"
+                    },
+                    {
+                        "value": 4.5111E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "45.11K"
+                    }
+                ],
+                "change": 1.85
+            },
+            {
+                "search_id": "balance_LAEX",
+                "metric_name": "Accrued Expenses",
+                "interim_date": "1.25K",
+                "trend": [
+                    {
+                        "value": 1.245E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "1.25K"
+                    }
+                ]
+            },
+            {
+                "search_id": "balance_LSTD",
+                "metric_name": "Notes Payable/Short Term Debt",
+                "interim_date": "4.99K",
+                "20181229": "11.97K",
+                "20190330": "11.92K",
+                "20190629": "9.95K",
+                "20190928": "5.98K",
+                "trend": [
+                    {
+                        "value": 1.1969E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "11.97K"
+                    },
+                    {
+                        "value": 1.1924E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.92K"
+                    },
+                    {
+                        "value": 9.953E15,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "9.95K"
+                    },
+                    {
+                        "value": 5.98E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "5.98K"
+                    },
+                    {
+                        "value": 4.99E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.99K"
+                    }
+                ],
+                "change": -58.31
+            },
+            {
+                "search_id": "balance_LCLD",
+                "metric_name": "Current Port. of LT Debt/Capital Leases",
+                "interim_date": "10.24K",
+                "20181229": "9.77K",
+                "20190330": "10.51K",
+                "20190629": "13.53K",
+                "20190928": "10.26K",
+                "trend": [
+                    {
+                        "value": 9.772E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "9.77K"
+                    },
+                    {
+                        "value": 1.0505E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "10.51K"
+                    },
+                    {
+                        "value": 1.3529E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "13.53K"
+                    },
+                    {
+                        "value": 1.026E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "10.26K"
+                    },
+                    {
+                        "value": 1.0238E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "10.24K"
+                    }
+                ],
+                "change": 4.77
+            },
+            {
+                "search_id": "balance_SOCL",
+                "metric_name": "Other Current Liabilities, Total",
+                "interim_date": "40.58K",
+                "20181229": "42.25K",
+                "20190330": "40.9K",
+                "20190629": "37.11K",
+                "20190928": "43.24K",
+                "trend": [
+                    {
+                        "value": 4.2249E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "42.25K"
+                    },
+                    {
+                        "value": 4.09E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "40.9K"
+                    },
+                    {
+                        "value": 3.7107E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "37.11K"
+                    },
+                    {
+                        "value": 4.3242E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "43.24K"
+                    },
+                    {
+                        "value": 4.0577E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "40.58K"
+                    }
+                ],
+                "change": -3.96
+            },
+            {
+                "search_id": "balance_LTCL",
+                "metric_name": "Total Current Liabilities",
+                "interim_date": "102.16B",
+                "20181229": "108.28B",
+                "20190330": "93.77B",
+                "20190629": "89.7B",
+                "20190928": "105.72B",
+                "trend": [
+                    {
+                        "value": 1.08283E11,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "108.28B"
+                    },
+                    {
+                        "value": 9.3772E10,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "93.77B"
+                    },
+                    {
+                        "value": 8.9704E10,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "89.7B"
+                    },
+                    {
+                        "value": 1.05718E11,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "105.72B"
+                    },
+                    {
+                        "value": 1.02161E11,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "102.16B"
+                    }
+                ],
+                "change": -5.65,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_LLTD",
+                "metric_name": "Long Term Debt",
+                "interim_date": "93.08K",
+                "20181229": "92.99K",
+                "20190330": "90.2K",
+                "20190629": "84.94K",
+                "20190928": "91.81K",
+                "trend": [
+                    {
+                        "value": 9.2989E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "92.99K"
+                    },
+                    {
+                        "value": 9.0201E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "90.2K"
+                    },
+                    {
+                        "value": 8.4936E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "84.94K"
+                    },
+                    {
+                        "value": 9.1807E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "91.81K"
+                    },
+                    {
+                        "value": 9.3078E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "93.08K"
+                    }
+                ],
+                "change": 0.1
+            },
+            {
+                "search_id": "balance_LCLO",
+                "metric_name": "Capital Lease Obligations",
+                "interim_date": "627",
+                "trend": [
+                    {
+                        "value": 6.27E14,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "627"
+                    }
+                ]
+            },
+            {
+                "search_id": "balance_LTTD",
+                "metric_name": "Total Long Term Debt",
+                "interim_date": "93.7K",
+                "20181229": "92.99K",
+                "20190330": "90.2K",
+                "20190629": "84.94K",
+                "20190928": "91.81K",
+                "trend": [
+                    {
+                        "value": 9.2989E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "92.99K"
+                    },
+                    {
+                        "value": 9.0201E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "90.2K"
+                    },
+                    {
+                        "value": 8.4936E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "84.94K"
+                    },
+                    {
+                        "value": 9.1807E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "91.81K"
+                    },
+                    {
+                        "value": 9.3705E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "93.7K"
+                    }
+                ],
+                "change": 0.77
+            },
+            {
+                "search_id": "balance_STLD",
+                "metric_name": "Total Debt",
+                "interim_date": "108.93K",
+                "20181229": "114.73K",
+                "20190330": "112.63K",
+                "20190629": "108.42K",
+                "20190928": "108.05K",
+                "trend": [
+                    {
+                        "value": 1.1473E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "114.73K"
+                    },
+                    {
+                        "value": 1.1263E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "112.63K"
+                    },
+                    {
+                        "value": 1.08418E17,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "108.42K"
+                    },
+                    {
+                        "value": 1.08047E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "108.05K"
+                    },
+                    {
+                        "value": 1.08933E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "108.93K"
+                    }
+                ],
+                "change": -5.05,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_SLTL",
+                "metric_name": "Other Liabilities, Total",
+                "interim_date": "55.22K",
+                "20181229": "54.55K",
+                "20190330": "52.16K",
+                "20190629": "51.14K",
+                "20190928": "50.5K",
+                "trend": [
+                    {
+                        "value": 5.4555E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "54.55K"
+                    },
+                    {
+                        "value": 5.2165E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "52.16K"
+                    },
+                    {
+                        "value": 5.1143E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "51.14K"
+                    },
+                    {
+                        "value": 5.0503E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "50.5K"
+                    },
+                    {
+                        "value": 5.5221E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "55.22K"
+                    }
+                ],
+                "change": 1.22
+            },
+            {
+                "search_id": "balance_LTLL",
+                "metric_name": "Total Liabilities",
+                "interim_date": "251.09K",
+                "20181229": "255.83K",
+                "20190330": "236.14K",
+                "20190629": "225.78K",
+                "20190928": "248.03K",
+                "trend": [
+                    {
+                        "value": 2.55827E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "255.83K"
+                    },
+                    {
+                        "value": 2.36138E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "236.14K"
+                    },
+                    {
+                        "value": 2.25783E17,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "225.78K"
+                    },
+                    {
+                        "value": 2.48028E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "248.03K"
+                    },
+                    {
+                        "value": 2.51087E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "251.09K"
+                    }
+                ],
+                "change": -1.85,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_SCMS",
+                "metric_name": "Common Stock, Total",
+                "interim_date": "45.97K",
+                "20181229": "40.97K",
+                "20190330": "42.8K",
+                "20190629": "43.37K",
+                "20190928": "45.17K",
+                "trend": [
+                    {
+                        "value": 4.097E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "40.97K"
+                    },
+                    {
+                        "value": 4.2801E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "42.8K"
+                    },
+                    {
+                        "value": 4.3371E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "43.37K"
+                    },
+                    {
+                        "value": 4.5174E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "45.17K"
+                    },
+                    {
+                        "value": 4.5972E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "45.97K"
+                    }
+                ],
+                "change": 12.21
+            },
+            {
+                "search_id": "balance_QRED",
+                "metric_name": "Retained Earnings (Accumulated Deficit)",
+                "interim_date": "43.98K",
+                "20181229": "80.51K",
+                "20190330": "64.56K",
+                "20190629": "53.72K",
+                "20190928": "45.9K",
+                "trend": [
+                    {
+                        "value": 8.051E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "80.51K"
+                    },
+                    {
+                        "value": 6.4558E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "64.56K"
+                    },
+                    {
+                        "value": 5.3724E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "53.72K"
+                    },
+                    {
+                        "value": 4.5898E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "45.9K"
+                    },
+                    {
+                        "value": 4.3977E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "43.98K"
+                    }
+                ],
+                "change": -45.38
+            },
+            {
+                "search_id": "balance_QUGL",
+                "metric_name": "Unrealized Gain (Loss)",
+                "interim_date": "822",
+                "20181229": "-2.97K",
+                "20190330": "-903",
+                "20190629": "328",
+                "20190928": "707",
+                "trend": [
+                    {
+                        "value": -2.973E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "-2.97K"
+                    },
+                    {
+                        "value": -9.03E14,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "-903"
+                    },
+                    {
+                        "value": 3.28E14,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "328"
+                    },
+                    {
+                        "value": 7.07E14,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "707"
+                    },
+                    {
+                        "value": 8.22E14,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "822"
+                    }
+                ],
+                "change": 127.65
+            },
+            {
+                "search_id": "balance_SOTE",
+                "metric_name": "Other Equity, Total",
+                "interim_date": "-1.24K",
+                "20181229": "-615",
+                "20190330": "-596",
+                "20190629": "-967",
+                "20190928": "-1.29K",
+                "trend": [
+                    {
+                        "value": -6.15E14,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "-615"
+                    },
+                    {
+                        "value": -5.96E14,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "-596"
+                    },
+                    {
+                        "value": -9.67E14,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "-967"
+                    },
+                    {
+                        "value": -1.291E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "-1.29K"
+                    },
+                    {
+                        "value": -1.24E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "-1.24K"
+                    }
+                ],
+                "change": -101.63
+            },
+            {
+                "search_id": "balance_QTLE",
+                "metric_name": "Total Equity",
+                "interim_date": "89.53K",
+                "20181229": "117.89K",
+                "20190330": "105.86K",
+                "20190629": "96.46K",
+                "20190928": "90.49K",
+                "trend": [
+                    {
+                        "value": 1.17892E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "117.89K"
+                    },
+                    {
+                        "value": 1.0586E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "105.86K"
+                    },
+                    {
+                        "value": 9.6456E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "96.46K"
+                    },
+                    {
+                        "value": 9.0488E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "90.49K"
+                    },
+                    {
+                        "value": 8.9531E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "89.53K"
+                    }
+                ],
+                "change": -24.06,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_QTEL",
+                "metric_name": "Total Liabilities & Shareholders' Equity",
+                "interim_date": "340.62K",
+                "20181229": "373.72K",
+                "20190330": "342K",
+                "20190629": "322.24K",
+                "20190928": "338.52K",
+                "trend": [
+                    {
+                        "value": 3.73719E17,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "373.72K"
+                    },
+                    {
+                        "value": 3.41998E17,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "342K"
+                    },
+                    {
+                        "value": 3.22239E17,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "322.24K"
+                    },
+                    {
+                        "value": 3.38516E17,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "338.52K"
+                    },
+                    {
+                        "value": 3.40618E17,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "340.62K"
+                    }
+                ],
+                "change": -8.86,
+                "isSummary": true
+            },
+            {
+                "search_id": "balance_QTCO",
+                "metric_name": "Shares Outstanding",
+                "interim_date": "4.38B",
+                "20181229": "4.73B",
+                "20190330": "4.61B",
+                "20190629": "4.53B",
+                "20190928": "4.44B",
+                "trend": [
+                    {
+                        "value": 4.729803E9,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "4.73B"
+                    },
+                    {
+                        "value": 4.607284E9,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "4.61B"
+                    },
+                    {
+                        "value": 4.531395E9,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "4.53B"
+                    },
+                    {
+                        "value": 4.443236E9,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "4.44B"
+                    },
+                    {
+                        "value": 4.384959E9,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.38B"
+                    }
+                ],
+                "change": -7.29,
+                "isSummary": true
+            }
+        ]
+    },
+    "currency": "USD"
+}

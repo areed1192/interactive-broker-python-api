@@ -1,0 +1,62 @@
+{
+    "news": {
+        "title": "News",
+        "content": [
+            {
+                "newsId": "SS$0c7d507f",
+                "headlineContent": "AAPL Positive - $AAPL $MSFT $SHOP $NFLX $SPY  \n \n&#x2018;I don&#x2019;t think we&#x2019;ve seen the high of the year in equities,&#x2019; Michael Novogratz says https://t.co/m77XPa7ywx",
+                "source": "SS",
+                "conid": 265598,
+                "time": 1583462153000,
+                "displayTime": "2020-03-06 02:35:53.0",
+                "sentiment": "1.00",
+                "hot": false,
+                "external": true
+            },
+            {
+                "newsId": "SS$0c7d5080",
+                "headlineContent": "AAPL Positive - $AAPL $MSFT $SHOP $NFLX $SPY  \n \n&#x2018;I don&#x2019;t think we&#x2019;ve seen the high of the year in equities,&#x2019; Michael Novogratz says https://t.co/m77XPa7ywx",
+                "source": "SS",
+                "conid": 265598,
+                "time": 1583462153000,
+                "displayTime": "2020-03-06 02:35:53.0",
+                "sentiment": "1.00",
+                "hot": false,
+                "external": true
+            },
+            {
+                "newsId": "SS$0c7d5081",
+                "headlineContent": "AAPL Positive - $AAPL $MSFT $SHOP $NFLX $SPY  \n \n&#x2018;I don&#x2019;t think we&#x2019;ve seen the high of the year in equities,&#x2019; Michael Novogratz says https://t.co/m77XPa7ywx",
+                "source": "SS",
+                "conid": 265598,
+                "time": 1583462153000,
+                "displayTime": "2020-03-06 02:35:53.0",
+                "sentiment": "1.00",
+                "hot": false,
+                "external": true
+            },
+            {
+                "newsId": "SS$0c7d3611",
+                "headlineContent": "AAPL Negative - $AAPL simmered down from the scene of the breakdown... https://t.co/bu32NJsqzS",
+                "source": "SS",
+                "conid": 265598,
+                "time": 1583459408000,
+                "displayTime": "2020-03-06 01:50:08.0",
+                "sentiment": "-1.00",
+                "hot": false,
+                "external": true
+            },
+            {
+                "newsId": "SS$0c7d3612",
+                "headlineContent": "AAPL Negative - $AAPL simmered down from the scene of the breakdown... https://t.co/bu32NJsqzS",
+                "source": "SS",
+                "conid": 265598,
+                "time": 1583459408000,
+                "displayTime": "2020-03-06 01:50:08.0",
+                "sentiment": "-1.00",
+                "hot": false,
+                "external": true
+            }
+        ]
+    }
+}

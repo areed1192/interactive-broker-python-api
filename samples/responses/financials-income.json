@@ -1,0 +1,1021 @@
+{
+    "generalInfo": [
+        {
+            "name": "Total Revenue",
+            "value": "91.82B",
+            "valueChange": 8.91,
+            "date": "20191228",
+            "previousValue": "84.31B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Gross Profit",
+            "value": "35.22B",
+            "valueChange": 9.95,
+            "date": "20191228",
+            "previousValue": "32.03B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Operating Income",
+            "value": "25.57B",
+            "valueChange": 9.52,
+            "date": "20191228",
+            "previousValue": "23.35B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Net Income bf/Tax",
+            "value": "25.92B",
+            "valueChange": 8.42,
+            "date": "20191228",
+            "previousValue": "23.91B",
+            "previousDate": "20181229"
+        },
+        {
+            "name": "Net Income After Taxes",
+            "value": "22.24B",
+            "valueChange": 11.37,
+            "date": "20191228",
+            "previousValue": "19.96B",
+            "previousDate": "20181229"
+        }
+    ],
+    "table": {
+        "columns": [
+            {
+                "name": "metric_name",
+                "value": "IN MILLIONS OF USD",
+                "secondaryValue": "(except per share item)"
+            },
+            {
+                "name": "interim_date",
+                "value": "Dec 28, 19"
+            },
+            {
+                "name": "change",
+                "value": "Y/Y %Change"
+            },
+            {
+                "name": "trend",
+                "value": "TREND"
+            },
+            {
+                "name": "20181229",
+                "value": "Dec 29, 18"
+            },
+            {
+                "name": "20190330",
+                "value": "Mar 30, 19"
+            },
+            {
+                "name": "20190629",
+                "value": "Jun 29, 19"
+            },
+            {
+                "name": "20190928",
+                "value": "Sep 28, 19"
+            }
+        ],
+        "rows": [
+            {
+                "search_id": "income_SREV",
+                "metric_name": "Revenue",
+                "interim_date": "91.82K",
+                "20181229": "84.31K",
+                "20190330": "58.02K",
+                "20190629": "53.81K",
+                "20190928": "64.04K",
+                "trend": [
+                    {
+                        "value": 8.431E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "84.31K"
+                    },
+                    {
+                        "value": 5.8015E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "58.02K"
+                    },
+                    {
+                        "value": 5.3809E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "53.81K"
+                    },
+                    {
+                        "value": 6.404E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "64.04K"
+                    },
+                    {
+                        "value": 9.1819E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "91.82K"
+                    }
+                ],
+                "change": 8.91,
+                "hasEsimates": true
+            },
+            {
+                "search_id": "income_RTLR",
+                "metric_name": "Total Revenue",
+                "interim_date": "91.82K",
+                "20181229": "84.31K",
+                "20190330": "58.02K",
+                "20190629": "53.81K",
+                "20190928": "64.04K",
+                "trend": [
+                    {
+                        "value": 8.431E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "84.31K"
+                    },
+                    {
+                        "value": 5.8015E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "58.02K"
+                    },
+                    {
+                        "value": 5.3809E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "53.81K"
+                    },
+                    {
+                        "value": 6.404E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "64.04K"
+                    },
+                    {
+                        "value": 9.1819E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "91.82K"
+                    }
+                ],
+                "change": 8.91,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_SCOR",
+                "metric_name": "Cost of Rev.",
+                "interim_date": "56.6K",
+                "20181229": "52.28K",
+                "20190330": "36.19K",
+                "20190629": "33.58K",
+                "20190928": "39.73K",
+                "trend": [
+                    {
+                        "value": 5.2279E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "52.28K"
+                    },
+                    {
+                        "value": 3.6194E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "36.19K"
+                    },
+                    {
+                        "value": 3.3582E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "33.58K"
+                    },
+                    {
+                        "value": 3.9727E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "39.73K"
+                    },
+                    {
+                        "value": 5.6602E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "56.6K"
+                    }
+                ],
+                "change": 8.27
+            },
+            {
+                "search_id": "income_SGRP",
+                "metric_name": "Gross Profit",
+                "interim_date": "35.22K",
+                "20181229": "32.03K",
+                "20190330": "21.82K",
+                "20190629": "20.23K",
+                "20190928": "24.31K",
+                "trend": [
+                    {
+                        "value": 3.2031E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "32.03K"
+                    },
+                    {
+                        "value": 2.1821E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "21.82K"
+                    },
+                    {
+                        "value": 2.0227E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "20.23K"
+                    },
+                    {
+                        "value": 2.4313E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "24.31K"
+                    },
+                    {
+                        "value": 3.5217E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "35.22K"
+                    }
+                ],
+                "change": 9.95,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_SSGA",
+                "metric_name": "Selling/General/Admin. Expenses, Total",
+                "interim_date": "5.2K",
+                "20181229": "4.78K",
+                "20190330": "4.46K",
+                "20190629": "4.43K",
+                "20190928": "4.58K",
+                "trend": [
+                    {
+                        "value": 4.783E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "4.78K"
+                    },
+                    {
+                        "value": 4.458E15,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "4.46K"
+                    },
+                    {
+                        "value": 4.426E15,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "4.43K"
+                    },
+                    {
+                        "value": 4.578E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "4.58K"
+                    },
+                    {
+                        "value": 5.197E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "5.2K"
+                    }
+                ],
+                "change": 8.66
+            },
+            {
+                "search_id": "income_ERAD",
+                "metric_name": "Rsrch and Dev. Exp.",
+                "interim_date": "4.45K",
+                "20181229": "3.9K",
+                "20190330": "3.95K",
+                "20190629": "4.26K",
+                "20190928": "4.11K",
+                "trend": [
+                    {
+                        "value": 3.902E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "3.9K"
+                    },
+                    {
+                        "value": 3.948E15,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "3.95K"
+                    },
+                    {
+                        "value": 4.257E15,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "4.26K"
+                    },
+                    {
+                        "value": 4.11E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "4.11K"
+                    },
+                    {
+                        "value": 4.451E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.45K"
+                    }
+                ],
+                "change": 14.07
+            },
+            {
+                "search_id": "income_ETOE",
+                "metric_name": "Total Operating Expense",
+                "interim_date": "66.25K",
+                "20181229": "60.96K",
+                "20190330": "44.6K",
+                "20190629": "42.27K",
+                "20190928": "48.41K",
+                "trend": [
+                    {
+                        "value": 6.0964E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "60.96K"
+                    },
+                    {
+                        "value": 4.46E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "44.6K"
+                    },
+                    {
+                        "value": 4.2265E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "42.27K"
+                    },
+                    {
+                        "value": 4.8415E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "48.41K"
+                    },
+                    {
+                        "value": 6.625E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "66.25K"
+                    }
+                ],
+                "change": 8.67,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_SOPI",
+                "metric_name": "Operating Income",
+                "interim_date": "25.57K",
+                "20181229": "23.35K",
+                "20190330": "13.41K",
+                "20190629": "11.54K",
+                "20190928": "15.62K",
+                "trend": [
+                    {
+                        "value": 2.3346E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "23.35K"
+                    },
+                    {
+                        "value": 1.3415E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "13.41K"
+                    },
+                    {
+                        "value": 1.1544E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "11.54K"
+                    },
+                    {
+                        "value": 1.5625E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "15.62K"
+                    },
+                    {
+                        "value": 2.5569E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "25.57K"
+                    }
+                ],
+                "change": 9.52,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_SNIN",
+                "metric_name": "Interest Inc.(Exp.),Net-Non-Op., Total",
+                "interim_date": "260",
+                "20181229": "417",
+                "20190330": "348",
+                "20190629": "324",
+                "20190928": "296",
+                "trend": [
+                    {
+                        "value": 4.17E14,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "417"
+                    },
+                    {
+                        "value": 3.48E14,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "348"
+                    },
+                    {
+                        "value": 3.24E14,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "324"
+                    },
+                    {
+                        "value": 2.96E14,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "296"
+                    },
+                    {
+                        "value": 2.6E14,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "260"
+                    }
+                ],
+                "change": -37.65
+            },
+            {
+                "search_id": "income_SONT",
+                "metric_name": "Other, Net",
+                "interim_date": "89",
+                "20181229": "143",
+                "20190330": "30",
+                "20190629": "43",
+                "20190928": "206",
+                "trend": [
+                    {
+                        "value": 1.43E14,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "143"
+                    },
+                    {
+                        "value": 3.0E13,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "30"
+                    },
+                    {
+                        "value": 4.3E13,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "43"
+                    },
+                    {
+                        "value": 2.06E14,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "206"
+                    },
+                    {
+                        "value": 8.9E13,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "89"
+                    }
+                ],
+                "change": -37.76
+            },
+            {
+                "search_id": "income_EIBT",
+                "metric_name": "Net Income bf/Tax",
+                "interim_date": "25.92K",
+                "20181229": "23.91K",
+                "20190330": "13.79K",
+                "20190629": "11.91K",
+                "20190928": "16.13K",
+                "trend": [
+                    {
+                        "value": 2.3906E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "23.91K"
+                    },
+                    {
+                        "value": 1.3793E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "13.79K"
+                    },
+                    {
+                        "value": 1.1911E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "11.91K"
+                    },
+                    {
+                        "value": 1.6127E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "16.13K"
+                    },
+                    {
+                        "value": 2.5918E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "25.92K"
+                    }
+                ],
+                "change": 8.42,
+                "isSummary": true,
+                "hasEsimates": true
+            },
+            {
+                "search_id": "income_TTAX",
+                "metric_name": "Provision for Income Taxes",
+                "interim_date": "3.68K",
+                "20181229": "3.94K",
+                "20190330": "2.23K",
+                "20190629": "1.87K",
+                "20190928": "2.44K",
+                "trend": [
+                    {
+                        "value": 3.941E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "3.94K"
+                    },
+                    {
+                        "value": 2.232E15,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "2.23K"
+                    },
+                    {
+                        "value": 1.867E15,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "1.87K"
+                    },
+                    {
+                        "value": 2.441E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "2.44K"
+                    },
+                    {
+                        "value": 3.682E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "3.68K"
+                    }
+                ],
+                "change": -6.57
+            },
+            {
+                "search_id": "income_TIAT",
+                "metric_name": "Net Income After Taxes",
+                "interim_date": "22.24K",
+                "20181229": "19.96K",
+                "20190330": "11.56K",
+                "20190629": "10.04K",
+                "20190928": "13.69K",
+                "trend": [
+                    {
+                        "value": 1.9965E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "19.96K"
+                    },
+                    {
+                        "value": 1.1561E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.56K"
+                    },
+                    {
+                        "value": 1.0044E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.04K"
+                    },
+                    {
+                        "value": 1.3686E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "13.69K"
+                    },
+                    {
+                        "value": 2.2236E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "22.24K"
+                    }
+                ],
+                "change": 11.37,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_NIBX",
+                "metric_name": "Net Income Before Extra. Items",
+                "interim_date": "22.24K",
+                "20181229": "19.96K",
+                "20190330": "11.56K",
+                "20190629": "10.04K",
+                "20190928": "13.69K",
+                "trend": [
+                    {
+                        "value": 1.9965E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "19.96K"
+                    },
+                    {
+                        "value": 1.1561E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.56K"
+                    },
+                    {
+                        "value": 1.0044E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.04K"
+                    },
+                    {
+                        "value": 1.3686E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "13.69K"
+                    },
+                    {
+                        "value": 2.2236E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "22.24K"
+                    }
+                ],
+                "change": 11.37,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_NINC",
+                "metric_name": "Net Inc. Avail. To Common",
+                "interim_date": "22.24K",
+                "20181229": "19.96K",
+                "20190330": "11.56K",
+                "20190629": "10.04K",
+                "20190928": "13.69K",
+                "trend": [
+                    {
+                        "value": 1.9965E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "19.96K"
+                    },
+                    {
+                        "value": 1.1561E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.56K"
+                    },
+                    {
+                        "value": 1.0044E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.04K"
+                    },
+                    {
+                        "value": 1.3686E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "13.69K"
+                    },
+                    {
+                        "value": 2.2236E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "22.24K"
+                    }
+                ],
+                "change": 11.37,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_CIAC",
+                "metric_name": "Net Inc. Excl. Ex. Items",
+                "interim_date": "22.24K",
+                "20181229": "19.96K",
+                "20190330": "11.56K",
+                "20190629": "10.04K",
+                "20190928": "13.69K",
+                "trend": [
+                    {
+                        "value": 1.9965E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "19.96K"
+                    },
+                    {
+                        "value": 1.1561E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.56K"
+                    },
+                    {
+                        "value": 1.0044E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.04K"
+                    },
+                    {
+                        "value": 1.3686E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "13.69K"
+                    },
+                    {
+                        "value": 2.2236E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "22.24K"
+                    }
+                ],
+                "change": 11.37,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_XNIC",
+                "metric_name": "Net Inc. Incl. Ex. Items",
+                "interim_date": "22.24K",
+                "20181229": "19.96K",
+                "20190330": "11.56K",
+                "20190629": "10.04K",
+                "20190928": "13.69K",
+                "trend": [
+                    {
+                        "value": 1.9965E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "19.96K"
+                    },
+                    {
+                        "value": 1.1561E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.56K"
+                    },
+                    {
+                        "value": 1.0044E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.04K"
+                    },
+                    {
+                        "value": 1.3686E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "13.69K"
+                    },
+                    {
+                        "value": 2.2236E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "22.24K"
+                    }
+                ],
+                "change": 11.37,
+                "isSummary": true
+            },
+            {
+                "search_id": "income_SDNI",
+                "metric_name": "Diluted Net Income",
+                "interim_date": "22.24K",
+                "20181229": "19.96K",
+                "20190330": "11.56K",
+                "20190629": "10.04K",
+                "20190928": "13.69K",
+                "trend": [
+                    {
+                        "value": 1.9965E16,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "19.96K"
+                    },
+                    {
+                        "value": 1.1561E16,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "11.56K"
+                    },
+                    {
+                        "value": 1.0044E16,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "10.04K"
+                    },
+                    {
+                        "value": 1.3686E16,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "13.69K"
+                    },
+                    {
+                        "value": 2.2236E16,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "22.24K"
+                    }
+                ],
+                "change": 11.37
+            },
+            {
+                "search_id": "income_SDWS",
+                "metric_name": "Diluted Weighted Average Shares",
+                "interim_date": "4.45K",
+                "20181229": "4.77K",
+                "20190330": "4.7K",
+                "20190629": "4.6K",
+                "20190928": "4.52K",
+                "trend": [
+                    {
+                        "value": 4.773252E15,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "4.77K"
+                    },
+                    {
+                        "value": 4.700646E15,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "4.7K"
+                    },
+                    {
+                        "value": 4.60138E15,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "4.6K"
+                    },
+                    {
+                        "value": 4.520375E15,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "4.52K"
+                    },
+                    {
+                        "value": 4.454604E15,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.45K"
+                    }
+                ],
+                "change": -6.68
+            },
+            {
+                "search_id": "income_SDBF",
+                "metric_name": "Diluted EPS Excluding ExtraOrd Items",
+                "interim_date": "4.99",
+                "20181229": "4.18",
+                "20190330": "2.46",
+                "20190629": "2.18",
+                "20190928": "3.03",
+                "trend": [
+                    {
+                        "value": 4.18268,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "4.18"
+                    },
+                    {
+                        "value": 2.45945,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "2.46"
+                    },
+                    {
+                        "value": 2.18282,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "2.18"
+                    },
+                    {
+                        "value": 3.02762,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "3.03"
+                    },
+                    {
+                        "value": 4.99169,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.99"
+                    }
+                ],
+                "change": 19.34
+            },
+            {
+                "search_id": "income_DDPS1",
+                "metric_name": "Dividend Per Share",
+                "interim_date": "0.77",
+                "20181229": "0.73",
+                "20190330": "0.73",
+                "20190629": "0.77",
+                "20190928": "0.77",
+                "trend": [
+                    {
+                        "value": 0.73,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "0.73"
+                    },
+                    {
+                        "value": 0.73,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "0.73"
+                    },
+                    {
+                        "value": 0.77,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "0.77"
+                    },
+                    {
+                        "value": 0.77,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "0.77"
+                    },
+                    {
+                        "value": 0.77,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "0.77"
+                    }
+                ],
+                "change": 5.48,
+                "hasEsimates": true
+            },
+            {
+                "search_id": "income_VDES",
+                "metric_name": "Diluted Normalized EPS",
+                "interim_date": "4.99",
+                "20181229": "4.18",
+                "20190330": "2.46",
+                "20190629": "2.18",
+                "20190928": "3.03",
+                "trend": [
+                    {
+                        "value": 4.18268,
+                        "year": "2019",
+                        "date": "20181229",
+                        "formatted_value": "4.18"
+                    },
+                    {
+                        "value": 2.45945,
+                        "year": "2019",
+                        "date": "20190330",
+                        "formatted_value": "2.46"
+                    },
+                    {
+                        "value": 2.18282,
+                        "year": "2019",
+                        "date": "20190629",
+                        "formatted_value": "2.18"
+                    },
+                    {
+                        "value": 3.02762,
+                        "year": "2019",
+                        "date": "20190928",
+                        "formatted_value": "3.03"
+                    },
+                    {
+                        "value": 4.99169,
+                        "year": "2020",
+                        "date": "20191228",
+                        "formatted_value": "4.99"
+                    }
+                ],
+                "change": 19.34
+            }
+        ]
+    },
+    "currency": "USD"
+}

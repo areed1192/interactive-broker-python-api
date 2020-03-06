@@ -1,0 +1,124 @@
+[
+    {
+        "type": "SPACED",
+        "title": "Revenue",
+        "provider": "financials",
+        "tab": "/fundamentals/financials/265598?annual=true&type=income",
+        "activate": [
+            "income_SREV"
+        ],
+        "content": [
+            {
+                "name": "Sep 28, 19",
+                "value": "260.17K"
+            },
+            {
+                "name": "Y/Y %Change",
+                "value": -2.04
+            },
+            {
+                "name": "5Y TREND",
+                "type": "TREND",
+                "values": [
+                    {
+                        "year": "2015",
+                        "value": 2.33715E17
+                    },
+                    {
+                        "year": "2016",
+                        "value": 2.15639E17
+                    },
+                    {
+                        "year": "2017",
+                        "value": 2.29234E17
+                    },
+                    {
+                        "year": "2018",
+                        "value": 2.65595E17
+                    },
+                    {
+                        "year": "2019",
+                        "value": 2.60174E17
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "SPACED",
+        "title": "Gross Margin",
+        "provider": "key_ratios",
+        "tab": "/fundamentals/key_ratios/265598",
+        "activate": [
+            "C|GROSMGN,TTM,0"
+        ],
+        "content": [
+            {
+                "name": "TTM",
+                "value": "37.95%"
+            },
+            {
+                "name": "5Y TREND",
+                "type": "TREND",
+                "values": [
+                    {
+                        "year": "2015",
+                        "value": 0.4
+                    },
+                    {
+                        "year": "2016",
+                        "value": 0.39
+                    },
+                    {
+                        "year": "2017",
+                        "value": 0.38
+                    },
+                    {
+                        "year": "2018",
+                        "value": 0.38
+                    },
+                    {
+                        "year": "2019",
+                        "value": 0.38
+                    },
+                    {
+                        "year": "2019",
+                        "value": 0.38,
+                        "isCurrent": true
+                    }
+                ]
+            },
+            {
+                "name": "5Y AVG",
+                "value": "38.75%"
+            },
+            {
+                "name": "IND AVG",
+                "value": "16.78%"
+            }
+        ]
+    },
+    {
+        "type": "SPREAD",
+        "title": "Directors & Officers",
+        "provider": "profile",
+        "tab": "/fundamentals/profile/265598",
+        "activate": [
+            "directors"
+        ],
+        "content": [
+            {
+                "name": "Independent Chairman of the Board",
+                "value": "Levinson, Arthur"
+            },
+            {
+                "name": "Chief Executive Officer, Director",
+                "value": "Cook, Timothy"
+            },
+            {
+                "name": "Chief Financial Officer, Senior Vice President",
+                "value": "Maestri, Luca"
+            }
+        ]
+    }
+]

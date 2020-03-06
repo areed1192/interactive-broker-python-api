@@ -1,0 +1,144 @@
+{
+    "meta": {
+        "name": "INDUSTRY COMPARISON",
+        "average": "5Y AVG",
+        "ttm": "TTM",
+        "trend": "Price to Tangible Book"
+    },
+    "data": [
+        {
+            "symbol": "AAPL",
+            "ttm": "14.83",
+            "average": "7.51",
+            "ttmValue": 14.83,
+            "price": 302.74,
+            "formattedPrice": "302.74",
+            "marketCap": 1.324633E12,
+            "formattedMarketCap": "1324.63B",
+            "fiveYearTrend": [
+                {
+                    "year": "2015",
+                    "value": 5.55
+                },
+                {
+                    "year": "2016",
+                    "value": 5.04
+                },
+                {
+                    "year": "2017",
+                    "value": 5.89
+                },
+                {
+                    "year": "2018",
+                    "value": 10.03
+                },
+                {
+                    "year": "2019",
+                    "value": 11.03
+                },
+                {
+                    "year": "2020",
+                    "value": 14.83,
+                    "isCurrent": true
+                }
+            ],
+            "isRequestedTicker": true,
+            "currency": "USD",
+            "company_name": "Apple Inc."
+        },
+        {
+            "symbol": "FIT",
+            "ttm": "4.22",
+            "average": "3.31",
+            "ttmValue": 4.22,
+            "price": 6.47,
+            "formattedPrice": "6.47",
+            "marketCap": 1.71633E9,
+            "formattedMarketCap": "1.72B",
+            "fiveYearTrend": [
+                {
+                    "year": "2015",
+                    "value": 6.73
+                },
+                {
+                    "year": "2016",
+                    "value": 1.79
+                },
+                {
+                    "year": "2017",
+                    "value": 1.82
+                },
+                {
+                    "year": "2018",
+                    "value": 1.92
+                },
+                {
+                    "year": "2019",
+                    "value": 4.29
+                },
+                {
+                    "year": "2019",
+                    "value": 4.22,
+                    "isCurrent": true
+                }
+            ],
+            "currency": "USD",
+            "company_name": "Fitbit Inc"
+        },
+        {
+            "symbol": "LBAS",
+            "ttm": "-0.05",
+            "average": "-0.19",
+            "ttmValue": -0.05,
+            "price": 0.0023,
+            "formattedPrice": "0.0023",
+            "marketCap": 610570.0,
+            "formattedMarketCap": "610.57K",
+            "fiveYearTrend": [
+                {
+                    "year": "",
+                    "value": null
+                },
+                {
+                    "year": "",
+                    "value": null
+                },
+                {
+                    "year": "",
+                    "value": null
+                },
+                {
+                    "year": "",
+                    "value": null
+                },
+                {
+                    "year": "2014",
+                    "value": -0.19
+                },
+                {
+                    "year": "2015",
+                    "value": -0.05,
+                    "isCurrent": true
+                }
+            ],
+            "currency": "USD",
+            "company_name": "Location Based Technologies Inc"
+        },
+        {
+            "symbol": "INVT",
+            "ttm": "0.02",
+            "average": "-",
+            "ttmValue": 0.02,
+            "price": 0.039,
+            "formattedPrice": "0.04",
+            "marketCap": 474610.0,
+            "formattedMarketCap": "474.61K",
+            "currency": "USD",
+            "company_name": "Inventergy Global Inc"
+        },
+        {
+            "isIndustry": true,
+            "company_name": "Industry"
+        }
+    ]
+}

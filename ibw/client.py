@@ -25,7 +25,7 @@ class IBClient():
         self.ACCOUNT = account
         self.USERNAME = username
         self.PASSWORD = password
-        self.CLIENT_PORTAL_FOLDER = pathlib.Path.cwd().joinpath('clientportal.gw').resolve()
+        self.CLIENT_PORTAL_FOLDER = pathlib.Path.cwd().joinpath('clientportal.beta.gw').resolve()
         self.API_VERSION = 'v1/'
         self.TESTING_FLAG = False
         self._operating_system = sys.platform
@@ -63,7 +63,7 @@ class IBClient():
             Creates a new session with Interactive Broker using the credentials
             passed through when the Robot was initalized.
         '''
-           
+          
         # first let's check if the server is running, if it's not then we can start up.
         if self.server_process == None and self.connect():
             
@@ -73,6 +73,7 @@ class IBClient():
 
         # more than likely it's running let's try and see if we can authenticate.
         auth_response = self.is_authenticated()
+        print(auth_response)
 
         if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
             
@@ -104,6 +105,7 @@ class IBClient():
             RTYPE: None | Integer
         '''
 
+        # define file components
         dir_path = os.path.dirname(os.path.realpath(__file__))
         filename = 'server_session.json'
         file_path = os.path.join(dir_path, filename)
@@ -118,16 +120,20 @@ class IBClient():
             with open(file_path, 'r') as server_file:
                 server_state = json.load(server_file)
 
-            proc_id = server_state['server_process_id']              
+            proc_id = server_state['server_process_id']
 
-            try:
-              os.kill(proc_id, 0)
-            except OSError:
-                return None
-            except SystemError:
-                return None
-            else:
-               return proc_id
+            if self._operating_system == 'win32':
+                for process in os.popen('tasklist').read().splitlines()[4:]:
+                    if str(proc_id) in process:
+                        process_details = process.split()
+                        print(process_details)   
+                        return proc_id
+            else:      
+                try:
+                    os.kill(proc_id, 0)
+                    return proc_id
+                except OSError:
+                    return None
 
         elif action == 'delete' and file_exists:
             os.remove(file_path)
@@ -162,7 +168,7 @@ class IBClient():
             STEP 3: WHEN YOU SEE `Client login succeeds` RETURN BACK TO THE TERMINAL AND TYPE `YES` TO CHECK IF THE SESSION IS AUTHENTICATED.
             SERVER IS RUNNING ON PROCESS ID: {}
         {}
-        '''.format('-'*80, self.IB_GATEWAY_PATH, self.server_process, '-'*80)
+        '''.format('-'*80, self.IB_GATEWAY_PATH + "/sso/Login?forwardTo=22&RL=1&ip2loc=off", self.server_process, '-'*80)
         )
 
         while self.authenticated == False:
@@ -182,10 +188,19 @@ class IBClient():
         return True
 
     def close_session(self):
+        '''
+            Closes the current session and kills the server using Taskkill
+        '''
 
         print('\nCLOSING SERVER AND EXITING SCRIPT.')
+
+        # kill the process.
         return_code = subprocess.call("TASKKILL /F /PID {} /T".format(self.server_process), creationflags=subprocess.DETACHED_PROCESS)
+        
+        # delete the state
         self._server_state(action ='delete')
+
+        # and exit.
         sys.exit()
 
     def _headers(self, mode = 'json'):
@@ -197,6 +212,7 @@ class IBClient():
             DESC: Defines the content-type for the headers dictionary.
                   default is 'json'. Possible values are ['json','form']
             TYPE: String
+
         '''
 
         if mode == 'json':
@@ -221,7 +237,6 @@ class IBClient():
 
         # otherwise build the URL
         return urllib.parse.unquote(urllib.parse.urljoin(self.IB_GATEWAY_PATH, self.API_VERSION) + r'portal/' + endpoint)
-        # return urllib.parse.unquote(urllib.parse.urljoin(self.BACKUP_GATEWAY_PATH,  r"portal.proxy/" + self.API_VERSION + r"/portal/")  + endpoint)
 
 
     def _make_request(self, endpoint = None, req_type = None, params = None):
@@ -397,6 +412,15 @@ class IBClient():
     '''
         MARKET DATA ENDPOINTS
     '''
+
+    def fundamentals_summary(self, conid = None):      
+
+        # define request components
+        endpoint = 'iserver/fundamentals/{}/summary'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content
 
 
     def market_data(self, conids = None, since = None, fields = None):

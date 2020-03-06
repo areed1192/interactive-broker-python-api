@@ -1,0 +1,914 @@
+{
+    "newsSentimentScore": {
+        "stock": {
+            "bullishPercent": 0.60,
+            "bearishPercent": 0.40
+        },
+        "sector": {
+            "bullishPercent": 0.61,
+            "bearishPercent": 0.39
+        }
+    },
+    "articles": [
+        {
+            "date": "2020-03-05T18:02:41",
+            "title": "Apple is rejecting coronavirus apps that aren't from health organizations, app makers say",
+            "link": "https://www.cnbc.com/2020/03/05/apple-rejects-coronavirus-apps-that-arent-from-health-organizations.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-05T17:17:54",
+            "title": "The coronavirus domino effect: South Korean tech firms reel as Vietnam links curbed",
+            "link": "https://uk.finance.yahoo.com/news/coronavirus-domino-effect-south-korean-221754525.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T17:00:00",
+            "title": "INSIGHT-The coronavirus domino effect: S.Korean tech firms reel as Vietnam links curbed",
+            "link": "https://finance.yahoo.com/news/insight-coronavirus-domino-effect-korean-220000206.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T16:28:46.65",
+            "title": "Sequoia Capital Warns Startups of Coronavirus ‘Black Swan’ Event",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-05/sequoia-capital-warns-startups-of-coronavirus-black-swan-event",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T15:22:29",
+            "title": "How Apple Makes Money: iPhones, iPads, Macs, and Services",
+            "link": "https://www.investopedia.com/how-apple-makes-money-4798689?utm_campaign=quote-yahoo&utm_source=yahoo&utm_medium=referral&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T14:57:17",
+            "title": "Stocks making the biggest moves midday: American Airlines, Apple, Uber, FireEye & more",
+            "link": "https://www.cnbc.com/2020/03/05/stocks-making-the-biggest-moves-midday-american-airlines-apple-uber-fireeye-more.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T13:25:00",
+            "title": "Tech shows go digital route amid coronavirus risks",
+            "link": "https://www.marketwatch.com/story/tech-shows-go-digital-route-amid-coronavirus-risks-2020-03-04?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T13:02:00",
+            "title": "South by Southwest Could Be a Ghost Town as Major Attendees Withdraw Over Coronavirus Fears",
+            "link": "https://www.nasdaq.com/articles/south-by-southwest-could-be-a-ghost-town-as-major-attendees-withdraw-over-coronavirus",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T12:31:01",
+            "title": "Facebook, Apple and other tech companies back new principles to prevent online child sexual exploitation and abuse",
+            "link": "https://www.cnbc.com/2020/03/05/tech-firms-back-new-principles-to-prevent-online-child-sexual-abuse.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T11:01:07.87",
+            "title": "How Biotech ETFs Are Weathering the Coronavirus Storm",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-05/how-biotech-etfs-are-weathering-the-coronavirus-storm",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T10:45:54",
+            "title": "Your first trade for Thursday, March 5",
+            "link": "https://www.cnbc.com/2020/03/05/your-first-trade-for-thursday-march-5.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T10:40:06",
+            "title": "Apple iPhone partner Foxconn's February revenue tanks on slowdown caused by coronavirus outbreak",
+            "link": "https://www.cnbc.com/2020/03/05/coronavirus-apple-iphone-partner-foxconn-february-revenue-down.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-05T10:19:04",
+            "title": "Tech Companies Could Be In Focus As Apple Pulls Out Of SXSW; Volatility Flares Up",
+            "link": "https://finance.yahoo.com/news/tech-companies-could-focus-apple-151904295.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T10:00:22",
+            "title": "James Bond Will Wait, But Movie Theaters Have No Time for a Virus",
+            "link": "https://finance.yahoo.com/news/james-bond-wait-movie-theaters-150022114.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T09:37:00",
+            "title": "Where Will Netflix Be in 5 Years?",
+            "link": "https://www.nasdaq.com/articles/where-will-netflix-be-in-5-years-2020-03-05",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T09:13:26",
+            "title": "Here are Thursday's biggest analyst calls of the day: Apple, FireEye, Johnson & Johnson and more",
+            "link": "https://www.cnbc.com/2020/03/05/thursdays-calls-of-the-day-apple-fireeye-johnson-johnson-more.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T09:00:24",
+            "title": "Here's How Long It Took Apple To Reach A $100B Market Cap",
+            "link": "https://finance.yahoo.com/news/heres-long-took-apple-reach-140024062.html",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-05T08:01:01",
+            "title": "LA Lakers great Magic Johnson joins board of renewable energy start-up Uncharted Power",
+            "link": "https://www.cnbc.com/2020/03/05/magic-johnson-joins-uncharted-powers-board-of-directors.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T08:00:00",
+            "title": "Will Coronavirus Push the World Into Recession? One CIO Isn’t Convinced Yet.",
+            "link": "https://www.barrons.com/articles/will-coronavirus-push-the-world-into-recession-one-cio-isnt-convinced-yet-51583366023?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T07:51:00",
+            "title": "Netflix's Stay-at-Home Appeal Sends Stock Soaring",
+            "link": "https://www.nasdaq.com/articles/netflixs-stay-at-home-appeal-sends-stock-soaring-2020-03-05",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T07:38:16",
+            "title": "Coronavirus live updates: South Africa confirms first case, US to order more masks",
+            "link": "https://www.cnbc.com/2020/03/05/coronavirus-latest-updates-outbreak.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T07:18:35",
+            "title": "Stock market live updates: Futures point to 500-point loss, airline stocks fall",
+            "link": "https://www.cnbc.com/2020/03/05/stock-market-today-live.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T07:07:36",
+            "title": "Apple supplier Foxconn's revenue hammered by coronavirus fallout",
+            "link": "https://finance.yahoo.com/news/apple-supplier-foxconns-revenue-hammered-120736256.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T06:06:00",
+            "title": "Here's How Much Dividend Income Warren Buffett Will Receive in 2020",
+            "link": "https://www.nasdaq.com/articles/heres-how-much-dividend-income-warren-buffett-will-receive-in-2020-2020-03-05",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T05:12:00",
+            "title": "Coronavirus Outbreak, Apple, JetBlue, Marvell and Costco - 5 Things You Must Know Thursday",
+            "link": "https://www.thestreet.com/markets/5-things-you-must-know-before-the-market-opens-thursday-030520?puc=yahoo&cm_ven=YAHOO&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T05:10:31.19",
+            "title": "Amazon Says EU’s Tax Payback Order Is ‘Patently Wrong’",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-05/amazon-says-eu-s-tax-payback-order-is-patently-wrong",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T04:57:58",
+            "title": "Is data this deflationary?",
+            "link": "http://www.ft.com/cms/s/1c7b1755-175f-43c0-86a8-d9d6c1443809,s01=1.html?ftcamp=traffic/partner/feed_headline/us_yahoo/auddev&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T04:01:53.223",
+            "title": "India plans to airlift components from China to help local tech industry",
+            "link": "https://www.investing.com/news/stock-market-news/india-plans-to-airlift-components-from-china-to-help-local-tech-industry-sources-2101779",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T04:00:21.93",
+            "title": "How A Profane Subreddit Moved The Market",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-05/how-a-profane-subreddit-moved-the-market",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T03:38:58",
+            "title": "India plans to airlift components from China to help local tech industry-sources",
+            "link": "https://finance.yahoo.com/news/india-plans-airlift-components-china-083858234.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T03:34:51.337",
+            "title": "Stocks  - Europe Opens Higher as Stimulus Measures Give Comfort",
+            "link": "https://www.investing.com/news/stock-market-news/stocks---europe-opens-higher-as-stimulus-measures-give-comfort-2101766",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T03:34:51.073",
+            "title": "Stocks  - Europe Opens Under Pressure as Virus Warnings Multiply",
+            "link": "https://www.investing.com/news/stock-market-news/stocks---europe-opens-under-pressure-as-virus-warnings-multiply-2101766",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-05T01:55:10.447",
+            "title": "Apple, Netflix pull out of South by Southwest festival amid coronavirus outbreak",
+            "link": "https://ca.investing.com/news/stock-market-news/apple-pulls-out-of-south-by-southwest-festival-amid-coronavirus-outbreak-2081962",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T23:19:00",
+            "title": "Apple, Netflix are latest to pull out of SXSW over outbreak",
+            "link": "https://www.marketwatch.com/story/apple-netflix-are-latest-to-pull-out-of-sxsw-over-outbreak-reports-2020-03-04?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T21:46:57",
+            "title": "Apple pulls out of South by Southwest festival amid coronavirus outbreak",
+            "link": "https://finance.yahoo.com/news/apple-pulls-south-southwest-festival-024657173.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T20:50:02",
+            "title": "Apple, Microsoft, Google look to move production away from China. That's not going to be easy",
+            "link": "https://www.cnbc.com/2020/03/05/coronavirus-apple-microsoft-google-look-to-move-production-away-from-china.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T20:21:13.49",
+            "title": "Apple Cancels SXSW TV+ Appearance Over Coronavirus Outbreak",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-05/apple-cancels-south-by-southwest-appearance-amid-virus-outbreak",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T18:06:11",
+            "title": "Apple Supplier Qorvo  Trims Q4 View on Coronavirus Woes",
+            "link": "https://finance.yahoo.com/news/apple-supplier-qorvo-qrvo-trims-230611168.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T18:00:21",
+            "title": "Here's a Contagion That Beijing May Be Able to Stop",
+            "link": "https://finance.yahoo.com/news/heres-contagion-beijing-may-able-230021529.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T17:20:59",
+            "title": "Myer Holdings' first-half profit slumps 37%",
+            "link": "https://finance.yahoo.com/news/myer-holdings-first-half-profit-222059772.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T16:16:00",
+            "title": "Coronavirus brings opportunities in gold — just like in the good, old days",
+            "link": "https://www.marketwatch.com/story/coronavirus-brings-opportunities-in-gold-just-like-in-the-good-old-days-2020-03-04?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-04T15:44:00",
+            "title": "Here’s what Apple suppliers have been saying about the coronavirus",
+            "link": "https://www.marketwatch.com/story/heres-what-apple-suppliers-have-been-saying-about-the-coronavirus-epidemic-2020-03-04?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T15:35:39.073",
+            "title": "Apple Warns Stores About a Shortage of Replacement iPhones",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-04/apple-warns-stores-about-shortage-of-replacement-iphones",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-04T15:31:41.527",
+            "title": "Apple Rises 4.01%",
+            "link": "https://uk.investing.com/news/stock-market-news/apple-rises-401-2065465",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-04T14:34:59.923",
+            "title": "Lawmakers Press Amazon, EBay Executives Over Counterfeit Goods",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-04/lawmakers-press-amazon-ebay-executives-over-counterfeit-goods",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T14:08:00",
+            "title": "Skyworks Lowered Its Forecast Because of the Coronavirus. Why Its Stock Rallied on the News.",
+            "link": "https://www.barrons.com/articles/skyworks-stock-rallies-after-company-lowers-forecast-because-of-coronavirus-51583348900?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T14:03:58.76",
+            "title": "Apple Supply Chain Woes May Fade Quicker Than Expected, Nomura Says",
+            "link": "https://www.investing.com/news/stock-market-news/apple-supply-chain-woes-may-fade-quicker-than-expected-nomura-says-2101326",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T14:00:04",
+            "title": "U.S. businesses show growing concern over impact of coronavirus, Fed survey shows",
+            "link": "https://finance.yahoo.com/news/u-businesses-show-growing-concern-190004888.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T13:10:50",
+            "title": "Technology Sector Update for 03/04/2020: MSFT, AAPL, IBM, CSCO, GOOG, INPX, CDLX, HPE, TA",
+            "link": "https://www.nasdaq.com/articles/technology-sector-update-for-03-04-2020%3A-msft-aapl-ibm-csco-goog-inpx-cdlx-hpe-ta-2020-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T13:05:41.26",
+            "title": "GM Promises Profitable Electric Cars With Tesla-Beating Range",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-04/gm-boasts-of-profit-and-tesla-beating-range-for-family-of-evs",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T13:03:00",
+            "title": "Apple Supplier Skyworks Cuts Revenue Forecast Due to Coronavirus Epidemic",
+            "link": "https://www.nasdaq.com/articles/apple-supplier-skyworks-cuts-revenue-forecast-due-to-coronavirus-epidemic-2020-03-04",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-04T12:00:00",
+            "title": "Better Buy: Spotify vs. Verizon",
+            "link": "https://www.nasdaq.com/articles/better-buy%3A-spotify-vs.-verizon-2020-03-04",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T11:52:00",
+            "title": "Quibi gets another $750 million in funding, bringing total haul to $1.75 billion",
+            "link": "https://www.marketwatch.com/story/quibi-gets-another-750-million-in-funding-bringing-total-haul-to-175-billion-2020-03-04?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T10:58:22.057",
+            "title": "Trading in Firm Hunting a Virus Vaccine Dwarfs GE and Apple Combined",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-04/trading-in-virus-vaccine-hunter-dwarfs-ge-apple-combined",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T10:15:15",
+            "title": "Your first trade for Wednesday, March 4",
+            "link": "https://www.cnbc.com/2020/03/04/your-first-trade-for-wednesday-march-4.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T10:00:21",
+            "title": "How to Fix the Federal Reserve",
+            "link": "https://finance.yahoo.com/news/fix-federal-150021839.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T09:49:00",
+            "title": "Skyworks Solutions lowers earnings forecast due to coronavirus",
+            "link": "https://www.marketwatch.com/story/skyworks-solutions-lowers-earnings-forecast-due-to-coronavirus-2020-03-04?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T09:39:06",
+            "title": "As Market Stays Choppy, Investors Watch Big Tech Companies Apple, Microsoft For Clues",
+            "link": "https://finance.yahoo.com/news/market-stays-choppy-investors-watch-143906165.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T09:14:14",
+            "title": "Technology Sector Update for 03/04/2020: MSFT, AAPL, IBM, CSCO, GOOG, CDLX, INPX, HPE",
+            "link": "https://www.nasdaq.com/articles/technology-sector-update-for-03-04-2020%3A-msft-aapl-ibm-csco-goog-cdlx-inpx-hpe-2020-03-04",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T08:45:42",
+            "title": "Apple supplier Skyworks sees no big production hit from coronavirus",
+            "link": "https://finance.yahoo.com/news/apple-supplier-skyworks-sees-no-134542109.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T08:40:01",
+            "title": "The Zacks Analyst Blog Highlights: Spotify, Amazon, Apple and Alphabet",
+            "link": "https://finance.yahoo.com/news/zacks-analyst-blog-highlights-spotify-134001532.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T08:39:31",
+            "title": "How to clean your phone to help stop the spread of germs",
+            "link": "https://www.cnbc.com/2020/03/04/how-to-clean-your-phone-to-help-stop-the-spread-of-germs.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T08:31:01",
+            "title": "The Zacks Analyst Blog Highlights: Microsoft, Procter & Gamble, Intel and Apple",
+            "link": "https://finance.yahoo.com/news/zacks-analyst-blog-highlights-microsoft-133101413.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T07:37:12.437",
+            "title": "Skype and WhatsApp Ban Under Fire as U.A.E. Extends Virus Curbs",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-04/skype-and-whatsapp-ban-under-fire-as-u-a-e-extends-virus-curbs",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T07:00:12",
+            "title": "Is Broadcom  Stock a Safe Semiconductor Buy Despite Coronavirus Worries?",
+            "link": "https://finance.yahoo.com/news/broadcom-avgo-stock-safe-semiconductor-120012747.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T06:00:00",
+            "title": "Fed's economic survey set to offer more clues on coronavirus impact",
+            "link": "https://finance.yahoo.com/news/feds-economic-survey-set-offer-110000804.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T04:06:06.84",
+            "title": "Lego Billionaire Takes Over as Chairman After Record Sales",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-04/lego-heir-becomes-chairman-as-toymaker-posts-record-sales",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T01:49:31.727",
+            "title": "Dialog Semi sees chip supply chain back to normal in second quarter",
+            "link": "https://uk.investing.com/news/stock-market-news/dialog-semi-sees-chip-supply-chain-back-to-normal-in-second-quarter-2064767",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T01:44:30",
+            "title": "PRESS DIGEST - Wall Street Journal - March 4",
+            "link": "https://finance.yahoo.com/news/press-digest-wall-street-journal-064430094.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T01:35:15",
+            "title": "Dialog Semi sees chip supply chain back to normal in Q2",
+            "link": "https://finance.yahoo.com/news/dialog-semi-sees-chip-supply-063515676.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-04T00:21:43",
+            "title": "iPhone Maker Foxconn Expects 15% Q1 Revenue Hit From Coronavirus, Says Production Rebounding",
+            "link": "https://finance.yahoo.com/news/iphone-maker-foxconn-expects-15-052143403.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T22:26:22",
+            "title": "Starting to Feel Like China's Got a Handle on Things?",
+            "link": "https://finance.yahoo.com/news/starting-feel-chinas-got-handle-032622212.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T19:24:15",
+            "title": "China's giants from Alibaba to Tencent ramp up health tech efforts to battle coronavirus",
+            "link": "https://www.cnbc.com/2020/03/04/coronavirus-china-alibaba-tencent-baidu-boost-health-tech-efforts.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T17:43:02.453",
+            "title": "Five Things You Need to Know to Start Your Day",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/five-things-you-need-to-know-to-start-your-day-k7cha9ge",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T17:20:37",
+            "title": "Hedge Funds Were Souring On Apple Inc.  Even Before The Coronavirus",
+            "link": "https://finance.yahoo.com/news/hedge-funds-were-souring-apple-222037434.html",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-03T17:01:31",
+            "title": "Facebook leads FAANG sell-off as Fed rate cut fails to calm investors' coronavirus concerns",
+            "link": "https://www.bizjournals.com/sanjose/news/2020/03/03/stock-sell-off-faang-fb-goog-amzn-aapl-coronavirus.html?ana=yahoo&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T16:30:00.003",
+            "title": "World’s Biggest Wealth Fund Slashed Tesla Stake Before Rally",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/world-s-biggest-wealth-fund-slashed-tesla-stake-before-rally",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T16:28:24",
+            "title": "US STOCKS-Another foul day on Wall Street after surprise Fed rate cut",
+            "link": "https://finance.yahoo.com/news/us-stocks-another-foul-day-212639099.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T16:25:52.237",
+            "title": "Google Cancels I/O Developer Conference on Coronavirus Concern",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/google-cancels-i-o-developer-conference-on-coronavirus-concern",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T16:25:52",
+            "title": "Google Cancels Most Important Conference on Coronavirus Concern",
+            "link": "https://finance.yahoo.com/news/google-cancels-most-important-conference-212552067.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T16:09:24",
+            "title": "Here's what happened to the stock market on Tuesday",
+            "link": "https://www.cnbc.com/2020/03/03/what-happened-to-the-stock-market-tuesday-stocks-fall-despite-fed-rate-cut.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T16:04:40.647",
+            "title": "Apple Restricts Employee Travel to Italy, Korea on Coronavirus",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/apple-restricts-employee-travel-to-italy-korea-on-coronavirus",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T14:57:10.693",
+            "title": "Wall Street losses deepen after Fed emergency rate cut",
+            "link": "https://www.investing.com/news/stock-market-news/wall-street-unconvinced-by-fed-emergency-rate-cut-2099667",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T14:53:14",
+            "title": "US STOCKS-Wall Street tumbles after Fed surprise rate cut",
+            "link": "https://finance.yahoo.com/news/us-stocks-wall-street-tumbles-195314113.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T14:48:51",
+            "title": "Apple Supplier Qorvo Cuts Guidance Due to the Coronavirus",
+            "link": "https://www.nasdaq.com/articles/apple-supplier-qorvo-cuts-guidance-due-to-the-coronavirus-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T14:47:00",
+            "title": "Apple Supplier Foxconn Resumes Production After Coronavirus Outbreak",
+            "link": "https://www.nasdaq.com/articles/apple-supplier-foxconn-resumes-production-after-coronavirus-outbreak-2020-03-03",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T14:36:35",
+            "title": "Apple and Xiaomi Increase Share in a Slowing Smartphone Market",
+            "link": "https://www.nasdaq.com/articles/apple-and-xiaomi-increase-share-in-a-slowing-smartphone-market-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T14:28:44",
+            "title": "Apple could still see historic iPhone sales despite the coronavirus",
+            "link": "https://finance.yahoo.com/news/apple-iphone-12-coronavirus-historic-sales-192844451.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T14:28:36.287",
+            "title": "Apple Falls 4.33%",
+            "link": "https://ca.investing.com/news/stock-market-news/apple-falls-433-2080654",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T14:23:07",
+            "title": "Fed Cuts Rates, Coronavirus Spreads & Buy Lyft Stock - Free Lunch",
+            "link": "https://finance.yahoo.com/news/fed-cuts-rates-coronavirus-spreads-192307712.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T14:21:46",
+            "title": "It's Business as Usual at Intel Despite the Coronavirus",
+            "link": "https://www.nasdaq.com/articles/its-business-as-usual-at-intel-despite-the-coronavirus-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T12:44:19",
+            "title": "Coronavirus won't affect development of Apple's next-generation iPads and MacBooks, top analyst says",
+            "link": "https://www.cnbc.com/2020/03/03/coronavirus-wont-affect-apples-new-ipads-macbooks-top-analyst-says.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T12:12:17",
+            "title": "Apple Stores to host over 5,000 female-focused sessions in March for International Women’s Day",
+            "link": "https://techcrunch.com/2020/03/03/apple-stores-to-host-over-5000-female-focused-sessions-in-march-for-international-womens-day/",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T12:06:00",
+            "title": "Dow Jones News: Apple 5G Optimism Remains; Visa Cuts Outlook",
+            "link": "https://www.nasdaq.com/articles/dow-jones-news%3A-apple-5g-optimism-remains-visa-cuts-outlook-2020-03-03",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-03T11:30:04",
+            "title": "Has Apple  Outpaced Other Computer and Technology Stocks This Year?",
+            "link": "https://finance.yahoo.com/news/apple-aapl-outpaced-other-computer-163004330.html",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-03T11:09:00",
+            "title": "Berkshire Hathaway Unlikely To Buy All of Delta",
+            "link": "https://www.barrons.com/articles/berkshire-hathaway-increased-its-stake-in-delta-its-still-unlikely-to-buy-all-of-delta-51583251783?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T11:05:38",
+            "title": "Volatility is Still With Us, But a Return to Logic is a Welcome Thing",
+            "link": "https://www.nasdaq.com/articles/volatility-is-still-with-us-but-a-return-to-logic-is-a-welcome-thing-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T10:53:00",
+            "title": "Apple Stock Will Soar in the Coming 5G iPhone Supercycle, Analyst Says",
+            "link": "https://www.barrons.com/articles/apple-stock-will-soar-in-the-coming-5g-iphone-supercycle-analyst-says-51583250827?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T10:49:03",
+            "title": "UDOW, AAPL, GS, UTX: Large Inflows Detected at ETF",
+            "link": "https://www.nasdaq.com/articles/udow-aapl-gs-utx%3A-large-inflows-detected-at-etf-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T10:13:10",
+            "title": "Your first trade for Tuesday, March 3",
+            "link": "https://www.cnbc.com/2020/03/03/your-first-trade-for-tuesday-march-3.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T10:00:21",
+            "title": "Warren Buffett Is Waiting for One Last Big Score",
+            "link": "https://finance.yahoo.com/news/warren-buffett-waiting-one-last-150021699.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T10:00:03",
+            "title": "Music Streaming Stocks to Benefit From Virus-Led Lockdown",
+            "link": "https://finance.yahoo.com/news/music-streaming-stocks-benefit-virus-150003695.html",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-03T10:00:00",
+            "title": "Google Needs to Put More Money Behind Stadia",
+            "link": "https://www.nasdaq.com/articles/google-needs-to-put-more-money-behind-stadia-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:57:41",
+            "title": "These 10 tech giants grew their Bay Area workforces most as hiring slowed last year",
+            "link": "https://www.bizjournals.com/sanjose/news/2020/03/03/bay-area-tech-companies-hiring-most-goog-aapl-amzn.html?ana=yahoo&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:44:37.523",
+            "title": "Stocks - Wall Street Resumes Its Fall at Opening After G7 Dud",
+            "link": "https://uk.investing.com/news/stock-market-news/stocks--wall-street-resumes-its-fall-at-opening-after-g7-dud-2064192",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:43:30",
+            "title": "Apple iPhone partner Foxconn predicts it will be back to full capacity by the end of the month",
+            "link": "https://www.cnbc.com/2020/03/03/apple-supplier-foxconn-back-to-full-capacity-by-end-of-march.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:37:26",
+            "title": "Super Tuesday Begins As Investors Eye Earnings From Kohl's, Target, And G7 Disappoints",
+            "link": "https://finance.yahoo.com/news/super-tuesday-begins-investors-eye-143726181.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:34:03",
+            "title": "Microsoft Stock Could Sell Off Into the Summer",
+            "link": "https://www.investopedia.com/microsoft-stock-could-sell-off-into-the-summer-4798527?utm_campaign=quote-yahoo&utm_source=yahoo&utm_medium=referral&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:21:02",
+            "title": "Apple to Pay $500 Million Settlement Over Battery Scandal",
+            "link": "https://finance.yahoo.com/news/apple-pay-500-million-settlement-142102163.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T09:08:00",
+            "title": "Apple Stock Falls 4%",
+            "link": "https://finance.yahoo.com/news/apple-stock-falls-4-140800372.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T08:59:28",
+            "title": "Russia accuses BBC World News of violating broadcasting requirements -regulator",
+            "link": "https://finance.yahoo.com/news/russia-accuses-bbc-world-news-135928744.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T08:58:01",
+            "title": "Apple  Looks Good: Stock Adds 9.3% in Session",
+            "link": "https://finance.yahoo.com/news/apple-aapl-looks-good-stock-135801264.html",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-03T08:39:58",
+            "title": "Apple iPhone chip supplier lowers guidance due to the coronavirus",
+            "link": "https://www.cnbc.com/2020/03/03/apple-iphone-supplier-qorvo-lowers-guidance-due-to-coronavirus.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T08:32:29",
+            "title": "Steve Wozniak Says He Might Be US Coronavirus 'Patient Zero'",
+            "link": "https://finance.yahoo.com/news/steve-wozniak-says-might-us-133229443.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T08:30:00",
+            "title": "Why It Matters That Apple Is Planning to Open Stores in India",
+            "link": "https://www.nasdaq.com/articles/why-it-matters-that-apple-is-planning-to-open-stores-in-india-2020-03-03",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T07:52:56",
+            "title": "Coronavirus live updates: FDA grants emergency use of masks, Trump calls for rate cut",
+            "link": "https://www.cnbc.com/2020/03/03/coronavirus-latest-updates-outbreak.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T07:34:00",
+            "title": "Executives are buying their own companies’ beaten-down stocks — here are nine with large purchases",
+            "link": "https://www.marketwatch.com/story/executives-are-buying-their-own-companies-beaten-down-stocks-here-are-nine-with-large-purchases-2020-03-03?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T07:25:03",
+            "title": "Stock market live updates: Waiting on G-7 statement, Tesla jumps",
+            "link": "https://www.cnbc.com/2020/03/03/stock-market-today-live.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T07:00:24.97",
+            "title": "U.K. Race for 2020 Trade Deals Gets Off to a Mixed Start",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/trade-war-latest-u-k-race-for-trade-deals-is-off-to-mixed-start-k7bubul1",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T06:00:21.95",
+            "title": "What Happens to Your Emails After You Die",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/this-is-what-happens-to-your-emails-after-you-die",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T05:59:23",
+            "title": "Apple fined $500 million for slowing down old iPhones",
+            "link": "https://news.yahoo.com/apple-fined-500-million-slowing-105923472.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T05:05:36.38",
+            "title": "Virus to dent Foxconn's consumer electronics revenue in first-quarter",
+            "link": "https://uk.investing.com/news/stock-market-news/virus-to-dent-foxconns-consumer-electronics-revenue-in-firstquarter-2063897",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T04:59:52.527",
+            "title": "U.S. Deaths Rise to Six; Treatments Seen in Months: Virus Update",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-02/u-s-deaths-rise-to-six-treatments-seen-in-months-virus-update",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T04:54:09",
+            "title": "Bull of the Day: Microsoft",
+            "link": "https://finance.yahoo.com/news/bull-day-microsoft-msft-095409692.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T04:02:02.677",
+            "title": "Foxconn Confirms IPhone City Worker Found Dead",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/foxconn-confirms-iphone-city-worker-found-dead",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T04:00:31",
+            "title": "Companies still can’t stop labor abuses at Chinese factories",
+            "link": "https://qz.com/1811305/nike-apple-linked-to-forced-uighur-labor-in-china-report-says/?utm_source=YPL&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T03:51:00",
+            "title": "Stocks - Apple Rises in Premarket After Hon Hai Update",
+            "link": "https://finance.yahoo.com/news/stocks-apple-rises-premarket-hon-085100743.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T03:37:36",
+            "title": "IPhone Maker Expects Return to Normal in China by End-March",
+            "link": "https://finance.yahoo.com/news/iphone-maker-expects-china-plants-063911578.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T03:13:32.813",
+            "title": "Foxconn to resume normal production in virus-hit China by end of March",
+            "link": "https://ca.investing.com/news/stock-market-news/foxconn-to-resume-normal-production-in-virushit-china-by-end-of-march-2079953",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T02:47:58",
+            "title": "RPT-Foxconn to resume normal production in China end of March",
+            "link": "https://finance.yahoo.com/news/rpt-foxconn-resume-normal-production-074758310.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T02:18:10",
+            "title": "Foxconn to resume normal production in China end of March",
+            "link": "https://finance.yahoo.com/news/foxconn-resume-normal-production-china-071810853.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T01:39:13",
+            "title": "PRESS DIGEST - Wall Street Journal - March 3",
+            "link": "https://finance.yahoo.com/news/press-digest-wall-street-journal-063913035.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T01:39:11",
+            "title": "IPhone Maker Expects China Plants Back to Normal in Coming Weeks",
+            "link": "https://finance.yahoo.com/news/iphone-maker-expects-china-plants-063911063.html",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-03T01:38:00",
+            "title": "Top 5 Things to Know in the Market on Tuesday, March 3rd",
+            "link": "https://finance.yahoo.com/news/top-5-things-know-market-063800199.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T01:23:01",
+            "title": "Lego is the world's most reputable company as tech giants lag, survey says",
+            "link": "https://www.cnbc.com/2020/03/03/lego-is-the-worlds-most-reputable-company-disney-follows.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T01:02:10",
+            "title": "PRESS DIGEST- New York Times business news - March 3",
+            "link": "https://finance.yahoo.com/news/press-digest-york-times-business-060210371.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-03T00:34:12",
+            "title": "Apple Settles $500M Lawsuit Over Claims It Slowed Down Older iPhone Models On Purpose",
+            "link": "https://finance.yahoo.com/news/apple-settles-500m-lawsuit-over-053412161.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T22:27:33.43",
+            "title": "Apple iPads, Facebook VR Headsets in Short Supply as Virus Spreads",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/apple-ipads-facebook-vr-headsets-in-short-supply-amid-virus",
+            "sentiment": 3
+        },
+        {
+            "date": "2020-03-02T20:56:08.62",
+            "title": "California Finds at Least 43 Companies Failed to Add Women to Boards",
+            "link": "https://www.bloomberg.com/news/articles/2020-03-03/california-finds-at-least-43-companies-failed-to-add-women-to-boards",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T18:14:09",
+            "title": "Uber acknowledges coronavirus poses material risk to its business",
+            "link": "https://www.cnbc.com/2020/03/02/uber-acknowledges-coronavirus-poses-material-risk-to-its-business.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T17:59:42",
+            "title": "US Indexes Close Higher Monday",
+            "link": "https://finance.yahoo.com/news/us-indexes-close-higher-monday-225942176.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T17:55:00",
+            "title": "Apple Stock Just Had Its Best Day in More Than 11 Years",
+            "link": "https://www.barrons.com/articles/apple-stock-just-had-its-best-day-in-11-years-51583189727?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T17:25:33.23",
+            "title": "U.S. stocks higher at close of trade; Dow Jones Industrial Average up 5.09%",
+            "link": "https://www.investing.com/news/stock-market-news/us-stocks-higher-at-close-of-trade-dow-jones-industrial-average-up-509-2099204",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T17:25:32.963",
+            "title": "U.S. shares higher at close of trade; Dow Jones Industrial Average up 5.09%",
+            "link": "https://uk.investing.com/news/stock-market-news/us-shares-higher-at-close-of-trade-dow-jones-industrial-average-up-509-2063647",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T17:16:07",
+            "title": "Apple, Microsoft And A Few Cyclicals Lead Broad-Based Stock Rally; Bond Yields Extend Weakness",
+            "link": "https://finance.yahoo.com/news/apple-microsoft-few-cyclicals-lead-221607500.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T17:10:00",
+            "title": "The Dow Scored Its Biggest Point Gain in History. Coronavirus Still Holds the Key.",
+            "link": "https://www.barrons.com/articles/the-dow-had-its-biggest-point-gain-dont-relax-on-coronavirus-51583187016?siteid=yhoof2&yptr=yahoo",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-02T17:08:27",
+            "title": "Nonprofit seeks developers with 'shovel-ready' housing projects to deploy $150M from Apple pledge",
+            "link": "https://www.bizjournals.com/sanjose/news/2020/03/02/apple-affordable-housing-fund-rfp-bay-area.html?ana=yahoo&yptr=yahoo",
+            "sentiment": 1
+        },
+        {
+            "date": "2020-03-02T17:06:16",
+            "title": "Apple agrees to settlement of up to $500 million from lawsuit alleging it throttled older phones",
+            "link": "https://techcrunch.com/2020/03/02/apple-agrees-to-settlement-of-up-to-500-million-from-lawsuit-alleging-it-throttled-older-phones/",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T16:49:45",
+            "title": "Top 5 Holdings of Bill Gates' Foundation Trust",
+            "link": "https://finance.yahoo.com/news/top-5-holdings-bill-gates-214945315.html",
+            "sentiment": 2
+        },
+        {
+            "date": "2020-03-02T16:46:33.66",
+            "title": "Dow has biggest daily jump since 2009 as Wall Street buys the dip",
+            "link": "https://www.investing.com/news/stock-market-news/wall-street-buys-the-dip-as-investors-bet-on-stimulus-2098533",
+            "sentiment": 2
+        }
+    ]
+}

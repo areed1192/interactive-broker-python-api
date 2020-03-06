@@ -1,0 +1,706 @@
+{
+    "about": {
+        "title": "About Apple Inc.",
+        "content": "Apple Inc. designs, manufactures and markets mobile communication and media devices, personal computers and portable digital music players. The Company sells a range of related software, services, accessories, networking solutions, and third-party digital content and applications. The Company's segments include the Americas, Europe, Greater China, Japan and Rest of Asia Pacific. The Americas segment includes both North and South America. The Europe segment includes European countries, India, the Middle East and Africa. The Greater China segment includes China, Hong Kong and Taiwan. The Rest of Asia Pacific segment includes Australia and the Asian countries not included in the Company's other operating segments. Its products and services include iPhone, iPad, Mac, iPod, Apple Watch, Apple TV, a portfolio of consumer and professional software applications, iPhone OS (iOS), OS X and watchOS operating systems, iCloud, Apple Pay and a range of accessory, service and support offerings."
+    },
+    "financial": {
+        "title": "Financials",
+        "content": {
+            "meta": {
+                "name": "",
+                "current": "Current",
+                "year": "",
+                "trend": "Trend"
+            },
+            "data": [
+                {
+                    "name": "Total Revenue",
+                    "current": "267.68B",
+                    "trend": [
+                        {
+                            "value": 2.33715E11,
+                            "year": "2015",
+                            "date": "20150926",
+                            "formatted_value": "233.72B"
+                        },
+                        {
+                            "value": 2.15639E11,
+                            "year": "2016",
+                            "date": "20160924",
+                            "formatted_value": "215.64B"
+                        },
+                        {
+                            "value": 2.29234E11,
+                            "year": "2017",
+                            "date": "20170930",
+                            "formatted_value": "229.23B"
+                        },
+                        {
+                            "value": 2.65595E11,
+                            "year": "2018",
+                            "date": "20180929",
+                            "formatted_value": "265.6B"
+                        },
+                        {
+                            "value": 2.60174E11,
+                            "year": "2019",
+                            "date": "20190928",
+                            "formatted_value": "260.17B"
+                        },
+                        {
+                            "value": 2.67683E11,
+                            "year": "TTM",
+                            "date": "20191228",
+                            "formatted_value": "267.68B"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cost of Rev.",
+                    "current": "166.1B",
+                    "trend": [
+                        {
+                            "value": 1.40089E11,
+                            "year": "2015",
+                            "date": "20150926",
+                            "formatted_value": "140.09B"
+                        },
+                        {
+                            "value": 1.31376E11,
+                            "year": "2016",
+                            "date": "20160924",
+                            "formatted_value": "131.38B"
+                        },
+                        {
+                            "value": 1.41048E11,
+                            "year": "2017",
+                            "date": "20170930",
+                            "formatted_value": "141.05B"
+                        },
+                        {
+                            "value": 1.63756E11,
+                            "year": "2018",
+                            "date": "20180929",
+                            "formatted_value": "163.76B"
+                        },
+                        {
+                            "value": 1.61782E11,
+                            "year": "2019",
+                            "date": "20190928",
+                            "formatted_value": "161.78B"
+                        },
+                        {
+                            "value": 1.66105E11,
+                            "year": "TTM",
+                            "date": "20190330",
+                            "formatted_value": "166.1B"
+                        }
+                    ]
+                },
+                {
+                    "name": "Net Income bf/Tax",
+                    "current": "67.75B",
+                    "trend": [
+                        {
+                            "value": 7.2515E10,
+                            "year": "2015",
+                            "date": "20150926",
+                            "formatted_value": "72.52B"
+                        },
+                        {
+                            "value": 6.1372E10,
+                            "year": "2016",
+                            "date": "20160924",
+                            "formatted_value": "61.37B"
+                        },
+                        {
+                            "value": 6.4089E10,
+                            "year": "2017",
+                            "date": "20170930",
+                            "formatted_value": "64.09B"
+                        },
+                        {
+                            "value": 7.2903E10,
+                            "year": "2018",
+                            "date": "20180929",
+                            "formatted_value": "72.9B"
+                        },
+                        {
+                            "value": 6.5737E10,
+                            "year": "2019",
+                            "date": "20190928",
+                            "formatted_value": "65.74B"
+                        },
+                        {
+                            "value": 6.7749E10,
+                            "year": "TTM",
+                            "date": "20190928",
+                            "formatted_value": "67.75B"
+                        }
+                    ]
+                },
+                {
+                    "name": "Net Profit Margin",
+                    "current": "21.49%",
+                    "trend": [
+                        {
+                            "value": 0.22845773698735639,
+                            "year": "2015",
+                            "date": "20150926",
+                            "formatted_value": "22.85%"
+                        },
+                        {
+                            "value": 0.211867983064288,
+                            "year": "2016",
+                            "date": "20160924",
+                            "formatted_value": "21.19%"
+                        },
+                        {
+                            "value": 0.21092420845075338,
+                            "year": "2017",
+                            "date": "20170930",
+                            "formatted_value": "21.09%"
+                        },
+                        {
+                            "value": 0.22984619439371975,
+                            "year": "2018",
+                            "date": "20180929",
+                            "formatted_value": "22.98%"
+                        },
+                        {
+                            "value": 0.21238094505984456,
+                            "year": "2019",
+                            "date": "20190928",
+                            "formatted_value": "21.24%"
+                        },
+                        {
+                            "value": 0.2149071849912023,
+                            "year": "TTM",
+                            "date": "20191228",
+                            "formatted_value": "21.49%"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cash from Op. Act.",
+                    "current": "187.23B",
+                    "trend": [
+                        {
+                            "value": 8.1266E10,
+                            "year": "2015",
+                            "date": "20150926",
+                            "formatted_value": "81.27B"
+                        },
+                        {
+                            "value": 6.6231E10,
+                            "year": "2016",
+                            "date": "20160924",
+                            "formatted_value": "66.23B"
+                        },
+                        {
+                            "value": 6.4225E10,
+                            "year": "2017",
+                            "date": "20170930",
+                            "formatted_value": "64.22B"
+                        },
+                        {
+                            "value": 7.7434E10,
+                            "year": "2018",
+                            "date": "20180929",
+                            "formatted_value": "77.43B"
+                        },
+                        {
+                            "value": 6.9391E10,
+                            "year": "2019",
+                            "date": "20190928",
+                            "formatted_value": "69.39B"
+                        },
+                        {
+                            "value": 1.87233E11,
+                            "year": "TTM",
+                            "date": "20190928",
+                            "formatted_value": "187.23B"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "ownership": {
+        "title": "Ownership",
+        "content": {
+            "summary": [
+                {
+                    "name": "Strat. Entit.",
+                    "value": 0.06554768848217796,
+                    "formatted_value": "0.07%"
+                },
+                {
+                    "name": "Institutions",
+                    "value": 61.86038210664887,
+                    "formatted_value": "61.86%"
+                },
+                {
+                    "name": "Others",
+                    "value": 38.07407020486895,
+                    "formatted_value": "38.07%"
+                }
+            ],
+            "top": {
+                "title": "TOP 3",
+                "data": [
+                    {
+                        "name": "The Vanguard Group, Inc.",
+                        "value": 3.29323432E8,
+                        "formatted_value": "7.53%"
+                    },
+                    {
+                        "name": "Berkshire Hathaway Inc.",
+                        "value": 2.45155566E8,
+                        "formatted_value": "5.6%"
+                    },
+                    {
+                        "name": "BlackRock Institutional Trust Company, N.A.",
+                        "value": 1.89855411E8,
+                        "formatted_value": "4.34%"
+                    }
+                ]
+            }
+        }
+    },
+    "analyst_forecast": {
+        "title": "Forecast: EPS",
+        "content": {
+            "periods": [
+                {
+                    "title": "Q2'18",
+                    "search_id": "EPS_null_Q_2_2018",
+                    "actual": 2.73,
+                    "formatted_actual": "2.73",
+                    "estimate": 2.673,
+                    "formatted_estimate": "2.67",
+                    "suprise": 0.06,
+                    "formatted_suprise": "0.06"
+                },
+                {
+                    "title": "Q3'18",
+                    "search_id": "EPS_null_Q_3_2018",
+                    "actual": 2.34,
+                    "formatted_actual": "2.34",
+                    "estimate": 2.181,
+                    "formatted_estimate": "2.18",
+                    "suprise": 0.16,
+                    "formatted_suprise": "0.16"
+                },
+                {
+                    "title": "Q4'18",
+                    "search_id": "EPS_null_Q_4_2018",
+                    "actual": 2.91,
+                    "formatted_actual": "2.91",
+                    "estimate": 2.783,
+                    "formatted_estimate": "2.78",
+                    "suprise": 0.13,
+                    "formatted_suprise": "0.13"
+                },
+                {
+                    "title": "Q1'18",
+                    "search_id": "EPS_null_Q_1_2018",
+                    "actual": 4.18,
+                    "formatted_actual": "4.18",
+                    "estimate": 4.167,
+                    "formatted_estimate": "4.17",
+                    "suprise": 0.01,
+                    "formatted_suprise": "0.01"
+                },
+                {
+                    "title": "Q2'19",
+                    "search_id": "EPS_null_Q_2_2019",
+                    "actual": 2.46,
+                    "formatted_actual": "2.46",
+                    "estimate": 2.361,
+                    "formatted_estimate": "2.36",
+                    "suprise": 0.1,
+                    "formatted_suprise": "0.1"
+                },
+                {
+                    "title": "Q3'19",
+                    "search_id": "EPS_null_Q_3_2019",
+                    "actual": 2.18,
+                    "formatted_actual": "2.18",
+                    "estimate": 2.098,
+                    "formatted_estimate": "2.1",
+                    "suprise": 0.08,
+                    "formatted_suprise": "0.08"
+                },
+                {
+                    "title": "Q4'19",
+                    "search_id": "EPS_null_Q_4_2019",
+                    "actual": 3.03,
+                    "formatted_actual": "3.03",
+                    "estimate": 2.839,
+                    "formatted_estimate": "2.84",
+                    "suprise": 0.19,
+                    "formatted_suprise": "0.19"
+                },
+                {
+                    "title": "Q1'19",
+                    "search_id": "EPS_null_Q_1_2019",
+                    "actual": 4.99,
+                    "formatted_actual": "4.99",
+                    "estimate": 4.547,
+                    "formatted_estimate": "4.55",
+                    "suprise": 0.44,
+                    "formatted_suprise": "0.44"
+                },
+                {
+                    "title": "Q2'20",
+                    "search_id": "EPS_null_Q_2_2020",
+                    "estimate": 2.72,
+                    "formatted_estimate": "2.72",
+                    "estimate_high": 3.11,
+                    "formatted_estimate_high": "3.11",
+                    "estimate_low": 2.24,
+                    "formatted_estimate_low": "2.24",
+                    "num_estimates": 32,
+                    "predict_surprise_indicator": "down",
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.004,
+                            "formatted_estimate": "3",
+                            "num_estimates": 32,
+                            "change_percent": -9.45
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.807,
+                            "formatted_estimate": "2.81",
+                            "num_estimates": 34,
+                            "change_percent": -3.1
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "esg": {
+        "title": "ESG Ratings",
+        "content": [
+            {
+                "name": "ESG Score",
+                "value": 8,
+                "isCombined": false
+            },
+            {
+                "name": "Environmental",
+                "value": 9,
+                "isCombined": false
+            },
+            {
+                "name": "Social",
+                "value": 6,
+                "isCombined": false
+            },
+            {
+                "name": "Governance",
+                "value": 8,
+                "isCombined": false
+            },
+            {
+                "name": "ESG Controversies Score",
+                "value": 0,
+                "isCombined": false
+            },
+            {
+                "name": "ESG Combined Score",
+                "value": 4,
+                "isCombined": true
+            }
+        ],
+        "asOfDate": "As of Mar 01, 2020. Source: Refinitiv",
+        "ibkr_esg_wp": "https://download2.interactivebrokers.com/mtws/assets/esg/IBKR_ESG_Scores.pdf",
+        "wb_esg_wp": "https://download.clientam.com/mtws/assets/esg/ESG_Scores.pdf"
+    },
+    "key_ratios": {
+        "title": "Key Ratios",
+        "content": {
+            "meta": {
+                "name": "",
+                "symbol": "AAPL",
+                "vs": "vs Ind."
+            },
+            "data": [
+                {
+                    "name": "P/E Excl. Ex. Items",
+                    "value": "23.91",
+                    "indAvg": "1.23",
+                    "vs": 62.22845519518401
+                },
+                {
+                    "name": "Cash Flow Per Share",
+                    "value": "39.77",
+                    "indAvg": "-0.000064",
+                    "vs": 100.0
+                },
+                {
+                    "name": "Current Ratio",
+                    "value": "1.6",
+                    "indAvg": "1.6",
+                    "vs": 0.0
+                },
+                {
+                    "name": "Return On Investment",
+                    "value": "22.83%",
+                    "indAvg": "0.96%",
+                    "vs": 41.14338951807488
+                }
+            ]
+        }
+    },
+    "competitors": {
+        "content": {
+            "competitors": [
+                {
+                    "ticker": "AAPL",
+                    "name": "Apple Inc.",
+                    "industry": "Phones & Smart Phones",
+                    "formattedCap": "1324.63B",
+                    "conid": 265598
+                },
+                {
+                    "ticker": "FIT",
+                    "name": "Fitbit Inc",
+                    "industry": "Phones & Handheld Devices - NEC",
+                    "formattedCap": "1.72B",
+                    "conid": 197066570
+                },
+                {
+                    "ticker": "DZSI",
+                    "name": "DASAN Zhone Solutions Inc",
+                    "industry": "Phones & Smart Phones",
+                    "formattedCap": "170.47M",
+                    "conid": 268250430
+                },
+                {
+                    "ticker": "ATGN",
+                    "name": "AltiGen Communications, Inc.",
+                    "industry": "Phones & Smart Phones",
+                    "formattedCap": "32.96M",
+                    "conid": 6857435
+                },
+                {
+                    "ticker": "WSTL",
+                    "name": "Westell Technologies Inc.",
+                    "industry": "Phones & Smart Phones",
+                    "formattedCap": "15.12M",
+                    "conid": 278547110
+                }
+            ]
+        },
+        "title": "Industry Competitors"
+    },
+    "ratings": {
+        "title": "Analyst Ratings",
+        "content": {
+            "log": {
+                "logEntries": [
+                    {
+                        "firm": "Deutsche Bank",
+                        "rating": "Hold",
+                        "abs": 295.0,
+                        "date": "Mar 05, 2020",
+                        "ago": {
+                            "unit": "c",
+                            "display_text": "Current"
+                        },
+                        "source": "SIUPDN",
+                        "action": "REITERATED",
+                        "newsId": "SIUPDN$0c7d1022",
+                        "adjustment": {
+                            "type": "CD",
+                            "amount": 0.77,
+                            "anouncementDate": 20200128,
+                            "currency": "USD",
+                            "payDate": 20200213,
+                            "recordDate": 20200210,
+                            "effectiveDate": 20200207
+                        },
+                        "formatted_abs": "295.00"
+                    },
+                    {
+                        "firm": "Oppenheimer",
+                        "rating": "Outperform",
+                        "abs": 320.0,
+                        "date": "Mar 02, 2020",
+                        "ago": {
+                            "unit": "c",
+                            "display_text": "Current"
+                        },
+                        "source": "BRFUPDN",
+                        "action": "UPGRADED",
+                        "newsId": "BRFUPDN$0c751b4e",
+                        "adjustment": {
+                            "type": "CD",
+                            "amount": 0.77,
+                            "anouncementDate": 20200128,
+                            "currency": "USD",
+                            "payDate": 20200213,
+                            "recordDate": 20200210,
+                            "effectiveDate": 20200207
+                        },
+                        "formatted_abs": "320.00"
+                    },
+                    {
+                        "firm": "Oppenheimer",
+                        "rating": "Outperform",
+                        "abs": 320.0,
+                        "date": "Mar 02, 2020",
+                        "ago": {
+                            "unit": "c",
+                            "display_text": "Current"
+                        },
+                        "source": "SIUPDN",
+                        "action": "UPGRADED",
+                        "newsId": "SIUPDN$0c74e1ec",
+                        "adjustment": {
+                            "type": "CD",
+                            "amount": 0.77,
+                            "anouncementDate": 20200128,
+                            "currency": "USD",
+                            "payDate": 20200213,
+                            "recordDate": 20200210,
+                            "effectiveDate": 20200207
+                        },
+                        "formatted_abs": "320.00"
+                    }
+                ]
+            },
+            "summary": {
+                "targets": [
+                    {
+                        "kind": "AVG",
+                        "abs": 333.83,
+                        "rel": 1.7976931348623157E308,
+                        "formatted_abs": "333.83",
+                        "formatted_rel": ""
+                    },
+                    {
+                        "kind": "HIGH",
+                        "abs": 400.0,
+                        "rel": 1.7976931348623157E308,
+                        "formatted_abs": "400.00",
+                        "formatted_rel": ""
+                    },
+                    {
+                        "kind": "MED",
+                        "abs": 349.0,
+                        "rel": 1.7976931348623157E308,
+                        "formatted_abs": "349.00",
+                        "formatted_rel": ""
+                    },
+                    {
+                        "kind": "LOW",
+                        "abs": 207.77,
+                        "rel": 1.7976931348623157E308,
+                        "formatted_abs": "207.77",
+                        "formatted_rel": ""
+                    }
+                ],
+                "consensus": "Buy",
+                "buy": 28,
+                "sell": 2,
+                "hold": 11,
+                "recsum": 41
+            }
+        }
+    },
+    "events": {
+        "title": "Events",
+        "content": {
+            "meta": {
+                "name": "Apple Inc.",
+                "symbol": "AAPL"
+            },
+            "data": [
+                {
+                    "issued_date": 1580247000000,
+                    "notification_date": 1580247000000,
+                    "description": "Q1 2020 Apple Inc Earnings Release",
+                    "event_type": "corp_earnings",
+                    "details": {
+                        "call": {
+                            "details": "+1-(888) 203-1112 / 6826206",
+                            "time": "20200128T220000+0000"
+                        },
+                        "period": "Q1'20",
+                        "revenue": "",
+                        "guidance": "",
+                        "eps": {
+                            "consensus": "5.38",
+                            "actual": "",
+                            "surprise": ""
+                        },
+                        "contract_description": "",
+                        "contract": "AAPL",
+                        "before_after_market": "",
+                        "ffo": "",
+                        "status": "",
+                        "start_date": "20200128T220000+0000"
+                    }
+                },
+                {
+                    "issued_date": 1582736400000,
+                    "notification_date": 1582736400000,
+                    "description": "Apple Inc Annual Shareholders Meeting",
+                    "event_type": "corp_events",
+                    "details": {
+                        "contract_description": "",
+                        "contract": "AAPL",
+                        "start_date": "20200226T170000+0000"
+                    }
+                },
+                {
+                    "issued_date": 1581051600000,
+                    "notification_date": 1581051600000,
+                    "description": "Regular dividend",
+                    "event_type": "DivExDates",
+                    "details": {
+                        "date": {
+                            "declaration_date": "20200128",
+                            "record_date": "20200210",
+                            "ex_dividend": "20200207",
+                            "payment_date": "20200213"
+                        },
+                        "amount": {
+                            "payment_amount": "0.77",
+                            "annualized_amount": "3.08",
+                            "payment_currency": "USD"
+                        },
+                        "contract_description": "",
+                        "contract": ""
+                    }
+                }
+            ]
+        }
+    },
+    "dividends": {
+        "title": "Dividends",
+        "content": {
+            "yield_ttm": 0.0100416,
+            "formatted_yield_ttm": "1%",
+            "payout_ratio": 24.48937,
+            "formatted_payout_ratio": "24.49%",
+            "dividend_data": {
+                "next_payment": 0.77,
+                "formatted_next_payment": "$0.77",
+                "ex_divident_date": {
+                    "d": 7,
+                    "m": "FEB",
+                    "y": 2020
+                },
+                "annual_dividend_ttm": 3.0,
+                "formatted_annual_dividend_ttm": "$3"
+            }
+        }
+    }
+}

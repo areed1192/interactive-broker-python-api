@@ -1,0 +1,96 @@
+{
+    "title": "ESG Ratings",
+    "content": [
+        {
+            "name": "ESG Score",
+            "value": 8,
+            "isCombined": false
+        },
+        {
+            "name": "Controversies Score",
+            "value": 0,
+            "isCombined": false
+        },
+        {
+            "name": "ESG Combined Score",
+            "value": 4,
+            "isCombined": true,
+            "description": "ESG Combined Score is an overall company score based on the reported information in the environmental, social and corporate governance scores with a Controversies overlay.",
+            "subdescription": "Note: a low Controversies score indicates the company has received negative events or there have been new developments from past negative events in the last fiscal year."
+        },
+        {
+            "name": "Environmental Score",
+            "value": 9,
+            "isCombined": false,
+            "children": [
+                {
+                    "name": "Resource Use Score",
+                    "value": 9,
+                    "isCombined": false
+                },
+                {
+                    "name": "Emissions Score",
+                    "value": 9,
+                    "isCombined": false
+                },
+                {
+                    "name": "Environmental Innovation Score",
+                    "value": 9,
+                    "isCombined": false
+                }
+            ]
+        },
+        {
+            "name": "Social Score",
+            "value": 6,
+            "isCombined": false,
+            "children": [
+                {
+                    "name": "Workforce Score",
+                    "value": 6,
+                    "isCombined": false
+                },
+                {
+                    "name": "Human Rights Score",
+                    "value": 6,
+                    "isCombined": false
+                },
+                {
+                    "name": "Community Score",
+                    "value": 8,
+                    "isCombined": false
+                },
+                {
+                    "name": "Product Responsibility Score",
+                    "value": 5,
+                    "isCombined": false
+                }
+            ]
+        },
+        {
+            "name": "Governance Score",
+            "value": 8,
+            "isCombined": false,
+            "children": [
+                {
+                    "name": "Management Score",
+                    "value": 9,
+                    "isCombined": false
+                },
+                {
+                    "name": "Shareholders Score",
+                    "value": 8,
+                    "isCombined": false
+                },
+                {
+                    "name": "CSR Strategy Score",
+                    "value": 8,
+                    "isCombined": false
+                }
+            ]
+        }
+    ],
+    "asOfDate": "As of Mar 01, 2020. Source: Refinitiv",
+    "ibkr_esg_wp": "https://download2.interactivebrokers.com/mtws/assets/esg/IBKR_ESG_Scores.pdf",
+    "wb_esg_wp": "https://download.clientam.com/mtws/assets/esg/ESG_Scores.pdf"
+}

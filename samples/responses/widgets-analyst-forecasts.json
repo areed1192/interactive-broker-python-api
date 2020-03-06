@@ -1,0 +1,3195 @@
+{
+    "trends": [
+        {
+            "name": "Net Income bf/Tax",
+            "search_id": "PRE_EIBT",
+            "forecast_id": "PRE",
+            "value": "25.92B",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "PRE_EIBT_Q_2_2018",
+                    "actual": 1.6168E10,
+                    "formatted_actual": "16.17B",
+                    "estimate": 1.6104155E10,
+                    "formatted_estimate": "16.1B",
+                    "suprise": 6.3845E7,
+                    "formatted_suprise": "63.84M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "PRE_EIBT_Q_3_2018",
+                    "actual": 1.3284E10,
+                    "formatted_actual": "13.28B",
+                    "estimate": 1.2715881E10,
+                    "formatted_estimate": "12.72B",
+                    "suprise": 5.68119E8,
+                    "formatted_suprise": "568.12M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "PRE_EIBT_Q_4_2018",
+                    "actual": 1.6421E10,
+                    "formatted_actual": "16.42B",
+                    "estimate": 1.5844095E10,
+                    "formatted_estimate": "15.84B",
+                    "suprise": 5.76905E8,
+                    "formatted_suprise": "576.9M"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "PRE_EIBT_Q_1_2018",
+                    "actual": 2.3906E10,
+                    "formatted_actual": "23.91B",
+                    "estimate": 2.379E10,
+                    "formatted_estimate": "23.79B",
+                    "suprise": 1.16E8,
+                    "formatted_suprise": "116M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "PRE_EIBT_Q_2_2019",
+                    "actual": 1.3793E10,
+                    "formatted_actual": "13.79B",
+                    "estimate": 1.3429983E10,
+                    "formatted_estimate": "13.43B",
+                    "suprise": 3.63017E8,
+                    "formatted_suprise": "363.02M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "PRE_EIBT_Q_3_2019",
+                    "actual": 1.1911E10,
+                    "formatted_actual": "11.91B",
+                    "estimate": 1.1614637E10,
+                    "formatted_estimate": "11.61B",
+                    "suprise": 2.96363E8,
+                    "formatted_suprise": "296.36M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "PRE_EIBT_Q_4_2019",
+                    "actual": 1.6127E10,
+                    "formatted_actual": "16.13B",
+                    "estimate": 1.5422641E10,
+                    "formatted_estimate": "15.42B",
+                    "suprise": 7.04359E8,
+                    "formatted_suprise": "704.36M"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "PRE_EIBT_Q_1_2019",
+                    "actual": 2.5918E10,
+                    "formatted_actual": "25.92B",
+                    "estimate": 2.4282156E10,
+                    "formatted_estimate": "24.28B",
+                    "suprise": 1.635844E9,
+                    "formatted_suprise": "1.64B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "PRE_EIBT_Q_2_2020",
+                    "estimate": 1.4986695E10,
+                    "formatted_estimate": "14.99B",
+                    "estimate_high": 1.634E10,
+                    "formatted_estimate_high": "16.34B",
+                    "estimate_low": 1.1775E10,
+                    "formatted_estimate_low": "11.78B",
+                    "num_estimates": 23,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.5802369E10,
+                            "formatted_estimate": "15.8B",
+                            "num_estimates": 24,
+                            "change_percent": -5.16
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.4768304E10,
+                            "formatted_estimate": "14.77B",
+                            "num_estimates": 24,
+                            "change_percent": 1.48
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "PRE_EIBT_Q_3_2020",
+                    "estimate": 1.3223094E10,
+                    "formatted_estimate": "13.22B",
+                    "estimate_high": 1.5003E10,
+                    "formatted_estimate_high": "15B",
+                    "estimate_low": 1.1926E10,
+                    "formatted_estimate_low": "11.93B",
+                    "num_estimates": 23,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.3155322E10,
+                            "formatted_estimate": "13.16B",
+                            "num_estimates": 24,
+                            "change_percent": 0.52
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.270066E10,
+                            "formatted_estimate": "12.7B",
+                            "num_estimates": 24,
+                            "change_percent": 4.11
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "PRE_EIBT_Q_4_2020",
+                    "estimate": 1.7202771E10,
+                    "formatted_estimate": "17.2B",
+                    "estimate_high": 1.8944E10,
+                    "formatted_estimate_high": "18.94B",
+                    "estimate_low": 1.5485E10,
+                    "formatted_estimate_low": "15.48B",
+                    "num_estimates": 23,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.7077721000000002E10,
+                            "formatted_estimate": "17.08B",
+                            "num_estimates": 24,
+                            "change_percent": 0.73
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.6472446E10,
+                            "formatted_estimate": "16.47B",
+                            "num_estimates": 24,
+                            "change_percent": 4.43
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "PRE_EIBT_Q_1_2020",
+                    "estimate": 2.8015586E10,
+                    "formatted_estimate": "28.02B",
+                    "estimate_high": 3.1109E10,
+                    "formatted_estimate_high": "31.11B",
+                    "estimate_low": 2.5836E10,
+                    "formatted_estimate_low": "25.84B",
+                    "num_estimates": 16,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.7947397E10,
+                            "formatted_estimate": "27.95B",
+                            "num_estimates": 18,
+                            "change_percent": 0.24
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.5753024E10,
+                            "formatted_estimate": "25.75B",
+                            "num_estimates": 16,
+                            "change_percent": 8.79
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "PRE_EIBT_Q_2_2021",
+                    "estimate": 1.7237538E10,
+                    "formatted_estimate": "17.24B",
+                    "estimate_high": 1.8045E10,
+                    "formatted_estimate_high": "18.05B",
+                    "estimate_low": 1.5783E10,
+                    "formatted_estimate_low": "15.78B",
+                    "num_estimates": 14,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.7216054E10,
+                            "formatted_estimate": "17.22B",
+                            "num_estimates": 16,
+                            "change_percent": 0.12
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.612956E10,
+                            "formatted_estimate": "16.13B",
+                            "num_estimates": 13,
+                            "change_percent": 6.87
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Gross Margin",
+            "search_id": "GRM_GROSMGN",
+            "forecast_id": "GRM",
+            "value": "38.35%",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "GRM_GROSMGN_Q_2_2018",
+                    "actual": 38.311,
+                    "formatted_actual": "38.31%",
+                    "estimate": 38.478,
+                    "formatted_estimate": "38.48%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "GRM_GROSMGN_Q_3_2018",
+                    "actual": 38.34,
+                    "formatted_actual": "38.34%",
+                    "estimate": 38.317,
+                    "formatted_estimate": "38.32%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "GRM_GROSMGN_Q_4_2018",
+                    "actual": 38.29,
+                    "formatted_actual": "38.29%",
+                    "estimate": 38.261,
+                    "formatted_estimate": "38.26%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "GRM_GROSMGN_Q_1_2018",
+                    "actual": 37.99,
+                    "formatted_actual": "37.99%",
+                    "estimate": 38.019,
+                    "formatted_estimate": "38.02%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "GRM_GROSMGN_Q_2_2019",
+                    "actual": 37.61,
+                    "formatted_actual": "37.61%",
+                    "estimate": 37.677,
+                    "formatted_estimate": "37.68%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "GRM_GROSMGN_Q_3_2019",
+                    "actual": 37.59,
+                    "formatted_actual": "37.59%",
+                    "estimate": 37.644,
+                    "formatted_estimate": "37.64%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "GRM_GROSMGN_Q_4_2019",
+                    "actual": 37.97,
+                    "formatted_actual": "37.97%",
+                    "estimate": 37.947,
+                    "formatted_estimate": "37.95%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "GRM_GROSMGN_Q_1_2019",
+                    "actual": 38.35,
+                    "formatted_actual": "38.35%",
+                    "estimate": 38.059,
+                    "formatted_estimate": "38.06%",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0%"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "GRM_GROSMGN_Q_2_2020",
+                    "estimate": 38.64,
+                    "formatted_estimate": "38.64%",
+                    "estimate_high": 39.3,
+                    "formatted_estimate_high": "39.3%",
+                    "estimate_low": 37.64,
+                    "formatted_estimate_low": "37.64%",
+                    "num_estimates": 26,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 38.601,
+                            "formatted_estimate": "38.6%",
+                            "num_estimates": 27,
+                            "change_percent": 0.1
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 38.122,
+                            "formatted_estimate": "38.12%",
+                            "num_estimates": 26,
+                            "change_percent": 1.36
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "GRM_GROSMGN_Q_3_2020",
+                    "estimate": 38.359,
+                    "formatted_estimate": "38.36%",
+                    "estimate_high": 40.0,
+                    "formatted_estimate_high": "40%",
+                    "estimate_low": 37.0,
+                    "formatted_estimate_low": "37%",
+                    "num_estimates": 25,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 38.38,
+                            "formatted_estimate": "38.38%",
+                            "num_estimates": 25,
+                            "change_percent": -0.05
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 38.08,
+                            "formatted_estimate": "38.08%",
+                            "num_estimates": 25,
+                            "change_percent": 0.73
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "GRM_GROSMGN_Q_4_2020",
+                    "estimate": 38.419,
+                    "formatted_estimate": "38.42%",
+                    "estimate_high": 39.0,
+                    "formatted_estimate_high": "39%",
+                    "estimate_low": 37.7,
+                    "formatted_estimate_low": "37.7%",
+                    "num_estimates": 24,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 38.431,
+                            "formatted_estimate": "38.43%",
+                            "num_estimates": 25,
+                            "change_percent": -0.03
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 38.054,
+                            "formatted_estimate": "38.05%",
+                            "num_estimates": 25,
+                            "change_percent": 0.96
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "GRM_GROSMGN_Q_1_2020",
+                    "estimate": 38.198,
+                    "formatted_estimate": "38.2%",
+                    "estimate_high": 40.0,
+                    "formatted_estimate_high": "40%",
+                    "estimate_low": 36.7,
+                    "formatted_estimate_low": "36.7%",
+                    "num_estimates": 16,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 38.209,
+                            "formatted_estimate": "38.21%",
+                            "num_estimates": 18,
+                            "change_percent": -0.03
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 37.781,
+                            "formatted_estimate": "37.78%",
+                            "num_estimates": 16,
+                            "change_percent": 1.1
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "GRM_GROSMGN_Q_2_2021",
+                    "estimate": 38.719,
+                    "formatted_estimate": "38.72%",
+                    "estimate_high": 39.7,
+                    "formatted_estimate_high": "39.7%",
+                    "estimate_low": 37.8,
+                    "formatted_estimate_low": "37.8%",
+                    "num_estimates": 14,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 38.676,
+                            "formatted_estimate": "38.68%",
+                            "num_estimates": 16,
+                            "change_percent": 0.11
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 38.41,
+                            "formatted_estimate": "38.41%",
+                            "num_estimates": 13,
+                            "change_percent": 0.8
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Book Value Per Share",
+            "search_id": "BPS_BVPS",
+            "forecast_id": "BPS",
+            "value": "20.42",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "BPS_BVPS_Q_2_2018",
+                    "actual": 25.67,
+                    "formatted_actual": "25.67",
+                    "estimate": 28.163,
+                    "formatted_estimate": "28.16",
+                    "suprise": -2.49,
+                    "formatted_suprise": "-2.49"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "BPS_BVPS_Q_3_2018",
+                    "actual": 23.74,
+                    "formatted_actual": "23.74",
+                    "estimate": 23.801,
+                    "formatted_estimate": "23.8",
+                    "suprise": -0.06,
+                    "formatted_suprise": "-0.06"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "BPS_BVPS_Q_4_2018",
+                    "actual": 22.53,
+                    "formatted_actual": "22.53",
+                    "estimate": 22.352,
+                    "formatted_estimate": "22.35",
+                    "suprise": 0.18,
+                    "formatted_suprise": "0.18"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "BPS_BVPS_Q_1_2018",
+                    "actual": 24.93,
+                    "formatted_actual": "24.93",
+                    "estimate": 23.792,
+                    "formatted_estimate": "23.79",
+                    "suprise": 1.14,
+                    "formatted_suprise": "1.14"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "BPS_BVPS_Q_2_2019",
+                    "actual": 22.98,
+                    "formatted_actual": "22.98",
+                    "estimate": 22.09,
+                    "formatted_estimate": "22.09",
+                    "suprise": 0.89,
+                    "formatted_suprise": "0.89"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "BPS_BVPS_Q_3_2019",
+                    "actual": 20.29,
+                    "formatted_actual": "20.29",
+                    "estimate": 20.978,
+                    "formatted_estimate": "20.98",
+                    "suprise": -0.69,
+                    "formatted_suprise": "-0.69"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "BPS_BVPS_Q_4_2019",
+                    "actual": 20.365,
+                    "formatted_actual": "20.36",
+                    "estimate": 19.265,
+                    "formatted_estimate": "19.27",
+                    "suprise": 1.1,
+                    "formatted_suprise": "1.1"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "BPS_BVPS_Q_1_2019",
+                    "actual": 20.42,
+                    "formatted_actual": "20.42",
+                    "estimate": 21.093,
+                    "formatted_estimate": "21.09",
+                    "suprise": -0.67,
+                    "formatted_suprise": "-0.67"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "BPS_BVPS_Q_2_2020",
+                    "estimate": 19.727,
+                    "formatted_estimate": "19.73",
+                    "estimate_high": 22.32,
+                    "formatted_estimate_high": "22.32",
+                    "estimate_low": 18.0,
+                    "formatted_estimate_low": "18",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 20.063,
+                            "formatted_estimate": "20.06",
+                            "num_estimates": 3,
+                            "change_percent": -1.67
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 21.987,
+                            "formatted_estimate": "21.99",
+                            "num_estimates": 3,
+                            "change_percent": -10.28
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "BPS_BVPS_Q_3_2020",
+                    "estimate": 20.01,
+                    "formatted_estimate": "20.01",
+                    "estimate_high": 24.19,
+                    "formatted_estimate_high": "24.19",
+                    "estimate_low": 15.72,
+                    "formatted_estimate_low": "15.72",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 20.42,
+                            "formatted_estimate": "20.42",
+                            "num_estimates": 3,
+                            "change_percent": -2.01
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 23.197,
+                            "formatted_estimate": "23.2",
+                            "num_estimates": 3,
+                            "change_percent": -13.74
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "BPS_BVPS_Q_4_2020",
+                    "estimate": 19.693,
+                    "formatted_estimate": "19.69",
+                    "estimate_high": 26.99,
+                    "formatted_estimate_high": "26.99",
+                    "estimate_low": 14.23,
+                    "formatted_estimate_low": "14.23",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 20.11,
+                            "formatted_estimate": "20.11",
+                            "num_estimates": 3,
+                            "change_percent": -2.07
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 23.667,
+                            "formatted_estimate": "23.67",
+                            "num_estimates": 3,
+                            "change_percent": -16.79
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "BPS_BVPS_Q_1_2020",
+                    "estimate": 20.533,
+                    "formatted_estimate": "20.53",
+                    "estimate_high": 32.13,
+                    "formatted_estimate_high": "32.13",
+                    "estimate_low": 14.73,
+                    "formatted_estimate_low": "14.73",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 20.96,
+                            "formatted_estimate": "20.96",
+                            "num_estimates": 3,
+                            "change_percent": -2.04
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 25.86,
+                            "formatted_estimate": "25.86",
+                            "num_estimates": 3,
+                            "change_percent": -20.6
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "BPS_BVPS_Q_2_2021",
+                    "estimate": 21.067,
+                    "formatted_estimate": "21.07",
+                    "estimate_high": 34.93,
+                    "formatted_estimate_high": "34.93",
+                    "estimate_low": 12.56,
+                    "formatted_estimate_low": "12.56",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 21.607,
+                            "formatted_estimate": "21.61",
+                            "num_estimates": 3,
+                            "change_percent": -2.5
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 26.7,
+                            "formatted_estimate": "26.7",
+                            "num_estimates": 3,
+                            "change_percent": -21.1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ROEPCT",
+            "search_id": "ROA_ROEPCT",
+            "forecast_id": "ROA",
+            "value": "26.19M",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "ROA_ROEPCT_Q_2_2018",
+                    "actual": 1.428E7,
+                    "formatted_actual": "14.28M",
+                    "estimate": 1.43E7,
+                    "formatted_estimate": "14.3M",
+                    "suprise": -20000.0,
+                    "formatted_suprise": "-20K"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "ROA_ROEPCT_Q_3_2018",
+                    "actual": 1.286E7,
+                    "formatted_actual": "12.86M",
+                    "estimate": 1.21E7,
+                    "formatted_estimate": "12.1M",
+                    "suprise": 760000.0,
+                    "formatted_suprise": "760K"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "ROA_ROEPCT_Q_4_2018",
+                    "actual": 1.581E7,
+                    "formatted_actual": "15.81M",
+                    "estimate": 1.54E7,
+                    "formatted_estimate": "15.4M",
+                    "suprise": 410000.0,
+                    "formatted_suprise": "410K"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "ROA_ROEPCT_Q_1_2018",
+                    "actual": 2.16E7,
+                    "formatted_actual": "21.6M",
+                    "estimate": 2.26E7,
+                    "formatted_estimate": "22.6M",
+                    "suprise": -1000000.0,
+                    "formatted_suprise": "-1M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "ROA_ROEPCT_Q_2_2019",
+                    "actual": 1.292E7,
+                    "formatted_actual": "12.92M",
+                    "estimate": 1.34E7,
+                    "formatted_estimate": "13.4M",
+                    "suprise": -480000.0,
+                    "formatted_suprise": "-480K"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "ROA_ROEPCT_Q_3_2019",
+                    "actual": 1.21E7,
+                    "formatted_actual": "12.1M",
+                    "estimate": 1.165E7,
+                    "formatted_estimate": "11.65M",
+                    "suprise": 450000.0,
+                    "formatted_suprise": "450K"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "ROA_ROEPCT_Q_4_2019",
+                    "actual": 1.657E7,
+                    "formatted_actual": "16.57M",
+                    "estimate": 9688000.0,
+                    "formatted_estimate": "9.69M",
+                    "suprise": 6882000.0,
+                    "formatted_suprise": "6.88M"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "ROA_ROEPCT_Q_1_2019",
+                    "actual": 2.619E7,
+                    "formatted_actual": "26.19M",
+                    "estimate": 2.5E7,
+                    "formatted_estimate": "25M",
+                    "suprise": 1190000.0,
+                    "formatted_suprise": "1.19M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "ROA_ROEPCT_Q_2_2020",
+                    "estimate": 1.8E7,
+                    "formatted_estimate": "18M",
+                    "estimate_high": 1.8E7,
+                    "formatted_estimate_high": "18M",
+                    "estimate_low": 1.8E7,
+                    "formatted_estimate_low": "18M",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.8E7,
+                            "formatted_estimate": "18M",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.5E7,
+                            "formatted_estimate": "15M",
+                            "num_estimates": 1,
+                            "change_percent": 20.0
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "ROA_ROEPCT_Q_3_2020",
+                    "estimate": 1.9E7,
+                    "formatted_estimate": "19M",
+                    "estimate_high": 1.9E7,
+                    "formatted_estimate_high": "19M",
+                    "estimate_low": 1.9E7,
+                    "formatted_estimate_low": "19M",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.9E7,
+                            "formatted_estimate": "19M",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.3E7,
+                            "formatted_estimate": "13M",
+                            "num_estimates": 1,
+                            "change_percent": 46.15
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "ROA_ROEPCT_Q_4_2020",
+                    "estimate": 1.8E7,
+                    "formatted_estimate": "18M",
+                    "estimate_high": 1.8E7,
+                    "formatted_estimate_high": "18M",
+                    "estimate_low": 1.8E7,
+                    "formatted_estimate_low": "18M",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.8E7,
+                            "formatted_estimate": "18M",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.8E7,
+                            "formatted_estimate": "18M",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Dividend Per Share",
+            "search_id": "DPS_DDPS1",
+            "forecast_id": "DPS",
+            "value": "0.77",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "DPS_DDPS1_Q_2_2018",
+                    "actual": 0.63,
+                    "formatted_actual": "0.63",
+                    "estimate": 0.614,
+                    "formatted_estimate": "0.61",
+                    "suprise": 0.02,
+                    "formatted_suprise": "0.02"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "DPS_DDPS1_Q_3_2018",
+                    "actual": 0.73,
+                    "formatted_actual": "0.73",
+                    "estimate": 0.71,
+                    "formatted_estimate": "0.71",
+                    "suprise": 0.02,
+                    "formatted_suprise": "0.02"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "DPS_DDPS1_Q_4_2018",
+                    "actual": 0.73,
+                    "formatted_actual": "0.73",
+                    "estimate": 0.73,
+                    "formatted_estimate": "0.73",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "DPS_DDPS1_Q_1_2018",
+                    "actual": 0.73,
+                    "formatted_actual": "0.73",
+                    "estimate": 0.73,
+                    "formatted_estimate": "0.73",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "DPS_DDPS1_Q_2_2019",
+                    "actual": 0.73,
+                    "formatted_actual": "0.73",
+                    "estimate": 0.73,
+                    "formatted_estimate": "0.73",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "DPS_DDPS1_Q_3_2019",
+                    "actual": 0.77,
+                    "formatted_actual": "0.77",
+                    "estimate": 0.777,
+                    "formatted_estimate": "0.78",
+                    "suprise": -0.01,
+                    "formatted_suprise": "-0.01"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "DPS_DDPS1_Q_4_2019",
+                    "actual": 0.77,
+                    "formatted_actual": "0.77",
+                    "estimate": 0.766,
+                    "formatted_estimate": "0.77",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "DPS_DDPS1_Q_1_2019",
+                    "actual": 0.77,
+                    "formatted_actual": "0.77",
+                    "estimate": 0.77,
+                    "formatted_estimate": "0.77",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "DPS_DDPS1_Q_2_2020",
+                    "estimate": 0.776,
+                    "formatted_estimate": "0.78",
+                    "estimate_high": 0.81,
+                    "formatted_estimate_high": "0.81",
+                    "estimate_low": 0.77,
+                    "formatted_estimate_low": "0.77",
+                    "num_estimates": 7,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 0.776,
+                            "formatted_estimate": "0.78",
+                            "num_estimates": 7,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 0.77,
+                            "formatted_estimate": "0.77",
+                            "num_estimates": 9,
+                            "change_percent": 0.78
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "DPS_DDPS1_Q_3_2020",
+                    "estimate": 0.826,
+                    "formatted_estimate": "0.83",
+                    "estimate_high": 0.89,
+                    "formatted_estimate_high": "0.89",
+                    "estimate_low": 0.77,
+                    "formatted_estimate_low": "0.77",
+                    "num_estimates": 7,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 0.826,
+                            "formatted_estimate": "0.83",
+                            "num_estimates": 7,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 0.823,
+                            "formatted_estimate": "0.82",
+                            "num_estimates": 9,
+                            "change_percent": 0.36
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "DPS_DDPS1_Q_4_2020",
+                    "estimate": 0.826,
+                    "formatted_estimate": "0.83",
+                    "estimate_high": 0.89,
+                    "formatted_estimate_high": "0.89",
+                    "estimate_low": 0.77,
+                    "formatted_estimate_low": "0.77",
+                    "num_estimates": 7,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 0.826,
+                            "formatted_estimate": "0.83",
+                            "num_estimates": 7,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 0.823,
+                            "formatted_estimate": "0.82",
+                            "num_estimates": 9,
+                            "change_percent": 0.36
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "DPS_DDPS1_Q_1_2020",
+                    "estimate": 0.816,
+                    "formatted_estimate": "0.82",
+                    "estimate_high": 0.85,
+                    "formatted_estimate_high": "0.85",
+                    "estimate_low": 0.77,
+                    "formatted_estimate_low": "0.77",
+                    "num_estimates": 5,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 0.816,
+                            "formatted_estimate": "0.82",
+                            "num_estimates": 5,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 0.82,
+                            "formatted_estimate": "0.82",
+                            "num_estimates": 6,
+                            "change_percent": -0.49
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "DPS_DDPS1_Q_2_2021",
+                    "estimate": 0.815,
+                    "formatted_estimate": "0.81",
+                    "estimate_high": 0.84,
+                    "formatted_estimate_high": "0.84",
+                    "estimate_low": 0.77,
+                    "formatted_estimate_low": "0.77",
+                    "num_estimates": 4,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 0.815,
+                            "formatted_estimate": "0.81",
+                            "num_estimates": 4,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 0.822,
+                            "formatted_estimate": "0.82",
+                            "num_estimates": 5,
+                            "change_percent": -0.85
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Cash Flow Per Share",
+            "search_id": "CPS_CFSHR",
+            "forecast_id": "CPS",
+            "value": "6.85",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "CPS_CFSHR_Q_2_2018",
+                    "actual": 2.98,
+                    "formatted_actual": "2.98",
+                    "estimate": 2.854,
+                    "formatted_estimate": "2.85",
+                    "suprise": 0.13,
+                    "formatted_suprise": "0.13"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "CPS_CFSHR_Q_3_2018",
+                    "actual": 2.94,
+                    "formatted_actual": "2.94",
+                    "estimate": 2.999,
+                    "formatted_estimate": "3",
+                    "suprise": -0.06,
+                    "formatted_suprise": "-0.06"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "CPS_CFSHR_Q_4_2018",
+                    "actual": 4.03,
+                    "formatted_actual": "4.03",
+                    "estimate": 3.055,
+                    "formatted_estimate": "3.06",
+                    "suprise": 0.98,
+                    "formatted_suprise": "0.98"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "CPS_CFSHR_Q_1_2018",
+                    "actual": 5.59,
+                    "formatted_actual": "5.59",
+                    "estimate": 4.751,
+                    "formatted_estimate": "4.75",
+                    "suprise": 0.84,
+                    "formatted_suprise": "0.84"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "CPS_CFSHR_Q_2_2019",
+                    "actual": 2.37,
+                    "formatted_actual": "2.37",
+                    "estimate": 3.051,
+                    "formatted_estimate": "3.05",
+                    "suprise": -0.68,
+                    "formatted_suprise": "-0.68"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "CPS_CFSHR_Q_3_2019",
+                    "actual": 2.53,
+                    "formatted_actual": "2.53",
+                    "estimate": 3.033,
+                    "formatted_estimate": "3.03",
+                    "suprise": -0.5,
+                    "formatted_suprise": "-0.5"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "CPS_CFSHR_Q_4_2019",
+                    "actual": 4.4,
+                    "formatted_actual": "4.4",
+                    "estimate": 3.558,
+                    "formatted_estimate": "3.56",
+                    "suprise": 0.84,
+                    "formatted_suprise": "0.84"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "CPS_CFSHR_Q_1_2019",
+                    "actual": 6.85,
+                    "formatted_actual": "6.85",
+                    "estimate": 5.632,
+                    "formatted_estimate": "5.63",
+                    "suprise": 1.22,
+                    "formatted_suprise": "1.22"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "CPS_CFSHR_Q_2_2020",
+                    "estimate": 2.012,
+                    "formatted_estimate": "2.01",
+                    "estimate_high": 3.31,
+                    "formatted_estimate_high": "3.31",
+                    "estimate_low": 1.17,
+                    "formatted_estimate_low": "1.17",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.176,
+                            "formatted_estimate": "3.18",
+                            "num_estimates": 4,
+                            "change_percent": -36.65
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.171,
+                            "formatted_estimate": "3.17",
+                            "num_estimates": 4,
+                            "change_percent": -36.55
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "CPS_CFSHR_Q_3_2020",
+                    "estimate": 3.552,
+                    "formatted_estimate": "3.55",
+                    "estimate_high": 4.395,
+                    "formatted_estimate_high": "4.39",
+                    "estimate_low": 3.07,
+                    "formatted_estimate_low": "3.07",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.186,
+                            "formatted_estimate": "3.19",
+                            "num_estimates": 4,
+                            "change_percent": 11.49
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.109,
+                            "formatted_estimate": "3.11",
+                            "num_estimates": 4,
+                            "change_percent": 14.25
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "CPS_CFSHR_Q_4_2020",
+                    "estimate": 4.34,
+                    "formatted_estimate": "4.34",
+                    "estimate_high": 5.029,
+                    "formatted_estimate_high": "5.03",
+                    "estimate_low": 3.9,
+                    "formatted_estimate_low": "3.9",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 4.128,
+                            "formatted_estimate": "4.13",
+                            "num_estimates": 4,
+                            "change_percent": 5.14
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 4.375,
+                            "formatted_estimate": "4.38",
+                            "num_estimates": 4,
+                            "change_percent": -0.8
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "CPS_CFSHR_Q_1_2020",
+                    "estimate": 6.694,
+                    "formatted_estimate": "6.69",
+                    "estimate_high": 7.321,
+                    "formatted_estimate_high": "7.32",
+                    "estimate_low": 6.11,
+                    "formatted_estimate_low": "6.11",
+                    "num_estimates": 3,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 6.775,
+                            "formatted_estimate": "6.78",
+                            "num_estimates": 4,
+                            "change_percent": -1.2
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 6.844,
+                            "formatted_estimate": "6.84",
+                            "num_estimates": 3,
+                            "change_percent": -2.19
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "CPS_CFSHR_Q_2_2021",
+                    "estimate": 3.824,
+                    "formatted_estimate": "3.82",
+                    "estimate_high": 4.2,
+                    "formatted_estimate_high": "4.2",
+                    "estimate_low": 3.447,
+                    "formatted_estimate_low": "3.45",
+                    "num_estimates": 2,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 4.026,
+                            "formatted_estimate": "4.03",
+                            "num_estimates": 3,
+                            "change_percent": -5.02
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.881,
+                            "formatted_estimate": "3.88",
+                            "num_estimates": 3,
+                            "change_percent": -1.47
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Earnings Per Share",
+            "search_id": "EPS_null",
+            "forecast_id": "EPS",
+            "value": "4.99",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "EPS_null_Q_2_2018",
+                    "actual": 2.73,
+                    "formatted_actual": "2.73",
+                    "estimate": 2.673,
+                    "formatted_estimate": "2.67",
+                    "suprise": 0.06,
+                    "formatted_suprise": "0.06"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EPS_null_Q_3_2018",
+                    "actual": 2.34,
+                    "formatted_actual": "2.34",
+                    "estimate": 2.181,
+                    "formatted_estimate": "2.18",
+                    "suprise": 0.16,
+                    "formatted_suprise": "0.16"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EPS_null_Q_4_2018",
+                    "actual": 2.91,
+                    "formatted_actual": "2.91",
+                    "estimate": 2.783,
+                    "formatted_estimate": "2.78",
+                    "suprise": 0.13,
+                    "formatted_suprise": "0.13"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "EPS_null_Q_1_2018",
+                    "actual": 4.18,
+                    "formatted_actual": "4.18",
+                    "estimate": 4.167,
+                    "formatted_estimate": "4.17",
+                    "suprise": 0.01,
+                    "formatted_suprise": "0.01"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EPS_null_Q_2_2019",
+                    "actual": 2.46,
+                    "formatted_actual": "2.46",
+                    "estimate": 2.361,
+                    "formatted_estimate": "2.36",
+                    "suprise": 0.1,
+                    "formatted_suprise": "0.1"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EPS_null_Q_3_2019",
+                    "actual": 2.18,
+                    "formatted_actual": "2.18",
+                    "estimate": 2.098,
+                    "formatted_estimate": "2.1",
+                    "suprise": 0.08,
+                    "formatted_suprise": "0.08"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EPS_null_Q_4_2019",
+                    "actual": 3.03,
+                    "formatted_actual": "3.03",
+                    "estimate": 2.839,
+                    "formatted_estimate": "2.84",
+                    "suprise": 0.19,
+                    "formatted_suprise": "0.19"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "EPS_null_Q_1_2019",
+                    "actual": 4.99,
+                    "formatted_actual": "4.99",
+                    "estimate": 4.547,
+                    "formatted_estimate": "4.55",
+                    "suprise": 0.44,
+                    "formatted_suprise": "0.44"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EPS_null_Q_2_2020",
+                    "estimate": 2.72,
+                    "formatted_estimate": "2.72",
+                    "estimate_high": 3.11,
+                    "formatted_estimate_high": "3.11",
+                    "estimate_low": 2.24,
+                    "formatted_estimate_low": "2.24",
+                    "num_estimates": 32,
+                    "predict_surprise_indicator": "down",
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.004,
+                            "formatted_estimate": "3",
+                            "num_estimates": 32,
+                            "change_percent": -9.45
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.807,
+                            "formatted_estimate": "2.81",
+                            "num_estimates": 34,
+                            "change_percent": -3.1
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EPS_null_Q_3_2020",
+                    "estimate": 2.555,
+                    "formatted_estimate": "2.56",
+                    "estimate_high": 2.921,
+                    "formatted_estimate_high": "2.92",
+                    "estimate_low": 2.23,
+                    "formatted_estimate_low": "2.23",
+                    "num_estimates": 31,
+                    "predict_surprise_indicator": "up",
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.534,
+                            "formatted_estimate": "2.53",
+                            "num_estimates": 32,
+                            "change_percent": 0.83
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.454,
+                            "formatted_estimate": "2.45",
+                            "num_estimates": 34,
+                            "change_percent": 4.12
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EPS_null_Q_4_2020",
+                    "estimate": 3.372,
+                    "formatted_estimate": "3.37",
+                    "estimate_high": 3.904,
+                    "formatted_estimate_high": "3.9",
+                    "estimate_low": 3.01,
+                    "formatted_estimate_low": "3.01",
+                    "num_estimates": 31,
+                    "predict_surprise_indicator": "non-directional",
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.334,
+                            "formatted_estimate": "3.33",
+                            "num_estimates": 32,
+                            "change_percent": 1.14
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.229,
+                            "formatted_estimate": "3.23",
+                            "num_estimates": 34,
+                            "change_percent": 4.43
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "EPS_null_Q_1_2020",
+                    "estimate": 5.585,
+                    "formatted_estimate": "5.58",
+                    "estimate_high": 6.31,
+                    "formatted_estimate_high": "6.31",
+                    "estimate_low": 5.22,
+                    "formatted_estimate_low": "5.22",
+                    "num_estimates": 25,
+                    "predict_surprise_indicator": "up",
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 5.54,
+                            "formatted_estimate": "5.54",
+                            "num_estimates": 26,
+                            "change_percent": 0.81
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 5.153,
+                            "formatted_estimate": "5.15",
+                            "num_estimates": 23,
+                            "change_percent": 8.38
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EPS_null_Q_2_2021",
+                    "estimate": 3.427,
+                    "formatted_estimate": "3.43",
+                    "estimate_high": 3.72,
+                    "formatted_estimate_high": "3.72",
+                    "estimate_low": 3.0,
+                    "formatted_estimate_low": "3",
+                    "num_estimates": 20,
+                    "predict_surprise_indicator": "down",
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.473,
+                            "formatted_estimate": "3.47",
+                            "num_estimates": 21,
+                            "change_percent": -1.32
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.275,
+                            "formatted_estimate": "3.27",
+                            "num_estimates": 20,
+                            "change_percent": 4.64
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Capital Expenditures",
+            "search_id": "CPX_SCEX",
+            "forecast_id": "CPX",
+            "value": "2.11B",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "CPX_SCEX_Q_2_2018",
+                    "actual": 4.195E9,
+                    "formatted_actual": "4.2B",
+                    "estimate": 3.327486E9,
+                    "formatted_estimate": "3.33B",
+                    "suprise": 8.67514E8,
+                    "formatted_suprise": "867.51M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "CPX_SCEX_Q_3_2018",
+                    "actual": 3.267E9,
+                    "formatted_actual": "3.27B",
+                    "estimate": 3.311654E9,
+                    "formatted_estimate": "3.31B",
+                    "suprise": -4.4654E7,
+                    "formatted_suprise": "-44.65M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "CPX_SCEX_Q_4_2018",
+                    "actual": 3.041E9,
+                    "formatted_actual": "3.04B",
+                    "estimate": 3.559782E9,
+                    "formatted_estimate": "3.56B",
+                    "suprise": -5.18782E8,
+                    "formatted_suprise": "-518.78M"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "CPX_SCEX_Q_1_2018",
+                    "actual": 3.355E9,
+                    "formatted_actual": "3.35B",
+                    "estimate": 3.493883E9,
+                    "formatted_estimate": "3.49B",
+                    "suprise": -1.38883E8,
+                    "formatted_suprise": "-138.88M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "CPX_SCEX_Q_2_2019",
+                    "actual": 2.363E9,
+                    "formatted_actual": "2.36B",
+                    "estimate": 3.453529E9,
+                    "formatted_estimate": "3.45B",
+                    "suprise": -1.090529E9,
+                    "formatted_suprise": "-1.09B"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "CPX_SCEX_Q_3_2019",
+                    "actual": 2.0E9,
+                    "formatted_actual": "2B",
+                    "estimate": 3.299667E9,
+                    "formatted_estimate": "3.3B",
+                    "suprise": -1.299667E9,
+                    "formatted_suprise": "-1.3B"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "CPX_SCEX_Q_4_2019",
+                    "actual": 2.777E9,
+                    "formatted_actual": "2.78B",
+                    "estimate": 3.140167E9,
+                    "formatted_estimate": "3.14B",
+                    "suprise": -3.63167E8,
+                    "formatted_suprise": "-363.17M"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "CPX_SCEX_Q_1_2019",
+                    "actual": 2.107E9,
+                    "formatted_actual": "2.11B",
+                    "estimate": 3.401656E9,
+                    "formatted_estimate": "3.4B",
+                    "suprise": -1.294656E9,
+                    "formatted_suprise": "-1.29B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "CPX_SCEX_Q_2_2020",
+                    "estimate": 2.786733E9,
+                    "formatted_estimate": "2.79B",
+                    "estimate_high": 3.623E9,
+                    "formatted_estimate_high": "3.62B",
+                    "estimate_low": 2.107E9,
+                    "formatted_estimate_low": "2.11B",
+                    "num_estimates": 12,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.891322E9,
+                            "formatted_estimate": "2.89B",
+                            "num_estimates": 13,
+                            "change_percent": -3.62
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.941833E9,
+                            "formatted_estimate": "2.94B",
+                            "num_estimates": 12,
+                            "change_percent": -5.27
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "CPX_SCEX_Q_3_2020",
+                    "estimate": 2.71238E9,
+                    "formatted_estimate": "2.71B",
+                    "estimate_high": 3.5E9,
+                    "formatted_estimate_high": "3.5B",
+                    "estimate_low": 2.06E9,
+                    "formatted_estimate_low": "2.06B",
+                    "num_estimates": 12,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.678538E9,
+                            "formatted_estimate": "2.68B",
+                            "num_estimates": 13,
+                            "change_percent": 1.26
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.747E9,
+                            "formatted_estimate": "2.75B",
+                            "num_estimates": 12,
+                            "change_percent": -1.26
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "CPX_SCEX_Q_4_2020",
+                    "estimate": 3.109468E9,
+                    "formatted_estimate": "3.11B",
+                    "estimate_high": 3.893E9,
+                    "formatted_estimate_high": "3.89B",
+                    "estimate_low": 2.107E9,
+                    "formatted_estimate_low": "2.11B",
+                    "num_estimates": 12,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.039127E9,
+                            "formatted_estimate": "3.04B",
+                            "num_estimates": 13,
+                            "change_percent": 2.31
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.139167E9,
+                            "formatted_estimate": "3.14B",
+                            "num_estimates": 12,
+                            "change_percent": -0.95
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "CPX_SCEX_Q_1_2020",
+                    "estimate": 3.423619E9,
+                    "formatted_estimate": "3.42B",
+                    "estimate_high": 5.237E9,
+                    "formatted_estimate_high": "5.24B",
+                    "estimate_low": 2.107E9,
+                    "formatted_estimate_low": "2.11B",
+                    "num_estimates": 8,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.383417E9,
+                            "formatted_estimate": "3.38B",
+                            "num_estimates": 10,
+                            "change_percent": 1.19
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.516778E9,
+                            "formatted_estimate": "3.52B",
+                            "num_estimates": 9,
+                            "change_percent": -2.65
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "CPX_SCEX_Q_2_2021",
+                    "estimate": 2.98104E9,
+                    "formatted_estimate": "2.98B",
+                    "estimate_high": 3.974E9,
+                    "formatted_estimate_high": "3.97B",
+                    "estimate_low": 2.107E9,
+                    "formatted_estimate_low": "2.11B",
+                    "num_estimates": 7,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.993284E9,
+                            "formatted_estimate": "2.99B",
+                            "num_estimates": 9,
+                            "change_percent": -0.41
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.093125E9,
+                            "formatted_estimate": "3.09B",
+                            "num_estimates": 8,
+                            "change_percent": -3.62
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Enterprise Value",
+            "search_id": "ENT_EV",
+            "forecast_id": "ENT",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "ENT_EV_Q_2_2018",
+                    "actual": 6.83997854E11,
+                    "formatted_actual": "684B"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "ENT_EV_Q_3_2018"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "ENT_EV_Q_4_2018"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "ENT_EV_Q_1_2018"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "ENT_EV_Q_2_2019"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "ENT_EV_Q_3_2019"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "ENT_EV_Q_4_2019",
+                    "actual": 1.002641567E12,
+                    "formatted_actual": "1002.64B"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "ENT_EV_Q_1_2019"
+                }
+            ]
+        },
+        {
+            "name": "GAAP Earnings Per Share",
+            "search_id": "GPS_null",
+            "forecast_id": "GPS",
+            "value": "4.99",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "GPS_null_Q_2_2018",
+                    "actual": 2.73,
+                    "formatted_actual": "2.73",
+                    "estimate": 2.671,
+                    "formatted_estimate": "2.67",
+                    "suprise": 0.06,
+                    "formatted_suprise": "0.06"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "GPS_null_Q_3_2018",
+                    "actual": 2.34,
+                    "formatted_actual": "2.34",
+                    "estimate": 2.18,
+                    "formatted_estimate": "2.18",
+                    "suprise": 0.16,
+                    "formatted_suprise": "0.16"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "GPS_null_Q_4_2018",
+                    "actual": 2.91,
+                    "formatted_actual": "2.91",
+                    "estimate": 2.788,
+                    "formatted_estimate": "2.79",
+                    "suprise": 0.12,
+                    "formatted_suprise": "0.12"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "GPS_null_Q_1_2018",
+                    "actual": 4.18,
+                    "formatted_actual": "4.18",
+                    "estimate": 4.167,
+                    "formatted_estimate": "4.17",
+                    "suprise": 0.01,
+                    "formatted_suprise": "0.01"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "GPS_null_Q_2_2019",
+                    "actual": 2.46,
+                    "formatted_actual": "2.46",
+                    "estimate": 2.36,
+                    "formatted_estimate": "2.36",
+                    "suprise": 0.1,
+                    "formatted_suprise": "0.1"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "GPS_null_Q_3_2019",
+                    "actual": 2.18,
+                    "formatted_actual": "2.18",
+                    "estimate": 2.097,
+                    "formatted_estimate": "2.1",
+                    "suprise": 0.08,
+                    "formatted_suprise": "0.08"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "GPS_null_Q_4_2019",
+                    "actual": 3.03,
+                    "formatted_actual": "3.03",
+                    "estimate": 2.842,
+                    "formatted_estimate": "2.84",
+                    "suprise": 0.19,
+                    "formatted_suprise": "0.19"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "GPS_null_Q_1_2019",
+                    "actual": 4.99,
+                    "formatted_actual": "4.99",
+                    "estimate": 4.553,
+                    "formatted_estimate": "4.55",
+                    "suprise": 0.44,
+                    "formatted_suprise": "0.44"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "GPS_null_Q_2_2020",
+                    "estimate": 2.793,
+                    "formatted_estimate": "2.79",
+                    "estimate_high": 3.11,
+                    "formatted_estimate_high": "3.11",
+                    "estimate_low": 2.24,
+                    "formatted_estimate_low": "2.24",
+                    "num_estimates": 28,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.009,
+                            "formatted_estimate": "3.01",
+                            "num_estimates": 28,
+                            "change_percent": -7.18
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.818,
+                            "formatted_estimate": "2.82",
+                            "num_estimates": 30,
+                            "change_percent": -0.89
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "GPS_null_Q_3_2020",
+                    "estimate": 2.539,
+                    "formatted_estimate": "2.54",
+                    "estimate_high": 2.89,
+                    "formatted_estimate_high": "2.89",
+                    "estimate_low": 2.23,
+                    "formatted_estimate_low": "2.23",
+                    "num_estimates": 27,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.539,
+                            "formatted_estimate": "2.54",
+                            "num_estimates": 28,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.471,
+                            "formatted_estimate": "2.47",
+                            "num_estimates": 30,
+                            "change_percent": 2.75
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "GPS_null_Q_4_2020",
+                    "estimate": 3.343,
+                    "formatted_estimate": "3.34",
+                    "estimate_high": 3.66,
+                    "formatted_estimate_high": "3.66",
+                    "estimate_low": 3.01,
+                    "formatted_estimate_low": "3.01",
+                    "num_estimates": 27,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.328,
+                            "formatted_estimate": "3.33",
+                            "num_estimates": 28,
+                            "change_percent": 0.45
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.237,
+                            "formatted_estimate": "3.24",
+                            "num_estimates": 30,
+                            "change_percent": 3.27
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "GPS_null_Q_1_2020",
+                    "estimate": 5.581,
+                    "formatted_estimate": "5.58",
+                    "estimate_high": 6.31,
+                    "formatted_estimate_high": "6.31",
+                    "estimate_low": 5.22,
+                    "formatted_estimate_low": "5.22",
+                    "num_estimates": 21,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 5.537,
+                            "formatted_estimate": "5.54",
+                            "num_estimates": 22,
+                            "change_percent": 0.79
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 5.134,
+                            "formatted_estimate": "5.13",
+                            "num_estimates": 21,
+                            "change_percent": 8.71
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "GPS_null_Q_2_2021",
+                    "estimate": 3.443,
+                    "formatted_estimate": "3.44",
+                    "estimate_high": 3.72,
+                    "formatted_estimate_high": "3.72",
+                    "estimate_low": 3.0,
+                    "formatted_estimate_low": "3",
+                    "num_estimates": 18,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.466,
+                            "formatted_estimate": "3.47",
+                            "num_estimates": 19,
+                            "change_percent": -0.66
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.266,
+                            "formatted_estimate": "3.27",
+                            "num_estimates": 18,
+                            "change_percent": 5.42
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "EBIT",
+            "search_id": "EBI_EBIT",
+            "forecast_id": "EBI",
+            "value": "25.57B",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "EBI_EBIT_Q_2_2018",
+                    "actual": 1.5894E10,
+                    "formatted_actual": "15.89B",
+                    "estimate": 1.5773542E10,
+                    "formatted_estimate": "15.77B",
+                    "suprise": 1.20458E8,
+                    "formatted_suprise": "120.46M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBI_EBIT_Q_3_2018",
+                    "actual": 1.2612E10,
+                    "formatted_actual": "12.61B",
+                    "estimate": 1.2349894E10,
+                    "formatted_estimate": "12.35B",
+                    "suprise": 2.62106E8,
+                    "formatted_suprise": "262.11M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBI_EBIT_Q_4_2018",
+                    "actual": 1.6118E10,
+                    "formatted_actual": "16.12B",
+                    "estimate": 1.5533082E10,
+                    "formatted_estimate": "15.53B",
+                    "suprise": 5.84918E8,
+                    "formatted_suprise": "584.92M"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "EBI_EBIT_Q_1_2018",
+                    "actual": 2.3346E10,
+                    "formatted_actual": "23.35B",
+                    "estimate": 2.3249706E10,
+                    "formatted_estimate": "23.25B",
+                    "suprise": 9.6294E7,
+                    "formatted_suprise": "96.29M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBI_EBIT_Q_2_2019",
+                    "actual": 1.3415E10,
+                    "formatted_actual": "13.41B",
+                    "estimate": 1.3071325E10,
+                    "formatted_estimate": "13.07B",
+                    "suprise": 3.43675E8,
+                    "formatted_suprise": "343.68M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBI_EBIT_Q_3_2019",
+                    "actual": 1.1544E10,
+                    "formatted_actual": "11.54B",
+                    "estimate": 1.1387659E10,
+                    "formatted_estimate": "11.39B",
+                    "suprise": 1.56341E8,
+                    "formatted_suprise": "156.34M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBI_EBIT_Q_4_2019",
+                    "actual": 1.5625E10,
+                    "formatted_actual": "15.62B",
+                    "estimate": 1.5152959E10,
+                    "formatted_estimate": "15.15B",
+                    "suprise": 4.72041E8,
+                    "formatted_suprise": "472.04M"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "EBI_EBIT_Q_1_2019",
+                    "actual": 2.5569E10,
+                    "formatted_actual": "25.57B",
+                    "estimate": 2.403132E10,
+                    "formatted_estimate": "24.03B",
+                    "suprise": 1.53768E9,
+                    "formatted_suprise": "1.54B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBI_EBIT_Q_2_2020",
+                    "estimate": 1.4723724E10,
+                    "formatted_estimate": "14.72B",
+                    "estimate_high": 1.609E10,
+                    "formatted_estimate_high": "16.09B",
+                    "estimate_low": 1.1525E10,
+                    "formatted_estimate_low": "11.53B",
+                    "num_estimates": 23,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.5539897E10,
+                            "formatted_estimate": "15.54B",
+                            "num_estimates": 24,
+                            "change_percent": -5.25
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.4517082E10,
+                            "formatted_estimate": "14.52B",
+                            "num_estimates": 23,
+                            "change_percent": 1.42
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBI_EBIT_Q_3_2020",
+                    "estimate": 1.290098E10,
+                    "formatted_estimate": "12.9B",
+                    "estimate_high": 1.4773E10,
+                    "formatted_estimate_high": "14.77B",
+                    "estimate_low": 1.1726E10,
+                    "formatted_estimate_low": "11.73B",
+                    "num_estimates": 22,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.2834527E10,
+                            "formatted_estimate": "12.83B",
+                            "num_estimates": 23,
+                            "change_percent": 0.52
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.2426767E10,
+                            "formatted_estimate": "12.43B",
+                            "num_estimates": 23,
+                            "change_percent": 3.82
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBI_EBIT_Q_4_2020",
+                    "estimate": 1.6894606E10,
+                    "formatted_estimate": "16.89B",
+                    "estimate_high": 1.871E10,
+                    "formatted_estimate_high": "18.71B",
+                    "estimate_low": 1.5135E10,
+                    "formatted_estimate_low": "15.13B",
+                    "num_estimates": 22,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.6769604E10,
+                            "formatted_estimate": "16.77B",
+                            "num_estimates": 23,
+                            "change_percent": 0.75
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.6165031E10,
+                            "formatted_estimate": "16.17B",
+                            "num_estimates": 23,
+                            "change_percent": 4.51
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "EBI_EBIT_Q_1_2020",
+                    "estimate": 2.7787239E10,
+                    "formatted_estimate": "27.79B",
+                    "estimate_high": 3.0927E10,
+                    "formatted_estimate_high": "30.93B",
+                    "estimate_low": 2.5436E10,
+                    "formatted_estimate_low": "25.44B",
+                    "num_estimates": 15,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.7715314E10,
+                            "formatted_estimate": "27.72B",
+                            "num_estimates": 17,
+                            "change_percent": 0.26
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.5421399E10,
+                            "formatted_estimate": "25.42B",
+                            "num_estimates": 15,
+                            "change_percent": 9.31
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBI_EBIT_Q_2_2021",
+                    "estimate": 1.6930579000000002E10,
+                    "formatted_estimate": "16.93B",
+                    "estimate_high": 1.7752E10,
+                    "formatted_estimate_high": "17.75B",
+                    "estimate_low": 1.5533E10,
+                    "formatted_estimate_low": "15.53B",
+                    "num_estimates": 13,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.6922258000000002E10,
+                            "formatted_estimate": "16.92B",
+                            "num_estimates": 15,
+                            "change_percent": 0.05
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.5857715E10,
+                            "formatted_estimate": "15.86B",
+                            "num_estimates": 12,
+                            "change_percent": 6.77
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "EBITD",
+            "search_id": "EBT_EBITD",
+            "forecast_id": "EBT",
+            "value": "28.39B",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "EBT_EBITD_Q_2_2018",
+                    "actual": 1.8633E10,
+                    "formatted_actual": "18.63B",
+                    "estimate": 1.8545489E10,
+                    "formatted_estimate": "18.55B",
+                    "suprise": 8.7511E7,
+                    "formatted_suprise": "87.51M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBT_EBITD_Q_3_2018",
+                    "actual": 1.5277E10,
+                    "formatted_actual": "15.28B",
+                    "estimate": 1.5084137E10,
+                    "formatted_estimate": "15.08B",
+                    "suprise": 1.92863E8,
+                    "formatted_suprise": "192.86M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBT_EBITD_Q_4_2018",
+                    "actual": 1.8872E10,
+                    "formatted_actual": "18.87B",
+                    "estimate": 1.8397905E10,
+                    "formatted_estimate": "18.4B",
+                    "suprise": 4.74095E8,
+                    "formatted_suprise": "474.1M"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "EBT_EBITD_Q_1_2018",
+                    "actual": 2.6741E10,
+                    "formatted_actual": "26.74B",
+                    "estimate": 2.6128266E10,
+                    "formatted_estimate": "26.13B",
+                    "suprise": 6.12734E8,
+                    "formatted_suprise": "612.73M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBT_EBITD_Q_2_2019",
+                    "actual": 1.6455E10,
+                    "formatted_actual": "16.45B",
+                    "estimate": 1.6121127E10,
+                    "formatted_estimate": "16.12B",
+                    "suprise": 3.33873E8,
+                    "formatted_suprise": "333.87M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBT_EBITD_Q_3_2019",
+                    "actual": 1.4477E10,
+                    "formatted_actual": "14.48B",
+                    "estimate": 1.4145899E10,
+                    "formatted_estimate": "14.15B",
+                    "suprise": 3.31101E8,
+                    "formatted_suprise": "331.1M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBT_EBITD_Q_4_2019",
+                    "actual": 1.8804E10,
+                    "formatted_actual": "18.8B",
+                    "estimate": 1.813694E10,
+                    "formatted_estimate": "18.14B",
+                    "suprise": 6.6706E8,
+                    "formatted_suprise": "667.06M"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "EBT_EBITD_Q_1_2019",
+                    "actual": 2.8385E10,
+                    "formatted_actual": "28.39B",
+                    "estimate": 2.7326699E10,
+                    "formatted_estimate": "27.33B",
+                    "suprise": 1.058301E9,
+                    "formatted_suprise": "1.06B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBT_EBITD_Q_2_2020",
+                    "estimate": 1.6813719000000002E10,
+                    "formatted_estimate": "16.81B",
+                    "estimate_high": 1.8911E10,
+                    "formatted_estimate_high": "18.91B",
+                    "estimate_low": 1.4341E10,
+                    "formatted_estimate_low": "14.34B",
+                    "num_estimates": 11,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.8514062E10,
+                            "formatted_estimate": "18.51B",
+                            "num_estimates": 12,
+                            "change_percent": -9.18
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.7618374E10,
+                            "formatted_estimate": "17.62B",
+                            "num_estimates": 9,
+                            "change_percent": -4.57
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBT_EBITD_Q_3_2020",
+                    "estimate": 1.5768065E10,
+                    "formatted_estimate": "15.77B",
+                    "estimate_high": 1.7589E10,
+                    "formatted_estimate_high": "17.59B",
+                    "estimate_low": 1.4427333E10,
+                    "formatted_estimate_low": "14.43B",
+                    "num_estimates": 11,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.5737931E10,
+                            "formatted_estimate": "15.74B",
+                            "num_estimates": 12,
+                            "change_percent": 0.19
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.5561474E10,
+                            "formatted_estimate": "15.56B",
+                            "num_estimates": 9,
+                            "change_percent": 1.33
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBT_EBITD_Q_4_2020",
+                    "estimate": 2.0082367E10,
+                    "formatted_estimate": "20.08B",
+                    "estimate_high": 2.1925E10,
+                    "formatted_estimate_high": "21.93B",
+                    "estimate_low": 1.8176E10,
+                    "formatted_estimate_low": "18.18B",
+                    "num_estimates": 11,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.966122E10,
+                            "formatted_estimate": "19.66B",
+                            "num_estimates": 12,
+                            "change_percent": 2.14
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.9568829E10,
+                            "formatted_estimate": "19.57B",
+                            "num_estimates": 9,
+                            "change_percent": 2.62
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "EBT_EBITD_Q_1_2020",
+                    "estimate": 3.0592634E10,
+                    "formatted_estimate": "30.59B",
+                    "estimate_high": 3.2014964E10,
+                    "formatted_estimate_high": "32.01B",
+                    "estimate_low": 2.8558E10,
+                    "formatted_estimate_low": "28.56B",
+                    "num_estimates": 6,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.0339937E10,
+                            "formatted_estimate": "30.34B",
+                            "num_estimates": 7,
+                            "change_percent": 0.83
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 2.9376515E10,
+                            "formatted_estimate": "29.38B",
+                            "num_estimates": 7,
+                            "change_percent": 4.14
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBT_EBITD_Q_2_2021",
+                    "estimate": 2.022504E10,
+                    "formatted_estimate": "20.23B",
+                    "estimate_high": 2.1314E10,
+                    "formatted_estimate_high": "21.31B",
+                    "estimate_low": 1.8863E10,
+                    "formatted_estimate_low": "18.86B",
+                    "num_estimates": 6,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 2.0042019E10,
+                            "formatted_estimate": "20.04B",
+                            "num_estimates": 7,
+                            "change_percent": 0.91
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 1.946265E10,
+                            "formatted_estimate": "19.46B",
+                            "num_estimates": 7,
+                            "change_percent": 3.92
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "EBITDA Per Share",
+            "search_id": "EBS_null",
+            "forecast_id": "EBS",
+            "value": "6.37",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "EBS_null_Q_2_2018",
+                    "actual": 3.68,
+                    "formatted_actual": "3.68",
+                    "estimate": 3.63,
+                    "formatted_estimate": "3.63",
+                    "suprise": 0.05,
+                    "formatted_suprise": "0.05"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBS_null_Q_3_2018",
+                    "actual": 3.1,
+                    "formatted_actual": "3.1",
+                    "estimate": 3.01,
+                    "formatted_estimate": "3.01",
+                    "suprise": 0.09,
+                    "formatted_suprise": "0.09"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBS_null_Q_4_2018",
+                    "actual": 3.89,
+                    "formatted_actual": "3.89",
+                    "estimate": 3.76,
+                    "formatted_estimate": "3.76",
+                    "suprise": 0.13,
+                    "formatted_suprise": "0.13"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "EBS_null_Q_1_2018",
+                    "actual": 5.6,
+                    "formatted_actual": "5.6",
+                    "estimate": 5.45,
+                    "formatted_estimate": "5.45",
+                    "suprise": 0.15,
+                    "formatted_suprise": "0.15"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBS_null_Q_2_2019",
+                    "actual": 3.5,
+                    "formatted_actual": "3.5",
+                    "estimate": 3.32,
+                    "formatted_estimate": "3.32",
+                    "suprise": 0.18,
+                    "formatted_suprise": "0.18"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBS_null_Q_3_2019",
+                    "actual": 3.15,
+                    "formatted_actual": "3.15",
+                    "estimate": 3.12,
+                    "formatted_estimate": "3.12",
+                    "suprise": 0.03,
+                    "formatted_suprise": "0.03"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBS_null_Q_4_2019",
+                    "actual": 4.16,
+                    "formatted_actual": "4.16",
+                    "estimate": 4.17,
+                    "formatted_estimate": "4.17",
+                    "suprise": -0.01,
+                    "formatted_suprise": "-0.01"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "EBS_null_Q_1_2019",
+                    "actual": 6.37,
+                    "formatted_actual": "6.37",
+                    "estimate": 6.365,
+                    "formatted_estimate": "6.37",
+                    "suprise": 0.0,
+                    "formatted_suprise": "0"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBS_null_Q_2_2020",
+                    "estimate": 4.19,
+                    "formatted_estimate": "4.19",
+                    "estimate_high": 4.19,
+                    "formatted_estimate_high": "4.19",
+                    "estimate_low": 4.19,
+                    "formatted_estimate_low": "4.19",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 4.19,
+                            "formatted_estimate": "4.19",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 4.295,
+                            "formatted_estimate": "4.29",
+                            "num_estimates": 2,
+                            "change_percent": -2.44
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "EBS_null_Q_3_2020",
+                    "estimate": 3.72,
+                    "formatted_estimate": "3.72",
+                    "estimate_high": 3.72,
+                    "formatted_estimate_high": "3.72",
+                    "estimate_low": 3.72,
+                    "formatted_estimate_low": "3.72",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 3.72,
+                            "formatted_estimate": "3.72",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 3.88,
+                            "formatted_estimate": "3.88",
+                            "num_estimates": 2,
+                            "change_percent": -4.12
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "EBS_null_Q_4_2020",
+                    "estimate": 4.75,
+                    "formatted_estimate": "4.75",
+                    "estimate_high": 4.75,
+                    "formatted_estimate_high": "4.75",
+                    "estimate_low": 4.75,
+                    "formatted_estimate_low": "4.75",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 4.75,
+                            "formatted_estimate": "4.75",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 5.065,
+                            "formatted_estimate": "5.07",
+                            "num_estimates": 2,
+                            "change_percent": -6.22
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "EBS_null_Q_1_2020",
+                    "estimate": 7.45,
+                    "formatted_estimate": "7.45",
+                    "estimate_high": 7.45,
+                    "formatted_estimate_high": "7.45",
+                    "estimate_low": 7.45,
+                    "formatted_estimate_low": "7.45",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 7.45,
+                            "formatted_estimate": "7.45",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 7.175,
+                            "formatted_estimate": "7.17",
+                            "num_estimates": 2,
+                            "change_percent": 3.83
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "EBS_null_Q_2_2021",
+                    "estimate": 4.84,
+                    "formatted_estimate": "4.84",
+                    "estimate_high": 4.84,
+                    "formatted_estimate_high": "4.84",
+                    "estimate_low": 4.84,
+                    "formatted_estimate_low": "4.84",
+                    "num_estimates": 1,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 4.84,
+                            "formatted_estimate": "4.84",
+                            "num_estimates": 1,
+                            "change_percent": 0.0
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 4.945,
+                            "formatted_estimate": "4.95",
+                            "num_estimates": 2,
+                            "change_percent": -2.12
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Revenue",
+            "search_id": "SAL_SREV",
+            "forecast_id": "SAL",
+            "value": "91.82B",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "SAL_SREV_Q_2_2018",
+                    "actual": 6.1137E10,
+                    "formatted_actual": "61.14B",
+                    "estimate": 6.0815316E10,
+                    "formatted_estimate": "60.82B",
+                    "suprise": 3.21684E8,
+                    "formatted_suprise": "321.68M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "SAL_SREV_Q_3_2018",
+                    "actual": 5.3265E10,
+                    "formatted_actual": "53.27B",
+                    "estimate": 5.2335595E10,
+                    "formatted_estimate": "52.34B",
+                    "suprise": 9.29405E8,
+                    "formatted_suprise": "929.4M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "SAL_SREV_Q_4_2018",
+                    "actual": 6.29E10,
+                    "formatted_actual": "62.9B",
+                    "estimate": 6.156988E10,
+                    "formatted_estimate": "61.57B",
+                    "suprise": 1.33012E9,
+                    "formatted_suprise": "1.33B"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "SAL_SREV_Q_1_2018",
+                    "actual": 8.431E10,
+                    "formatted_actual": "84.31B",
+                    "estimate": 8.3972059E10,
+                    "formatted_estimate": "83.97B",
+                    "suprise": 3.37941E8,
+                    "formatted_suprise": "337.94M"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "SAL_SREV_Q_2_2019",
+                    "actual": 5.8015E10,
+                    "formatted_actual": "58.02B",
+                    "estimate": 5.7372383E10,
+                    "formatted_estimate": "57.37B",
+                    "suprise": 6.42617E8,
+                    "formatted_suprise": "642.62M"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "SAL_SREV_Q_3_2019",
+                    "actual": 5.3809E10,
+                    "formatted_actual": "53.81B",
+                    "estimate": 5.3392132E10,
+                    "formatted_estimate": "53.39B",
+                    "suprise": 4.16868E8,
+                    "formatted_suprise": "416.87M"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "SAL_SREV_Q_4_2019",
+                    "actual": 6.404E10,
+                    "formatted_actual": "64.04B",
+                    "estimate": 6.2985162E10,
+                    "formatted_estimate": "62.99B",
+                    "suprise": 1.054838E9,
+                    "formatted_suprise": "1.05B"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "SAL_SREV_Q_1_2019",
+                    "actual": 9.1819E10,
+                    "formatted_actual": "91.82B",
+                    "estimate": 8.8496401E10,
+                    "formatted_estimate": "88.5B",
+                    "suprise": 3.322599E9,
+                    "formatted_suprise": "3.32B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "SAL_SREV_Q_2_2020",
+                    "estimate": 6.128713E10,
+                    "formatted_estimate": "61.29B",
+                    "estimate_high": 6.6545E10,
+                    "formatted_estimate_high": "66.55B",
+                    "estimate_low": 5.4873E10,
+                    "formatted_estimate_low": "54.87B",
+                    "num_estimates": 29,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 6.5341559E10,
+                            "formatted_estimate": "65.34B",
+                            "num_estimates": 29,
+                            "change_percent": -6.2
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 6.2269788E10,
+                            "formatted_estimate": "62.27B",
+                            "num_estimates": 31,
+                            "change_percent": -1.58
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "SAL_SREV_Q_3_2020",
+                    "estimate": 5.8800711E10,
+                    "formatted_estimate": "58.8B",
+                    "estimate_high": 6.404E10,
+                    "formatted_estimate_high": "64.04B",
+                    "estimate_low": 5.4061E10,
+                    "formatted_estimate_low": "54.06B",
+                    "num_estimates": 29,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 5.8906721E10,
+                            "formatted_estimate": "58.91B",
+                            "num_estimates": 29,
+                            "change_percent": -0.18
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 5.7544366E10,
+                            "formatted_estimate": "57.54B",
+                            "num_estimates": 30,
+                            "change_percent": 2.18
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "SAL_SREV_Q_4_2020",
+                    "estimate": 6.9596233E10,
+                    "formatted_estimate": "69.6B",
+                    "estimate_high": 7.5E10,
+                    "formatted_estimate_high": "75B",
+                    "estimate_low": 6.4723E10,
+                    "formatted_estimate_low": "64.72B",
+                    "num_estimates": 28,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 6.9023924E10,
+                            "formatted_estimate": "69.02B",
+                            "num_estimates": 29,
+                            "change_percent": 0.83
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 6.794856E10,
+                            "formatted_estimate": "67.95B",
+                            "num_estimates": 30,
+                            "change_percent": 2.42
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "SAL_SREV_Q_1_2020",
+                    "estimate": 1.01299148E11,
+                    "formatted_estimate": "101.3B",
+                    "estimate_high": 1.121732E11,
+                    "formatted_estimate_high": "112.17B",
+                    "estimate_low": 9.674871E10,
+                    "formatted_estimate_low": "96.75B",
+                    "num_estimates": 22,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 1.00426242E11,
+                            "formatted_estimate": "100.43B",
+                            "num_estimates": 23,
+                            "change_percent": 0.87
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 9.4752924E10,
+                            "formatted_estimate": "94.75B",
+                            "num_estimates": 20,
+                            "change_percent": 6.91
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "SAL_SREV_Q_2_2021",
+                    "estimate": 7.0373533E10,
+                    "formatted_estimate": "70.37B",
+                    "estimate_high": 7.5883E10,
+                    "formatted_estimate_high": "75.88B",
+                    "estimate_low": 6.3E10,
+                    "formatted_estimate_low": "63B",
+                    "num_estimates": 18,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": 7.097963E10,
+                            "formatted_estimate": "70.98B",
+                            "num_estimates": 19,
+                            "change_percent": -0.85
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": 6.6879107E10,
+                            "formatted_estimate": "66.88B",
+                            "num_estimates": 17,
+                            "change_percent": 5.22
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Net Debt",
+            "search_id": "NDT_NETDEBT",
+            "forecast_id": "NDT",
+            "value": "2.4B",
+            "source": {
+                "title": "Refinitiv I/B/E/S data",
+                "update_date": 1582761600000,
+                "smart_estimates_update_date": 1583366400000
+            },
+            "periods": [
+                {
+                    "title": "Q2",
+                    "search_id": "NDT_NETDEBT_Q_2_2018",
+                    "actual": -1.45386E11,
+                    "formatted_actual": "-145.39B",
+                    "estimate": -1.56971168E11,
+                    "formatted_estimate": "-156.97B",
+                    "suprise": 1.1585168E10,
+                    "formatted_suprise": "11.59B"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "NDT_NETDEBT_Q_3_2018",
+                    "actual": -1.29143E11,
+                    "formatted_actual": "-129.14B",
+                    "estimate": -1.46380043E11,
+                    "formatted_estimate": "-146.38B",
+                    "suprise": 1.7237043E10,
+                    "formatted_suprise": "17.24B"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "NDT_NETDEBT_Q_4_2018",
+                    "actual": 4.8182E10,
+                    "formatted_actual": "48.18B",
+                    "estimate": -1.29977596E11,
+                    "formatted_estimate": "-129.98B",
+                    "suprise": 1.78159596E11,
+                    "formatted_suprise": "178.16B"
+                },
+                {
+                    "title": "'18",
+                    "search_id": "NDT_NETDEBT_Q_1_2018",
+                    "actual": 2.8303E10,
+                    "formatted_actual": "28.3B",
+                    "estimate": -1.0783558E11,
+                    "formatted_estimate": "-107.84B",
+                    "suprise": 1.3613858E11,
+                    "formatted_suprise": "136.14B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "NDT_NETDEBT_Q_2_2019",
+                    "actual": 3.2538E10,
+                    "formatted_actual": "32.54B",
+                    "estimate": -1.1713908E11,
+                    "formatted_estimate": "-117.14B",
+                    "suprise": 1.4967708E11,
+                    "formatted_suprise": "149.68B"
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "NDT_NETDEBT_Q_3_2019",
+                    "actual": 1.3804E10,
+                    "formatted_actual": "13.8B",
+                    "estimate": -8.6035836E10,
+                    "formatted_estimate": "-86.04B",
+                    "suprise": 9.9839836E10,
+                    "formatted_suprise": "99.84B"
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "NDT_NETDEBT_Q_4_2019",
+                    "actual": 7.49E9,
+                    "formatted_actual": "7.49B",
+                    "estimate": -1.02622102E11,
+                    "formatted_estimate": "-102.62B",
+                    "suprise": 1.10112102E11,
+                    "formatted_suprise": "110.11B"
+                },
+                {
+                    "title": "'19",
+                    "search_id": "NDT_NETDEBT_Q_1_2019",
+                    "actual": 2.4E9,
+                    "formatted_actual": "2.4B",
+                    "estimate": -1.08344757E11,
+                    "formatted_estimate": "-108.34B",
+                    "suprise": 1.10744757E11,
+                    "formatted_suprise": "110.74B"
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "NDT_NETDEBT_Q_2_2020",
+                    "estimate": -9.1573588E10,
+                    "formatted_estimate": "-91.57B",
+                    "estimate_high": -8.428994E10,
+                    "formatted_estimate_high": "-84.29B",
+                    "estimate_low": -1.01339E11,
+                    "formatted_estimate_low": "-101.34B",
+                    "num_estimates": 5,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": -9.642351E10,
+                            "formatted_estimate": "-96.42B",
+                            "num_estimates": 7,
+                            "change_percent": 5.03
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": -9.7484903E10,
+                            "formatted_estimate": "-97.48B",
+                            "num_estimates": 7,
+                            "change_percent": 6.06
+                        }
+                    ]
+                },
+                {
+                    "title": "Q3",
+                    "search_id": "NDT_NETDEBT_Q_3_2020",
+                    "estimate": -8.0417146E10,
+                    "formatted_estimate": "-80.42B",
+                    "estimate_high": -7.144873E10,
+                    "formatted_estimate_high": "-71.45B",
+                    "estimate_low": -8.7466E10,
+                    "formatted_estimate_low": "-87.47B",
+                    "num_estimates": 5,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": -8.7581836E10,
+                            "formatted_estimate": "-87.58B",
+                            "num_estimates": 7,
+                            "change_percent": 8.18
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": -8.9233234E10,
+                            "formatted_estimate": "-89.23B",
+                            "num_estimates": 7,
+                            "change_percent": 9.88
+                        }
+                    ]
+                },
+                {
+                    "title": "Q4",
+                    "search_id": "NDT_NETDEBT_Q_4_2020",
+                    "estimate": -7.3214848E10,
+                    "formatted_estimate": "-73.21B",
+                    "estimate_high": -4.301124E10,
+                    "formatted_estimate_high": "-43.01B",
+                    "estimate_low": -8.9055E10,
+                    "formatted_estimate_low": "-89.06B",
+                    "num_estimates": 5,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": -8.309696E10,
+                            "formatted_estimate": "-83.1B",
+                            "num_estimates": 7,
+                            "change_percent": 11.89
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": -8.5729401E10,
+                            "formatted_estimate": "-85.73B",
+                            "num_estimates": 7,
+                            "change_percent": 14.6
+                        }
+                    ]
+                },
+                {
+                    "title": "'20",
+                    "search_id": "NDT_NETDEBT_Q_1_2020",
+                    "estimate": -8.4894765E10,
+                    "formatted_estimate": "-84.89B",
+                    "estimate_high": -6.878706E10,
+                    "formatted_estimate_high": "-68.79B",
+                    "estimate_low": -9.4431E10,
+                    "formatted_estimate_low": "-94.43B",
+                    "num_estimates": 4,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": -9.6821594E10,
+                            "formatted_estimate": "-96.82B",
+                            "num_estimates": 7,
+                            "change_percent": 12.32
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": -9.7689423E10,
+                            "formatted_estimate": "-97.69B",
+                            "num_estimates": 7,
+                            "change_percent": 13.1
+                        }
+                    ]
+                },
+                {
+                    "title": "Q2",
+                    "search_id": "NDT_NETDEBT_Q_2_2021",
+                    "estimate": -7.347795E10,
+                    "formatted_estimate": "-73.48B",
+                    "estimate_high": -6.61028E10,
+                    "formatted_estimate_high": "-66.1B",
+                    "estimate_low": -7.8332E10,
+                    "formatted_estimate_low": "-78.33B",
+                    "num_estimates": 4,
+                    "history": [
+                        {
+                            "title": "4W Ago",
+                            "estimate": -9.1356809E10,
+                            "formatted_estimate": "-91.36B",
+                            "num_estimates": 7,
+                            "change_percent": 19.57
+                        },
+                        {
+                            "title": "3M Ago",
+                            "estimate": -8.8899533E10,
+                            "formatted_estimate": "-88.9B",
+                            "num_estimates": 7,
+                            "change_percent": 17.35
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
