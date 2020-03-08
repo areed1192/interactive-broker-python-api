@@ -38,24 +38,26 @@ class IBClient():
         self.IB_GATEWAY_PATH = IB_GATEWAY_HOST + ":" + IB_GATEWAY_PORT
         self.BACKUP_GATEWAY_PATH = r"https://cdcdyn.interactivebrokers.com/portal.proxy"
 
-    def _check_server_update(self):
+    def _set_server(self):
+        '''
+            Sets the Server for the session, and if the server cannot be set then
+            script will halt. Otherwise will return True to continue on in the script.
+
+            RTYPE: Boolean
+        '''
 
         server_update_content = self.update_server_account(account_id = self.ACCOUNT, check = False)
+        success = '\nNew session has been created and authenticated. Requests will not be limited.\n'.upper()
+        failure = '\nCould not create a new session that was authenticated, exiting script.\n'.upper()
 
         if 'set' in server_update_content.keys() and server_update_content['set'] == True:
-            print('')
-            print('New session has been created and authenticated. Requests will not be limited.'.upper())
-            print('')
+            print(success)
             return True
         elif ('message' in server_update_content.keys()) and (server_update_content['message'] == 'Account already set'):
-            print('')
-            print('New session has been created and authenticated. Requests will not be limited.'.upper())
-            print('')
+            print(success)
             return True      
         else:
-            print('')
-            print('Could not create a new session that was authenticated, exiting script.'.upper())
-            print('')
+            print(failure)
             sys.exit()
 
     def create_session(self):
@@ -68,18 +70,17 @@ class IBClient():
         if self.server_process == None and self.connect():
             
             # then make sture the server is updated.
-            if self._check_server_update():
+            if self._set_server():
                 return True
 
         # more than likely it's running let's try and see if we can authenticate.
         auth_response = self.is_authenticated()
-        print(auth_response)
 
         if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
             
             self.authenticated == True
 
-            if self._check_server_update():
+            if self._set_server():
                 return True
 
         else:
@@ -87,7 +88,7 @@ class IBClient():
             # in this case don't connect, but prompt the user to log in again.
             self.connect(start_server=False)
 
-            if self._check_server_update():
+            if self._set_server():
                 return True
 
     def _server_state(self, action = 'save'):
@@ -126,7 +127,6 @@ class IBClient():
                 for process in os.popen('tasklist').read().splitlines()[4:]:
                     if str(proc_id) in process:
                         process_details = process.split()
-                        print(process_details)   
                         return proc_id
             else:      
                 try:
@@ -290,7 +290,7 @@ class IBClient():
         elif req_type == 'GET' and params is not None:
 
             # grab the response.
-            response = requests.get(url, headers = headers, verify = False, params = params)
+            response = requests.get(url, headers = self._headers(mode = 'json'), verify = False, params = params)
 
         # grab the status code
         if response.status_code != 200:
@@ -410,10 +410,19 @@ class IBClient():
 
 
     '''
-        MARKET DATA ENDPOINTS
+        FUNDAMENTAL DATA ENDPOINTS
     '''
 
-    def fundamentals_summary(self, conid = None):      
+    def fundamentals_summary(self, conid = None):
+        '''
+            Return a financial summary for specific Contract ID. The financial summary
+            includes key ratios and descriptive components of the Contract ID.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
 
         # define request components
         endpoint = 'iserver/fundamentals/{}/summary'.format(conid)
@@ -422,6 +431,249 @@ class IBClient():
 
         return content
 
+    def fundamentals_financials(self, conid = None, financial_statement = None, period = None):
+        '''
+            Return a financial summary for specific Contract ID. The financial summary
+            includes key ratios and descriptive components of the Contract ID.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+            NAME: financial_statement
+            DESC: The specific financial statement you wish to request for the Contract ID. Possible
+                  values are ['balance','cash','income']
+            TYPE: String
+
+            NAME: period
+            DESC: The specific period you wish to see. Possible values are ['annual','quarter']
+            TYPE: String
+
+            RTYPE: Dictionary
+        '''
+
+        # define the period
+        if period == 'annual':
+            period = True
+        else:
+            period = False
+
+        # Build the arguments.
+        params = {
+            'type':financial_statement,
+            'annual':period
+        }
+
+        # define request components
+        endpoint = 'fundamentals/financials/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
+
+    def fundamentals_key_ratios(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'key_ratios'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
+
+    def fundamentals_dividends(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'dividends'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
+
+    def fundamentals_esg(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'esg'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
+
+    '''
+        DATA ENDPOINTS
+    '''
+
+    def data_news(self, conid = None):
+        '''
+            Return a financial summary for specific Contract ID. The financial summary
+            includes key ratios and descriptive components of the Contract ID.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'news',
+            'lang':'en'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content      
+
+    def data_ratings(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'ratings'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content   
+
+    def data_events(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'ratings'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content   
+
+    def data_ownership(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'ownership'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
+
+    def data_competitors(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'competitors'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
+
+    def data_analyst_forecast(self, conid = None):
+        '''
+            Returns analyst ratings for a specific conid.
+        
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+
+        '''
+
+        # Build the arguments.
+        params = {
+            'widgets':'analyst_forecast'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+
+        return content
 
     def market_data(self, conids = None, since = None, fields = None):
         '''
@@ -472,7 +724,6 @@ class IBClient():
 
         return content
 
-
     def market_data_history(self, conid = None, period = None, bar = None):
         '''
             Get history of market Data for the given conid, length of data is controlled by period and 
@@ -501,7 +752,7 @@ class IBClient():
         params = {'conid':conid, 'period':period, 'bar':bar}
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
 
-        return content
+        return content    
 
 
     '''
@@ -522,7 +773,7 @@ class IBClient():
         # define request components
         endpoint = 'iserver/accounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
 
         return content
 
@@ -555,7 +806,7 @@ class IBClient():
         return content
 
 
-    def server_accountPNL(self):
+    def server_account_pnl(self):
         '''
             Returns an object containing PnLfor the selected account and its models 
             (if any).
