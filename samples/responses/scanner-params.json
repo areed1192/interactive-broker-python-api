@@ -1,17 +1,3186 @@
-{"scan_type_list":
-    [
-    {"display_name":"Top % Gainers",
-    "code":"TOP_PERC_GAIN",
-    "instruments":
-    [
-        "STK","FUT.US","IND.US","SSF.US","STOCK.NA","STOCK.EU","FUT.EU","IND.EU","SSF.EU","STOCK.HK","FUT.HK","SSF.HK"
+{
+    "scan_type_list": [
+    {
+    "display_name": "Top % Gainers",
+    "code": "TOP_PERC_GAIN",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "IND.US",
+    "SSF.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "IND.EU",
+    "SSF.EU",
+    "STOCK.HK",
+    "FUT.HK",
+    "SSF.HK"
     ]
-},
-    {"display_name":"Top % Losers",
-        "code":"TOP_PERC_LOSE","instruments":
-        ["STK","FUT.US","IND.US","SSF.US","STOCK.NA","STOCK.EU","FUT.EU","IND.EU","SSF.EU","STOCK.HK","FUT.HK","SSF.HK"]
     },
-    {"display_name":"Most Active",
-        "code":"MOST_ACTIVE","instruments":["STK","FUT.US","SSF.US","STOCK.NA","STOCK.EU","FUT.EU","SSF.EU","STOCK.HK","FUT.HK","SSF.HK"]},
-    {"display_name":"Not Yet Traded Today",
-        "code":"NOT_YET_TRADED_TODAY","instruments":["STK","FUT.US","STOCK.NA","STOCK.EU","FUT.EU","STOCK.HK","FUT.HK"]},{"display_name":"Most Active ($)","code":"MOST_ACTIVE_USD","instruments":["STK","FUT.US","SSF.US","STOCK.NA","STOCK.EU","FUT.EU","SSF.EU","STOCK.HK","FUT.HK","SSF.HK"]},{"display_name":"Most Active (Avg $)","code":"MOST_ACTIVE_AVG_USD","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"Halted","code":"HALTED","instruments":["STK","FUT.US","SSF.US","STOCK.NA","STOCK.EU","FUT.EU","SSF.EU","STOCK.HK","FUT.HK","SSF.HK"]},{"display_name":"Closest to Limit Up/Down","code":"LIMIT_UP_DOWN","instruments":["STK","FUT.US"]},{"display_name":"Hot Contracts by Price","code":"HOT_BY_PRICE","instruments":["STK","FUT.US","SSF.US","STOCK.NA","STOCK.EU","FUT.EU","SSF.EU","STOCK.HK","FUT.HK","SSF.HK"]},{"display_name":"Hot Contracts by Volume","code":"HOT_BY_VOLUME","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"High Dividend Yield","code":"HIGH_DIVIDEND_YIELD_IB","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"Top Price Range","code":"TOP_PRICE_RANGE","instruments":["STK","FUT.US"]},{"display_name":"Hot By Price Range","code":"HOT_BY_PRICE_RANGE","instruments":["STK","FUT.US","STOCK.NA","STOCK.EU","FUT.EU","STOCK.HK","FUT.HK"]},{"display_name":"Top Volume Rate","code":"TOP_VOLUME_RATE","instruments":["STK","FUT.US","STOCK.NA","STOCK.EU","FUT.EU","STOCK.HK","FUT.HK"]},{"display_name":"Highest Option Imp Vol","code":"HIGH_OPT_IMP_VOLAT","instruments":["STK","IND.US","STOCK.NA","STOCK.EU","IND.EU","STOCK.HK"]},{"display_name":"Lowest Option Imp Vol","code":"LOW_OPT_IMP_VOLAT","instruments":["STK","IND.US","STOCK.NA","STOCK.EU","IND.EU","STOCK.HK"]},{"display_name":"Top Option Imp Vol % Gainers","code":"TOP_OPT_IMP_VOLAT_GAIN","instruments":["STK","IND.US","STOCK.NA","STOCK.EU","IND.EU","STOCK.HK"]},{"display_name":"Top Option Imp Vol % Losers","code":"TOP_OPT_IMP_VOLAT_LOSE","instruments":["STK","IND.US","STOCK.NA","STOCK.EU","IND.EU","STOCK.HK"]},{"display_name":"High Option Imp Vol Over Historical","code":"HIGH_OPT_IMP_VOLAT_OVER_HIST","instruments":["STK","IND.US","STOCK.NA","STOCK.EU","IND.EU","STOCK.HK"]},{"display_name":"Low Option Imp Vol Over Historical","code":"LOW_OPT_IMP_VOLAT_OVER_HIST","instruments":["STK","IND.US","STOCK.NA","STOCK.EU","IND.EU","STOCK.HK"]},{"display_name":"Most Active By Opt Volume","code":"OPT_VOLUME_MOST_ACTIVE","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"Most Active By Opt Open Interest","code":"OPT_OPEN_INTEREST_MOST_ACTIVE","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"High Opt Volume P/C Ratio","code":"HIGH_OPT_VOLUME_PUT_CALL_RATIO","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"Low Opt Volume P/C Ratio","code":"LOW_OPT_VOLUME_PUT_CALL_RATIO","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"High Opt Open Interest P/C Ratio","code":"HIGH_OPT_OPEN_INTEREST_PUT_CALL_RATIO","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"Low Opt Open Interest P/C Ratio","code":"LOW_OPT_OPEN_INTEREST_PUT_CALL_RATIO","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"Hot By Opt Volume","code":"HOT_BY_OPT_VOLUME","instruments":["STK","IND.US","STOCK.HK"]},{"display_name":"13-Week High","code":"HIGH_VS_13W_HL","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"13-Week Low","code":"LOW_VS_13W_HL","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"26-Week High","code":"HIGH_VS_26W_HL","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"26-Week Low","code":"LOW_VS_26W_HL","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"52-Week High","code":"HIGH_VS_52W_HL","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"52-Week Low","code":"LOW_VS_52W_HL","instruments":["STK","STOCK.NA","STOCK.EU","STOCK.HK"]},{"display_name":"Trades","code":"COMBO_LATEST_TRADE","instruments":["NATCOMB"]},{"display_name":"Quotes","code":"COMBO_QUOTES","instruments":["NATCOMB"]},{"display_name":"Volume","code":"COMBO_MOST_ACTIVE","instruments":["NATCOMB"]},{"display_name":"All (Trade Time Asc)","code":"COMBO_ALL_TRADE_TIME_ASC","instruments":["NATCOMB"]},{"display_name":"All (Trade Time Desc)","code":"COMBO_ALL_TRADE_TIME_DESC","instruments":["NATCOMB"]},{"display_name":"All (Quote Time Asc)","code":"COMBO_ALL_QUOTE_TIME_ASC","instruments":["NATCOMB"]},{"display_name":"All (Quote Time Desc)","code":"COMBO_ALL_QUOTE_TIME_DESC","instruments":["NATCOMB"]},{"display_name":"All (Time Asc)","code":"COMBO_ALL_TRADE_QUOTE_TIME_ASC","instruments":["NATCOMB"]},{"display_name":"All (Time Desc)","code":"COMBO_ALL_TRADE_QUOTE_TIME_DESC","instruments":["NATCOMB"]},{"display_name":"All (Volume Asc)","code":"COMBO_ALL_VOLUME_ASC","instruments":["NATCOMB"]},{"display_name":"All (Volume Desc)","code":"COMBO_ALL_VOLUME_DESC","instruments":["NATCOMB"]}],"instrument_list":[{"display_name":"US Stocks","type":"STK","filters":["afterHoursChangePerc","avgOptVolume","avgPriceTarget","avgRating","avgAnalystTarget2PriceRatio","avgVolume","avgUsdVolume","changeOpenPerc","changePerc","curEMA20","curEMA50","curEMA100","curEMA200","lastVsEMAChangeRatio20","lastVsEMAChangeRatio50","lastVsEMAChangeRatio100","lastVsEMAChangeRatio200","dividendFrd","dividendYieldFrd","feeRate","firstTradeDate","minGrowthRate","maxGrowthRate","haltedIs","hasOptionsIs","histDividendFrd","histDividendFrdYield","imbalance","displayImbalanceAdvRatio","impVolat","impVolatOverHist","ihInsiderOfFloatPerc","iiInstitutionalOfFloatPerc","curMACD","curMACDSignal","curMACDDist","marketCap","dividendNextAmount","dividendNextDate","numPriceTargets","numRatings","ihNumSharesInsider","iiNumSharesInstitutional","openGapPerc","optVolume","optVolumePCRatio","minPeRatio","maxPeRatio","curPPO","curPPOSignal","curPPODist","price","minPrice2Bk","maxPrice2Bk","minPrice2TanBk","maxPrice2TanBk","priceRange","usdPrice","minQuickRatio","maxQuickRatio","rebateRate","regulatoryImbalance","displayRegulatoryImbAdvRatio","minRetnOnEq","maxRetnOnEq","sharesAvailableMany","shortSaleRestrictionIs","issuerCountryIs","socialSentimentActivity","socialSentimentNet","stkTypes","stVolume3min","stVolume5min","stVolume10min","tradeCount","tradeRate","unshortableIs","volume","volumeRate","usdVolume","esgScore","esgCombinedScore","esgControversiesScore","esgResourceUseScore","esgEmissionsScore","esgEnvInvScore","esgWorkforceScore","esgHrScore","esgCommunityScore","esgProdRespScore","esgManagementScore","esgShareholdersScore","esgStrategyScore","esgEnvPillarScore","esgSocialPillarScore","esgCorpGovPillarScore","ivRank13w","ivRank26w","ivRank52w","ivPercntl13w","ivPercntl26w","ivPercntl52w","hvRank13w","HVRank26w","HVRank52w","HVPercntl13w","HVPercntl26w","HVPercntl52w","utilization"]},{"display_name":"US Futures","type":"FUT.US","filters":["price","usdPrice","volume","usdVolume","prodCatIs","leadFutOnly","changePerc","changeOpenPerc","openGapPerc","priceRange","tradeCount","tradeRate","stVolume3min","stVolume5min","stVolume10min"]},{"display_name":"US Indexes","type":"IND.US","filters":["price","usdPrice","optVolume","avgOptVolume","optVolumePCRatio","impVolat","impVolatOverHist","changePerc"]},{"display_name":"US SSFs","type":"SSF.US","filters":["price","usdPrice","volume","usdVolume","prodCatIs","leadFutOnly","changePerc","tradeCount","tradeRate","stVolume3min","stVolume5min","stVolume10min"]},{"display_name":"America Non-US Stocks","type":"STOCK.NA","filters":["avgRating","avgVolume","avgUsdVolume","changeOpenPerc","changePerc","dividendFrd","dividendYieldFrd","feeRate","firstTradeDate","minGrowthRate","maxGrowthRate","haltedIs","hasOptionsIs","histDividendFrd","histDividendFrdYield","imbalance","displayImbalanceAdvRatio","impVolat","impVolatOverHist","ihInsiderOfFloatPerc","iiInstitutionalOfFloatPerc","dividendNextAmount","dividendNextDate","numPriceTargets","numRatings","ihNumSharesInsider","iiNumSharesInstitutional","openGapPerc","usdPrice","rebateRate","regulatoryImbalance","displayRegulatoryImbAdvRatio","sharesAvailableMany","shortSaleRestrictionIs","issuerCountryIs","stkTypes","stVolume3min","stVolume5min","stVolume10min","tradeCount","tradeRate","unshortableIs","volume","volumeRate","usdVolume","esgScore","esgCombinedScore","esgControversiesScore","esgResourceUseScore","esgEmissionsScore","esgEnvInvScore","esgWorkforceScore","esgHrScore","esgCommunityScore","esgProdRespScore","esgManagementScore","esgShareholdersScore","esgStrategyScore","esgEnvPillarScore","esgSocialPillarScore","esgCorpGovPillarScore","ivRank13w","ivRank26w","ivRank52w","ivPercntl13w","ivPercntl26w","ivPercntl52w","hvRank13w","HVRank26w","HVRank52w","HVPercntl13w","HVPercntl26w","HVPercntl52w","utilization"]},{"display_name":"Europe Stocks","type":"STOCK.EU","filters":["avgRating","avgVolume","avgUsdVolume","changeOpenPerc","changePerc","dividendFrd","dividendYieldFrd","feeRate","firstTradeDate","minGrowthRate","maxGrowthRate","haltedIs","hasOptionsIs","histDividendFrd","histDividendFrdYield","imbalance","displayImbalanceAdvRatio","impVolat","impVolatOverHist","ihInsiderOfFloatPerc","iiInstitutionalOfFloatPerc","dividendNextAmount","dividendNextDate","numPriceTargets","numRatings","ihNumSharesInsider","iiNumSharesInstitutional","openGapPerc","usdPrice","rebateRate","regulatoryImbalance","displayRegulatoryImbAdvRatio","sharesAvailableMany","shortSaleRestrictionIs","issuerCountryIs","stkTypes","stVolume3min","stVolume5min","stVolume10min","tradeCount","tradeRate","unshortableIs","volume","volumeRate","usdVolume","esgScore","esgCombinedScore","esgControversiesScore","esgResourceUseScore","esgEmissionsScore","esgEnvInvScore","esgWorkforceScore","esgHrScore","esgCommunityScore","esgProdRespScore","esgManagementScore","esgShareholdersScore","esgStrategyScore","esgEnvPillarScore","esgSocialPillarScore","esgCorpGovPillarScore","ivRank13w","ivRank26w","ivRank52w","ivPercntl13w","ivPercntl26w","ivPercntl52w","hvRank13w","HVRank26w","HVRank52w","HVPercntl13w","HVPercntl26w","HVPercntl52w","utilization"]},{"display_name":"Europe Futures","type":"FUT.EU","filters":["usdPrice","volume","usdVolume","prodCatIs","leadFutOnly","changePerc","changeOpenPerc","openGapPerc","tradeCount","tradeRate","stVolume3min","stVolume5min","stVolume10min"]},{"display_name":"Europe Indexes","type":"IND.EU","filters":["usdPrice","impVolat","impVolatOverHist","changePerc"]},{"display_name":"Europe SSFs","type":"SSF.EU","filters":["usdPrice","volume","usdVolume","prodCatIs","leadFutOnly","changePerc","tradeCount","tradeRate","stVolume3min","stVolume5min","stVolume10min"]},{"display_name":"Asia Stocks","type":"STOCK.HK","filters":["avgRating","avgVolume","avgUsdVolume","changeOpenPerc","changePerc","dividendFrd","dividendYieldFrd","feeRate","firstTradeDate","minGrowthRate","maxGrowthRate","haltedIs","hasOptionsIs","histDividendFrd","histDividendFrdYield","imbalance","displayImbalanceAdvRatio","impVolat","impVolatOverHist","ihInsiderOfFloatPerc","iiInstitutionalOfFloatPerc","dividendNextAmount","dividendNextDate","numPriceTargets","numRatings","ihNumSharesInsider","iiNumSharesInstitutional","openGapPerc","usdPrice","rebateRate","regulatoryImbalance","displayRegulatoryImbAdvRatio","sharesAvailableMany","shortSaleRestrictionIs","issuerCountryIs","stkTypes","stVolume3min","stVolume5min","stVolume10min","tradeCount","tradeRate","unshortableIs","volume","volumeRate","usdVolume","esgScore","esgCombinedScore","esgControversiesScore","esgResourceUseScore","esgEmissionsScore","esgEnvInvScore","esgWorkforceScore","esgHrScore","esgCommunityScore","esgProdRespScore","esgManagementScore","esgShareholdersScore","esgStrategyScore","esgEnvPillarScore","esgSocialPillarScore","esgCorpGovPillarScore","ivRank13w","ivRank26w","ivRank52w","ivPercntl13w","ivPercntl26w","ivPercntl52w","hvRank13w","HVRank26w","HVRank52w","HVPercntl13w","HVPercntl26w","HVPercntl52w","utilization"]},{"display_name":"Asia Futures","type":"FUT.HK","filters":["usdPrice","volume","usdVolume","prodCatIs","leadFutOnly","changePerc","changeOpenPerc","openGapPerc","tradeCount","tradeRate","stVolume3min","stVolume5min","stVolume10min"]},{"display_name":"Asia SSFs","type":"SSF.HK","filters":["usdPrice","volume","usdVolume","prodCatIs","leadFutOnly","changePerc","tradeCount","tradeRate","stVolume3min","stVolume5min","stVolume10min"]},{"display_name":"Native Combos","type":"NATCOMB","filters":["underConID"]}],"filter_list":[{"group":"afterHoursChangePercAbove","display_name":"After-Hours Change (%) Above","code":"afterHoursChangePercAbove","type":"non-range"},{"group":"afterHoursChangePercBelow","display_name":"After-Hours Change (%) Below","code":"afterHoursChangePercBelow","type":"non-range"},{"group":"avgOptVolumeAbove","display_name":"Average Opt. Volume Above","code":"avgOptVolumeAbove","type":"non-range"},{"group":"avgPriceTargetAbove","display_name":"Avg Analyst Price Target Above","code":"avgPriceTargetAbove","type":"non-range"},{"group":"avgPriceTargetBelow","display_name":"Avg Analyst Price Target Below","code":"avgPriceTargetBelow","type":"non-range"},{"group":"avgRatingAbove","display_name":"Avg Analyst Rating Above","code":"avgRatingAbove","type":"non-range"},{"group":"avgRatingBelow","display_name":"Avg Analyst Rating Below","code":"avgRatingBelow","type":"non-range"},{"group":"avgAnalystTarget2PriceRatioAbove","display_name":"Avg Analyst Target/Price Ratio Above","code":"avgAnalystTarget2PriceRatioAbove","type":"non-range"},{"group":"avgAnalystTarget2PriceRatioBelow","display_name":"Avg Analyst Target/Price Ratio Below","code":"avgAnalystTarget2PriceRatioBelow","type":"non-range"},{"group":"avgVolumeAbove","display_name":"Avg Volume Above","code":"avgVolumeAbove","type":"non-range"},{"group":"avgVolumeBelow","display_name":"Avg Volume Below","code":"avgVolumeBelow","type":"non-range"},{"group":"avgUsdVolumeAbove","display_name":"Avg Volume ($) Above","code":"avgUsdVolumeAbove","type":"non-range"},{"group":"avgUsdVolumeBelow","display_name":"Avg Volume ($) Below","code":"avgUsdVolumeBelow","type":"non-range"},{"group":"changeOpenPercAbove","display_name":"Change Since Open (%) Above","code":"changeOpenPercAbove","type":"non-range"},{"group":"changeOpenPercBelow","display_name":"Change Since Open (%) Below","code":"changeOpenPercBelow","type":"non-range"},{"group":"changePercAbove","display_name":"Change (%) Above","code":"changePercAbove","type":"non-range"},{"group":"changePercBelow","display_name":"Change (%) Below","code":"changePercBelow","type":"non-range"},{"group":"curEMA20Above","display_name":"EMA(20) Above","code":"curEMA20Above","type":"non-range"},{"group":"curEMA20Below","display_name":"EMA(20) Below","code":"curEMA20Below","type":"non-range"},{"group":"curEMA50Above","display_name":"EMA(50) Above","code":"curEMA50Above","type":"non-range"},{"group":"curEMA50Below","display_name":"EMA(50) Below","code":"curEMA50Below","type":"non-range"},{"group":"curEMA100Above","display_name":"EMA(100) Above","code":"curEMA100Above","type":"non-range"},{"group":"curEMA100Below","display_name":"EMA(100) Below","code":"curEMA100Below","type":"non-range"},{"group":"curEMA200Above","display_name":"EMA(200) Above","code":"curEMA200Above","type":"non-range"},{"group":"curEMA200Below","display_name":"EMA(200) Below","code":"curEMA200Below","type":"non-range"},{"group":"lastVsEMAChangeRatio20Above","display_name":"Price vs EMA(20) Change(%) Above","code":"lastVsEMAChangeRatio20Above","type":"non-range"},{"group":"lastVsEMAChangeRatio20Below","display_name":"Price vs EMA(20) Change(%) Below","code":"lastVsEMAChangeRatio20Below","type":"non-range"},{"group":"lastVsEMAChangeRatio50Above","display_name":"Price vs EMA(50) Change(%) Above","code":"lastVsEMAChangeRatio50Above","type":"non-range"},{"group":"lastVsEMAChangeRatio50Below","display_name":"Price vs EMA(50) Change(%) Below","code":"lastVsEMAChangeRatio50Below","type":"non-range"},{"group":"lastVsEMAChangeRatio100Above","display_name":"Price vs EMA(100) Change(%) Above","code":"lastVsEMAChangeRatio100Above","type":"non-range"},{"group":"lastVsEMAChangeRatio100Below","display_name":"Price vs EMA(100) Change(%) Below","code":"lastVsEMAChangeRatio100Below","type":"non-range"},{"group":"lastVsEMAChangeRatio200Above","display_name":"Price vs EMA(200) Change(%) Above","code":"lastVsEMAChangeRatio200Above","type":"non-range"},{"group":"lastVsEMAChangeRatio200Below","display_name":"Price vs EMA(200) Change(%) Below","code":"lastVsEMAChangeRatio200Below","type":"non-range"},{"group":"dividendFrdAbove","display_name":"Dividends Above (%)","code":"dividendFrdAbove","type":"non-range"},{"group":"dividendFrdBelow","display_name":"Dividends Below (%)","code":"dividendFrdBelow","type":"non-range"},{"group":"dividendYieldFrdAbove","display_name":"Dividend Yield Above (%)","code":"dividendYieldFrdAbove","type":"non-range"},{"group":"dividendYieldFrdBelow","display_name":"Dividend Yield Below (%)","code":"dividendYieldFrdBelow","type":"non-range"},{"group":"feeRateAbove","display_name":"Fee Rate Above","code":"feeRateAbove","type":"non-range"},{"group":"feeRateBelow","display_name":"Fee Rate Below","code":"feeRateBelow","type":"non-range"},{"group":"firstTradeDateAbove","display_name":"First Trade Date Above","code":"firstTradeDateAbove","type":"non-range"},{"group":"firstTradeDateBelow","display_name":"First Trade Date Below","code":"firstTradeDateBelow","type":"non-range"},{"group":"minGrowthRate","display_name":"Growth Rate Above (Refinitiv)","code":"minGrowthRate","type":"non-range"},{"group":"maxGrowthRate","display_name":"Growth Rate Below (Refinitiv)","code":"maxGrowthRate","type":"non-range"},{"group":"haltedIs","display_name":"Halted","code":"haltedIs","combo_values":[{"default":true},{"default":false},{"default":false}],"type":"combo"},{"group":"hasOptionsIs","display_name":"Has Options","code":"hasOptionsIs","combo_values":[{"default":false},{"default":true}],"type":"combo"},{"group":"histDividendFrdAbove","display_name":"Dividends TTM Above (%)","code":"histDividendFrdAbove","type":"non-range"},{"group":"histDividendFrdBelow","display_name":"Dividends TTM Below (%)","code":"histDividendFrdBelow","type":"non-range"},{"group":"histDividendFrdYieldAbove","display_name":"Dividend Yield TTM Above (%)","code":"histDividendFrdYieldAbove","type":"non-range"},{"group":"histDividendFrdYieldBelow","display_name":"Dividend Yield TTM Below (%)","code":"histDividendFrdYieldBelow","type":"non-range"},{"group":"imbalanceAbove","display_name":"Imbalance Above","code":"imbalanceAbove","type":"non-range"},{"group":"imbalanceBelow","display_name":"Imbalance Below","code":"imbalanceBelow","type":"non-range"},{"group":"displayImbalanceAdvRatioAbove","display_name":"Imbalance Adv Ratio (%) Above","code":"displayImbalanceAdvRatioAbove","type":"non-range"},{"group":"displayImbalanceAdvRatioBelow","display_name":"Imbalance Adv Ratio (%) Below","code":"displayImbalanceAdvRatioBelow","type":"non-range"},{"group":"impVolatAbove","display_name":"Opt Imp Vol Above","code":"impVolatAbove","type":"non-range"},{"group":"impVolatBelow","display_name":"Opt Imp Vol Below","code":"impVolatBelow","type":"non-range"},{"group":"impVolatOverHistAbove","display_name":"Opt Imp Vol Over Hist Above","code":"impVolatOverHistAbove","type":"non-range"},{"group":"impVolatOverHistBelow","display_name":"Opt Imp Vol Over Hist Below","code":"impVolatOverHistBelow","type":"non-range"},{"group":"ihInsiderOfFloatPercAbove","display_name":"Insider Shares as % of Float Above","code":"ihInsiderOfFloatPercAbove","type":"non-range"},{"group":"ihInsiderOfFloatPercBelow","display_name":"Insider Shares as % of Float Below","code":"ihInsiderOfFloatPercBelow","type":"non-range"},{"group":"iiInstitutionalOfFloatPercAbove","display_name":"Institutional Shares as % of Float Above","code":"iiInstitutionalOfFloatPercAbove","type":"non-range"},{"group":"iiInstitutionalOfFloatPercBelow","display_name":"Institutional Shares as % of Float Below","code":"iiInstitutionalOfFloatPercBelow","type":"non-range"},{"group":"curMACDAbove","display_name":"MACD Above","code":"curMACDAbove","type":"non-range"},{"group":"curMACDBelow","display_name":"MACD Below","code":"curMACDBelow","type":"non-range"},{"group":"curMACDSignalAbove","display_name":"MACD Signal Above","code":"curMACDSignalAbove","type":"non-range"},{"group":"curMACDSignalBelow","display_name":"MACD Signal Below","code":"curMACDSignalBelow","type":"non-range"},{"group":"curMACDDistAbove","display_name":"MACD Histogram Above","code":"curMACDDistAbove","type":"non-range"},{"group":"curMACDDistBelow","display_name":"MACD Histogram Below","code":"curMACDDistBelow","type":"non-range"},{"group":"marketCapAbove1e6","display_name":"Capitalization Above","code":"marketCapAbove1e6","type":"non-range"},{"group":"marketCapBelow1e6","display_name":"Capitalization Below","code":"marketCapBelow1e6","type":"non-range"},{"group":"dividendNextAmountAbove","display_name":"Next Dividend per Share Above","code":"dividendNextAmountAbove","type":"non-range"},{"group":"dividendNextAmountBelow","display_name":"Next Dividend per Share Below","code":"dividendNextAmountBelow","type":"non-range"},{"group":"dividendNextDateAbove","display_name":"Next Dividend Date Above","code":"dividendNextDateAbove","type":"non-range"},{"group":"dividendNextDateBelow","display_name":"Next Dividend Date Below","code":"dividendNextDateBelow","type":"non-range"},{"group":"numPriceTargetsAbove","display_name":"# of Analyst Price Targets Above","code":"numPriceTargetsAbove","type":"non-range"},{"group":"numPriceTargetsBelow","display_name":"# of Analyst Price Targets Below","code":"numPriceTargetsBelow","type":"non-range"},{"group":"numRatingsAbove","display_name":"# of Analyst Ratings Above","code":"numRatingsAbove","type":"non-range"},{"group":"numRatingsBelow","display_name":"# of Analyst Ratings Below","code":"numRatingsBelow","type":"non-range"},{"group":"ihNumSharesInsiderAbove","display_name":"# Shares held by Insider Above","code":"ihNumSharesInsiderAbove","type":"non-range"},{"group":"ihNumSharesInsiderBelow","display_name":"# Shares held by Insider Below","code":"ihNumSharesInsiderBelow","type":"non-range"},{"group":"iiNumSharesInstitutionalAbove","display_name":"# Shares held by Institutions Above","code":"iiNumSharesInstitutionalAbove","type":"non-range"},{"group":"iiNumSharesInstitutionalBelow","display_name":"# Shares held by Institutions Below","code":"iiNumSharesInstitutionalBelow","type":"non-range"},{"group":"openGapPercAbove","display_name":"Gap (%) Above","code":"openGapPercAbove","type":"non-range"},{"group":"openGapPercBelow","display_name":"Gap (%) Below","code":"openGapPercBelow","type":"non-range"},{"group":"optVolumeAbove","display_name":"Option Volume Above","code":"optVolumeAbove","type":"non-range"},{"group":"optVolumeBelow","display_name":"Option Volume Below","code":"optVolumeBelow","type":"non-range"},{"group":"optVolumePCRatioAbove","display_name":"Opt Volume P/C Ratio Above","code":"optVolumePCRatioAbove","type":"non-range"},{"group":"optVolumePCRatioBelow","display_name":"Opt Volume P/C Ratio Below","code":"optVolumePCRatioBelow","type":"non-range"},{"group":"minPeRatio","display_name":"P/E Ratio Above (Refinitiv)","code":"minPeRatio","type":"non-range"},{"group":"maxPeRatio","display_name":"P/E Ratio Below (Refinitiv)","code":"maxPeRatio","type":"non-range"},{"group":"curPPOAbove","display_name":"PPO Above","code":"curPPOAbove","type":"non-range"},{"group":"curPPOBelow","display_name":"PPO Below","code":"curPPOBelow","type":"non-range"},{"group":"curPPOSignalAbove","display_name":"PPO Signal Above","code":"curPPOSignalAbove","type":"non-range"},{"group":"curPPOSignalBelow","display_name":"PPO Signal Below","code":"curPPOSignalBelow","type":"non-range"},{"group":"curPPODistAbove","display_name":"PPO Histogram Above","code":"curPPODistAbove","type":"non-range"},{"group":"curPPODistBelow","display_name":"PPO Histogram Below","code":"curPPODistBelow","type":"non-range"},{"group":"priceAbove","display_name":"Price Above","code":"priceAbove","type":"non-range"},{"group":"priceBelow","display_name":"Price Below","code":"priceBelow","type":"non-range"},{"group":"minPrice2Bk","display_name":"Price/Book Ratio Above (Refinitiv)","code":"minPrice2Bk","type":"non-range"},{"group":"maxPrice2Bk","display_name":"Price/Book Ratio Below (Refinitiv)","code":"maxPrice2Bk","type":"non-range"},{"group":"minPrice2TanBk","display_name":"Price/Tang. Book Above (Refinitiv)","code":"minPrice2TanBk","type":"non-range"},{"group":"maxPrice2TanBk","display_name":"Price/Tang. Book Below (Refinitiv)","code":"maxPrice2TanBk","type":"non-range"},{"group":"priceRangeAbove","display_name":"Price Range Above","code":"priceRangeAbove","type":"non-range"},{"group":"priceRangeBelow","display_name":"Price Range Below","code":"priceRangeBelow","type":"non-range"},{"group":"usdPriceAbove","display_name":"Price ($) Above","code":"usdPriceAbove","type":"non-range"},{"group":"usdPriceBelow","display_name":"Price ($) Below","code":"usdPriceBelow","type":"non-range"},{"group":"minQuickRatio","display_name":"Quick Ratio Above (Refinitiv)","code":"minQuickRatio","type":"non-range"},{"group":"maxQuickRatio","display_name":"Quick Ratio Below (Refinitiv)","code":"maxQuickRatio","type":"non-range"},{"group":"rebateRateAbove","display_name":"Rebate Rate Above","code":"rebateRateAbove","type":"non-range"},{"group":"rebateRateBelow","display_name":"Rebate Rate Below","code":"rebateRateBelow","type":"non-range"},{"group":"regulatoryImbalanceAbove","display_name":"Regulatory Imbalance Above","code":"regulatoryImbalanceAbove","type":"non-range"},{"group":"regulatoryImbalanceBelow","display_name":"Regulatory Imbalance Below","code":"regulatoryImbalanceBelow","type":"non-range"},{"group":"displayRegulatoryImbAdvRatioAbove","display_name":"Regulatory Imbalance Adv Ratio (%) Above","code":"displayRegulatoryImbAdvRatioAbove","type":"non-range"},{"group":"displayRegulatoryImbAdvRatioBelow","display_name":"Regulatory Imbalance Adv Ratio (%) Below","code":"displayRegulatoryImbAdvRatioBelow","type":"non-range"},{"group":"minRetnOnEq","display_name":"Return On Equity Above (Refinitiv)","code":"minRetnOnEq","type":"non-range"},{"group":"maxRetnOnEq","display_name":"Return On Equity Below (Refinitiv)","code":"maxRetnOnEq","type":"non-range"},{"group":"sharesAvailableManyAbove","display_name":"Shares Available Above","code":"sharesAvailableManyAbove","type":"non-range"},{"group":"sharesAvailableManyBelow","display_name":"Shares Available Below","code":"sharesAvailableManyBelow","type":"non-range"},{"group":"shortSaleRestrictionIs","display_name":"Short Sale Restriction","code":"shortSaleRestrictionIs","combo_values":[{"default":true},{"default":false},{"default":false}],"type":"combo"},{"group":"issuerCountryIs","display_name":"Issuer Country","code":"issuerCountryIs","combo_values":[{"default":true},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false}],"type":"combo"},{"group":"socialSentimentActivityAbove","display_name":"Social Sentiment Activity Above","code":"socialSentimentActivityAbove","type":"non-range"},{"group":"socialSentimentActivityBelow","display_name":"Social Sentiment Activity Below","code":"socialSentimentActivityBelow","type":"non-range"},{"group":"socialSentimentNetAbove","display_name":"Net Social Sentiment Above","code":"socialSentimentNetAbove","type":"non-range"},{"group":"socialSentimentNetBelow","display_name":"Net Social Sentiment Below","code":"socialSentimentNetBelow","type":"non-range"},{"group":"stkTypes","display_name":"Stock type","code":"stkTypes","combo_values":[{"default":true},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false}],"type":"combo"},{"group":"stVolume3minAbove","display_name":"3min Volume Above","code":"stVolume3minAbove","type":"non-range"},{"group":"stVolume3minBelow","display_name":"3min Volume Below","code":"stVolume3minBelow","type":"non-range"},{"group":"stVolume5minAbove","display_name":"5min Volume Above","code":"stVolume5minAbove","type":"non-range"},{"group":"stVolume5minBelow","display_name":"5min Volume Below","code":"stVolume5minBelow","type":"non-range"},{"group":"stVolume10minAbove","display_name":"10min Volume Above","code":"stVolume10minAbove","type":"non-range"},{"group":"stVolume10minBelow","display_name":"10min Volume Below","code":"stVolume10minBelow","type":"non-range"},{"group":"tradeCountAbove","display_name":"Trade Count Above","code":"tradeCountAbove","type":"non-range"},{"group":"tradeCountBelow","display_name":"Trade Count Below","code":"tradeCountBelow","type":"non-range"},{"group":"tradeRateAbove","display_name":"Trade Rate Above","code":"tradeRateAbove","type":"non-range"},{"group":"tradeRateBelow","display_name":"Trade Rate Below","code":"tradeRateBelow","type":"non-range"},{"group":"unshortableIs","display_name":"Unshortable","code":"unshortableIs","combo_values":[{"default":true},{"default":false},{"default":false}],"type":"combo"},{"group":"volumeAbove","display_name":"Volume Above","code":"volumeAbove","type":"non-range"},{"group":"volumeRateAbove","display_name":"Volume Rate Above","code":"volumeRateAbove","type":"non-range"},{"group":"volumeRateBelow","display_name":"Volume Rate Below","code":"volumeRateBelow","type":"non-range"},{"group":"usdVolumeAbove","display_name":"Volume ($) Above","code":"usdVolumeAbove","type":"non-range"},{"group":"usdVolumeBelow","display_name":"Volume ($) Below","code":"usdVolumeBelow","type":"non-range"},{"group":"esgScoreAbove","display_name":"ESG Score Above","code":"esgScoreAbove","type":"non-range"},{"group":"esgScoreBelow","display_name":"ESG Score Below","code":"esgScoreBelow","type":"non-range"},{"group":"esgCombinedScoreAbove","display_name":"ESG Combined Score Above","code":"esgCombinedScoreAbove","type":"non-range"},{"group":"esgCombinedScoreBelow","display_name":"ESG Combined Score Below","code":"esgCombinedScoreBelow","type":"non-range"},{"group":"esgControversiesScoreAbove","display_name":"ESG Controversies Score Above","code":"esgControversiesScoreAbove","type":"non-range"},{"group":"esgControversiesScoreBelow","display_name":"ESG Controversies Score Below","code":"esgControversiesScoreBelow","type":"non-range"},{"group":"esgResourceUseScoreAbove","display_name":"ESG Resource Use Score Above","code":"esgResourceUseScoreAbove","type":"non-range"},{"group":"esgResourceUseScoreBelow","display_name":"ESG Resource Use Score Below","code":"esgResourceUseScoreBelow","type":"non-range"},{"group":"esgEmissionsScoreAbove","display_name":"ESG Emissions Score Above","code":"esgEmissionsScoreAbove","type":"non-range"},{"group":"esgEmissionsScoreBelow","display_name":"ESG Emissions Score Below","code":"esgEmissionsScoreBelow","type":"non-range"},{"group":"esgEnvInvScoreAbove","display_name":"ESG Environmental Innovation Score Above","code":"esgEnvInvScoreAbove","type":"non-range"},{"group":"esgEnvInvScoreBelow","display_name":"ESG Environmental Innovation Score Below","code":"esgEnvInvScoreBelow","type":"non-range"},{"group":"esgWorkforceScoreAbove","display_name":"ESG Workforce Score Above","code":"esgWorkforceScoreAbove","type":"non-range"},{"group":"esgWorkforceScoreBelow","display_name":"ESG Workforce Score Below","code":"esgWorkforceScoreBelow","type":"non-range"},{"group":"esgHrScoreAbove","display_name":"ESG Human Rights Score Above","code":"esgHrScoreAbove","type":"non-range"},{"group":"esgHrScoreBelow","display_name":"ESG Human Rights Score Below","code":"esgHrScoreBelow","type":"non-range"},{"group":"esgCommunityScoreAbove","display_name":"ESG Community Score Above","code":"esgCommunityScoreAbove","type":"non-range"},{"group":"esgCommunityScoreBelow","display_name":"ESG Community Score Below","code":"esgCommunityScoreBelow","type":"non-range"},{"group":"esgProdRespScoreAbove","display_name":"ESG Product Responsibility Score Above","code":"esgProdRespScoreAbove","type":"non-range"},{"group":"esgProdRespScoreBelow","display_name":"ESG Product Responsibility Score Below","code":"esgProdRespScoreBelow","type":"non-range"},{"group":"esgManagementScoreAbove","display_name":"ESG Management Score Above","code":"esgManagementScoreAbove","type":"non-range"},{"group":"esgManagementScoreBelow","display_name":"ESG Management Score Below","code":"esgManagementScoreBelow","type":"non-range"},{"group":"esgShareholdersScoreAbove","display_name":"ESG Shareholders Score Above","code":"esgShareholdersScoreAbove","type":"non-range"},{"group":"esgShareholdersScoreBelow","display_name":"ESG Shareholders Score Below","code":"esgShareholdersScoreBelow","type":"non-range"},{"group":"esgStrategyScoreAbove","display_name":"ESG CSR Strategy Score Above","code":"esgStrategyScoreAbove","type":"non-range"},{"group":"esgStrategyScoreBelow","display_name":"ESG CSR Strategy Score Below","code":"esgStrategyScoreBelow","type":"non-range"},{"group":"esgEnvPillarScoreAbove","display_name":"ESG Environmental Score Above","code":"esgEnvPillarScoreAbove","type":"non-range"},{"group":"esgEnvPillarScoreBelow","display_name":"ESG Environmental Score Below","code":"esgEnvPillarScoreBelow","type":"non-range"},{"group":"esgSocialPillarScoreAbove","display_name":"ESG Social Score Above","code":"esgSocialPillarScoreAbove","type":"non-range"},{"group":"esgSocialPillarScoreBelow","display_name":"ESG Social Score Below","code":"esgSocialPillarScoreBelow","type":"non-range"},{"group":"esgCorpGovPillarScoreAbove","display_name":"ESG Corporate Governance Score Above","code":"esgCorpGovPillarScoreAbove","type":"non-range"},{"group":"esgCorpGovPillarScoreBelow","display_name":"ESG Corporate Governance Score Below","code":"esgCorpGovPillarScoreBelow","type":"non-range"},{"group":"ivRank13wAbove","display_name":"13 Week IV Rank Above","code":"ivRank13wAbove","type":"non-range"},{"group":"ivRank13wBelow","display_name":"13 Week IV Rank Below","code":"ivRank13wBelow","type":"non-range"},{"group":"ivRank26wAbove","display_name":"26 Week IV Rank Above","code":"ivRank26wAbove","type":"non-range"},{"group":"ivRank26wBelow","display_name":"26 Week IV Rank Below","code":"ivRank26wBelow","type":"non-range"},{"group":"ivRank52wAbove","display_name":"52 Week IV Rank Above","code":"ivRank52wAbove","type":"non-range"},{"group":"ivRank52wBelow","display_name":"52 Week IV Rank Below","code":"ivRank52wBelow","type":"non-range"},{"group":"ivPercntl13wAbove","display_name":"13 Week IV Percentile Above","code":"ivPercntl13wAbove","type":"non-range"},{"group":"ivPercntl13wBelow","display_name":"13 Week IV Percentile Below","code":"ivPercntl13wBelow","type":"non-range"},{"group":"ivPercntl26wAbove","display_name":"26 Week IV Percentile Above","code":"ivPercntl26wAbove","type":"non-range"},{"group":"ivPercntl26wBelow","display_name":"26 Week IV Percentile Below","code":"ivPercntl26wBelow","type":"non-range"},{"group":"ivPercntl52wAbove","display_name":"52 Week IV Percentile Above","code":"ivPercntl52wAbove","type":"non-range"},{"group":"ivPercntl52wBelow","display_name":"52 Week IV Percentile Below","code":"ivPercntl52wBelow","type":"non-range"},{"group":"hvRank13wAbove","display_name":"13 Week HV Rank Above","code":"hvRank13wAbove","type":"non-range"},{"group":"hvRank13wBelow","display_name":"13 Week HV Rank Below","code":"hvRank13wBelow","type":"non-range"},{"group":"HVRank26wAbove","display_name":"26 Week HV Rank Above","code":"HVRank26wAbove","type":"non-range"},{"group":"HVRank26wBelow","display_name":"26 Week HV Rank Below","code":"HVRank26wBelow","type":"non-range"},{"group":"HVRank52wAbove","display_name":"52 Week HV Rank Above","code":"HVRank52wAbove","type":"non-range"},{"group":"HVRank52wBelow","display_name":"52 Week HV Rank Below","code":"HVRank52wBelow","type":"non-range"},{"group":"HVPercntl13wAbove","display_name":"13 Week HV Percentile Above","code":"HVPercntl13wAbove","type":"non-range"},{"group":"HVPercntl13wBelow","display_name":"13 Week HV Percentile Below","code":"HVPercntl13wBelow","type":"non-range"},{"group":"HVPercntl26wAbove","display_name":"26 Week HV Percentile Above","code":"HVPercntl26wAbove","type":"non-range"},{"group":"HVPercntl26wBelow","display_name":"26 Week HV Percentile Below","code":"HVPercntl26wBelow","type":"non-range"},{"group":"HVPercntl52wAbove","display_name":"52 Week HV Percentile Above","code":"HVPercntl52wAbove","type":"non-range"},{"group":"HVPercntl52wBelow","display_name":"52 Week HV Percentile Below","code":"HVPercntl52wBelow","type":"non-range"},{"group":"utilizationAbove","display_name":"Utilization Above","code":"utilizationAbove","type":"non-range"},{"group":"utilizationBelow","display_name":"Utilization Below","code":"utilizationBelow","type":"non-range"},{"group":"prodCatIs","display_name":"Product Category","code":"prodCatIs","combo_values":[{"default":true},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false},{"default":false}],"type":"combo"},{"group":"leadFutOnly","display_name":"Lead Month Only","code":"leadFutOnly","combo_values":[{"default":false},{"default":true}],"type":"combo"},{"group":"underConID","display_name":"Underlying Contract","code":"underConID","type":"non-range"}],"location_tree":[{"display_name":"US Stocks","type":"STK","locations":[{"display_name":"Listed/NASDAQ","type":"STK.US.MAJOR","locations":[]}]},{"display_name":"US Futures","type":"FUT.US","locations":[{"display_name":"GLOBEX","type":"FUT.GLOBEX"},{"display_name":"E-CBOT","type":"FUT.ECBOT"},{"display_name":"IPE","type":"FUT.IPE"},{"display_name":"NYBOT","type":"FUT.NYBOT"},{"display_name":"NYSELIFFE","type":"FUT.NYSELIFFE"},{"display_name":"CFE","type":"FUT.CFE"},{"display_name":"CFECRYPTO","type":"FUT.CFECRYPTO"},{"display_name":"CMECRYPTO","type":"FUT.CMECRYPTO"},{"display_name":"ICECRYPTO","type":"FUT.ICECRYPTO"}]},{"display_name":"US SSFs","type":"SSF.US","locations":[{"display_name":"ONE/Chicago","type":"SSF.ONE"}]},{"display_name":"America Non-US Stocks","type":"STOCK.NA","locations":[{"display_name":"Canada","type":"STK.NA.CANADA","locations":[]}]},{"display_name":"Europe Stocks","type":"STOCK.EU","locations":[{"display_name":"France (SBF)","type":"STK.EU.SBF"},{"display_name":"Germany","type":"STK.EU.IBIS","locations":[]},{"display_name":"Netherlands (AEB)","type":"STK.EU.AEB"},{"display_name":"Spain (BM)","type":"STK.EU.BM"},{"display_name":"Switzerland","type":"STK.EU.SWISS","locations":[]},{"display_name":"United Kingdom (LSE)","type":"STK.EU.LSE"}]},{"display_name":"Europe Futures","type":"FUT.EU","locations":[{"display_name":"Belgium (BELFOX)","type":"FUT.EU.BELFOX"},{"display_name":"Germany (DTB)","type":"FUT.EU.DTB"},{"display_name":"Netherlands (FTA)","type":"FUT.EU.FTA"},{"display_name":"United Kingdom","type":"FUT.EU.UK","locations":[]},{"display_name":"France (MONEP)","type":"FUT.EU.MONEP"},{"display_name":"Switzerland (SOFFEX)","type":"FUT.EU.SOFFEX"}]},{"display_name":"Europe Indexes","type":"IND.EU","locations":[{"display_name":"Belgium (BELFOX)","type":"IND.EU.BELFOX"},{"display_name":"Germany (DTB)","type":"IND.EU.DTB"},{"display_name":"Netherlands (FTA)","type":"IND.EU.FTA"},{"display_name":"United Kingdom (ICEEU)","type":"IND.EU.ICEEU"},{"display_name":"France (MONEP)","type":"IND.EU.MONEP"}]},{"display_name":"Europe SSFs","type":"SSF.EU","locations":[{"display_name":"Germany (DTB)","type":"SSF.EU.DTB"},{"display_name":"United Kingdom (ICEEU)","type":"SSF.EU.ICEEU"},{"display_name":"Switzerland (SOFFEX)","type":"SSF.EU.SOFFEX"}]},{"display_name":"Asia Stocks","type":"STOCK.HK","locations":[{"display_name":"Hong Kong (SEHK)","type":"STK.HK.SEHK"},{"display_name":"Australia (ASX)","type":"STK.HK.ASX"}]},{"display_name":"Asia Futures","type":"FUT.HK","locations":[{"display_name":"Hong Kong (HKFE)","type":"FUT.HK.HKFE"},{"display_name":"Japan (OSE.JPN)","type":"FUT.HK.OSE_JPN"}]},{"display_name":"Asia SSFs","type":"SSF.HK","locations":[{"display_name":"Hong Kong (HKFE)","type":"SSF.HK.HKFE"}]},{"display_name":"Native Combos","type":"NATCOMB","locations":[{"display_name":"Option Combos (SMART)","type":"NATCOMB.OPT.US"},{"display_name":"Option Combos (AMEX)","type":"NATCOMB.OPT.AMEX"},{"display_name":"Option Combos (CBOE)","type":"NATCOMB.OPT.CBOE"},{"display_name":"Option Combos (ISE)","type":"NATCOMB.OPT.ISE"},{"display_name":"Option Combos (PHLX)","type":"NATCOMB.OPT.PHLX"},{"display_name":"Option Combos (PSE)","type":"NATCOMB.OPT.PSE"},{"display_name":"Globex Combos","type":"NATCOMB.GLOBEX"}]}]}
+    {
+    "display_name": "Top % Losers",
+    "code": "TOP_PERC_LOSE",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "IND.US",
+    "SSF.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "IND.EU",
+    "SSF.EU",
+    "STOCK.HK",
+    "FUT.HK",
+    "SSF.HK"
+    ]
+    },
+    {
+    "display_name": "Most Active",
+    "code": "MOST_ACTIVE",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "SSF.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "SSF.EU",
+    "STOCK.HK",
+    "FUT.HK",
+    "SSF.HK"
+    ]
+    },
+    {
+    "display_name": "Not Yet Traded Today",
+    "code": "NOT_YET_TRADED_TODAY",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "STOCK.HK",
+    "FUT.HK"
+    ]
+    },
+    {
+    "display_name": "Most Active ($)",
+    "code": "MOST_ACTIVE_USD",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "SSF.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "SSF.EU",
+    "STOCK.HK",
+    "FUT.HK",
+    "SSF.HK"
+    ]
+    },
+    {
+    "display_name": "Most Active (Avg $)",
+    "code": "MOST_ACTIVE_AVG_USD",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Halted",
+    "code": "HALTED",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "SSF.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "SSF.EU",
+    "STOCK.HK",
+    "FUT.HK",
+    "SSF.HK"
+    ]
+    },
+    {
+    "display_name": "Closest to Limit Up/Down",
+    "code": "LIMIT_UP_DOWN",
+    "instruments": [
+    "STK",
+    "FUT.US"
+    ]
+    },
+    {
+    "display_name": "Hot Contracts by Price",
+    "code": "HOT_BY_PRICE",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "SSF.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "SSF.EU",
+    "STOCK.HK",
+    "FUT.HK",
+    "SSF.HK"
+    ]
+    },
+    {
+    "display_name": "Hot Contracts by Volume",
+    "code": "HOT_BY_VOLUME",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "High Dividend Yield",
+    "code": "HIGH_DIVIDEND_YIELD_IB",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Top Price Range",
+    "code": "TOP_PRICE_RANGE",
+    "instruments": [
+    "STK",
+    "FUT.US"
+    ]
+    },
+    {
+    "display_name": "Hot By Price Range",
+    "code": "HOT_BY_PRICE_RANGE",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "STOCK.HK",
+    "FUT.HK"
+    ]
+    },
+    {
+    "display_name": "Top Volume Rate",
+    "code": "TOP_VOLUME_RATE",
+    "instruments": [
+    "STK",
+    "FUT.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "FUT.EU",
+    "STOCK.HK",
+    "FUT.HK"
+    ]
+    },
+    {
+    "display_name": "Highest Option Imp Vol",
+    "code": "HIGH_OPT_IMP_VOLAT",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "IND.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Lowest Option Imp Vol",
+    "code": "LOW_OPT_IMP_VOLAT",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "IND.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Top Option Imp Vol % Gainers",
+    "code": "TOP_OPT_IMP_VOLAT_GAIN",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "IND.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Top Option Imp Vol % Losers",
+    "code": "TOP_OPT_IMP_VOLAT_LOSE",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "IND.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "High Option Imp Vol Over Historical",
+    "code": "HIGH_OPT_IMP_VOLAT_OVER_HIST",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "IND.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Low Option Imp Vol Over Historical",
+    "code": "LOW_OPT_IMP_VOLAT_OVER_HIST",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.NA",
+    "STOCK.EU",
+    "IND.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Most Active By Opt Volume",
+    "code": "OPT_VOLUME_MOST_ACTIVE",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Most Active By Opt Open Interest",
+    "code": "OPT_OPEN_INTEREST_MOST_ACTIVE",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "High Opt Volume P/C Ratio",
+    "code": "HIGH_OPT_VOLUME_PUT_CALL_RATIO",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Low Opt Volume P/C Ratio",
+    "code": "LOW_OPT_VOLUME_PUT_CALL_RATIO",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "High Opt Open Interest P/C Ratio",
+    "code": "HIGH_OPT_OPEN_INTEREST_PUT_CALL_RATIO",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Low Opt Open Interest P/C Ratio",
+    "code": "LOW_OPT_OPEN_INTEREST_PUT_CALL_RATIO",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Hot By Opt Volume",
+    "code": "HOT_BY_OPT_VOLUME",
+    "instruments": [
+    "STK",
+    "IND.US",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "13-Week High",
+    "code": "HIGH_VS_13W_HL",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "13-Week Low",
+    "code": "LOW_VS_13W_HL",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "26-Week High",
+    "code": "HIGH_VS_26W_HL",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "26-Week Low",
+    "code": "LOW_VS_26W_HL",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "52-Week High",
+    "code": "HIGH_VS_52W_HL",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "52-Week Low",
+    "code": "LOW_VS_52W_HL",
+    "instruments": [
+    "STK",
+    "STOCK.NA",
+    "STOCK.EU",
+    "STOCK.HK"
+    ]
+    },
+    {
+    "display_name": "Trades",
+    "code": "COMBO_LATEST_TRADE",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "Quotes",
+    "code": "COMBO_QUOTES",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "Volume",
+    "code": "COMBO_MOST_ACTIVE",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Trade Time Asc)",
+    "code": "COMBO_ALL_TRADE_TIME_ASC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Trade Time Desc)",
+    "code": "COMBO_ALL_TRADE_TIME_DESC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Quote Time Asc)",
+    "code": "COMBO_ALL_QUOTE_TIME_ASC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Quote Time Desc)",
+    "code": "COMBO_ALL_QUOTE_TIME_DESC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Time Asc)",
+    "code": "COMBO_ALL_TRADE_QUOTE_TIME_ASC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Time Desc)",
+    "code": "COMBO_ALL_TRADE_QUOTE_TIME_DESC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Volume Asc)",
+    "code": "COMBO_ALL_VOLUME_ASC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    },
+    {
+    "display_name": "All (Volume Desc)",
+    "code": "COMBO_ALL_VOLUME_DESC",
+    "instruments": [
+    "NATCOMB"
+    ]
+    }
+    ],
+    "instrument_list": [
+    {
+    "display_name": "US Stocks",
+    "type": "STK",
+    "filters": []
+    },
+    {
+    "display_name": "US Futures",
+    "type": "FUT.US",
+    "filters": []
+    },
+    {
+    "display_name": "US Indexes",
+    "type": "IND.US",
+    "filters": []
+    },
+    {
+    "display_name": "US SSFs",
+    "type": "SSF.US",
+    "filters": [
+    "price",
+    "usdPrice",
+    "volume",
+    "usdVolume",
+    "prodCatIs",
+    "leadFutOnly",
+    "changePerc",
+    "tradeCount",
+    "tradeRate",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min"
+    ]
+    },
+    {
+    "display_name": "America Non-US Stocks",
+    "type": "STOCK.NA",
+    "filters": [
+    "avgRating",
+    "avgVolume",
+    "avgUsdVolume",
+    "changeOpenPerc",
+    "changePerc",
+    "dividendFrd",
+    "dividendYieldFrd",
+    "feeRate",
+    "firstTradeDate",
+    "minGrowthRate",
+    "maxGrowthRate",
+    "haltedIs",
+    "hasOptionsIs",
+    "histDividendFrd",
+    "histDividendFrdYield",
+    "imbalance",
+    "displayImbalanceAdvRatio",
+    "impVolat",
+    "impVolatOverHist",
+    "ihInsiderOfFloatPerc",
+    "iiInstitutionalOfFloatPerc",
+    "dividendNextAmount",
+    "dividendNextDate",
+    "numPriceTargets",
+    "numRatings",
+    "ihNumSharesInsider",
+    "iiNumSharesInstitutional",
+    "openGapPerc",
+    "usdPrice",
+    "rebateRate",
+    "regulatoryImbalance",
+    "displayRegulatoryImbAdvRatio",
+    "sharesAvailableMany",
+    "shortSaleRestrictionIs",
+    "issuerCountryIs",
+    "stkTypes",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min",
+    "tradeCount",
+    "tradeRate",
+    "unshortableIs",
+    "volume",
+    "volumeRate",
+    "usdVolume",
+    "esgScore",
+    "esgCombinedScore",
+    "esgControversiesScore",
+    "esgResourceUseScore",
+    "esgEmissionsScore",
+    "esgEnvInvScore",
+    "esgWorkforceScore",
+    "esgHrScore",
+    "esgCommunityScore",
+    "esgProdRespScore",
+    "esgManagementScore",
+    "esgShareholdersScore",
+    "esgStrategyScore",
+    "esgEnvPillarScore",
+    "esgSocialPillarScore",
+    "esgCorpGovPillarScore",
+    "ivRank13w",
+    "ivRank26w",
+    "ivRank52w",
+    "ivPercntl13w",
+    "ivPercntl26w",
+    "ivPercntl52w",
+    "hvRank13w",
+    "HVRank26w",
+    "HVRank52w",
+    "HVPercntl13w",
+    "HVPercntl26w",
+    "HVPercntl52w",
+    "utilization"
+    ]
+    },
+    {
+    "display_name": "Europe Stocks",
+    "type": "STOCK.EU",
+    "filters": [
+    "avgRating",
+    "avgVolume",
+    "avgUsdVolume",
+    "changeOpenPerc",
+    "changePerc",
+    "dividendFrd",
+    "dividendYieldFrd",
+    "feeRate",
+    "firstTradeDate",
+    "minGrowthRate",
+    "maxGrowthRate",
+    "haltedIs",
+    "hasOptionsIs",
+    "histDividendFrd",
+    "histDividendFrdYield",
+    "imbalance",
+    "displayImbalanceAdvRatio",
+    "impVolat",
+    "impVolatOverHist",
+    "ihInsiderOfFloatPerc",
+    "iiInstitutionalOfFloatPerc",
+    "dividendNextAmount",
+    "dividendNextDate",
+    "numPriceTargets",
+    "numRatings",
+    "ihNumSharesInsider",
+    "iiNumSharesInstitutional",
+    "openGapPerc",
+    "usdPrice",
+    "rebateRate",
+    "regulatoryImbalance",
+    "displayRegulatoryImbAdvRatio",
+    "sharesAvailableMany",
+    "shortSaleRestrictionIs",
+    "issuerCountryIs",
+    "stkTypes",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min",
+    "tradeCount",
+    "tradeRate",
+    "unshortableIs",
+    "volume",
+    "volumeRate",
+    "usdVolume",
+    "esgScore",
+    "esgCombinedScore",
+    "esgControversiesScore",
+    "esgResourceUseScore",
+    "esgEmissionsScore",
+    "esgEnvInvScore",
+    "esgWorkforceScore",
+    "esgHrScore",
+    "esgCommunityScore",
+    "esgProdRespScore",
+    "esgManagementScore",
+    "esgShareholdersScore",
+    "esgStrategyScore",
+    "esgEnvPillarScore",
+    "esgSocialPillarScore",
+    "esgCorpGovPillarScore",
+    "ivRank13w",
+    "ivRank26w",
+    "ivRank52w",
+    "ivPercntl13w",
+    "ivPercntl26w",
+    "ivPercntl52w",
+    "hvRank13w",
+    "HVRank26w",
+    "HVRank52w",
+    "HVPercntl13w",
+    "HVPercntl26w",
+    "HVPercntl52w",
+    "utilization"
+    ]
+    },
+    {
+    "display_name": "Europe Futures",
+    "type": "FUT.EU",
+    "filters": [
+    "usdPrice",
+    "volume",
+    "usdVolume",
+    "prodCatIs",
+    "leadFutOnly",
+    "changePerc",
+    "changeOpenPerc",
+    "openGapPerc",
+    "tradeCount",
+    "tradeRate",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min"
+    ]
+    },
+    {
+    "display_name": "Europe Indexes",
+    "type": "IND.EU",
+    "filters": [
+    "usdPrice",
+    "impVolat",
+    "impVolatOverHist",
+    "changePerc"
+    ]
+    },
+    {
+    "display_name": "Europe SSFs",
+    "type": "SSF.EU",
+    "filters": [
+    "usdPrice",
+    "volume",
+    "usdVolume",
+    "prodCatIs",
+    "leadFutOnly",
+    "changePerc",
+    "tradeCount",
+    "tradeRate",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min"
+    ]
+    },
+    {
+    "display_name": "Asia Stocks",
+    "type": "STOCK.HK",
+    "filters": [
+    "avgRating",
+    "avgVolume",
+    "avgUsdVolume",
+    "changeOpenPerc",
+    "changePerc",
+    "dividendFrd",
+    "dividendYieldFrd",
+    "feeRate",
+    "firstTradeDate",
+    "minGrowthRate",
+    "maxGrowthRate",
+    "haltedIs",
+    "hasOptionsIs",
+    "histDividendFrd",
+    "histDividendFrdYield",
+    "imbalance",
+    "displayImbalanceAdvRatio",
+    "impVolat",
+    "impVolatOverHist",
+    "ihInsiderOfFloatPerc",
+    "iiInstitutionalOfFloatPerc",
+    "dividendNextAmount",
+    "dividendNextDate",
+    "numPriceTargets",
+    "numRatings",
+    "ihNumSharesInsider",
+    "iiNumSharesInstitutional",
+    "openGapPerc",
+    "usdPrice",
+    "rebateRate",
+    "regulatoryImbalance",
+    "displayRegulatoryImbAdvRatio",
+    "sharesAvailableMany",
+    "shortSaleRestrictionIs",
+    "issuerCountryIs",
+    "stkTypes",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min",
+    "tradeCount",
+    "tradeRate",
+    "unshortableIs",
+    "volume",
+    "volumeRate",
+    "usdVolume",
+    "esgScore",
+    "esgCombinedScore",
+    "esgControversiesScore",
+    "esgResourceUseScore",
+    "esgEmissionsScore",
+    "esgEnvInvScore",
+    "esgWorkforceScore",
+    "esgHrScore",
+    "esgCommunityScore",
+    "esgProdRespScore",
+    "esgManagementScore",
+    "esgShareholdersScore",
+    "esgStrategyScore",
+    "esgEnvPillarScore",
+    "esgSocialPillarScore",
+    "esgCorpGovPillarScore",
+    "ivRank13w",
+    "ivRank26w",
+    "ivRank52w",
+    "ivPercntl13w",
+    "ivPercntl26w",
+    "ivPercntl52w",
+    "hvRank13w",
+    "HVRank26w",
+    "HVRank52w",
+    "HVPercntl13w",
+    "HVPercntl26w",
+    "HVPercntl52w",
+    "utilization"
+    ]
+    },
+    {
+    "display_name": "Asia Futures",
+    "type": "FUT.HK",
+    "filters": [
+    "usdPrice",
+    "volume",
+    "usdVolume",
+    "prodCatIs",
+    "leadFutOnly",
+    "changePerc",
+    "changeOpenPerc",
+    "openGapPerc",
+    "tradeCount",
+    "tradeRate",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min"
+    ]
+    },
+    {
+    "display_name": "Asia SSFs",
+    "type": "SSF.HK",
+    "filters": [
+    "usdPrice",
+    "volume",
+    "usdVolume",
+    "prodCatIs",
+    "leadFutOnly",
+    "changePerc",
+    "tradeCount",
+    "tradeRate",
+    "stVolume3min",
+    "stVolume5min",
+    "stVolume10min"
+    ]
+    },
+    {
+    "display_name": "Native Combos",
+    "type": "NATCOMB",
+    "filters": [
+    "underConID"
+    ]
+    }
+    ],
+    "filter_list": [
+    {
+    "group": "afterHoursChangePercAbove",
+    "display_name": "After-Hours Change (%) Above",
+    "code": "afterHoursChangePercAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "afterHoursChangePercBelow",
+    "display_name": "After-Hours Change (%) Below",
+    "code": "afterHoursChangePercBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "avgOptVolumeAbove",
+    "display_name": "Average Opt. Volume Above",
+    "code": "avgOptVolumeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "avgPriceTargetAbove",
+    "display_name": "Avg Analyst Price Target Above",
+    "code": "avgPriceTargetAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "avgPriceTargetBelow",
+    "display_name": "Avg Analyst Price Target Below",
+    "code": "avgPriceTargetBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "avgRatingAbove",
+    "display_name": "Avg Analyst Rating Above",
+    "code": "avgRatingAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "avgRatingBelow",
+    "display_name": "Avg Analyst Rating Below",
+    "code": "avgRatingBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "avgAnalystTarget2PriceRatioAbove",
+    "display_name": "Avg Analyst Target/Price Ratio Above",
+    "code": "avgAnalystTarget2PriceRatioAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "avgAnalystTarget2PriceRatioBelow",
+    "display_name": "Avg Analyst Target/Price Ratio Below",
+    "code": "avgAnalystTarget2PriceRatioBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "avgVolumeAbove",
+    "display_name": "Avg Volume Above",
+    "code": "avgVolumeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "avgVolumeBelow",
+    "display_name": "Avg Volume Below",
+    "code": "avgVolumeBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "avgUsdVolumeAbove",
+    "display_name": "Avg Volume ($) Above",
+    "code": "avgUsdVolumeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "avgUsdVolumeBelow",
+    "display_name": "Avg Volume ($) Below",
+    "code": "avgUsdVolumeBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "changeOpenPercAbove",
+    "display_name": "Change Since Open (%) Above",
+    "code": "changeOpenPercAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "changeOpenPercBelow",
+    "display_name": "Change Since Open (%) Below",
+    "code": "changeOpenPercBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "changePercAbove",
+    "display_name": "Change (%) Above",
+    "code": "changePercAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "changePercBelow",
+    "display_name": "Change (%) Below",
+    "code": "changePercBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA20Above",
+    "display_name": "EMA(20) Above",
+    "code": "curEMA20Above",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA20Below",
+    "display_name": "EMA(20) Below",
+    "code": "curEMA20Below",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA50Above",
+    "display_name": "EMA(50) Above",
+    "code": "curEMA50Above",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA50Below",
+    "display_name": "EMA(50) Below",
+    "code": "curEMA50Below",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA100Above",
+    "display_name": "EMA(100) Above",
+    "code": "curEMA100Above",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA100Below",
+    "display_name": "EMA(100) Below",
+    "code": "curEMA100Below",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA200Above",
+    "display_name": "EMA(200) Above",
+    "code": "curEMA200Above",
+    "type": "non-range"
+    },
+    {
+    "group": "curEMA200Below",
+    "display_name": "EMA(200) Below",
+    "code": "curEMA200Below",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio20Above",
+    "display_name": "Price vs EMA(20) Change(%) Above",
+    "code": "lastVsEMAChangeRatio20Above",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio20Below",
+    "display_name": "Price vs EMA(20) Change(%) Below",
+    "code": "lastVsEMAChangeRatio20Below",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio50Above",
+    "display_name": "Price vs EMA(50) Change(%) Above",
+    "code": "lastVsEMAChangeRatio50Above",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio50Below",
+    "display_name": "Price vs EMA(50) Change(%) Below",
+    "code": "lastVsEMAChangeRatio50Below",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio100Above",
+    "display_name": "Price vs EMA(100) Change(%) Above",
+    "code": "lastVsEMAChangeRatio100Above",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio100Below",
+    "display_name": "Price vs EMA(100) Change(%) Below",
+    "code": "lastVsEMAChangeRatio100Below",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio200Above",
+    "display_name": "Price vs EMA(200) Change(%) Above",
+    "code": "lastVsEMAChangeRatio200Above",
+    "type": "non-range"
+    },
+    {
+    "group": "lastVsEMAChangeRatio200Below",
+    "display_name": "Price vs EMA(200) Change(%) Below",
+    "code": "lastVsEMAChangeRatio200Below",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendFrdAbove",
+    "display_name": "Dividends Above (%)",
+    "code": "dividendFrdAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendFrdBelow",
+    "display_name": "Dividends Below (%)",
+    "code": "dividendFrdBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendYieldFrdAbove",
+    "display_name": "Dividend Yield Above (%)",
+    "code": "dividendYieldFrdAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendYieldFrdBelow",
+    "display_name": "Dividend Yield Below (%)",
+    "code": "dividendYieldFrdBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "feeRateAbove",
+    "display_name": "Fee Rate Above",
+    "code": "feeRateAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "feeRateBelow",
+    "display_name": "Fee Rate Below",
+    "code": "feeRateBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "firstTradeDateAbove",
+    "display_name": "First Trade Date Above",
+    "code": "firstTradeDateAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "firstTradeDateBelow",
+    "display_name": "First Trade Date Below",
+    "code": "firstTradeDateBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "minGrowthRate",
+    "display_name": "Growth Rate Above (Refinitiv)",
+    "code": "minGrowthRate",
+    "type": "non-range"
+    },
+    {
+    "group": "maxGrowthRate",
+    "display_name": "Growth Rate Below (Refinitiv)",
+    "code": "maxGrowthRate",
+    "type": "non-range"
+    },
+    {
+    "group": "haltedIs",
+    "display_name": "Halted",
+    "code": "haltedIs",
+    "combo_values": [
+    {
+    "default": true
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "hasOptionsIs",
+    "display_name": "Has Options",
+    "code": "hasOptionsIs",
+    "combo_values": [
+    {
+    "default": false
+    },
+    {
+    "default": true
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "histDividendFrdAbove",
+    "display_name": "Dividends TTM Above (%)",
+    "code": "histDividendFrdAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "histDividendFrdBelow",
+    "display_name": "Dividends TTM Below (%)",
+    "code": "histDividendFrdBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "histDividendFrdYieldAbove",
+    "display_name": "Dividend Yield TTM Above (%)",
+    "code": "histDividendFrdYieldAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "histDividendFrdYieldBelow",
+    "display_name": "Dividend Yield TTM Below (%)",
+    "code": "histDividendFrdYieldBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "imbalanceAbove",
+    "display_name": "Imbalance Above",
+    "code": "imbalanceAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "imbalanceBelow",
+    "display_name": "Imbalance Below",
+    "code": "imbalanceBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "displayImbalanceAdvRatioAbove",
+    "display_name": "Imbalance Adv Ratio (%) Above",
+    "code": "displayImbalanceAdvRatioAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "displayImbalanceAdvRatioBelow",
+    "display_name": "Imbalance Adv Ratio (%) Below",
+    "code": "displayImbalanceAdvRatioBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "impVolatAbove",
+    "display_name": "Opt Imp Vol Above",
+    "code": "impVolatAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "impVolatBelow",
+    "display_name": "Opt Imp Vol Below",
+    "code": "impVolatBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "impVolatOverHistAbove",
+    "display_name": "Opt Imp Vol Over Hist Above",
+    "code": "impVolatOverHistAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "impVolatOverHistBelow",
+    "display_name": "Opt Imp Vol Over Hist Below",
+    "code": "impVolatOverHistBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ihInsiderOfFloatPercAbove",
+    "display_name": "Insider Shares as % of Float Above",
+    "code": "ihInsiderOfFloatPercAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ihInsiderOfFloatPercBelow",
+    "display_name": "Insider Shares as % of Float Below",
+    "code": "ihInsiderOfFloatPercBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "iiInstitutionalOfFloatPercAbove",
+    "display_name": "Institutional Shares as % of Float Above",
+    "code": "iiInstitutionalOfFloatPercAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "iiInstitutionalOfFloatPercBelow",
+    "display_name": "Institutional Shares as % of Float Below",
+    "code": "iiInstitutionalOfFloatPercBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "curMACDAbove",
+    "display_name": "MACD Above",
+    "code": "curMACDAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "curMACDBelow",
+    "display_name": "MACD Below",
+    "code": "curMACDBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "curMACDSignalAbove",
+    "display_name": "MACD Signal Above",
+    "code": "curMACDSignalAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "curMACDSignalBelow",
+    "display_name": "MACD Signal Below",
+    "code": "curMACDSignalBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "curMACDDistAbove",
+    "display_name": "MACD Histogram Above",
+    "code": "curMACDDistAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "curMACDDistBelow",
+    "display_name": "MACD Histogram Below",
+    "code": "curMACDDistBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "marketCapAbove1e6",
+    "display_name": "Capitalization Above",
+    "code": "marketCapAbove1e6",
+    "type": "non-range"
+    },
+    {
+    "group": "marketCapBelow1e6",
+    "display_name": "Capitalization Below",
+    "code": "marketCapBelow1e6",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendNextAmountAbove",
+    "display_name": "Next Dividend per Share Above",
+    "code": "dividendNextAmountAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendNextAmountBelow",
+    "display_name": "Next Dividend per Share Below",
+    "code": "dividendNextAmountBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendNextDateAbove",
+    "display_name": "Next Dividend Date Above",
+    "code": "dividendNextDateAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "dividendNextDateBelow",
+    "display_name": "Next Dividend Date Below",
+    "code": "dividendNextDateBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "numPriceTargetsAbove",
+    "display_name": "# of Analyst Price Targets Above",
+    "code": "numPriceTargetsAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "numPriceTargetsBelow",
+    "display_name": "# of Analyst Price Targets Below",
+    "code": "numPriceTargetsBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "numRatingsAbove",
+    "display_name": "# of Analyst Ratings Above",
+    "code": "numRatingsAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "numRatingsBelow",
+    "display_name": "# of Analyst Ratings Below",
+    "code": "numRatingsBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ihNumSharesInsiderAbove",
+    "display_name": "# Shares held by Insider Above",
+    "code": "ihNumSharesInsiderAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ihNumSharesInsiderBelow",
+    "display_name": "# Shares held by Insider Below",
+    "code": "ihNumSharesInsiderBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "iiNumSharesInstitutionalAbove",
+    "display_name": "# Shares held by Institutions Above",
+    "code": "iiNumSharesInstitutionalAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "iiNumSharesInstitutionalBelow",
+    "display_name": "# Shares held by Institutions Below",
+    "code": "iiNumSharesInstitutionalBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "openGapPercAbove",
+    "display_name": "Gap (%) Above",
+    "code": "openGapPercAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "openGapPercBelow",
+    "display_name": "Gap (%) Below",
+    "code": "openGapPercBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "optVolumeAbove",
+    "display_name": "Option Volume Above",
+    "code": "optVolumeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "optVolumeBelow",
+    "display_name": "Option Volume Below",
+    "code": "optVolumeBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "optVolumePCRatioAbove",
+    "display_name": "Opt Volume P/C Ratio Above",
+    "code": "optVolumePCRatioAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "optVolumePCRatioBelow",
+    "display_name": "Opt Volume P/C Ratio Below",
+    "code": "optVolumePCRatioBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "minPeRatio",
+    "display_name": "P/E Ratio Above (Refinitiv)",
+    "code": "minPeRatio",
+    "type": "non-range"
+    },
+    {
+    "group": "maxPeRatio",
+    "display_name": "P/E Ratio Below (Refinitiv)",
+    "code": "maxPeRatio",
+    "type": "non-range"
+    },
+    {
+    "group": "curPPOAbove",
+    "display_name": "PPO Above",
+    "code": "curPPOAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "curPPOBelow",
+    "display_name": "PPO Below",
+    "code": "curPPOBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "curPPOSignalAbove",
+    "display_name": "PPO Signal Above",
+    "code": "curPPOSignalAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "curPPOSignalBelow",
+    "display_name": "PPO Signal Below",
+    "code": "curPPOSignalBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "curPPODistAbove",
+    "display_name": "PPO Histogram Above",
+    "code": "curPPODistAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "curPPODistBelow",
+    "display_name": "PPO Histogram Below",
+    "code": "curPPODistBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "priceAbove",
+    "display_name": "Price Above",
+    "code": "priceAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "priceBelow",
+    "display_name": "Price Below",
+    "code": "priceBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "minPrice2Bk",
+    "display_name": "Price/Book Ratio Above (Refinitiv)",
+    "code": "minPrice2Bk",
+    "type": "non-range"
+    },
+    {
+    "group": "maxPrice2Bk",
+    "display_name": "Price/Book Ratio Below (Refinitiv)",
+    "code": "maxPrice2Bk",
+    "type": "non-range"
+    },
+    {
+    "group": "minPrice2TanBk",
+    "display_name": "Price/Tang. Book Above (Refinitiv)",
+    "code": "minPrice2TanBk",
+    "type": "non-range"
+    },
+    {
+    "group": "maxPrice2TanBk",
+    "display_name": "Price/Tang. Book Below (Refinitiv)",
+    "code": "maxPrice2TanBk",
+    "type": "non-range"
+    },
+    {
+    "group": "priceRangeAbove",
+    "display_name": "Price Range Above",
+    "code": "priceRangeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "priceRangeBelow",
+    "display_name": "Price Range Below",
+    "code": "priceRangeBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "usdPriceAbove",
+    "display_name": "Price ($) Above",
+    "code": "usdPriceAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "usdPriceBelow",
+    "display_name": "Price ($) Below",
+    "code": "usdPriceBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "minQuickRatio",
+    "display_name": "Quick Ratio Above (Refinitiv)",
+    "code": "minQuickRatio",
+    "type": "non-range"
+    },
+    {
+    "group": "maxQuickRatio",
+    "display_name": "Quick Ratio Below (Refinitiv)",
+    "code": "maxQuickRatio",
+    "type": "non-range"
+    },
+    {
+    "group": "rebateRateAbove",
+    "display_name": "Rebate Rate Above",
+    "code": "rebateRateAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "rebateRateBelow",
+    "display_name": "Rebate Rate Below",
+    "code": "rebateRateBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "regulatoryImbalanceAbove",
+    "display_name": "Regulatory Imbalance Above",
+    "code": "regulatoryImbalanceAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "regulatoryImbalanceBelow",
+    "display_name": "Regulatory Imbalance Below",
+    "code": "regulatoryImbalanceBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "displayRegulatoryImbAdvRatioAbove",
+    "display_name": "Regulatory Imbalance Adv Ratio (%) Above",
+    "code": "displayRegulatoryImbAdvRatioAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "displayRegulatoryImbAdvRatioBelow",
+    "display_name": "Regulatory Imbalance Adv Ratio (%) Below",
+    "code": "displayRegulatoryImbAdvRatioBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "minRetnOnEq",
+    "display_name": "Return On Equity Above (Refinitiv)",
+    "code": "minRetnOnEq",
+    "type": "non-range"
+    },
+    {
+    "group": "maxRetnOnEq",
+    "display_name": "Return On Equity Below (Refinitiv)",
+    "code": "maxRetnOnEq",
+    "type": "non-range"
+    },
+    {
+    "group": "sharesAvailableManyAbove",
+    "display_name": "Shares Available Above",
+    "code": "sharesAvailableManyAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "sharesAvailableManyBelow",
+    "display_name": "Shares Available Below",
+    "code": "sharesAvailableManyBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "shortSaleRestrictionIs",
+    "display_name": "Short Sale Restriction",
+    "code": "shortSaleRestrictionIs",
+    "combo_values": [
+    {
+    "default": true
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "issuerCountryIs",
+    "display_name": "Issuer Country",
+    "code": "issuerCountryIs",
+    "combo_values": [
+    {
+    "default": true
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "socialSentimentActivityAbove",
+    "display_name": "Social Sentiment Activity Above",
+    "code": "socialSentimentActivityAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "socialSentimentActivityBelow",
+    "display_name": "Social Sentiment Activity Below",
+    "code": "socialSentimentActivityBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "socialSentimentNetAbove",
+    "display_name": "Net Social Sentiment Above",
+    "code": "socialSentimentNetAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "socialSentimentNetBelow",
+    "display_name": "Net Social Sentiment Below",
+    "code": "socialSentimentNetBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "stkTypes",
+    "display_name": "Stock type",
+    "code": "stkTypes",
+    "combo_values": [
+    {
+    "default": true
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "stVolume3minAbove",
+    "display_name": "3min Volume Above",
+    "code": "stVolume3minAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "stVolume3minBelow",
+    "display_name": "3min Volume Below",
+    "code": "stVolume3minBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "stVolume5minAbove",
+    "display_name": "5min Volume Above",
+    "code": "stVolume5minAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "stVolume5minBelow",
+    "display_name": "5min Volume Below",
+    "code": "stVolume5minBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "stVolume10minAbove",
+    "display_name": "10min Volume Above",
+    "code": "stVolume10minAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "stVolume10minBelow",
+    "display_name": "10min Volume Below",
+    "code": "stVolume10minBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "tradeCountAbove",
+    "display_name": "Trade Count Above",
+    "code": "tradeCountAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "tradeCountBelow",
+    "display_name": "Trade Count Below",
+    "code": "tradeCountBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "tradeRateAbove",
+    "display_name": "Trade Rate Above",
+    "code": "tradeRateAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "tradeRateBelow",
+    "display_name": "Trade Rate Below",
+    "code": "tradeRateBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "unshortableIs",
+    "display_name": "Unshortable",
+    "code": "unshortableIs",
+    "combo_values": [
+    {
+    "default": true
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "volumeAbove",
+    "display_name": "Volume Above",
+    "code": "volumeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "volumeRateAbove",
+    "display_name": "Volume Rate Above",
+    "code": "volumeRateAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "volumeRateBelow",
+    "display_name": "Volume Rate Below",
+    "code": "volumeRateBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "usdVolumeAbove",
+    "display_name": "Volume ($) Above",
+    "code": "usdVolumeAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "usdVolumeBelow",
+    "display_name": "Volume ($) Below",
+    "code": "usdVolumeBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgScoreAbove",
+    "display_name": "ESG Score Above",
+    "code": "esgScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgScoreBelow",
+    "display_name": "ESG Score Below",
+    "code": "esgScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgCombinedScoreAbove",
+    "display_name": "ESG Combined Score Above",
+    "code": "esgCombinedScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgCombinedScoreBelow",
+    "display_name": "ESG Combined Score Below",
+    "code": "esgCombinedScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgControversiesScoreAbove",
+    "display_name": "ESG Controversies Score Above",
+    "code": "esgControversiesScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgControversiesScoreBelow",
+    "display_name": "ESG Controversies Score Below",
+    "code": "esgControversiesScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgResourceUseScoreAbove",
+    "display_name": "ESG Resource Use Score Above",
+    "code": "esgResourceUseScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgResourceUseScoreBelow",
+    "display_name": "ESG Resource Use Score Below",
+    "code": "esgResourceUseScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgEmissionsScoreAbove",
+    "display_name": "ESG Emissions Score Above",
+    "code": "esgEmissionsScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgEmissionsScoreBelow",
+    "display_name": "ESG Emissions Score Below",
+    "code": "esgEmissionsScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgEnvInvScoreAbove",
+    "display_name": "ESG Environmental Innovation Score Above",
+    "code": "esgEnvInvScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgEnvInvScoreBelow",
+    "display_name": "ESG Environmental Innovation Score Below",
+    "code": "esgEnvInvScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgWorkforceScoreAbove",
+    "display_name": "ESG Workforce Score Above",
+    "code": "esgWorkforceScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgWorkforceScoreBelow",
+    "display_name": "ESG Workforce Score Below",
+    "code": "esgWorkforceScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgHrScoreAbove",
+    "display_name": "ESG Human Rights Score Above",
+    "code": "esgHrScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgHrScoreBelow",
+    "display_name": "ESG Human Rights Score Below",
+    "code": "esgHrScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgCommunityScoreAbove",
+    "display_name": "ESG Community Score Above",
+    "code": "esgCommunityScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgCommunityScoreBelow",
+    "display_name": "ESG Community Score Below",
+    "code": "esgCommunityScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgProdRespScoreAbove",
+    "display_name": "ESG Product Responsibility Score Above",
+    "code": "esgProdRespScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgProdRespScoreBelow",
+    "display_name": "ESG Product Responsibility Score Below",
+    "code": "esgProdRespScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgManagementScoreAbove",
+    "display_name": "ESG Management Score Above",
+    "code": "esgManagementScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgManagementScoreBelow",
+    "display_name": "ESG Management Score Below",
+    "code": "esgManagementScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgShareholdersScoreAbove",
+    "display_name": "ESG Shareholders Score Above",
+    "code": "esgShareholdersScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgShareholdersScoreBelow",
+    "display_name": "ESG Shareholders Score Below",
+    "code": "esgShareholdersScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgStrategyScoreAbove",
+    "display_name": "ESG CSR Strategy Score Above",
+    "code": "esgStrategyScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgStrategyScoreBelow",
+    "display_name": "ESG CSR Strategy Score Below",
+    "code": "esgStrategyScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgEnvPillarScoreAbove",
+    "display_name": "ESG Environmental Score Above",
+    "code": "esgEnvPillarScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgEnvPillarScoreBelow",
+    "display_name": "ESG Environmental Score Below",
+    "code": "esgEnvPillarScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgSocialPillarScoreAbove",
+    "display_name": "ESG Social Score Above",
+    "code": "esgSocialPillarScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgSocialPillarScoreBelow",
+    "display_name": "ESG Social Score Below",
+    "code": "esgSocialPillarScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "esgCorpGovPillarScoreAbove",
+    "display_name": "ESG Corporate Governance Score Above",
+    "code": "esgCorpGovPillarScoreAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "esgCorpGovPillarScoreBelow",
+    "display_name": "ESG Corporate Governance Score Below",
+    "code": "esgCorpGovPillarScoreBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ivRank13wAbove",
+    "display_name": "13 Week IV Rank Above",
+    "code": "ivRank13wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ivRank13wBelow",
+    "display_name": "13 Week IV Rank Below",
+    "code": "ivRank13wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ivRank26wAbove",
+    "display_name": "26 Week IV Rank Above",
+    "code": "ivRank26wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ivRank26wBelow",
+    "display_name": "26 Week IV Rank Below",
+    "code": "ivRank26wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ivRank52wAbove",
+    "display_name": "52 Week IV Rank Above",
+    "code": "ivRank52wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ivRank52wBelow",
+    "display_name": "52 Week IV Rank Below",
+    "code": "ivRank52wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ivPercntl13wAbove",
+    "display_name": "13 Week IV Percentile Above",
+    "code": "ivPercntl13wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ivPercntl13wBelow",
+    "display_name": "13 Week IV Percentile Below",
+    "code": "ivPercntl13wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ivPercntl26wAbove",
+    "display_name": "26 Week IV Percentile Above",
+    "code": "ivPercntl26wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ivPercntl26wBelow",
+    "display_name": "26 Week IV Percentile Below",
+    "code": "ivPercntl26wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "ivPercntl52wAbove",
+    "display_name": "52 Week IV Percentile Above",
+    "code": "ivPercntl52wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "ivPercntl52wBelow",
+    "display_name": "52 Week IV Percentile Below",
+    "code": "ivPercntl52wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "hvRank13wAbove",
+    "display_name": "13 Week HV Rank Above",
+    "code": "hvRank13wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "hvRank13wBelow",
+    "display_name": "13 Week HV Rank Below",
+    "code": "hvRank13wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "HVRank26wAbove",
+    "display_name": "26 Week HV Rank Above",
+    "code": "HVRank26wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "HVRank26wBelow",
+    "display_name": "26 Week HV Rank Below",
+    "code": "HVRank26wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "HVRank52wAbove",
+    "display_name": "52 Week HV Rank Above",
+    "code": "HVRank52wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "HVRank52wBelow",
+    "display_name": "52 Week HV Rank Below",
+    "code": "HVRank52wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "HVPercntl13wAbove",
+    "display_name": "13 Week HV Percentile Above",
+    "code": "HVPercntl13wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "HVPercntl13wBelow",
+    "display_name": "13 Week HV Percentile Below",
+    "code": "HVPercntl13wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "HVPercntl26wAbove",
+    "display_name": "26 Week HV Percentile Above",
+    "code": "HVPercntl26wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "HVPercntl26wBelow",
+    "display_name": "26 Week HV Percentile Below",
+    "code": "HVPercntl26wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "HVPercntl52wAbove",
+    "display_name": "52 Week HV Percentile Above",
+    "code": "HVPercntl52wAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "HVPercntl52wBelow",
+    "display_name": "52 Week HV Percentile Below",
+    "code": "HVPercntl52wBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "utilizationAbove",
+    "display_name": "Utilization Above",
+    "code": "utilizationAbove",
+    "type": "non-range"
+    },
+    {
+    "group": "utilizationBelow",
+    "display_name": "Utilization Below",
+    "code": "utilizationBelow",
+    "type": "non-range"
+    },
+    {
+    "group": "prodCatIs",
+    "display_name": "Product Category",
+    "code": "prodCatIs",
+    "combo_values": [
+    {
+    "default": true
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    },
+    {
+    "default": false
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "leadFutOnly",
+    "display_name": "Lead Month Only",
+    "code": "leadFutOnly",
+    "combo_values": [
+    {
+    "default": false
+    },
+    {
+    "default": true
+    }
+    ],
+    "type": "combo"
+    },
+    {
+    "group": "underConID",
+    "display_name": "Underlying Contract",
+    "code": "underConID",
+    "type": "non-range"
+    }
+    ],
+    "location_tree": [
+    {
+    "display_name": "US Stocks",
+    "type": "STK",
+    "locations": [
+    {
+    "display_name": "Listed/NASDAQ",
+    "type": "STK.US.MAJOR",
+    "locations": []
+    }
+    ]
+    },
+    {
+    "display_name": "US Futures",
+    "type": "FUT.US",
+    "locations": [
+    {
+    "display_name": "GLOBEX",
+    "type": "FUT.GLOBEX"
+    },
+    {
+    "display_name": "E-CBOT",
+    "type": "FUT.ECBOT"
+    },
+    {
+    "display_name": "IPE",
+    "type": "FUT.IPE"
+    },
+    {
+    "display_name": "NYBOT",
+    "type": "FUT.NYBOT"
+    },
+    {
+    "display_name": "NYSELIFFE",
+    "type": "FUT.NYSELIFFE"
+    },
+    {
+    "display_name": "CFE",
+    "type": "FUT.CFE"
+    },
+    {
+    "display_name": "CFECRYPTO",
+    "type": "FUT.CFECRYPTO"
+    },
+    {
+    "display_name": "CMECRYPTO",
+    "type": "FUT.CMECRYPTO"
+    },
+    {
+    "display_name": "ICECRYPTO",
+    "type": "FUT.ICECRYPTO"
+    }
+    ]
+    },
+    {
+    "display_name": "US SSFs",
+    "type": "SSF.US",
+    "locations": [
+    {
+    "display_name": "ONE/Chicago",
+    "type": "SSF.ONE"
+    }
+    ]
+    },
+    {
+    "display_name": "America Non-US Stocks",
+    "type": "STOCK.NA",
+    "locations": [
+    {
+    "display_name": "Canada",
+    "type": "STK.NA.CANADA",
+    "locations": []
+    }
+    ]
+    },
+    {
+    "display_name": "Europe Stocks",
+    "type": "STOCK.EU",
+    "locations": [
+    {
+    "display_name": "France (SBF)",
+    "type": "STK.EU.SBF"
+    },
+    {
+    "display_name": "Germany",
+    "type": "STK.EU.IBIS",
+    "locations": []
+    },
+    {
+    "display_name": "Netherlands (AEB)",
+    "type": "STK.EU.AEB"
+    },
+    {
+    "display_name": "Spain (BM)",
+    "type": "STK.EU.BM"
+    },
+    {
+    "display_name": "Switzerland",
+    "type": "STK.EU.SWISS",
+    "locations": []
+    },
+    {
+    "display_name": "United Kingdom (LSE)",
+    "type": "STK.EU.LSE"
+    }
+    ]
+    },
+    {
+    "display_name": "Europe Futures",
+    "type": "FUT.EU",
+    "locations": [
+    {
+    "display_name": "Belgium (BELFOX)",
+    "type": "FUT.EU.BELFOX"
+    },
+    {
+    "display_name": "Germany (DTB)",
+    "type": "FUT.EU.DTB"
+    },
+    {
+    "display_name": "Netherlands (FTA)",
+    "type": "FUT.EU.FTA"
+    },
+    {
+    "display_name": "United Kingdom",
+    "type": "FUT.EU.UK",
+    "locations": []
+    },
+    {
+    "display_name": "France (MONEP)",
+    "type": "FUT.EU.MONEP"
+    },
+    {
+    "display_name": "Switzerland (SOFFEX)",
+    "type": "FUT.EU.SOFFEX"
+    }
+    ]
+    },
+    {
+    "display_name": "Europe Indexes",
+    "type": "IND.EU",
+    "locations": [
+    {
+    "display_name": "Belgium (BELFOX)",
+    "type": "IND.EU.BELFOX"
+    },
+    {
+    "display_name": "Germany (DTB)",
+    "type": "IND.EU.DTB"
+    },
+    {
+    "display_name": "Netherlands (FTA)",
+    "type": "IND.EU.FTA"
+    },
+    {
+    "display_name": "United Kingdom (ICEEU)",
+    "type": "IND.EU.ICEEU"
+    },
+    {
+    "display_name": "France (MONEP)",
+    "type": "IND.EU.MONEP"
+    }
+    ]
+    },
+    {
+    "display_name": "Europe SSFs",
+    "type": "SSF.EU",
+    "locations": [
+    {
+    "display_name": "Germany (DTB)",
+    "type": "SSF.EU.DTB"
+    },
+    {
+    "display_name": "United Kingdom (ICEEU)",
+    "type": "SSF.EU.ICEEU"
+    },
+    {
+    "display_name": "Switzerland (SOFFEX)",
+    "type": "SSF.EU.SOFFEX"
+    }
+    ]
+    },
+    {
+    "display_name": "Asia Stocks",
+    "type": "STOCK.HK",
+    "locations": [
+    {
+    "display_name": "Hong Kong (SEHK)",
+    "type": "STK.HK.SEHK"
+    },
+    {
+    "display_name": "Australia (ASX)",
+    "type": "STK.HK.ASX"
+    }
+    ]
+    },
+    {
+    "display_name": "Asia Futures",
+    "type": "FUT.HK",
+    "locations": [
+    {
+    "display_name": "Hong Kong (HKFE)",
+    "type": "FUT.HK.HKFE"
+    },
+    {
+    "display_name": "Japan (OSE.JPN)",
+    "type": "FUT.HK.OSE_JPN"
+    }
+    ]
+    },
+    {
+    "display_name": "Asia SSFs",
+    "type": "SSF.HK",
+    "locations": [
+    {
+    "display_name": "Hong Kong (HKFE)",
+    "type": "SSF.HK.HKFE"
+    }
+    ]
+    },
+    {
+    "display_name": "Native Combos",
+    "type": "NATCOMB",
+    "locations": [
+    {
+    "display_name": "Option Combos (SMART)",
+    "type": "NATCOMB.OPT.US"
+    },
+    {
+    "display_name": "Option Combos (AMEX)",
+    "type": "NATCOMB.OPT.AMEX"
+    },
+    {
+    "display_name": "Option Combos (CBOE)",
+    "type": "NATCOMB.OPT.CBOE"
+    },
+    {
+    "display_name": "Option Combos (ISE)",
+    "type": "NATCOMB.OPT.ISE"
+    },
+    {
+    "display_name": "Option Combos (PHLX)",
+    "type": "NATCOMB.OPT.PHLX"
+    },
+    {
+    "display_name": "Option Combos (PSE)",
+    "type": "NATCOMB.OPT.PSE"
+    },
+    {
+    "display_name": "Globex Combos",
+    "type": "NATCOMB.GLOBEX"
+    }
+    ]
+    }
+    ]
+    }

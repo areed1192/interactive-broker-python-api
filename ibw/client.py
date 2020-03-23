@@ -823,7 +823,7 @@ class IBClient():
         CONTRACT ENDPOINTS
     '''
 
-    def symbol_search(self, symbol):
+    def symbol_search(self, symbol = None):
         '''
             Performs a symbol search for a given symbol and returns information related to the
             symbol including the contract id.
@@ -837,7 +837,62 @@ class IBClient():
 
         return content
 
+    def contract_details(self, conid = None):
+        '''
+            Get contract details, you can use this to prefill your order before you submit an order.
 
+            NAME: conid
+            DESC: The contract ID you wish to get details for.
+            TYPE: String
+
+            RTYPE: Dictionary
+        '''
+
+        # define the request components
+        endpoint = '/iserver/contract/{conid}/info'.format(conid = conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content
+
+    def contracts_definitions(self, conids = None):
+        '''
+            Returns a list of security definitions for the given conids.
+
+            NAME: conids
+            DESC: A list of contract IDs you wish to get details for.
+            TYPE: List<Integer>
+
+            RTYPE: Dictionary
+        '''
+
+        # define the request components
+        endpoint = '/trsrv/secdef'
+        req_type = 'POST'
+        payload = {'conids':conids}
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+
+        return content
+
+    def futures_search(self, symbols = None):
+        '''
+            Returns a list of non-expired future contracts for given symbol(s).
+
+            NAME: Symbol
+            DESC: List of case-sensitive symbols separated by comma.
+            TYPE: List<String>
+
+            RTYPE: Dictionary
+        '''
+
+        # define the request components
+        endpoint = '/trsrv/futures'
+        req_type = 'GET'
+        payload = {'symbols':{}.format(','.join(symbols))}
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+
+        return content        
+        
     '''
         PORTFOLIO ACCOUNTS ENDPOINTS
     '''
@@ -1272,3 +1327,185 @@ class IBClient():
         content = self._make_request(endpoint = endpoint, req_type = req_type).json()
 
         return content 
+
+
+    '''
+        ORDERS ENDPOINTS
+    '''
+
+
+    def get_scanners(self):
+        '''
+            Returns an object contains four lists contain all parameters for scanners.
+
+            RTYPE Dictionary
+        '''
+        # define request components
+        endpoint = r'/iserver/scanner/params'
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content 
+
+    def run_scanner(self, instrument = None, scanner_type = None, location = None, size = None, filters = None):
+        '''
+            Run a scanner to get a list of contracts.
+
+            NAME: instrument
+            DESC: The type of financial instrument you want to scan for.
+            TYPE: String
+
+            NAME: scanner_type
+            DESC: The Type of scanner you wish to run, defined by the scanner code.
+            TYPE: String
+
+            NAME: location
+            DESC: The geographic location you wish to run the scan. For example (STK.US.MAJOR)
+            TYPE: String 
+
+            NAME: size
+            DESC: The number of results to return back. Defaults to 25.
+            TYPE: String        
+
+            NAME: filters
+            DESC: A list of dictionaries where the key is the filter you wish to set and the value is the value you want set
+                  for that filter.
+            TYPE: List<Dictionaries>      
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/iserver/scanner/params'
+        req_type = 'POST'
+        payload = {
+            "instrument": instrument,
+            "type": scanner_type,
+            "filter": [
+                {
+                    "code": "string",
+                    "value": 0
+                }
+            ],
+            "location": location,
+            "size": size
+        }
+
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+
+        return content 
+    
+    def customer_info(self):
+        '''
+            Returns Applicant Id with all owner related entities     
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/ibcust/entity/info'
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content 
+    
+    def get_unread_messages(self):
+        '''
+            Returns the unread messages associated with the account.
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fyi/unreadnumber'
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content 
+
+    def get_subscriptions(self):
+        '''
+            Return the current choices of subscriptions, we can toggle the option.
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fyi/settings'
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content 
+
+    def change_subscriptions_status(self, type_code = None, enable = None):
+        '''
+            Turns the subscription on or off.
+
+            NAME: type_code
+            DESC: The subscription code you wish to change the status for.
+            TYPE: String
+
+            NAME: enable
+            DESC: True if you want the subscription turned on, False if you want it turned of.
+            TYPE: Boolean
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fyi/settings/{}'
+        req_type = 'POST'
+        payload = {'enable': enable}
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+
+        return content 
+
+    def subscriptions_disclaimer(self, type_code = None):
+        '''
+            Returns the disclaimer for the specified subscription.
+
+            NAME: type_code
+            DESC: The subscription code you wish to change the status for.
+            TYPE: String
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fyi/disclaimer/{}'
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content
+
+    def mark_subscriptions_disclaimer(self, type_code = None):
+        '''
+            Sets the specified disclaimer to read.
+
+            NAME: type_code
+            DESC: The subscription code you wish to change the status for.
+            TYPE: String
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fyi/disclaimer/{}'
+        req_type = 'PUT'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content
+
+    def subscriptions_delivery_options(self):
+        '''
+            Options for sending fyis to email and other devices.
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fyi/deliveryoptions'
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+
+        return content

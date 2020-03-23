@@ -16,6 +16,14 @@ ib_client.create_session()
 # https://localhost:5000/sso/Login?forwardTo=22&RL=1&ip2loc=off
 # https://cdcdyn.interactivebrokers.com/portal/?action=22&RL=1&ip2loc=off
 
+# WIDGETS - NEWS BRIEFING
+# https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/iserver/news/briefing
+# https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/iserver/news/sources
+# https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/iserver/news/top
+# https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/iserver/news/portfolio
+# https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/metrics/report
+# https://cdcdyn.interactivebrokers.com/portal.proxy/v1/mkt/hmds/scanner
+
 
 # FUNDAMENTAL DATA - WORKS
 # https://localhost:5000/v1/portal/iserver/fundamentals/265598/summary

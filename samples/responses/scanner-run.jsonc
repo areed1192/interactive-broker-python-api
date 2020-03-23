@@ -1,0 +1,584 @@
+[
+    // Request the Scan
+    {
+        "instrument": "STK",
+        "type": "NOT_YET_TRADED_TODAY",
+        "filter": [
+            {
+                "code": "priceAbove",
+                "value": 50
+            },
+            {
+                "code": "priceBelow",
+                "value": 70
+            },
+            {
+                "code": "volumeAbove",
+                "value": null
+            },
+            {
+                "code": "volumeBelow",
+                "value": null
+            }
+        ],
+        "location": "STK.US.MAJOR",
+        "size": "25"
+    },
+    // Result of Scan
+    {
+        "contracts": [
+            {
+                "server_id": "0",
+                "column_name": " ",
+                "symbol": "ABT",
+                "conidex": "4065",
+                "con_id": 4065,
+                "available_chart_periods": "#R|1",
+                "company_name": "ABBOTT LABORATORIES .",
+                "contract_description_1": "ABT",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "1",
+                "symbol": "ADC",
+                "conidex": "4151",
+                "con_id": 4151,
+                "available_chart_periods": "#R|1",
+                "company_name": "AGREE REALTY CORP",
+                "contract_description_1": "ADC",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "2",
+                "symbol": "ALB",
+                "conidex": "4347",
+                "con_id": 4347,
+                "available_chart_periods": "#R|1",
+                "company_name": "ALBEMARLE CORP",
+                "contract_description_1": "ALB",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "3",
+                "symbol": "AME",
+                "conidex": "4392",
+                "con_id": 4392,
+                "available_chart_periods": "#R|1",
+                "company_name": "AMETEK INC",
+                "contract_description_1": "AME",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "4",
+                "symbol": "BBY",
+                "conidex": "4817",
+                "con_id": 4817,
+                "available_chart_periods": "#R|1",
+                "company_name": "BEST BUY CO INC",
+                "contract_description_1": "BBY",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "5",
+                "symbol": "VZ",
+                "conidex": "4901",
+                "con_id": 4901,
+                "available_chart_periods": "#R|1",
+                "company_name": "VERIZON COMMUNICATIONS INC",
+                "contract_description_1": "VZ",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "6",
+                "symbol": "BKH",
+                "conidex": "5022",
+                "con_id": 5022,
+                "available_chart_periods": "#R|1",
+                "company_name": "BLACK HILLS CORP",
+                "contract_description_1": "BKH",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "7",
+                "symbol": "BLL",
+                "conidex": "5052",
+                "con_id": 5052,
+                "available_chart_periods": "#R|1",
+                "company_name": "BALL CORP",
+                "contract_description_1": "BLL",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "8",
+                "symbol": "BOH",
+                "conidex": "5147",
+                "con_id": 5147,
+                "available_chart_periods": "#R|1",
+                "company_name": "BANK OF HAWAII CORP",
+                "contract_description_1": "BOH",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "9",
+                "symbol": "CDNS",
+                "conidex": "5552",
+                "con_id": 5552,
+                "available_chart_periods": "#R|1",
+                "company_name": "CADENCE DESIGN SYS INC",
+                "contract_description_1": "CDNS",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "10",
+                "symbol": "CFR",
+                "conidex": "5610",
+                "con_id": 5610,
+                "available_chart_periods": "#R|1",
+                "company_name": "CULLEN/FROST BANKERS INC",
+                "contract_description_1": "CFR",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "11",
+                "symbol": "CHD",
+                "conidex": "5651",
+                "con_id": 5651,
+                "available_chart_periods": "#R|1",
+                "company_name": "CHURCH & DWIGHT CO INC",
+                "contract_description_1": "CHD",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "12",
+                "symbol": "CVX",
+                "conidex": "5684",
+                "con_id": 5684,
+                "available_chart_periods": "#R|1",
+                "company_name": "CHEVRON CORP",
+                "contract_description_1": "CVX",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "13",
+                "symbol": "CL",
+                "conidex": "5749",
+                "con_id": 5749,
+                "available_chart_periods": "#R|1",
+                "company_name": "COLGATE-PALMOLIVE CO",
+                "contract_description_1": "CL",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "14",
+                "symbol": "CWT",
+                "conidex": "6255",
+                "con_id": 6255,
+                "available_chart_periods": "#R|1",
+                "company_name": "CALIFORNIA WATER SERVICE GRP",
+                "contract_description_1": "CWT",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "15",
+                "symbol": "D",
+                "conidex": "6327",
+                "con_id": 6327,
+                "available_chart_periods": "#R|1",
+                "company_name": "DOMINION ENERGY INC",
+                "contract_description_1": "D",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "16",
+                "symbol": "DOV",
+                "conidex": "6517",
+                "con_id": 6517,
+                "available_chart_periods": "#R|1",
+                "company_name": "DOVER CORP",
+                "contract_description_1": "DOV",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "17",
+                "symbol": "EQR",
+                "conidex": "6917",
+                "con_id": 6917,
+                "available_chart_periods": "#R|1",
+                "company_name": "EQUITY RESIDENTIAL",
+                "contract_description_1": "EQR",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "18",
+                "symbol": "ESE",
+                "conidex": "6929",
+                "con_id": 6929,
+                "available_chart_periods": "#R|1",
+                "company_name": "ESCO TECHNOLOGIES INC",
+                "contract_description_1": "ESE",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "19",
+                "symbol": "FMC",
+                "conidex": "7238",
+                "con_id": 7238,
+                "available_chart_periods": "#R|1",
+                "company_name": "FMC CORP",
+                "contract_description_1": "FMC",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "20",
+                "symbol": "GIS",
+                "conidex": "7616",
+                "con_id": 7616,
+                "available_chart_periods": "#R|1",
+                "company_name": "GENERAL MILLS INC",
+                "contract_description_1": "GIS",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "21",
+                "symbol": "GATX",
+                "conidex": "7690",
+                "con_id": 7690,
+                "available_chart_periods": "#R|1",
+                "company_name": "GATX CORP",
+                "contract_description_1": "GATX",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "22",
+                "symbol": "GPC",
+                "conidex": "7745",
+                "con_id": 7745,
+                "available_chart_periods": "#R|1",
+                "company_name": "GENUINE PARTS CO",
+                "contract_description_1": "GPC",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "23",
+                "symbol": "J",
+                "conidex": "8660",
+                "con_id": 8660,
+                "available_chart_periods": "#R|1",
+                "company_name": "JACOBS ENGINEERING GROUP INC",
+                "contract_description_1": "J",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "24",
+                "symbol": "K",
+                "conidex": "8758",
+                "con_id": 8758,
+                "available_chart_periods": "#R|1",
+                "company_name": "KELLOGG CO",
+                "contract_description_1": "K",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "25",
+                "symbol": "LOW",
+                "conidex": "9199",
+                "con_id": 9199,
+                "available_chart_periods": "#R|1",
+                "company_name": "LOWE'S COS INC",
+                "contract_description_1": "LOW",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "26",
+                "symbol": "MAN",
+                "conidex": "9355",
+                "con_id": 9355,
+                "available_chart_periods": "#R|1",
+                "company_name": "MANPOWERGROUP INC",
+                "contract_description_1": "MAN",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "27",
+                "symbol": "NKE",
+                "conidex": "10291",
+                "con_id": 10291,
+                "available_chart_periods": "#R|1",
+                "company_name": "NIKE INC -CL B",
+                "contract_description_1": "NKE",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "28",
+                "symbol": "XEL",
+                "conidex": "10517",
+                "con_id": 10517,
+                "available_chart_periods": "#R|1",
+                "company_name": "XCEL ENERGY INC",
+                "contract_description_1": "XEL",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "29",
+                "symbol": "PGR",
+                "conidex": "11080",
+                "con_id": 11080,
+                "available_chart_periods": "#R|1",
+                "company_name": "PROGRESSIVE CORP",
+                "contract_description_1": "PGR",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "30",
+                "symbol": "PNW",
+                "conidex": "11257",
+                "con_id": 11257,
+                "available_chart_periods": "#R|1",
+                "company_name": "PINNACLE WEST CAPITAL",
+                "contract_description_1": "PNW",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "31",
+                "symbol": "RJF",
+                "conidex": "11656",
+                "con_id": 11656,
+                "available_chart_periods": "#R|1",
+                "company_name": "RAYMOND JAMES FINANCIAL INC",
+                "contract_description_1": "RJF",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "32",
+                "symbol": "SNE",
+                "conidex": "12268",
+                "con_id": 12268,
+                "available_chart_periods": "#R|1",
+                "company_name": "SONY CORP-SPONSORED ADR",
+                "contract_description_1": "SNE",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "33",
+                "symbol": "SWX",
+                "conidex": "12540",
+                "con_id": 12540,
+                "available_chart_periods": "#R|1",
+                "company_name": "SOUTHWEST GAS HOLDINGS INC",
+                "contract_description_1": "SWX",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "34",
+                "symbol": "TTC",
+                "conidex": "13024",
+                "con_id": 13024,
+                "available_chart_periods": "#R|1",
+                "company_name": "TORO CO",
+                "contract_description_1": "TTC",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "35",
+                "symbol": "AEE",
+                "conidex": "13181",
+                "con_id": 13181,
+                "available_chart_periods": "#R|1",
+                "company_name": "AMEREN CORP",
+                "contract_description_1": "AEE",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "36",
+                "symbol": "UHT",
+                "conidex": "13209",
+                "con_id": 13209,
+                "available_chart_periods": "#R|1",
+                "company_name": "UNIVERSAL HEALTH RLTY INCOME",
+                "contract_description_1": "UHT",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "37",
+                "symbol": "VFC",
+                "conidex": "13440",
+                "con_id": 13440,
+                "available_chart_periods": "#R|1",
+                "company_name": "VF CORP",
+                "contract_description_1": "VFC",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "38",
+                "symbol": "ANAT",
+                "conidex": "266204",
+                "con_id": 266204,
+                "available_chart_periods": "#R|1",
+                "company_name": "AMERICAN NATIONAL INSURANCE",
+                "contract_description_1": "ANAT",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "39",
+                "symbol": "CBSH",
+                "conidex": "267345",
+                "con_id": 267345,
+                "available_chart_periods": "#R|1",
+                "company_name": "COMMERCE BANCSHARES INC",
+                "contract_description_1": "CBSH",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "40",
+                "symbol": "CERN",
+                "conidex": "267475",
+                "con_id": 267475,
+                "available_chart_periods": "#R|1",
+                "company_name": "CERNER CORP",
+                "contract_description_1": "CERN",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "41",
+                "symbol": "CRUS",
+                "conidex": "268057",
+                "con_id": 268057,
+                "available_chart_periods": "#R|1",
+                "company_name": "CIRRUS LOGIC INC",
+                "contract_description_1": "CRUS",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "42",
+                "symbol": "CRVL",
+                "conidex": "268060",
+                "con_id": 268060,
+                "available_chart_periods": "#R|1",
+                "company_name": "CORVEL CORP",
+                "contract_description_1": "CRVL",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "43",
+                "symbol": "EXPD",
+                "conidex": "269082",
+                "con_id": 269082,
+                "available_chart_periods": "#R|1",
+                "company_name": "EXPEDITORS INTL WASH INC",
+                "contract_description_1": "EXPD",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "44",
+                "symbol": "INDB",
+                "conidex": "270567",
+                "con_id": 270567,
+                "available_chart_periods": "#R|1",
+                "company_name": "INDEPENDENT BANK CORP/MA",
+                "contract_description_1": "INDB",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "45",
+                "symbol": "MCHP",
+                "conidex": "271568",
+                "con_id": 271568,
+                "available_chart_periods": "#R|1",
+                "company_name": "MICROCHIP TECHNOLOGY INC",
+                "contract_description_1": "MCHP",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "46",
+                "symbol": "MGEE",
+                "conidex": "271652",
+                "con_id": 271652,
+                "available_chart_periods": "#R|1",
+                "company_name": "MGE ENERGY INC",
+                "contract_description_1": "MGEE",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "47",
+                "symbol": "MHK",
+                "conidex": "271967",
+                "con_id": 271967,
+                "available_chart_periods": "#R|1",
+                "company_name": "MOHAWK INDUSTRIES INC",
+                "contract_description_1": "MHK",
+                "listing_exchange": "NYSE",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "48",
+                "symbol": "MSEX",
+                "conidex": "272088",
+                "con_id": 272088,
+                "available_chart_periods": "#R|1",
+                "company_name": "MIDDLESEX WATER CO",
+                "contract_description_1": "MSEX",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            },
+            {
+                "server_id": "49",
+                "symbol": "NEOG",
+                "conidex": "272327",
+                "con_id": 272327,
+                "available_chart_periods": "#R|1",
+                "company_name": "NEOGEN CORP",
+                "contract_description_1": "NEOG",
+                "listing_exchange": "NASDAQ.NMS",
+                "sec_type": "STK"
+            }
+        ]
+    }
+]
+
