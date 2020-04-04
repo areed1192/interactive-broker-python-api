@@ -168,7 +168,7 @@ class IBClient():
             STEP 3: WHEN YOU SEE `Client login succeeds` RETURN BACK TO THE TERMINAL AND TYPE `YES` TO CHECK IF THE SESSION IS AUTHENTICATED.
             SERVER IS RUNNING ON PROCESS ID: {}
         {}
-        '''.format('-'*80, self.IB_GATEWAY_PATH + "/sso/Login?forwardTo=22&RL=1&ip2loc=off", self.server_process, '-'*80)
+        '''.format('-'*80, self.IB_GATEWAY_PATH + "/sso/Login?forwardTo=22&RL=1&ip2loc=on", self.server_process, '-'*80)
         )
 
         while self.authenticated == False:
@@ -181,6 +181,7 @@ class IBClient():
                 auth_response = self.is_authenticated()
 
             if 'statusCode' in auth_response.keys() and auth_response['statusCode'] == 401:
+                self.reauthenticate()
                 self.authenticated = False
             elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
                 self.authenticated = True
@@ -293,13 +294,28 @@ class IBClient():
             response = requests.get(url, headers = self._headers(mode = 'json'), verify = False, params = params)
 
         # grab the status code
-        if response.status_code != 200:
-            print(response.url)
-            print(response.headers)
-            print(response.content)
-            print(response.status_code)
+        status_code = response.status_code
+
+        # grab the response headers.
+        response_headers = response.headers
+
+        # Check to see if it was successful
+        if status_code in (200, 201):
+
+            if response_headers['Content-Type'] == 'application/json;charset=utf-8':
+                return response.json()
+
+        # if it was a bad request print it out.
+        elif status_code in (400, 403, 500):
             
-        return response 
+            print('')
+            print('-'*80)
+            print("BAD REQUEST - STATUS CODE: {}".format(status_code))
+            print("RESPONSE URL: {}".format(response.url))
+            print("RESPONSE HEADERS: {}".format(response.headers))
+            print("RESPONSE TEXT: {}".format(response.text))
+            print('-'*80)
+            print('')
 
 
     def _prepare_arguments_list(self, parameter_list = None):
@@ -341,7 +357,7 @@ class IBClient():
         # define request components
         endpoint = r'sso/validate'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -356,7 +372,7 @@ class IBClient():
         # define request components
         endpoint = r'tickle'
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -370,7 +386,7 @@ class IBClient():
         # define request components
         endpoint = r'logout'
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -404,7 +420,7 @@ class IBClient():
         # define request components
         endpoint = 'iserver/auth/status'
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -427,7 +443,7 @@ class IBClient():
         # define request components
         endpoint = 'iserver/fundamentals/{}/summary'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -467,7 +483,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/financials/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -489,7 +505,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -511,7 +527,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -533,7 +549,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -561,7 +577,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content      
 
@@ -583,7 +599,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content   
 
@@ -605,7 +621,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content   
 
@@ -627,7 +643,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -649,7 +665,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -671,7 +687,7 @@ class IBClient():
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -713,14 +729,18 @@ class IBClient():
 
         # define the parameters
         if since is None:
-            params = {'conids':conids_joined,
-                      'fields':fields_joined}
+            params = {
+                'conids':conids_joined,
+                'fields':fields_joined
+            }
         else:
-            params = {'conids':conids_joined,
-                      'since':since,
-                      'fields':fields_joined}       
+            params = {
+                'conids':conids_joined,
+                'since':since,
+                'fields':fields_joined
+            }       
 
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -749,8 +769,12 @@ class IBClient():
         # define request components
         endpoint = 'iserver/marketdata/history'
         req_type = 'GET'
-        params = {'conid':conid, 'period':period, 'bar':bar}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        params = {
+            'conid':conid, 
+            'period':period, 
+            'bar':bar
+        }
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content    
 
@@ -773,7 +797,7 @@ class IBClient():
         # define request components
         endpoint = 'iserver/accounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -797,11 +821,11 @@ class IBClient():
         req_type = 'POST'
         params = {'acctId':account_id}
 
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         if 'status_code' in content.keys():
             time.sleep(1)
-            content = self._make_request(endpoint = endpoint, req_type = req_type, params = params).json()
+            content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 
@@ -815,7 +839,7 @@ class IBClient():
         # define request components
         endpoint = 'iserver/account/pnl/partitioned'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content    
 
@@ -833,7 +857,7 @@ class IBClient():
         endpoint = 'iserver/secdef/search'
         req_type = 'POST'
         payload = {'symbol':symbol}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params= payload).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params= payload)
 
         return content
 
@@ -851,7 +875,7 @@ class IBClient():
         # define the request components
         endpoint = '/iserver/contract/{conid}/info'.format(conid = conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -869,8 +893,10 @@ class IBClient():
         # define the request components
         endpoint = '/trsrv/secdef'
         req_type = 'POST'
-        payload = {'conids':conids}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+        payload = {
+            'conids':conids
+            }
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
         return content
 
@@ -888,8 +914,8 @@ class IBClient():
         # define the request components
         endpoint = '/trsrv/futures'
         req_type = 'GET'
-        payload = {'symbols':{}.format(','.join(symbols))}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+        payload = {'symbols':"{}".format(','.join(symbols))}
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
         return content        
         
@@ -911,7 +937,7 @@ class IBClient():
         # define request components
         endpoint = 'portfolio/accounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -928,7 +954,7 @@ class IBClient():
         # define request components
         endpoint = r'​portfolio/subaccounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
         
         return content
 
@@ -949,7 +975,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/meta'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
         
         return content
 
@@ -970,7 +996,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/summary'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
         
         return content
 
@@ -991,7 +1017,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/ledger'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
         
         return content
 
@@ -1011,7 +1037,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/allocation'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
         
         return content
 
@@ -1032,8 +1058,8 @@ class IBClient():
         endpoint = r'portfolio/allocation'
         req_type = 'POST'
         payload = account_ids
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
-        
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+
         return content
 
 
@@ -1065,7 +1091,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/positions/{}'.format(account_id, page_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
         
         return content
 
@@ -1093,7 +1119,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/position/{}'.format(account_id, conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1114,7 +1140,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/{}/positions/invalidate'.format(account_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1134,7 +1160,7 @@ class IBClient():
         # define request components
         endpoint = r'portfolio/positions/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1153,7 +1179,7 @@ class IBClient():
          # define request components
         endpoint = r'iserver/account/trades'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1176,7 +1202,7 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/orders'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1206,7 +1232,7 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/order'.format(account_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
 
         return content
 
@@ -1235,11 +1261,7 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/orders'.format(account_id)
         req_type = 'POST'
-
-        try:
-            content = self._make_request(endpoint = endpoint, req_type = req_type, params = orders).json()
-        except:
-            content = self._make_request(endpoint = endpoint, req_type = req_type, params = orders)
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = orders)
 
         return content
 
@@ -1266,11 +1288,7 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/order/whatif'.format(account_id)
         req_type = 'POST'
-
-        try:
-            content = self._make_request(endpoint = endpoint, req_type = req_type, params = order).json()
-        except:
-            content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
 
         return content
 
@@ -1303,7 +1321,7 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/order/{}'.format(account_id, customer_order_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
 
         return content 
 
@@ -1324,7 +1342,7 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/order/{}'.format(account_id, customer_order_id)
         req_type = 'DELETE'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content 
 
@@ -1343,7 +1361,7 @@ class IBClient():
         # define request components
         endpoint = r'/iserver/scanner/params'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content 
 
@@ -1391,7 +1409,7 @@ class IBClient():
             "size": size
         }
 
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
         return content 
     
@@ -1405,7 +1423,7 @@ class IBClient():
         # define request components
         endpoint = r'/ibcust/entity/info'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content 
     
@@ -1419,7 +1437,7 @@ class IBClient():
         # define request components
         endpoint = r'/fyi/unreadnumber'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content 
 
@@ -1433,7 +1451,7 @@ class IBClient():
         # define request components
         endpoint = r'/fyi/settings'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content 
 
@@ -1456,7 +1474,7 @@ class IBClient():
         endpoint = r'/fyi/settings/{}'
         req_type = 'POST'
         payload = {'enable': enable}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
         return content 
 
@@ -1474,7 +1492,7 @@ class IBClient():
         # define request components
         endpoint = r'/fyi/disclaimer/{}'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1492,7 +1510,7 @@ class IBClient():
         # define request components
         endpoint = r'/fyi/disclaimer/{}'
         req_type = 'PUT'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
 
@@ -1506,6 +1524,6 @@ class IBClient():
         # define request components
         endpoint = r'/fyi/deliveryoptions'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type).json()
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
