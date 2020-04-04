@@ -146,69 +146,94 @@ ib_client.create_session()
     FUTURES SEARCH
 '''
 
-futures_search = ib_client.futures_search(symbols = 'ES')
-print(futures_search)
-print('')
+# futures_search = ib_client.futures_search(symbols = 'ES')
+# print(futures_search)
+# print('')
 
 '''
     PORTFOLIO ACCOUNTS
 '''
 
-# portfolio_accounts = ib_client.portfolio_accounts()
-# print(portfolio_accounts)
-# print('')
+portfolio_accounts = ib_client.portfolio_accounts()
+print(portfolio_accounts)
+print('')
 
-# account_id = 'DU1767913'
+portfolio_account_info = ib_client.portfolio_account_info(account_id=PAPER_ACCOUNT)
+print(portfolio_account_info)
+print('')
 
-# portfolio_account_info = ib_client.portfolio_account_info(account_id=account_id)
-# print(portfolio_account_info)
-# print('')
+portfolio_positions = ib_client.portfolio_account_positions(account_id=PAPER_ACCOUNT, page_id = 0)
+print(portfolio_positions)
+print('')
 
-# portfolio_positions = ib_client.portfolio_account_positions(account_id=account_id, page_id = 0)
-# print(portfolio_positions)
-# print('')
+portfolio_position = ib_client.portfolio_account_position(account_id=PAPER_ACCOUNT, conid = 272093)
+print(portfolio_position)
+print('')
 
-# portfolio_position = ib_client.portfolio_account_position(account_id=account_id, conid = 272093)
-# print(portfolio_position)
-# print('')
+portfolio_summary = ib_client.portfolio_account_summary(account_id=PAPER_ACCOUNT)
+print(portfolio_summary)
+print('')
 
-# portfolio_summary = ib_client.portfolio_account_summary(account_id=account_id)
-# print(portfolio_summary)
-# print('')
+portfolio_ledger = ib_client.portfolio_account_ledger(account_id=PAPER_ACCOUNT)
+print(portfolio_ledger)
+print('')
 
-# portfolio_ledger = ib_client.portfolio_account_ledger(account_id=account_id)
-# print(portfolio_ledger)
-# print('')
+portfolio_allocation = ib_client.portfolio_account_allocation(account_id=PAPER_ACCOUNT)
+print(portfolio_allocation)
+print('')
 
-# portfolio_allocation = ib_client.portfolio_account_allocation(account_id=account_id)
-# print(portfolio_allocation)
-# print('')
-
-# portfolio_allocations = ib_client.portfolio_accounts_allocation(account_ids=account_id)
-# print(portfolio_allocations)
-# print('')
+# Grab Portfolio Allocations.
+portfolio_allocations = ib_client.portfolio_accounts_allocation(account_ids=PAPER_ACCOUNT)
+print(portfolio_allocations)
+print('')
 
 '''
     CUSTOMER
 '''
 
+# Grab Customer Info.
 customer_info = ib_client.customer_info()
 print(customer_info)
 print('')
 
+# Get the number of Unread messages.
 unread_messages = ib_client.get_unread_messages()
 print(unread_messages)
 print('')
 
+# Grab the Subscriptions Codes.
 subscriptions = ib_client.get_subscriptions()
 print(subscriptions)
 print('')
 
+# Grab the Delivery Options for a Subscription.
 subscriptions_delivery = ib_client.subscriptions_delivery_options()
 print(subscriptions_delivery)
 print('')
 
+# Grab a Discaimer for a specific Subscription.
 sub_code = 'FN'
 subscriptions_disclaimer = ib_client.subscriptions_disclaimer(type_code = sub_code)
 print(subscriptions_disclaimer)
+print('')
+
+
+'''
+    MUTUAL FUNDS
+'''
+
+# Define a Mutual Fund Contract ID.
+mutual_fund_conid = '10753238'
+
+# Grab Fees and Objectives.
+mutual_fund_fees = ib_client.mutual_funds_portfolios_and_fees(conid = mutual_fund_conid)
+print(mutual_fund_fees)
+print('')
+
+# Possible Values for Performance.
+POSSIBLE_VALUES = ['6M', '1Y', '3Y', '5Y', '10Y']
+
+# Grab Performance.
+mutual_fund_ratings = ib_client.mutual_funds_performance(conid = mutual_fund_conid, risk_period = '6M', yield_period= '6M', statistic_period = '6M')
+print(mutual_fund_ratings)
 print('')

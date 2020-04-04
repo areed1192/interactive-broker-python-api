@@ -1527,3 +1527,61 @@ class IBClient():
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
         return content
+
+    def mutual_funds_portfolios_and_fees(self, conid = None):
+        '''
+            Grab the Fees and objectives for a specified mutual fund.
+
+            NAME: conid
+            DESC: The Contract ID for the mutual fund.
+            TYPE: String
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fundamentals/mf_profile_and_fees/{mutual_fund_id}'.format(mutual_fund_id = conid)
+        req_type = 'GET'
+        content = self._make_request(endpoint = endpoint, req_type = req_type)
+
+        return content
+
+    def mutual_funds_performance(self, conid = None, risk_period = None, yield_period = None, statistic_period = None):
+        '''
+            Grab the Lip Rating for a specified mutual fund.
+
+            NAME: conid
+            DESC: The Contract ID for the mutual fund.
+            TYPE: String
+
+            NAME: yield_period
+            DESC: The Period threshold for yield information
+                  possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
+            TYPE: String
+
+            NAME: risk_period
+            DESC: The Period threshold for risk information
+                  possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
+            TYPE: String
+
+            NAME: statistic_period
+            DESC: The Period threshold for statistic information
+                  possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
+            TYPE: String
+
+            RTYPE Dictionary
+        '''
+
+        # define request components
+        endpoint = r'/fundamentals/mf_performance/{mutual_fund_id}'.format(mutual_fund_id = conid)
+        req_type = 'GET'
+        payload = {
+            'risk_period':None,
+            'yield_period':None,
+            'statistic_period':None
+        }
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+
+        return content
+
+    
