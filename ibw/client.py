@@ -185,6 +185,13 @@ class IBClient():
                 self.authenticated = False
             elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
                 self.authenticated = True
+            elif auth_response.get('authenticated','Null') in (False, 'Null') and auth_response.get('connected','Null') in (False, 'Null'):
+                
+                self.validate()
+                if self.reauthenticate() == True:
+                    self.authenticated = True
+                else:
+                    self.authenticated = False
 
         return True
 
@@ -302,7 +309,9 @@ class IBClient():
         # Check to see if it was successful
         if status_code in (200, 201):
 
-            if response_headers['Content-Type'] == 'application/json;charset=utf-8':
+            if response_headers.get('Content-Type','null') == 'application/json;charset=utf-8':
+                return response.json()
+            else:
                 return response.json()
 
         # if it was a bad request print it out.
@@ -383,6 +392,10 @@ class IBClient():
             re-authentication.
         '''
 
+        # https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/logout
+        # https://cdcdyn.interactivebrokers.com/portal.proxy/v1/ibcust/logout
+        # https://cdcdyn.interactivebrokers.com/sso/Logout?RL=1
+
         # define request components
         endpoint = r'logout'
         req_type = 'POST'
@@ -403,11 +416,7 @@ class IBClient():
 
         # this is special, I don't want the JSON content right away.
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-
-        if content.status_code != 200:
-            return False
-        else:
-            return content.json()
+        return content
             
 
     def is_authenticated(self):

@@ -1,5 +1,15 @@
+import pprint
+from configparser import ConfigParser
 from ibw.client import IBClient
-from ibw.configAlex import REGULAR_ACCOUNT, REGULAR_PASSWORD, REGULAR_USERNAME, PAPER_ACCOUNT, PAPER_PASSWORD, PAPER_USERNAME
+
+# Grab configuration values.
+config = ConfigParser()
+config.read('config/config.ini')
+
+# Load the details/
+PAPER_ACCOUNT = config.get('main','PAPER_ACCOUNT')
+PAPER_PASSWORD = config.get('main','PAPER_PASSWORD')
+PAPER_USERNAME = config.get('main','PAPER_USERNAME')
 
 # Create a new session of the IB Web API.
 ib_client = IBClient(username=PAPER_USERNAME, password=PAPER_PASSWORD, account=PAPER_ACCOUNT)

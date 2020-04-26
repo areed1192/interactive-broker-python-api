@@ -31,9 +31,9 @@ setup(
       
       # there are some dependencies to use the library, so let's list them out.
       install_requires = [
-            'certifi==2019.11.28',
-            'requests==2.22.0',
-            'urllib3==1.25.3'
+            'certifi>=2019.11.28',
+            'requests>=2.22.0',
+            'urllib3>=1.25.3'
       ],
 
       # here are the packages I want "build."
@@ -62,5 +62,5 @@ setup(
       ],
 
       # you will need python 3.7 to use this libary.
-      python_requires='>3.6'
+      python_requires='>3.7'
      )
