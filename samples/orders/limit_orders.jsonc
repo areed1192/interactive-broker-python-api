@@ -1,0 +1,46 @@
+[
+    // LIMIT BUY ORDER, ENTER A POSITION.
+    {
+        "conid": 251962528,
+        "secType": "362673777:STK",
+        "cOID": "limit-buy-order-1",
+        "orderType": "LMT",
+        "price": 5.00,
+        "side": "BUY",
+        "quantity": 1,
+        "tif": "DAY"
+    },
+    // LIMIT SELL ORDER, EXIT A POSITION.
+    {
+        "conid": 251962528,
+        "secType": "362673777:STK",
+        "cOID": "limit-sell-order-1",
+        "orderType": "LMT",
+        "price": 5.00,
+        "side": "BUY",
+        "quantity": 1,
+        "tif": "DAY"
+    },
+    // LIMIT SELL ORDER, ENTER A POSITION.
+    {
+        "conid": 251962528,
+        "secType": "362673777:STK",
+        "cOID": "sell-short-order-1",
+        "orderType": "LMT",
+        "price": 5.00,
+        "side": "SELL",
+        "quantity": 1,
+        "tif": "DAY"
+    },
+    // LIMIT SELL ORDER, EXIT A POSITION.
+    {
+        "conid": 251962528,
+        "secType": "362673777:STK",
+        "cOID": "cover-short-order-1",
+        "orderType": "LMT",
+        "price": 5.00,
+        "side": "SELL",
+        "quantity": 1,
+        "tif": "DAY"
+    }
+]

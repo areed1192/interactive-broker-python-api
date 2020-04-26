@@ -1,0 +1,42 @@
+[
+    // MARKET BUY ORDER, ENTER A POSITION.
+    {
+        "conid": 362698833,
+        "secType": "362673777:FUT",
+        "cOID": "YOUR_CONTRACT_ORDER_ID",
+        "orderType": "MKT",
+        "side": "BUY",
+        "quantity": 1,
+        "tif": "DAY"
+    },
+    // MARKET SELL ORDER, EXIT A POSITION.
+    {
+        "conid": 362698833,
+        "secType": "362673777:FUT",
+        "cOID": "YOUR_CONTRACT_ORDER_ID",
+        "orderType": "MKT",
+        "side": "BUY",
+        "quantity": 1,
+        "tif": "DAY"
+    },
+    // MARKET SELL ORDER, ENTER A POSITION.
+    {
+        "conid": 251962528,
+        "secType": "362673777:STK",
+        "cOID": "sell-short-order-1",
+        "orderType": "MKT",
+        "side": "SELL",
+        "quantity": 3,
+        "tif": "DAY"
+    },
+    // MARKET SELL ORDER, EXIT A POSITION.
+    {
+        "conid": 251962528,
+        "secType": "362673777:STK",
+        "cOID": "cover-short-order-1",
+        "orderType": "MKT",
+        "side": "SELL",
+        "quantity": 1,
+        "tif": "DAY"
+    }
+]

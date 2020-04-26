@@ -6,6 +6,7 @@ configAlex.py
 clientportal.gw/
 clientportal.beta.gw/
 alex/
+config/
 
 # C extensions
 *.so
@@ -133,3 +134,4 @@ dmypy.json
 .pyre/
 .vscode/settings.json
 curl.txt
+ibw/server_session.json

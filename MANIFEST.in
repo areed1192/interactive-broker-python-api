@@ -5,8 +5,8 @@ include ibw/client.py
 
 recursive-include samples *
 
-global-exclude ibw/config.py
-global-exclude tests/config.py
-global-exclude config.py
+global-exclude *config.py
 
+# global-exclude tests/config.py
+# global-exclude config.py
 # recursive-exclude **/samples
