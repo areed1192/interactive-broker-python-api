@@ -21,7 +21,7 @@ class IBClient():
             Initalizes a new IBClient Object with the username and password of the
             account holder.
         '''
-        
+
         self.ACCOUNT = account
         self.USERNAME = username
         self.PASSWORD = password
@@ -55,7 +55,7 @@ class IBClient():
             return True
         elif ('message' in server_update_content.keys()) and (server_update_content['message'] == 'Account already set'):
             print(success)
-            return True      
+            return True
         else:
             print(failure)
             sys.exit()
@@ -65,11 +65,11 @@ class IBClient():
             Creates a new session with Interactive Broker using the credentials
             passed through when the Robot was initalized.
         '''
-          
+
         # first let's check if the server is running, if it's not then we can start up.
         if self.server_process == None and self.connect():
-            
-            # then make sture the server is updated.
+
+            # then make sure the server is updated.
             if self._set_server():
                 return True
 
@@ -77,14 +77,14 @@ class IBClient():
         auth_response = self.is_authenticated()
 
         if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
-            
+
             self.authenticated == True
 
             if self._set_server():
                 return True
 
         else:
-                 
+
             # in this case don't connect, but prompt the user to log in again.
             self.connect(start_server=False)
 
@@ -128,7 +128,7 @@ class IBClient():
                     if str(proc_id) in process:
                         process_details = process.split()
                         return proc_id
-            else:      
+            else:
                 try:
                     os.kill(proc_id, 0)
                     return proc_id
@@ -204,7 +204,7 @@ class IBClient():
 
         # kill the process.
         return_code = subprocess.call("TASKKILL /F /PID {} /T".format(self.server_process), creationflags=subprocess.DETACHED_PROCESS)
-        
+
         # delete the state
         self._server_state(action ='delete')
 
@@ -212,11 +212,11 @@ class IBClient():
         sys.exit()
 
     def _headers(self, mode = 'json'):
-        ''' 
+        '''
             Returns a dictionary of default HTTP headers for calls to TD Ameritrade API,
             in the headers we defined the Authorization and access token.
 
-            NAME: mode            
+            NAME: mode
             DESC: Defines the content-type for the headers dictionary.
                   default is 'json'. Possible values are ['json','form']
             TYPE: String
@@ -267,7 +267,7 @@ class IBClient():
                   could be parameters of a 'GET' request, or a data payload of a
                   'POST' request.
             TYPE: Dictionary
-    
+
         '''
 
         # first build the url
@@ -275,7 +275,7 @@ class IBClient():
 
         # Scenario 1: POST with a payload.
         if req_type == 'POST'and params is not None:
-            
+
             # make sure it's a JSON String
             headers = self._headers(mode = 'json')
 
@@ -284,7 +284,7 @@ class IBClient():
 
         # SCENARIO 2: POST without a payload.
         elif req_type == 'POST'and params is None:
-            
+
             # grab the response.
             response = requests.post(url, headers = self._headers(mode = 'json'), verify = False)
 
@@ -316,7 +316,7 @@ class IBClient():
 
         # if it was a bad request print it out.
         elif status_code in (400, 403, 500):
-            
+
             print('')
             print('-'*80)
             print("BAD REQUEST - STATUS CODE: {}".format(status_code))
@@ -330,7 +330,7 @@ class IBClient():
     def _prepare_arguments_list(self, parameter_list = None):
         '''
             Some endpoints can take multiple values for a parameter, this
-            method takes that list and creates a valid string that can be 
+            method takes that list and creates a valid string that can be
             used in an API request. The list can have either one index or
             multiple indexes.
 
@@ -346,9 +346,9 @@ class IBClient():
         # validate it's a list.
         if type(parameter_list) is list:
 
-            # specify the delimeter and join the list.            
-            delimeter = ','
-            parameter_list = delimeter.join(parameter_list)
+            # specify the delimiter and join the list.
+            delimiter = ','
+            parameter_list = delimiter.join(parameter_list)
 
         return parameter_list
 
@@ -373,8 +373,8 @@ class IBClient():
 
     def tickle(self):
         '''
-            If the gateway has not received any requests for several minutes an open session will 
-            automatically timeout. The tickle endpoint pings the server to prevent the 
+            If the gateway has not received any requests for several minutes an open session will
+            automatically timeout. The tickle endpoint pings the server to prevent the
             session from ending.
         '''
 
@@ -388,7 +388,7 @@ class IBClient():
 
     def logout(self):
         '''
-            Logs the user out of the gateway session. Any further activity requires 
+            Logs the user out of the gateway session. Any further activity requires
             re-authentication.
         '''
 
@@ -406,7 +406,7 @@ class IBClient():
 
     def reauthenticate(self):
         '''
-            Provides a way to reauthenticate to the Brokerage system as long as there 
+            Provides a way to reauthenticate to the Brokerage system as long as there
             is a valid SSO session, see /sso/validate.
         '''
 
@@ -416,13 +416,13 @@ class IBClient():
 
         # this is special, I don't want the JSON content right away.
         content = self._make_request(endpoint = endpoint, req_type = req_type)
+        
         return content
-            
 
     def is_authenticated(self):
         '''
-            Current Authentication status to the Brokerage system. Market Data and 
-            Trading is not possible if not authenticated, e.g. authenticated 
+            Current Authentication status to the Brokerage system. Market Data and
+            Trading is not possible if not authenticated, e.g. authenticated
             shows false.
         '''
 
@@ -442,7 +442,7 @@ class IBClient():
         '''
             Return a financial summary for specific Contract ID. The financial summary
             includes key ratios and descriptive components of the Contract ID.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -460,7 +460,7 @@ class IBClient():
         '''
             Return a financial summary for specific Contract ID. The financial summary
             includes key ratios and descriptive components of the Contract ID.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -499,7 +499,7 @@ class IBClient():
     def fundamentals_key_ratios(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -521,7 +521,7 @@ class IBClient():
     def fundamentals_dividends(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -543,7 +543,7 @@ class IBClient():
     def fundamentals_esg(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -570,7 +570,7 @@ class IBClient():
         '''
             Return a financial summary for specific Contract ID. The financial summary
             includes key ratios and descriptive components of the Contract ID.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -588,12 +588,12 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
-        return content      
+        return content
 
     def data_ratings(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -610,12 +610,12 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
-        return content   
+        return content
 
     def data_events(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -632,12 +632,12 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
-        return content   
+        return content
 
     def data_ownership(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -659,7 +659,7 @@ class IBClient():
     def data_competitors(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -681,7 +681,7 @@ class IBClient():
     def data_analyst_forecast(self, conid = None):
         '''
             Returns analyst ratings for a specific conid.
-        
+
             NAME: conid
             DESC: The contract ID.
             TYPE: String
@@ -702,11 +702,11 @@ class IBClient():
 
     def market_data(self, conids = None, since = None, fields = None):
         '''
-            Get Market Data for the given conid(s). The end-point will return by 
-            default bid, ask, last, change, change pct, close, listing exchange. 
-            See response fields for a list of available fields that can be request 
-            via fields argument. The endpoint /iserver/accounts should be called 
-            prior to /iserver/marketdata/snapshot. To receive all available fields 
+            Get Market Data for the given conid(s). The end-point will return by
+            default bid, ask, last, change, change pct, close, listing exchange.
+            See response fields for a list of available fields that can be request
+            via fields argument. The endpoint /iserver/accounts should be called
+            prior to /iserver/marketdata/snapshot. To receive all available fields
             the /snapshot endpoint will need to be called several times.
 
             NAME: conid
@@ -714,13 +714,13 @@ class IBClient():
             TYPE: List<String>
 
             NAME: since
-            DESC: Time period since which updates are required. 
+            DESC: Time period since which updates are required.
                   Uses epoch time with milliseconds.
             TYPE: String
 
             NAME: fields
             DESC: List of fields you wish to retrieve for each quote.
-            TYPE: List<String>          
+            TYPE: List<String>
 
         '''
 
@@ -730,7 +730,7 @@ class IBClient():
 
         # join the two list arguments so they are both a single string.
         conids_joined = self._prepare_arguments_list(parameter_list = conids)
-        
+
         if fields is not None:
             fields_joined = ",".join(str(n) for n in fields)
         else:
@@ -747,7 +747,7 @@ class IBClient():
                 'conids':conids_joined,
                 'since':since,
                 'fields':fields_joined
-            }       
+            }
 
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
@@ -755,7 +755,7 @@ class IBClient():
 
     def market_data_history(self, conid = None, period = None, bar = None):
         '''
-            Get history of market Data for the given conid, length of data is controlled by period and 
+            Get history of market Data for the given conid, length of data is controlled by period and
             bar. e.g. 1y period with bar=1w returns 52 data points.
 
             NAME: conid
@@ -779,13 +779,13 @@ class IBClient():
         endpoint = 'iserver/marketdata/history'
         req_type = 'GET'
         params = {
-            'conid':conid, 
-            'period':period, 
+            'conid':conid,
+            'period':period,
             'bar':bar
         }
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
-        return content    
+        return content
 
 
     '''
@@ -796,9 +796,9 @@ class IBClient():
     def server_accounts(self):
         '''
 
-            Returns a list of accounts the user has trading access to, their 
-            respective aliases and the currently selected account. Note this 
-            endpoint must be called before modifying an order or querying 
+            Returns a list of accounts the user has trading access to, their
+            respective aliases and the currently selected account. Note this
+            endpoint must be called before modifying an order or querying
             open orders.
 
         '''
@@ -813,9 +813,9 @@ class IBClient():
 
     def update_server_account(self, account_id = None, check = False):
         '''
-            If an user has multiple accounts, and user wants to get orders, trades, 
-            etc. of an account other than currently selected account, then user 
-            can update the currently selected account using this API and then can 
+            If an user has multiple accounts, and user wants to get orders, trades,
+            etc. of an account other than currently selected account, then user
+            can update the currently selected account using this API and then can
             fetch required information for the newly updated account.
 
             NAME: account_id
@@ -841,7 +841,7 @@ class IBClient():
 
     def server_account_pnl(self):
         '''
-            Returns an object containing PnLfor the selected account and its models 
+            Returns an object containing PnLfor the selected account and its models
             (if any).
         '''
 
@@ -850,7 +850,7 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
-        return content    
+        return content
 
     '''
         CONTRACT ENDPOINTS
@@ -926,8 +926,8 @@ class IBClient():
         payload = {'symbols':"{}".format(','.join(symbols))}
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
-        return content        
-        
+        return content
+
     '''
         PORTFOLIO ACCOUNTS ENDPOINTS
     '''
@@ -935,10 +935,10 @@ class IBClient():
 
     def portfolio_accounts(self):
         '''
-            In non-tiered account structures, returns a list of accounts for which the 
-            user can view position and account information. This endpoint must be called prior 
-            to calling other /portfolio endpoints for those accounts. For querying a list of accounts 
-            which the user can trade, see /iserver/accounts. For a list of subaccounts in tiered account 
+            In non-tiered account structures, returns a list of accounts for which the
+            user can view position and account information. This endpoint must be called prior
+            to calling other /portfolio endpoints for those accounts. For querying a list of accounts
+            which the user can trade, see /iserver/accounts. For a list of subaccounts in tiered account
             structures (e.g. financial advisor or ibroker accounts) see /portfolio/subaccounts.
 
         '''
@@ -953,9 +953,9 @@ class IBClient():
 
     def portfolio_sub_accounts(self):
         '''
-            Used in tiered account structures (such as financial advisor and ibroker accounts) to return a 
-            list of sub-accounts for which the user can view position and account-related information. This 
-            endpoint must be called prior to calling other /portfolio endpoints for those subaccounts. To 
+            Used in tiered account structures (such as financial advisor and ibroker accounts) to return a
+            list of sub-accounts for which the user can view position and account-related information. This
+            endpoint must be called prior to calling other /portfolio endpoints for those subaccounts. To
             query a list of accounts the user can trade, see /iserver/accounts.
 
         '''
@@ -964,15 +964,15 @@ class IBClient():
         endpoint = r'​portfolio/subaccounts'
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+
         return content
 
 
     def portfolio_account_info(self, account_id = None):
         '''
-            Used in tiered account structures (such as financial advisor and ibroker accounts) to return a 
-            list of sub-accounts for which the user can view position and account-related information. This 
-            endpoint must be called prior to calling other /portfolio endpoints for those subaccounts. To 
+            Used in tiered account structures (such as financial advisor and ibroker accounts) to return a
+            list of sub-accounts for which the user can view position and account-related information. This
+            endpoint must be called prior to calling other /portfolio endpoints for those subaccounts. To
             query a list of accounts the user can trade, see /iserver/accounts.
 
             NAME: account_id
@@ -985,15 +985,15 @@ class IBClient():
         endpoint = r'portfolio/{}/meta'.format(account_id)
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+
         return content
 
 
     def portfolio_account_summary(self, account_id = None):
         '''
-            Returns information about margin, cash balances and other information 
-            related to specified account. See also /portfolio/{accountId}/ledger. 
-            /portfolio/accounts or /portfolio/subaccounts must be called 
+            Returns information about margin, cash balances and other information
+            related to specified account. See also /portfolio/{accountId}/ledger.
+            /portfolio/accounts or /portfolio/subaccounts must be called
             prior to this endpoint.
 
             NAME: account_id
@@ -1006,15 +1006,15 @@ class IBClient():
         endpoint = r'portfolio/{}/summary'.format(account_id)
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+
         return content
 
 
     def portfolio_account_ledger(self, account_id = None):
         '''
-            Information regarding settled cash, cash balances, etc. in the account's 
-            base currency and any other cash balances hold in other currencies. /portfolio/accounts 
-            or /portfolio/subaccounts must be called prior to this endpoint. The list of supported 
+            Information regarding settled cash, cash balances, etc. in the account's
+            base currency and any other cash balances hold in other currencies. /portfolio/accounts
+            or /portfolio/subaccounts must be called prior to this endpoint. The list of supported
             currencies is available at https://www.interactivebrokers.com/en/index.php?f=3185.
 
             NAME: account_id
@@ -1027,14 +1027,14 @@ class IBClient():
         endpoint = r'portfolio/{}/ledger'.format(account_id)
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+
         return content
 
 
     def portfolio_account_allocation(self, account_id = None):
         '''
-            Information about the account's portfolio allocation by Asset Class, Industry and 
-            Category. /portfolio/accounts or /portfolio/subaccounts must be called prior to 
+            Information about the account's portfolio allocation by Asset Class, Industry and
+            Category. /portfolio/accounts or /portfolio/subaccounts must be called prior to
             this endpoint.
 
             NAME: account_id
@@ -1047,14 +1047,14 @@ class IBClient():
         endpoint = r'portfolio/{}/allocation'.format(account_id)
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+
         return content
 
 
     def portfolio_accounts_allocation(self, account_ids = None):
         '''
-            Similar to /portfolio/{accountId}/allocation but returns a consolidated view of of all the 
-            accounts returned by /portfolio/accounts. /portfolio/accounts or /portfolio/subaccounts must 
+            Similar to /portfolio/{accountId}/allocation but returns a consolidated view of of all the
+            accounts returned by /portfolio/accounts. /portfolio/accounts or /portfolio/subaccounts must
             be called prior to this endpoint.
 
             NAME: account_ids
@@ -1074,8 +1074,8 @@ class IBClient():
 
     def portfolio_account_positions(self, account_id = None, page_id = None):
         '''
-            Returns a list of positions for the given account. The endpoint supports paging, 
-            page's default size is 30 positions. /portfolio/accounts or /portfolio/subaccounts 
+            Returns a list of positions for the given account. The endpoint supports paging,
+            page's default size is 30 positions. /portfolio/accounts or /portfolio/subaccounts
             must be called prior to this endpoint.
 
             NAME: account_id
@@ -1101,7 +1101,7 @@ class IBClient():
         endpoint = r'portfolio/{}/positions/{}'.format(account_id, page_id)
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+
         return content
 
     #
@@ -1110,9 +1110,9 @@ class IBClient():
 
     def portfolio_account_position(self, account_id = None, conid = None):
         '''
-            Returns a list of all positions matching the conid. For portfolio models the conid 
-            could be in more than one model, returning an array with the name of the model it 
-            belongs to. /portfolio/accounts or /portfolio/subaccounts must be called prior to 
+            Returns a list of all positions matching the conid. For portfolio models the conid
+            could be in more than one model, returning an array with the name of the model it
+            belongs to. /portfolio/accounts or /portfolio/subaccounts must be called prior to
             this endpoint.
 
             NAME: account_id
@@ -1145,7 +1145,7 @@ class IBClient():
             TYPE: String
 
         '''
-        
+
         # define request components
         endpoint = r'portfolio/{}/positions/invalidate'.format(account_id)
         req_type = 'POST'
@@ -1156,14 +1156,14 @@ class IBClient():
 
     def portfolio_positions(self, conid = None):
         '''
-            Returns an object of all positions matching the conid for all the selected accounts. 
-            For portfolio models the conid could be in more than one model, returning an array 
-            with the name of the model it belongs to. /portfolio/accounts or /portfolio/subaccounts 
+            Returns an object of all positions matching the conid for all the selected accounts.
+            For portfolio models the conid could be in more than one model, returning an array
+            with the name of the model it belongs to. /portfolio/accounts or /portfolio/subaccounts
             must be called prior to this endpoint.
 
             NAME: conid
             DESC: The contract ID you wish to find matching positions for.
-            TYPE: String          
+            TYPE: String
         '''
 
         # define request components
@@ -1181,7 +1181,7 @@ class IBClient():
 
     def trades(self):
         '''
-            Returns a list of trades for the currently selected account for current day and 
+            Returns a list of trades for the currently selected account for current day and
             six previous days.
         '''
 
@@ -1200,10 +1200,10 @@ class IBClient():
 
     def get_live_orders(self):
         '''
-            The end-point is meant to be used in polling mode, e.g. requesting every 
-            x seconds. The response will contain two objects, one is notification, the 
-            other is orders. Orders is the list of orders (cancelled, filled, submitted) 
-            with activity in the current day. Notifications contains information about 
+            The end-point is meant to be used in polling mode, e.g. requesting every
+            x seconds. The response will contain two objects, one is notification, the
+            other is orders. Orders is the list of orders (cancelled, filled, submitted)
+            with activity in the current day. Notifications contains information about
             execute orders as they happen, see status field.
 
         '''
@@ -1218,9 +1218,9 @@ class IBClient():
 
     def place_order(self, account_id = None, order = None):
         '''
-            Please note here, sometimes this end-point alone can't make sure you submit the order 
-            successfully, you could receive some questions in the response, you have to to answer 
-            them in order to submit the order successfully. You can use "/iserver/reply/{replyid}" 
+            Please note here, sometimes this end-point alone can't make sure you submit the order
+            successfully, you could receive some questions in the response, you have to to answer
+            them in order to submit the order successfully. You can use "/iserver/reply/{replyid}"
             end-point to answer questions.
 
             NAME: account_id
@@ -1276,7 +1276,7 @@ class IBClient():
 
     def place_order_scenario(self, account_id = None, order = None):
         '''
-            This end-point allows you to preview order without actually submitting the 
+            This end-point allows you to preview order without actually submitting the
             order and you can get commission information in the response.
 
             NAME: account_id
@@ -1332,7 +1332,7 @@ class IBClient():
         req_type = 'POST'
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
 
-        return content 
+        return content
 
 
     def delete_order(self, account_id = None, customer_order_id = None):
@@ -1353,7 +1353,7 @@ class IBClient():
         req_type = 'DELETE'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
-        return content 
+        return content
 
 
     '''
@@ -1372,7 +1372,7 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
-        return content 
+        return content
 
     def run_scanner(self, instrument = None, scanner_type = None, location = None, size = None, filters = None):
         '''
@@ -1388,16 +1388,16 @@ class IBClient():
 
             NAME: location
             DESC: The geographic location you wish to run the scan. For example (STK.US.MAJOR)
-            TYPE: String 
+            TYPE: String
 
             NAME: size
             DESC: The number of results to return back. Defaults to 25.
-            TYPE: String        
+            TYPE: String
 
             NAME: filters
             DESC: A list of dictionaries where the key is the filter you wish to set and the value is the value you want set
                   for that filter.
-            TYPE: List<Dictionaries>      
+            TYPE: List<Dictionaries>
 
             RTYPE Dictionary
         '''
@@ -1420,11 +1420,11 @@ class IBClient():
 
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
-        return content 
-    
+        return content
+
     def customer_info(self):
         '''
-            Returns Applicant Id with all owner related entities     
+            Returns Applicant Id with all owner related entities
 
             RTYPE Dictionary
         '''
@@ -1434,8 +1434,8 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
-        return content 
-    
+        return content
+
     def get_unread_messages(self):
         '''
             Returns the unread messages associated with the account.
@@ -1448,7 +1448,7 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
-        return content 
+        return content
 
     def get_subscriptions(self):
         '''
@@ -1462,7 +1462,7 @@ class IBClient():
         req_type = 'GET'
         content = self._make_request(endpoint = endpoint, req_type = req_type)
 
-        return content 
+        return content
 
     def change_subscriptions_status(self, type_code = None, enable = None):
         '''
@@ -1485,7 +1485,7 @@ class IBClient():
         payload = {'enable': enable}
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
 
-        return content 
+        return content
 
     def subscriptions_disclaimer(self, type_code = None):
         '''
@@ -1593,4 +1593,3 @@ class IBClient():
 
         return content
 
-    
