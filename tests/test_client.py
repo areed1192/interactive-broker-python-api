@@ -1,18 +1,19 @@
 import pprint
+import pathlib
 from configparser import ConfigParser
 from ibw.client import IBClient
 
 # Grab configuration values.
 config = ConfigParser()
-config.read('config/config.ini')
+file_path = pathlib.Path(__file__).parent.parent.joinpath('config','config.ini').resolve()
+config.read(file_path)
 
-# Load the details/
+# Load the details.
 PAPER_ACCOUNT = config.get('main','PAPER_ACCOUNT')
-PAPER_PASSWORD = config.get('main','PAPER_PASSWORD')
 PAPER_USERNAME = config.get('main','PAPER_USERNAME')
 
 # Create a new session of the IB Web API.
-ib_client = IBClient(username = PAPER_USERNAME, password = PAPER_PASSWORD, account = PAPER_ACCOUNT)
+ib_client = IBClient(username=PAPER_USERNAME, account=PAPER_ACCOUNT)
 
 '''
     SESSIONS
@@ -21,12 +22,12 @@ ib_client = IBClient(username = PAPER_USERNAME, password = PAPER_PASSWORD, accou
 # create a new session
 ib_client.create_session()
 
-# Logout of the client.
-logout_response = ib_client.logout()
-print(logout_response)
+# # Logout of the client.
+# logout_response = ib_client.logout()
+# print(logout_response)
 
-# close the current session.
-ib_client.close_session()
+# # close the current session.
+# ib_client.close_session()
 
 
 # '''

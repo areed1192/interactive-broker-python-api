@@ -49,7 +49,6 @@ ib_client.create_session()
 # https://localhost:5000/v1/portal/fundamentals/analyst_forecasts/265598?annual=false&all=true
 # https://localhost:5000/v1/portal/fundamentals/persist/search/265598
 
-# https://localhost:5000/v1/portal/calendar/events/
 # https://localhost:5000/v1/portal/fundamentals/landing/10753238
 
 # {

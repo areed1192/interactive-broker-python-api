@@ -2,9 +2,11 @@
 
 - [Overview](#overview)
 - [What's in the API](#whats-in-the-api)
-- [Requirements](#requirements)
-- [API Key & Credentials](#api-key-and-credentials)
-- [Installation](#installation)
+- [Setup Requirements](#setup-requirements)
+- [Setup Client Portal](#setup-client-portal)
+- [Setup API Key & Credentials](#setup-api-key-and-credentials)
+- [Setup Installation](#setup-installation)
+- [Setup Writing Account Information](#setup-writing-account-information)
 - [Usage](#usage)
 - [Features](#features)
 - [Documentation & Resources](#documentation-and-resources)
@@ -31,23 +33,63 @@ Interactive Broker offers multiple APIs for their clients. If you would like to 
 - Portfolio Analysis Endpoints
 - Web Streaming
 
-## Requirements
+## Setup Requirements
 
 The following requirements must be met to use this API:
 
 - A Interactive Broker account, you'll need your account password and account number to use the API.
 - [Java 8](https://developers.redhat.com/products/openjdk/download) update 192 or higher installed (gateway is compatible with higher Java versions including OpenJDK 11).
-- Download the [Client Portal Gateway](https://www.interactivebrokers.com/en/index.php?f=45185)
+- Download the [Beta Client Portal Gateway](https://www.interactivebrokers.com/en/index.php?f=45185)
 
-## API Key and Credentials
+## Setup Client Portal
+
+Once you've downloaded the latest client portal or if you chose to use the one provided by the repo. You need to unzip the folder and place it in the repo where this code is stored.
+
+## Setup API Key and Credentials
 
 The API does not require any API keys to use it, all of the authentication is handled by the Client Portal Gateway. Everytime a user starts a new session with the API they will need to proivde their login credentials for the account they wish to use. The Interactive Broker Web API does offer the ability to use the API using a paper account.
 
 **Important:** Your account number and account password should be kept secret.
 
-## Installation
+## Setup Installation
 
 PLACE HOLDER FOR PIP INSTALLATION
+
+## Setup Writing Account Information
+
+The Client needs specific account information to create a and validate a new session. Where you choose to store this information is up to you, but I'll layout some options here.
+
+**Write a Config File:**
+
+It's common in Python to have a config file that contains information you need to use during the setup of a script. Additionally, you can make this file in a standard way so that way it's easy to read everytime. In Python, there is a module called `configparser` which can be used to create config files that mimic that of Windows INI files. 
+
+To create a config file using hte `configparser` module, run the script below in a separate file or go to the [Resources Folder](https://github.com/areed1192/interactive-broker-python-api/tree/master/resources) and run the `write_config.py` file.
+
+```python
+import pathlib
+from configparser import ConfigParser
+
+config = ConfigParser()
+
+config.add_section('main')
+
+config.set('main', 'REGULAR_ACCOUNT', 'YOUR_ACCOUNT_NUMBER')
+config.set('main', 'REGULAR_PASSWORD', 'YOUR_ACCOUNT_PASSWORD')
+config.set('main', 'REGULAR_USERNAME', 'YOUR_ACCOUNT_USERNAME')
+
+config.set('main', 'PAPER_ACCOUNT', 'YOUR_ACCOUNT_NUMBER')
+config.set('main', 'PAPER_PASSWORD', 'YOUR_ACCOUNT_PASSWORD')
+config.set('main', 'PAPER_USERNAME', 'YOUR_ACCOUNT_USERNAME')
+
+new_directory = pathlib.Path("config/").mkdir(parents=True, exist_ok=True)
+
+with open('config/config.ini', 'w+') as f:
+    config.write(f)
+```
+
+**Store the Variables in the Script:**
+
+If you plan to not share the script with anyone else, then you can store the account info inside the script itself. However, please make sure that you do not make the file public to individuals you don't know.
 
 ## Usage
 
@@ -57,11 +99,10 @@ This example demonstrates how to login to the API and demonstrates sending a req
 from ibw.client import IBClient
 
 REGULAR_ACCOUNT = 'MY_ACCOUNT_NUMBER'
-REGULAR_PASSWORD = 'MY_ACCOUNT_PASSWORD'
 REGULAR_USERNAME = 'MY_ACCOUNT_USERNAME'
 
 # Create a new session of the IB Web API.
-ib_session = IBClient(username = REGULAR_USERNAME, password = REGULAR_PASSWORD, account = REGULAR_ACCOUNT)
+ib_session = IBClient(username=REGULAR_USERNAME, account=REGULAR_ACCOUNT)
 
 # create a new session.
 ib_client.create_session()
@@ -73,7 +114,7 @@ account_data = ib_client.portfolio_accounts()
 print(account_data)
 
 # Grab historical prices.
-aapl_prices = ib_client.market_data_history(conid = ['265598'], period = '1d', bar = '5min')
+aapl_prices = ib_client.market_data_history(conid=['265598'], period='1d', bar='5min')
 
 # print the prices.
 print(aapl_prices)
