@@ -102,7 +102,7 @@ REGULAR_ACCOUNT = 'MY_ACCOUNT_NUMBER'
 REGULAR_USERNAME = 'MY_ACCOUNT_USERNAME'
 
 # Create a new session of the IB Web API.
-ib_session = IBClient(username=REGULAR_USERNAME, account=REGULAR_ACCOUNT)
+ib_client = IBClient(username=REGULAR_USERNAME, account=REGULAR_ACCOUNT)
 
 # create a new session.
 ib_client.create_session()

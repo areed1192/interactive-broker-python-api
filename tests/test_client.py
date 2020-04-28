@@ -22,12 +22,12 @@ ib_client = IBClient(username=PAPER_USERNAME, account=PAPER_ACCOUNT)
 # create a new session
 ib_client.create_session()
 
-# # Logout of the client.
-# logout_response = ib_client.logout()
-# print(logout_response)
+# Logout of the client.
+logout_response = ib_client.logout()
+print(logout_response)
 
-# # close the current session.
-# ib_client.close_session()
+# close the current session.
+ib_client.close_session()
 
 
 # '''

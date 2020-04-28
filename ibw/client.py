@@ -307,7 +307,7 @@ class IBClient():
         return urllib.parse.unquote(urllib.parse.urljoin(self.IB_GATEWAY_PATH, self.API_VERSION) + r'portal/' + endpoint)
 
 
-    def _make_request(self, endpoint: str, req_type: str, params: Union[Dict, None]) -> Dict:
+    def _make_request(self, endpoint: str, req_type: str, params: Dict = None) -> Dict:
         """
             Handles all the requests made by the client and correctly organizes
             the information so it is sent correctly. Additionally it will also
