@@ -243,10 +243,19 @@ class IBClient():
                 auth_response = self.is_authenticated()
 
             if 'statusCode' in auth_response.keys() and auth_response['statusCode'] == 401:
-                self.reauthenticate()
-                self.authenticated = False
+                print("Session isn't connected, closing script.")
+                self.close_session()
+
             elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
                 self.authenticated = True
+
+            elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == False:
+                
+                if self.reauthenticate().get('message','Null') == 'triggered':
+                    self.authenticated = True
+                else:
+                    self.authenticated = False    
+
             elif auth_response.get('authenticated','Null') in (False, 'Null') and auth_response.get('connected','Null') in (False, 'Null'):
                 
                 self.validate()
