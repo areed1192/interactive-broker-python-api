@@ -61,7 +61,7 @@ The Client needs specific account information to create a and validate a new ses
 
 **Write a Config File:**
 
-It's common in Python to have a config file that contains information you need to use during the setup of a script. Additionally, you can make this file in a standard way so that way it's easy to read everytime. In Python, there is a module called `configparser` which can be used to create config files that mimic that of Windows INI files. 
+It's common in Python to have a config file that contains information you need to use during the setup of a script. Additionally, you can make this file in a standard way so that way it's easy to read everytime. In Python, there is a module called `configparser` which can be used to create config files that mimic that of Windows INI files.
 
 To create a config file using hte `configparser` module, run the script below in a separate file or go to the [Resources Folder](https://github.com/areed1192/interactive-broker-python-api/tree/master/resources) and run the `write_config.py` file.
 
@@ -74,11 +74,9 @@ config = ConfigParser()
 config.add_section('main')
 
 config.set('main', 'REGULAR_ACCOUNT', 'YOUR_ACCOUNT_NUMBER')
-config.set('main', 'REGULAR_PASSWORD', 'YOUR_ACCOUNT_PASSWORD')
 config.set('main', 'REGULAR_USERNAME', 'YOUR_ACCOUNT_USERNAME')
 
 config.set('main', 'PAPER_ACCOUNT', 'YOUR_ACCOUNT_NUMBER')
-config.set('main', 'PAPER_PASSWORD', 'YOUR_ACCOUNT_PASSWORD')
 config.set('main', 'PAPER_USERNAME', 'YOUR_ACCOUNT_USERNAME')
 
 new_directory = pathlib.Path("config/").mkdir(parents=True, exist_ok=True)
