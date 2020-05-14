@@ -114,6 +114,7 @@ class IBClient():
         # more than likely it's running let's try and see if we can authenticate.
         auth_response = self.is_authenticated()
 
+
         if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
 
             if self._set_server():
@@ -931,10 +932,6 @@ class IBClient():
         }
 
         content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
-
-        # if 'status_code' in content.keys():
-        #     time.sleep(1)
-        #     content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
 
         return content
 

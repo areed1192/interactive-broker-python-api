@@ -66,12 +66,18 @@ class InteractiveBrokersSession(TestCase):
         session_response = self.ibw_client.create_session()
         self.assertTrue(session_response)
         self.assertTrue(self.ibw_client.authenticated)
+
+    def test_close_session(self):
+        """Test Closing the session."""
+        
+        with self.assertRaises(SystemExit) as cm:
+            self.ibw_client.close_session()
+            self.assertEqual(cm.exception.code, 1)
     
     def tearDown(self) -> None:
         """Teardown the Session."""
 
         self.ibw_client = None
-
 
 if __name__ == '__main__':
     unittest.main()
