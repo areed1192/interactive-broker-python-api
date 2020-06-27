@@ -58,7 +58,6 @@ class IBClient():
                 account='IB_REGULAR_ACCOUNT',
             )
             >>> ib_regular_session
-
         """
 
         self.account = account
@@ -76,7 +75,7 @@ class IBClient():
         self.backup_gateway_path = r"https://cdcdyn.interactivebrokers.com/portal.proxy"
 
         try:
-            self.client_portal_folder = pathlib.Path(__file__).parent.parent.joinpath('clientportal.beta.gw').resolve()
+            self.client_portal_folder = pathlib.Path(__file__).parent.parent.joinpath('resources/clientportal.beta.gw').resolve()
         except FileNotFoundError:
             raise FileNotFoundError("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
 
