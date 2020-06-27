@@ -309,12 +309,15 @@ class IBClient():
         """ 
             Returns a dictionary of default HTTP headers for calls to TD Ameritrade API,
             in the headers we defined the Authorization and access token.
+        
+        Arguments:
+        ----
+        mode {str} -- Defines the content-type for the headers dictionary.
+            default is 'json'. Possible values are ['json','form']
 
-            NAME: mode
-            DESC: Defines the content-type for the headers dictionary.
-                  default is 'json'. Possible values are ['json','form']
-            TYPE: String
-
+        Returns:
+        ----
+        Dict
         """
 
         if mode == 'json':
@@ -326,15 +329,15 @@ class IBClient():
 
 
     def _build_url(self, endpoint: str) -> str:
-        """
-            builds a url for a request.
+        """Builds a url for a request.
 
-            NAME: endpoint
-            DESC: The URL that needs conversion to a full endpoint URL.
-            TYPE: String
+        Arguments:
+        ----
+        endpoint {str} -- The URL that needs conversion to a full endpoint URL.
 
-            RTYPE: String
-
+        Returns:
+        ----
+        {srt} -- A full URL path.
         """
 
         # otherwise build the URL
@@ -342,25 +345,27 @@ class IBClient():
 
 
     def _make_request(self, endpoint: str, req_type: str, params: Dict = None) -> Dict:
-        """
-            Handles all the requests made by the client and correctly organizes
-            the information so it is sent correctly. Additionally it will also
-            build the URL.
+        """Handles the request to the client.
 
-            NAME: endpoint
-            DESC: The endpoint we wish to request.
-            TYPE: String
+        Handles all the requests made by the client and correctly organizes
+        the information so it is sent correctly. Additionally it will also
+        build the URL.
 
-            NAME: type
-            DESC: Defines the type of request to be made. Can be one of four
-                  possible values ['GET','POST','DELETE','PUT']
-            TYPE: String
+        Arguments:
+        ----
+        endpoint {str} -- The endpoint we wish to request.
 
-            NAME: params
-            DESC: Any arguments that are to be sent along in the request. That
-                  could be parameters of a 'GET' request, or a data payload of a
-                  'POST' request.
-            TYPE: Dictionary
+        req_type {str} --  Defines the type of request to be made. Can be one of four
+            possible values ['GET','POST','DELETE','PUT']
+
+        params {dict} -- Any arguments that are to be sent along in the request. That
+            could be parameters of a 'GET' request, or a data payload of a
+            'POST' request.
+        
+        Returns:
+        ----
+        {Dict} -- A response dictionary.
+
         """
 
         # first build the url
@@ -421,18 +426,24 @@ class IBClient():
 
 
     def _prepare_arguments_list(self, parameter_list: List[str]) -> str:
-        """
-            Some endpoints can take multiple values for a parameter, this
-            method takes that list and creates a valid string that can be
-            used in an API request. The list can have either one index or
-            multiple indexes.
+        """Prepares the arguments for the request.
 
-            NAME: parameter_list
-            DESC: A list of paramater values assigned to an argument.
-            TYPE: List
+        Some endpoints can take multiple values for a parameter, this
+        method takes that list and creates a valid string that can be
+        used in an API request. The list can have either one index or
+        multiple indexes.
 
-            EXAMPLE:
-            SessionObject.prepare_arguments_list(parameter_list = ['MSFT', 'SQ'])
+        Arguments:
+        ----
+        parameter_list {List} -- A list of paramater values assigned to an argument.
+
+        Usage:
+        ----
+            >>> SessionObject._prepare_arguments_list(parameter_list=['MSFT','SQ'])
+        
+        Returns:
+        ----
+        {str} -- The joined list.
 
         """
 
@@ -444,7 +455,6 @@ class IBClient():
             parameter_list = delimiter.join(parameter_list)
 
         return parameter_list
-
 
     """
         SESSION ENDPOINTS
@@ -1025,6 +1035,25 @@ class IBClient():
 
         return content        
         
+    def symbols_search_list(self, symbols: List[str]) -> Dict:
+        """
+            Returns a list of non-expired future contracts for given symbol(s).
+
+            NAME: Symbol
+            DESC: List of case-sensitive symbols separated by comma.
+            TYPE: List<String>
+
+            RTYPE: Dictionary
+        """
+
+        # define the request components
+        endpoint = '/trsrv/stocks'
+        req_type = 'GET'
+        payload = {'symbols':'{}'.format(','.join(symbols))}
+        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+
+        return content     
+
     """
         PORTFOLIO ACCOUNTS ENDPOINTS
     """
