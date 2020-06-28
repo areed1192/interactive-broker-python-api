@@ -1,4 +1,6 @@
-#### Table of Contents
+# Unofficial Interactive Brokers API
+
+## Table of Contents
 
 - [Overview](#overview)
 - [What's in the API](#whats-in-the-api)
