@@ -55,7 +55,9 @@ The API does not require any API keys to use it, all of the authentication is ha
 
 ## Setup Installation
 
-PLACE HOLDER FOR PIP INSTALLATION
+```console
+pip install interactive-broker-python-web-api
+```
 
 ## Setup Writing Account Information
 
