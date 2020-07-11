@@ -220,7 +220,8 @@ mutual_fund_conid = '10753238'
 
 # Grab Fees and Objectives.
 mutual_fund_fees = ib_client.mutual_funds_portfolios_and_fees(
-    conid=mutual_fund_conid)
+    conid=mutual_fund_conid
+)
 pprint.pprint(mutual_fund_fees)
 pprint('')
 
