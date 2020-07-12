@@ -16,6 +16,7 @@ from typing import List
 from typing import Dict
 
 from urllib3.exceptions import InsecureRequestWarning
+from ibw.clientportal import ClientPortal
 
 urllib3.disable_warnings(category=InsecureRequestWarning)
 # http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=certifi.where())
@@ -67,6 +68,7 @@ class IBClient():
 
         self.account = account
         self.username = username
+        self.client_portal_client = ClientPortal()
 
         self.api_version = 'v1/'
         self._operating_system = sys.platform
@@ -80,15 +82,17 @@ class IBClient():
         self.backup_gateway_path = r"https://cdcdyn.interactivebrokers.com/portal.proxy"     
 
         if client_gateway_path is None:
-            try:
-                # Grab the Client Portal Path.
-                self.client_portal_folder = pathlib.Path(__file__).parents[1].joinpath(
-                    'resources/clientportal.beta.gw'
-                ).resolve()
-            except FileNotFoundError:
-                raise FileNotFoundError(
-                        "The Client Portal Gateway doesn't exist. You need to download it before using the Library."
-                    )
+
+            # Grab the Client Portal Path.
+            self.client_portal_folder: pathlib.Path = pathlib.Path(__file__).parents[1].joinpath(
+                'resources/clientportal.beta.gw'
+            ).resolve()
+
+            # See if it exists.
+            if not self.client_portal_folder.exists():
+                print("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
+                print("Downloading the Client Portal file...")
+                self.client_portal_client.download_and_extract()
         
         else:
             self.client_portal_folder = client_gateway_path

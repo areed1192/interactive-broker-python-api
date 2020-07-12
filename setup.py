@@ -17,7 +17,7 @@ setup(
 
       # I'm in alpha development still, so a compliant version number is a1.
       # read this as MAJOR VERSION 0, MINOR VERSION 1, MAINTENANCE VERSION 0
-      version='0.1.0',
+      version='0.1.2',
       description='A python client library for the Interactive Broker Web API.',
 
       # I have a long description but that will just be my README file.
