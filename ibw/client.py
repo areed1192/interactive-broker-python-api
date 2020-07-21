@@ -118,6 +118,36 @@ class IBClient():
             '''.format(serv_proc=self.server_process)
         )
 
+            # See if it exists.
+            if not self.client_portal_folder.exists():
+                print("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
+                print("Downloading the Client Portal file...")
+                self.client_portal_client.download_and_extract()
+        
+        else:
+            self.client_portal_folder = client_gateway_path
+
+        # Log the initial Info.
+        logging.info('''
+        Operating System: {op_sys}
+        Session State Path: {state_path}
+        Client Portal Folder: {client_path}
+        '''.format(
+            op_sys=self._operating_system,
+            state_path=self.session_state_path,
+            client_path=self.client_portal_folder
+            )
+        )
+
+        # Load the Server State.
+        self.server_process = self._server_state(action='load')        
+
+        # Log the response.
+        logging.debug('''
+            Server Prcoess Init: {serv_proc}
+            '''.format(serv_proc=self.server_process)
+        )
+
     def create_session(self, set_server=True) -> bool:
         """Creates a new session.
 
@@ -314,6 +344,8 @@ class IBClient():
         ----
         bool: `True` if authenticated, `False` otherwise.
         """
+        
+        logging.debug('Running Client Folder at: {file_path}'.format(file_path=self.client_portal_folder))
 
         max_retries = 0
 
