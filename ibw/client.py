@@ -1,23 +1,25 @@
 import os
 import sys
+import ssl
 import json
 import time
-import pathlib
 import urllib
+import urllib3
+import certifi
+import logging
+import pathlib
 import requests
 import subprocess
 
-import urllib3
-import certifi
 from typing import Union
 from typing import List
 from typing import Dict
+
 from urllib3.exceptions import InsecureRequestWarning
+from ibw.clientportal import ClientPortal
+
 urllib3.disable_warnings(category=InsecureRequestWarning)
 # http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=certifi.where())
-
-
-import ssl
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -28,11 +30,15 @@ else:
     # Handle target environment that doesn't support HTTPS verification
     ssl._create_default_https_context = _create_unverified_https_context
 
+logging.basicConfig(
+    filename='app.log',
+    format='%(levelname)s - %(name)s - %(message)s',
+    level=logging.DEBUG
+)
 
 class IBClient():
 
-
-    def __init__(self, username: str, account: str) -> None:
+    def __init__(self, username: str, account: str, client_gateway_path: str = None) -> None:
         
         """Initalizes a new instance of the IBClient Object.
 
@@ -62,6 +68,7 @@ class IBClient():
 
         self.account = account
         self.username = username
+        self.client_portal_client = ClientPortal()
 
         self.api_version = 'v1/'
         self._operating_system = sys.platform
@@ -72,16 +79,46 @@ class IBClient():
         ib_gateway_host = r"https://localhost"
         ib_gateway_port = r"5000"
         self.ib_gateway_path = ib_gateway_host + ":" + ib_gateway_port
-        self.backup_gateway_path = r"https://cdcdyn.interactivebrokers.com/portal.proxy"
+        self.backup_gateway_path = r"https://cdcdyn.interactivebrokers.com/portal.proxy"     
 
-        try:
-            self.client_portal_folder = pathlib.Path(__file__).parent.parent.joinpath('resources/clientportal.beta.gw').resolve()
-        except FileNotFoundError:
-            raise FileNotFoundError("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
+        if client_gateway_path is None:
 
-        self.server_process = self._server_state(action ='load')        
+            # Grab the Client Portal Path.
+            self.client_portal_folder: pathlib.Path = pathlib.Path(__file__).parents[1].joinpath(
+                'resources/clientportal.beta.gw'
+            ).resolve()
 
-    def create_session(self) -> bool:
+            # See if it exists.
+            if not self.client_portal_folder.exists():
+                print("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
+                print("Downloading the Client Portal file...")
+                self.client_portal_client.download_and_extract()
+        
+        else:
+            self.client_portal_folder = client_gateway_path
+
+        # Log the initial Info.
+        logging.info('''
+        Operating System: {op_sys}
+        Session State Path: {state_path}
+        Client Portal Folder: {client_path}
+        '''.format(
+            op_sys=self._operating_system,
+            state_path=self.session_state_path,
+            client_path=self.client_portal_folder
+            )
+        )
+
+        # Load the Server State.
+        self.server_process = self._server_state(action='load')        
+
+        # Log the response.
+        logging.debug('''
+            Server Prcoess Init: {serv_proc}
+            '''.format(serv_proc=self.server_process)
+        )
+
+    def create_session(self, set_server=True) -> bool:
         """Creates a new session.
 
         Creates a new session with Interactive Broker using the credentials
@@ -103,16 +140,26 @@ class IBClient():
         bool -- True if the session was created, False if wasn't created.
         """
           
+        # Log the process ID.
+        logging.info('Server Process: {serv_proc}'.format(serv_proc=self.server_process))
+
         # first let's check if the server is running, if it's not then we can start up.
-        if self.server_process == None and self.connect():
+        if self.server_process is None:
+            
+            # If it's None we need to connect first.
+            if set_server:
+                self.connect(start_server=True)
+            else:
+                self.connect(start_server=True, check_user_input=False)
+                return True
 
             # then make sure the server is updated.
             if self._set_server():
                 return True
 
+
         # more than likely it's running let's try and see if we can authenticate.
         auth_response = self.is_authenticated()
-
 
         if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
 
@@ -141,10 +188,26 @@ class IBClient():
         """
 
         server_update_content = self.update_server_account(account_id = self.account, check = False)
+        server_account_content = self.server_accounts()
+
         success = '\nNew session has been created and authenticated. Requests will not be limited.\n'.upper()
         failure = '\nCould not create a new session that was authenticated, exiting script.\n'.upper()
 
-        if 'set' in server_update_content.keys() and server_update_content['set'] == True:
+        # Log the response.
+        logging.debug('''
+            Server Update Response: {auth_resp}
+            Server Response: {serv_resp}
+            '''.format(
+                auth_resp=server_update_content,
+                serv_resp=server_account_content
+            )
+        )
+
+        # TO DO: Add check market hours here and then check for a mutual fund.
+        if 'accounts' in self.server_accounts():
+            print(success)
+            return True
+        if server_account_content is not None and 'set' in server_update_content.keys() and server_update_content['set'] == True:
             print(success)
             return True
         elif ('message' in server_update_content.keys()) and (server_update_content['message'] == 'Account already set'):
@@ -173,44 +236,199 @@ class IBClient():
         Union[None, int] -- The Process ID of the Server.
         """
 
-        # define file components
-        # dir_path = os.path.dirname(os.path.realpath(__file__))
-        # filename = 'server_session.json'
-        # file_path = os.path.join(dir_path, filename)
+        # Define file components.
         file_exists = self.session_state_path.exists()
 
-        session_state_path = pathlib.Path(__file__).parent.joinpath('server_session.json').resolve()
+        # Log the response.
+        logging.debug('''
+            Server State: {state}
+            State File: {exist}
+            '''.format(
+                state=action,
+                exist=file_exists
+            )
+        )
 
         if action == 'save':
+
+            # Save the State.
             with open(self.session_state_path, 'w') as server_file:
-                json.dump({'server_process_id':self.server_process},server_file)
+                json.dump(obj={'server_process_id': self.server_process}, fp=server_file)
 
+        # If we are loading check the file exists first.
         elif action == 'load' and file_exists:
+            
+            # Load it.
             with open(self.session_state_path, 'r') as server_file:
-                server_state = json.load(server_file)
+                server_state = json.load(fp=server_file)
 
+            # Grab the Process Id.
             proc_id = server_state['server_process_id']
 
-            if self._operating_system == 'win32':
+            # If it's running return the process ID.
+            is_running = self._check_if_server_running(process_id=proc_id)
 
-                with os.popen('tasklist') as task_list:
-                    for process in task_list.read().splitlines()[4:]:
-                        if str(proc_id) in process:
-                            process_details = process.split()
-                            return proc_id
-            else:
-                try:
-                    os.kill(proc_id, 0)
-                    return proc_id
-                except OSError:
-                    return None
+            if is_running:
+                return proc_id
 
+        # Delete it.
         elif action == 'delete' and file_exists:
             self.session_state_path.unlink()
-        else:
-            return None
 
-    def connect(self, start_server: bool = True) -> bool:
+
+    def _check_if_server_running(self, process_id: str) -> bool:
+
+        if self._operating_system == 'win32':
+        
+            # See if the Process is running.
+            with os.popen('tasklist') as task_list:
+                
+                # Grab each task.
+                for process in task_list.read().splitlines()[4:]:                    
+
+                    if str(process_id) in process:
+
+                        # Log the response.
+                        logging.debug('''
+                            Process ID Found: {process}
+                            '''.format(
+                                process=process
+                            )
+                        )
+
+                        process_details = process.split()
+                        return True
+
+        else:
+
+            try:
+                os.kill(process_id, 0)
+                return True
+            except OSError:
+                return False
+ 
+    def _check_authentication_user_input(self) -> bool:
+        """Used to check the authentication of the Server.
+
+        Returns:
+        ----
+        bool: `True` if authenticated, `False` otherwise.
+        """
+
+        max_retries = 0
+
+        while (max_retries > 4 or self.authenticated == False):
+
+            user_input = input('Would you like to make an authenticated request (Yes/No)? ').upper()
+
+            if user_input == 'NO':
+                self.close_session()
+            else:
+                auth_response = self.is_authenticated()
+            
+            logging.debug('Check User Auth Inital: {auth_resp}'.format(
+                    auth_resp=auth_response
+                )
+            )
+
+            if 'statusCode' in auth_response.keys() and auth_response['statusCode'] == 401:
+                print("Session isn't connected, closing script.")
+                self.close_session()
+
+            elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
+                self.authenticated = True
+                break
+
+            elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == False:
+                valid_resp = self.validate()
+                reauth_resp = self.reauthenticate()
+                auth_response = self.is_authenticated()
+
+                try:
+                    serv_resp = self.server_accounts()
+                    if 'accounts' in serv_resp:
+                        self.authenticated = True
+
+                        #  Log the response.
+                        logging.debug('Had to do Server Account Request: {auth_resp}'.format(
+                                auth_resp=serv_resp
+                            )
+                        )
+                        break
+                except:
+                    pass
+
+                logging.debug(
+                    '''
+                    Validate Response: {valid_resp}
+                    Reauth Response: {reauth_resp}
+                    '''.format(
+                        valid_resp=valid_resp,
+                        reauth_resp=reauth_resp
+                    )
+                )
+            
+            max_retries += 1
+        
+        return self.authenticated
+
+    def _check_authentication_non_input(self) -> bool:
+
+        auth_response = self.is_authenticated()
+
+        if 'statusCode' in auth_response:
+            print("Session isn't connected, closing script.")
+            self.close_session()
+
+        elif 'authenticated' in auth_response and auth_response['authenticated']:
+            self.authenticated = True
+
+        elif 'authenticated' in auth_response and not auth_response['authenticated']:
+
+            self.validate()
+            self.reauthenticate()
+            
+            if self.reauthenticate().get('message','Null') == 'triggered':
+                self.authenticated = True
+            else:
+                self.authenticated = False    
+
+        elif auth_response.get('authenticated','Null') in (False, 'Null') and auth_response.get('connected','Null') in (False, 'Null'):
+            
+            self.validate()
+            if self.reauthenticate() == True:
+                self.authenticated = True
+            else:
+                self.authenticated = False
+
+    def _start_server(self) -> str:
+        """Starts the Server.
+
+        Returns:
+        ----
+        str: The Server Process ID.
+        """        
+
+        # windows will use the command line application.
+        if self._operating_system == 'win32':
+            IB_WEB_API_PROC = ["cmd", "/k", r"bin\run.bat", r"root\conf.yaml"]
+            self.server_process = subprocess.Popen(
+                args=IB_WEB_API_PROC,
+                cwd=self.client_portal_folder,
+                creationflags=subprocess.CREATE_NEW_CONSOLE
+            ).pid
+
+        # mac will use the terminal.
+        elif self._operating_system == 'darwin':
+            IB_WEB_API_PROC = ["open", "-F", "-a", "Terminal", r"bin/run.sh", r"root/conf.yaml"]
+            self.server_process = subprocess.Popen(
+                args=IB_WEB_API_PROC,
+                cwd=self.client_portal_folder
+            ).pid
+
+        return self.server_process
+
+    def connect(self, start_server: bool = True, check_user_input: bool = True) -> bool:
         """Connects the session with the API.
 
         Connects the session to the Interactive Broker API by, starting up the Client Portal Gateway,
@@ -225,70 +443,35 @@ class IBClient():
         ----
         bool -- `True` if it was connected.
         """
+        
+        logging.debug('Running Client Folder at: {file_path}'.format(file_path=self.client_portal_folder))
 
+        # If needed, start the server and save the State.
         if start_server:
-            # windows will use the command line application.
-            if self._operating_system == 'win32':
-                IB_WEB_API_PROC = ["cmd", "/k", r"bin\run.bat", r"root\conf.yaml"]
-                self.server_process = subprocess.Popen(
-                    args=IB_WEB_API_PROC,
-                    cwd=self.client_portal_folder,
-                    creationflags=subprocess.CREATE_NEW_CONSOLE
-                ).pid
+            server_state = self._start_server()
+            self._server_state(action='save')
 
-            # mac will use the terminal.
-            elif self._operating_system == 'darwin':
-                IB_WEB_API_PROC = ["open", "-F", "-a", "Terminal", r"bin/run.sh", r"root/conf.yaml"]
-                self.server_process = subprocess.Popen(
-                    args=IB_WEB_API_PROC,
-                    cwd=self.client_portal_folder
-                ).pid
+        # Display prompt if needed.
+        if check_user_input:
 
-        self._server_state(action='save')
+            print("""{}
+            The Interactive Broker server is currently starting up, so we can authenticate your session.
+                STEP 1: GO TO THE FOLLOWING URL: {}
+                STEP 2: LOGIN TO YOUR account WITH YOUR username AND PASSWORD.
+                STEP 3: WHEN YOU SEE `Client login succeeds` RETURN BACK TO THE TERMINAL AND TYPE `YES` TO CHECK IF THE SESSION IS AUTHENTICATED.
+                SERVER IS RUNNING ON PROCESS ID: {}
+            {}
+            """.format('-'*80, self.ib_gateway_path + "/sso/Login?forwardTo=22&RL=1&ip2loc=on", self.server_process, '-'*80)
+            )
 
-        print("""{}
-        The Interactive Broker server is currently starting up, so we can authenticate your session.
-            STEP 1: GO TO THE FOLLOWING URL: {}
-            STEP 2: LOGIN TO YOUR account WITH YOUR username AND PASSWORD.
-            STEP 3: WHEN YOU SEE `Client login succeeds` RETURN BACK TO THE TERMINAL AND TYPE `YES` TO CHECK IF THE SESSION IS AUTHENTICATED.
-            SERVER IS RUNNING ON PROCESS ID: {}
-        {}
-        """.format('-'*80, self.ib_gateway_path + "/sso/Login?forwardTo=22&RL=1&ip2loc=on", self.server_process, '-'*80)
-        )
+            # Check the auth status
+            auth_status = self._check_authentication_user_input()
 
-        while self.authenticated == False:
+        else:
 
-            user_input = input('Would you like to make an authenticated request (Yes/No)? ').upper()
+            auth_status = True
 
-            if user_input == 'NO':
-                self.close_session()
-            else:
-                auth_response = self.is_authenticated()
-
-            if 'statusCode' in auth_response.keys() and auth_response['statusCode'] == 401:
-                print("Session isn't connected, closing script.")
-                self.close_session()
-
-            elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
-                self.authenticated = True
-
-            elif 'authenticated' in auth_response.keys() and auth_response['authenticated'] == False:
-                
-                if self.reauthenticate().get('message','Null') == 'triggered':
-                    self.authenticated = True
-                else:
-                    self.authenticated = False    
-
-            elif auth_response.get('authenticated','Null') in (False, 'Null') and auth_response.get('connected','Null') in (False, 'Null'):
-                
-                self.validate()
-                if self.reauthenticate() == True:
-                    self.authenticated = True
-                else:
-                    self.authenticated = False
-
-        self.authenticated = True
-        return True
+        return auth_status
 
     def close_session(self) -> None:
         """Closes the current session and kills the server using Taskkill."""
@@ -404,7 +587,7 @@ class IBClient():
         response_headers = response.headers
 
         # Check to see if it was successful
-        if status_code in (200, 201):
+        if response.ok:
 
             if response_headers.get('Content-Type','null') == 'application/json;charset=utf-8':
                 return response.json()
@@ -412,7 +595,7 @@ class IBClient():
                 return response.json()
 
         # if it was a bad request print it out.
-        elif status_code in (400, 403, 500):
+        elif not response.ok and url != 'https://localhost:5000/v1/portal/iserver/account':
 
             print('')
             print('-'*80)
@@ -940,7 +1123,11 @@ class IBClient():
             'acctId':account_id
         }
 
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
@@ -1420,6 +1607,32 @@ class IBClient():
 
         return content
 
+
+    def place_order_reply(self, reply_id: str = None, reply: str = None):
+        '''
+            An extension of the `place_order` endpoint but allows for a list of orders. Those orders may be
+            either a list of dictionary objects or a list of IBOrder objects.
+
+            NAME: account_id
+            DESC: The account ID you wish to place an order for.
+            TYPE: String
+
+            NAME: orders
+            DESC: Either a list of IBOrder objects or a list of dictionaries with the specified payload.
+            TYPE: List<IBOrder Object> or List<Dictionary>
+
+        '''
+
+        # define request components
+        endpoint = r'iserver/reply/{}'.format(reply_id)
+        req_type = 'POST'
+        reply = {
+            'confirmed': reply
+        }
+
+        content = self._make_request(endpoint=endpoint, req_type=req_type, json=reply)
+
+        return content
 
     def modify_order(self, account_id: str, customer_order_id: str, order: dict) -> Dict:
         """
