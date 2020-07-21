@@ -2,11 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-configAlex.py
-clientportal.gw/
-clientportal.beta.gw/
-alex/
-config/
 
 # C extensions
 *.so
@@ -132,6 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-.vscode/settings.json
-curl.txt
+
+# Add files that I don't want on GitHub.
+.vscode/
 ibw/server_session.json
+.pypirc
+MANIFEST.in
+clientportal.gw/
+clientportal.beta.gw/
+alex/
+config/
