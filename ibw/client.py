@@ -118,15 +118,6 @@ class IBClient():
             '''.format(serv_proc=self.server_process)
         )
 
-            # See if it exists.
-            if not self.client_portal_folder.exists():
-                print("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
-                print("Downloading the Client Portal file...")
-                self.client_portal_client.download_and_extract()
-        
-        else:
-            self.client_portal_folder = client_gateway_path
-
         # Log the initial Info.
         logging.info('''
         Operating System: {op_sys}
