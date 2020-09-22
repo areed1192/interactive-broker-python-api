@@ -199,7 +199,8 @@ class IBClient():
         )
 
         # TO DO: Add check market hours here and then check for a mutual fund.
-        if 'news' in self.data_news(conid='265598'):
+        news = self.data_news(conid='265598')
+        if news and 'news' in news:
             print(success)
             return True
         if server_account_content is not None and 'set' in server_update_content.keys() and server_update_content['set'] == True:
