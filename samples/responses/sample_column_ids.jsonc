@@ -1,0 +1,2692 @@
+{
+  "selected_columns": [
+    {
+      "fix_tag": 55,
+      "movable": false,
+      "removable": false,
+      "name": "Instrument",
+      "description": "Enter the contract symbol or class as it is defined by the exchange on which it's trading.",
+      "groups": ["G-3"],
+      "id": "INSTRUMENT"
+    },
+    {
+      "fix_tag": 76,
+      "removable": false,
+      "name": "Position",
+      "description": "The current aggregate position for the selected account or group",
+      "groups": ["G2"],
+      "id": "POSITION"
+    },
+    {
+      "fix_tag": 31,
+      "name": "Last",
+      "description": "The last price at which the contract traded. \"C\" identifies this price as the previous day's closing price. \"H\" means that the trading is halted.",
+      "groups": ["G4"],
+      "id": "LAST"
+    },
+    {
+      "fix_tag": 83,
+      "name": "Change %",
+      "description": "The difference between the last price and the close on the previous trading day.",
+      "groups": ["G4"],
+      "id": "PCT_CHANGE"
+    },
+    {
+      "fix_tag": 7292,
+      "name": "Cost Basis",
+      "description": "Your current position in this security multiplied by average price and multiplier",
+      "groups": ["G2"],
+      "id": "COST_BASIS"
+    },
+    {
+      "fix_tag": 73,
+      "name": "Market Value",
+      "description": "The current market value of your position in the security. Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "MARKET_VALUE"
+    },
+    {
+      "fix_tag": 74,
+      "name": "Avg Price",
+      "description": "The average price of the position.",
+      "groups": ["G2"],
+      "id": "AVG_PRICE"
+    },
+    {
+      "fix_tag": 78,
+      "name": "Daily P&L",
+      "description": "Your profit or loss for the day since prior Close Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "DAILY_PL"
+    },
+    {
+      "fix_tag": 77,
+      "name": "Unrealized P&L",
+      "description": "Unrealized profit or loss. Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "UNREALIZED_PL"
+    }
+  ],
+  "groups": [
+    { "name": "Financial Instrument Description", "id": "G-3" },
+    { "name": "Columns", "id": "G0" },
+    { "name": "Position and P&L", "id": "G2" },
+    { "name": "Prices", "id": "G4" },
+    { "name": "High/Low/Volume/History", "id": "G5" },
+    { "name": "ETFs", "id": "G6" },
+    { "name": "Futures", "id": "G7" },
+    { "name": "Options", "id": "G8" },
+    { "name": "Bonds", "id": "G9" },
+    { "name": "Greeks", "id": "G10" },
+    { "name": "Dividends", "id": "G14" },
+    { "name": "Fundamentals - Popular", "id": "G15" },
+    { "name": "Fundamentals - Independent Ratings", "id": "G17" },
+    { "name": "WSH Corporate Event Calendar", "id": "G27" },
+    { "name": "Short Selling", "id": "G33" },
+    { "name": "Technical Indicator", "id": "G40" },
+    { "name": "Technical Indicators by Recognia", "id": "G41" },
+    { "name": "ESG - Combined Scores", "id": "G44" },
+    { "name": "ESG - Category Scores", "id": "G45" },
+    { "name": "ESG - Pillar Scores", "id": "G46" },
+    { "name": "Funds - Popular", "id": "G48" },
+    { "name": "Funds - Ratings & Strategy", "id": "G49" },
+    { "name": "Funds - Ratios & Statistics", "id": "G50" },
+    { "name": "Funds - Other", "id": "G51" },
+    { "name": "Option Exercise", "id": "G10022" }
+  ],
+  "available_columns": [
+    {
+      "fix_tag": 7639,
+      "name": "% of Market Value",
+      "description": "Displays the market value of the contract as a percentage of the total market value of the account. Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "PCT_MARKET_VALUE"
+    },
+    {
+      "fix_tag": 7436,
+      "name": "12b-1 Fees",
+      "description": "Indicates whether 12b-1 commission rules apply",
+      "groups": ["G51"],
+      "id": "12B1_FEES"
+    },
+    {
+      "fix_tag": 7247,
+      "name": "13 Week HV High",
+      "description": "Maximum closing value of the 30-day historical volatility over the last 13 weeks.",
+      "groups": ["G4"],
+      "id": "HV_HIGH13"
+    },
+    {
+      "fix_tag": 7263,
+      "name": "13 Week HV Low",
+      "description": "Minimum closing value of the 30-day historical volatility over the last 13 weeks.",
+      "groups": ["G4"],
+      "id": "HV_LOW13"
+    },
+    {
+      "fix_tag": 7212,
+      "name": "13 Week HV Percentile",
+      "description": "Indicates the percentage of days with historical volatility closing below the current historical volatility over the period. Percentile ranges from 0% to 100%. For example, if the last 4 days of daily historical volatility were 1.41%, 1.61%, 2.01%, 3.12% and the current is 1.91% then the latest is the 3rd highest out of 5 days or 60%. The observation period for the historical volatility calculation is 30 days.",
+      "groups": ["G4"],
+      "id": "HV_PERCNTL13"
+    },
+    {
+      "fix_tag": 7209,
+      "name": "13 Week HV Rank",
+      "description": "Indicates the rank of the historical volatility between the period high and low. HV Rank allows to determine if the current level is high or low within the period. HV Rank ranges from 0 to 100 where 0 rank indicates the current historical volatility is the lowest within the period and 100 indicates it is the highest within the period. HV Rank is calculated as ((Current HV - N-Week HV Low) / (N-Week HV High- N-Week HV Low))*100 where N is the number of weeks as defined by the column (e.g. 26 weeks). The observation period for the historical volatility calculation is 30 days.",
+      "groups": ["G4"],
+      "id": "HV_RANK13"
+    },
+    {
+      "fix_tag": 7203,
+      "name": "13 Week IV High",
+      "description": "Maximum intraday value of the implied volatility over the last 13 weeks.",
+      "groups": ["G8"],
+      "id": "IV_HIGH13"
+    },
+    {
+      "fix_tag": 7206,
+      "name": "13 Week IV Low",
+      "description": "Minimum intraday value of the implied volatility over the last 13 weeks.",
+      "groups": ["G8"],
+      "id": "IV_LOW13"
+    },
+    {
+      "fix_tag": 7200,
+      "name": "13 Week IV Percentile",
+      "description": "Indicates the percentage of days with implied volatility closing below the current implied volatility over the period. Percentile ranges from 0% to 100%. For example, if the last 4 days of daily implied volatility were 1.41%, 1.61%, 2.01%, 3.12% and the current is 1.91% then the latest is the 3rd highest out of 5 days or 60%.",
+      "groups": ["G8"],
+      "id": "IV_PERCNTL13"
+    },
+    {
+      "fix_tag": 7197,
+      "name": "13 Week IV Rank",
+      "description": "Indicates the rank of the current implied volatility between the period intraday high and low. IV Rank allows to determine if the current level is high or low within the period. IV Rank ranges from 0 to 100 where 0 rank indicates the current implied volatility is the lowest within the period and 100 indicates it is the highest within the period. IV Rank is calculated as ((Current IV - N-Week IV Low)/(N-Week IV High- N-Week IV Low))*100 where N is the number of weeks as defined by the column (e.g. 26 weeks).",
+      "groups": ["G8"],
+      "id": "IV_RANK13"
+    },
+    {
+      "fix_tag": 7246,
+      "name": "26 Week HV High",
+      "description": "Maximum closing value of the 30-day historical volatility over the last 26 weeks.",
+      "groups": ["G4"],
+      "id": "HV_HIGH26"
+    },
+    {
+      "fix_tag": 7249,
+      "name": "26 Week HV Low",
+      "description": "Minimum closing value of the 30-day historical volatility over the last 26 weeks.",
+      "groups": ["G4"],
+      "id": "HV_LOW26"
+    },
+    {
+      "fix_tag": 7211,
+      "name": "26 Week HV Percentile",
+      "description": "Indicates the percentage of days with historical volatility closing below the current historical volatility over the period. Percentile ranges from 0% to 100%. For example, if the last 4 days of daily historical volatility were 1.41%, 1.61%, 2.01%, 3.12% and the current is 1.91% then the latest is the 3rd highest out of 5 days or 60%. The observation period for the historical volatility calculation is 30 days.",
+      "groups": ["G4"],
+      "id": "HV_PERCNTL26"
+    },
+    {
+      "fix_tag": 7208,
+      "name": "26 Week HV Rank",
+      "description": "Indicates the rank of the historical volatility between the period high and low. HV Rank allows to determine if the current level is high or low within the period. HV Rank ranges from 0 to 100 where 0 rank indicates the current historical volatility is the lowest within the period and 100 indicates it is the highest within the period. HV Rank is calculated as ((Current HV - N-Week HV Low) / (N-Week HV High- N-Week HV Low))*100 where N is the number of weeks as defined by the column (e.g. 26 weeks). The observation period for the historical volatility calculation is 30 days.",
+      "groups": ["G4"],
+      "id": "HV_RANK26"
+    },
+    {
+      "fix_tag": 7202,
+      "name": "26 Week IV High",
+      "description": "Maximum intraday value of the implied volatility over the last 26 weeks.",
+      "groups": ["G8"],
+      "id": "IV_HIGH26"
+    },
+    {
+      "fix_tag": 7205,
+      "name": "26 Week IV Low",
+      "description": "Minimum intraday value of the implied volatility over the last 26 weeks.",
+      "groups": ["G8"],
+      "id": "IV_LOW26"
+    },
+    {
+      "fix_tag": 7199,
+      "name": "26 Week IV Percentile",
+      "description": "Indicates the percentage of days with implied volatility closing below the current implied volatility over the period. Percentile ranges from 0% to 100%. For example, if the last 4 days of daily implied volatility were 1.41%, 1.61%, 2.01%, 3.12% and the current is 1.91% then the latest is the 3rd highest out of 5 days or 60%.",
+      "groups": ["G8"],
+      "id": "IV_PERCNTL26"
+    },
+    {
+      "fix_tag": 7196,
+      "name": "26 Week IV Rank",
+      "description": "Indicates the rank of the current implied volatility between the period intraday high and low. IV Rank allows to determine if the current level is high or low within the period. IV Rank ranges from 0 to 100 where 0 rank indicates the current implied volatility is the lowest within the period and 100 indicates it is the highest within the period. IV Rank is calculated as ((Current IV - N-Week IV Low)/(N-Week IV High- N-Week IV Low))*100 where N is the number of weeks as defined by the column (e.g. 26 weeks).",
+      "groups": ["G8"],
+      "id": "IV_RANK26"
+    },
+    {
+      "fix_tag": 7245,
+      "name": "52 Week HV High",
+      "description": "Maximum closing value of the 30-day historical volatility over the last 52 weeks.",
+      "groups": ["G4"],
+      "id": "HV_HIGH52"
+    },
+    {
+      "fix_tag": 7248,
+      "name": "52 Week HV Low",
+      "description": "Minimum closing value of the 30-day historical volatility over the last 52 weeks.",
+      "groups": ["G4"],
+      "id": "HV_LOW52"
+    },
+    {
+      "fix_tag": 7210,
+      "name": "52 Week HV Percentile",
+      "description": "Indicates the percentage of days with historical volatility closing below the current historical volatility over the period. Percentile ranges from 0% to 100%. For example, if the last 4 days of daily historical volatility were 1.41%, 1.61%, 2.01%, 3.12% and the current is 1.91% then the latest is the 3rd highest out of 5 days or 60%. The observation period for the historical volatility calculation is 30 days.",
+      "groups": ["G4"],
+      "id": "HV_PERCNTL52"
+    },
+    {
+      "fix_tag": 7207,
+      "name": "52 Week HV Rank",
+      "description": "Indicates the rank of the historical volatility between the period high and low. HV Rank allows to determine if the current level is high or low within the period. HV Rank ranges from 0 to 100 where 0 rank indicates the current historical volatility is the lowest within the period and 100 indicates it is the highest within the period. HV Rank is calculated as ((Current HV - N-Week HV Low) / (N-Week HV High- N-Week HV Low))*100 where N is the number of weeks as defined by the column (e.g. 26 weeks). The observation period for the historical volatility calculation is 30 days.",
+      "groups": ["G4"],
+      "id": "HV_RANK52"
+    },
+    {
+      "fix_tag": 7293,
+      "name": "52 Week High",
+      "description": "The highest price for the past 52 weeks.",
+      "groups": ["G5"],
+      "id": "HIGH_52_WEEK"
+    },
+    {
+      "fix_tag": 7201,
+      "name": "52 Week IV High",
+      "description": "Maximum intraday value of the implied volatility over the last 52 weeks.",
+      "groups": ["G8"],
+      "id": "IV_HIGH52"
+    },
+    {
+      "fix_tag": 7204,
+      "name": "52 Week IV Low",
+      "description": "Minimum intraday value of the implied volatility over the last 52 weeks.",
+      "groups": ["G8"],
+      "id": "IV_LOW52"
+    },
+    {
+      "fix_tag": 7198,
+      "name": "52 Week IV Percentile",
+      "description": "Indicates the percentage of days with implied volatility closing below the current implied volatility over the period. Percentile ranges from 0% to 100%. For example, if the last 4 days of daily implied volatility were 1.41%, 1.61%, 2.01%, 3.12% and the current is 1.91% then the latest is the 3rd highest out of 5 days or 60%.",
+      "groups": ["G8"],
+      "id": "IV_PERCNTL52"
+    },
+    {
+      "fix_tag": 7195,
+      "name": "52 Week IV Rank",
+      "description": "Indicates the rank of the current implied volatility between the period intraday high and low. IV Rank allows to determine if the current level is high or low within the period. IV Rank ranges from 0 to 100 where 0 rank indicates the current implied volatility is the lowest within the period and 100 indicates it is the highest within the period. IV Rank is calculated as ((Current IV - N-Week IV Low)/(N-Week IV High- N-Week IV Low))*100 where N is the number of weeks as defined by the column (e.g. 26 weeks).",
+      "groups": ["G8"],
+      "id": "IV_RANK52"
+    },
+    {
+      "fix_tag": 7294,
+      "name": "52 Week Low",
+      "description": "The lowest price for the past 52 weeks.",
+      "groups": ["G5"],
+      "id": "LOW_52_WEEK"
+    },
+    {
+      "fix_tag": 7497,
+      "name": "Alpha 1Yr",
+      "description": "Alpha, also known as Jensen's Alpha, is the measure of a portfolio's risk-adjusted performance relative to a benchmark. In performance terms, Alpha refers to the difference between the portfolio's actual return versus the expected return using its volatility (Standard Deviation) relative to the market as measured by the beta coefficient (see Beta). It measures the manager's contribution to performance due to security selection or market timing. A positive Alpha indicates that the portfolio did better than the benchmark on a risk-adjusted basis, and a negative Alpha indicates the portfolio under-performed the benchmark, given the expectations established by the fund's beta. In mathematical terms, Alpha is the intercept of the linear regression equation of the excess returns over the risk-free asset for the portfolio and the benchmark.",
+      "groups": ["G50"],
+      "id": "ALPHA_1YR"
+    },
+    {
+      "fix_tag": 7391,
+      "name": "Altar Score",
+      "description": "ALTAR(AltaVista Long Term Annual Return Forecast) Score TM is AltaVista's proprietary measure of an ETF's overall investment merit. ALTAR compares funds based on their fundamentals and identifying value (or the lack thereof) and then assigns the following investment ratings based on this score: Avoid (&lt;3%), Underweight (3% to 6%), Neutral (6% to 8%), Overweight (8% to 11%) and Speculative (&gt;11%). For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "ALTAR_SCORE"
+    },
+    {
+      "fix_tag": 7491,
+      "name": "Annualized Performance 10Yr Value",
+      "description": "Annualized Performance 10Yr Value",
+      "groups": ["G48"],
+      "id": "GRWTH_ANN_10YR"
+    },
+    {
+      "fix_tag": 7489,
+      "name": "Annualized Performance 3Yr Value",
+      "description": "Annualized Performance 3Yr Value",
+      "groups": ["G48"],
+      "id": "GRWTH_ANN_3YR"
+    },
+    {
+      "fix_tag": 7490,
+      "name": "Annualized Performance 5Yr Value",
+      "description": "Annualized Performance 5Yr Value",
+      "groups": ["G48"],
+      "id": "GRWTH_ANN_5YR"
+    },
+    {
+      "fix_tag": 7653,
+      "name": "Argus Research Rating",
+      "description": "Displays Argus Research Rating provider value",
+      "groups": ["G17"],
+      "id": "ARGUS_RESEARCH_RATING"
+    },
+    {
+      "fix_tag": 86,
+      "name": "Ask",
+      "description": "The lowest price offered on the contract.",
+      "groups": ["G4"],
+      "id": "ASK"
+    },
+    {
+      "fix_tag": 7057,
+      "name": "Ask Exch",
+      "description": "Displays the exchange(s) offering the SMART price. A=AMEX, C=CBOE, I=ISE, X=PHLX, N=PSE, B=BOX, Q=NASDAQOM, Z=BATS, W=CBOE2, T=NASDAQBX, M=MIAX, H=GEMINI, E=EDGX, J=MERCURY",
+      "groups": ["G4"],
+      "id": "ASK_EXCH_CODES"
+    },
+    {
+      "fix_tag": 85,
+      "name": "Ask Size",
+      "description": "The number of contracts or shares offered at the ask price. For US stocks, the number displayed is divided by 100.",
+      "groups": ["G4"],
+      "id": "ASK_SIZE"
+    },
+    {
+      "fix_tag": 7699,
+      "name": "Ask Yield",
+      "description": "Implied yield of the bond if it is purchased at the current offer. Ask yield is calculated using the Bid on all possible call dates. It is assumed that prepayment occurs if the bond has call or put provisions and the issuer can offer a lower coupon rate based on current market rates. The yield to worst will be the lowest of yield to maturity or yield to call (if the bond has prepayment provisions); yield to worst may be the same as yield to maturity but never higher.",
+      "groups": ["G9"],
+      "id": "YIELD_BID"
+    },
+    {
+      "fix_tag": 6070,
+      "name": "Asset Class",
+      "description": "This is the asset class of the ETF holdings, such as equity or fixed income",
+      "groups": ["G-3"],
+      "id": "ASSET_CLASS"
+    },
+    {
+      "fix_tag": 7392,
+      "name": "Asset Turnover Ratio",
+      "description": "Asset turnover For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "ASSET_TURNOVER_RATIO"
+    },
+    {
+      "fix_tag": 7409,
+      "name": "Asset Universe",
+      "description": "Asset Universe is hierarchically above Asset Type and is a broad characteristic that describes the asset, such as Mutual Fund, Exchange Traded Fund, or Insurance Fund.",
+      "groups": ["G51"],
+      "id": "ASSET_UNIV"
+    },
+    {
+      "fix_tag": 7579,
+      "name": "Average Coupon",
+      "description": "The weighted average of the fixed rate of interest paid on a portfolio's bonds.",
+      "groups": ["G51"],
+      "id": "AVG_COUPON"
+    },
+    {
+      "fix_tag": 7572,
+      "name": "Average Final Composite Z-Score",
+      "description": "The simple average Composite Z-Score for the classification portfolios from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "AVG_FIN_COMP_ZSCORE"
+    },
+    {
+      "fix_tag": 7498,
+      "name": "Average Loss 1Yr",
+      "description": "This figure represents an average value for each of the calculation sub periods (i.e., calculation intervals) in which a fund's total return was negative (any periods in which performance return was positive are ignored) divided by the total number of sub periods (e.g., months) over which the calculation is being undertaken. It is important to note that although the positive calculation periods are ignored for calculating the average negative return value, the Average Loss figure is then calculated by reference to the total number of sub periods (positive and negative) during the entire period of investment.",
+      "groups": ["G50"],
+      "id": "AVG_LOSS_1YR"
+    },
+    {
+      "fix_tag": 7580,
+      "name": "Average Quality",
+      "description": "Average Quality is a measure of a bond portfolio's relative safety.",
+      "groups": ["G48"],
+      "id": "AVG_QUALITY"
+    },
+    {
+      "fix_tag": 7334,
+      "name": "Average Return 1Yr",
+      "description": "The simple arithmetic mean (often referred to as the average) of a fund's performance during the period of investment.",
+      "groups": ["G50"],
+      "id": "AVG_RETURN_1YR"
+    },
+    {
+      "fix_tag": 7282,
+      "name": "Average Volume",
+      "description": "The average daily trading volume over 90 days.",
+      "groups": ["G5"],
+      "id": "AVG_DAILY_VOLUME"
+    },
+    {
+      "fix_tag": 74,
+      "name": "Avg Price",
+      "description": "The average price of the position.",
+      "groups": ["G2"],
+      "id": "AVG_PRICE"
+    },
+    {
+      "fix_tag": 7582,
+      "name": "Bear Beta 1Yr",
+      "description": "Measures sensitivity of fund performance relative to downswings in benchmark performance. A fund with a beta of 1.0 has tended to experience down movements of roughly the same magnitude as the benchmark and a beta of 1.2 suggest that the down movement of the fund is 1.2 times that of the benchmark. Higher Bear Beta means more risk in the down markets represented by the benchmark. Confidence in beta must be qualified by an R-Squared that approaches 1.",
+      "groups": ["G50"],
+      "id": "BEAR_BETA_1YR"
+    },
+    {
+      "fix_tag": 7417,
+      "name": "Benchmark_Index",
+      "description": "Benchmark_Index",
+      "groups": ["G51"],
+      "id": "BM_INDEX"
+    },
+    {
+      "fix_tag": 7718,
+      "name": "Beta",
+      "description": "Beta is against standard index",
+      "groups": ["G0"],
+      "id": "RISK_BETA"
+    },
+    {
+      "fix_tag": 7583,
+      "name": "Beta 1Yr",
+      "description": "In performance terms, Beta is the measure of a portfolio's volatility (standard deviation) relative to the market or a benchmark portfolio as defined by a relevant index. A positive Beta indicates that the portfolio moves in the same direction as the benchmark while a negative Beta represents movements in the opposite direction. A portfolio with a Beta of 1.0 has tended to experience up and down movements of roughly the same magnitude as the benchmark, while a Beta of 1.2 suggests that the movement of the portfolio is 1.2 times that of the benchmark.",
+      "groups": ["G50"],
+      "id": "BETA_1YR"
+    },
+    {
+      "fix_tag": 7393,
+      "name": "Beta Vs S&P 500",
+      "description": "ETF's beta vs the S&P 500 index For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "BETA_VS_SNP_500"
+    },
+    {
+      "fix_tag": 84,
+      "name": "Bid",
+      "description": "The highest-priced bid for the contract.",
+      "groups": ["G4"],
+      "id": "BID"
+    },
+    {
+      "fix_tag": 7068,
+      "name": "Bid Exch",
+      "description": "Displays the exchange(s) offering the SMART price. A=AMEX, C=CBOE, I=ISE, X=PHLX, N=PSE, B=BOX, Q=NASDAQOM, Z=BATS, W=CBOE2, T=NASDAQBX, M=MIAX, H=GEMINI, E=EDGX, J=MERCURY",
+      "groups": ["G4"],
+      "id": "BID_EXCH_CODES"
+    },
+    {
+      "fix_tag": 88,
+      "name": "Bid Size",
+      "description": "The number of contracts or shares bid for at the bid price. For US stocks, the number displayed is divided by 100.",
+      "groups": ["G4"],
+      "id": "BID_SIZE"
+    },
+    {
+      "fix_tag": 7720,
+      "name": "Bid Yield",
+      "description": "Implied yield of the bond if it is purchased at the current bid. Bid yield is calculated using the Ask on all possible call dates. It is assumed that prepayment occurs if the bond has call or put provisions and the issuer can offer a lower coupon rate based on current market rates. The yield to worst will be the lowest of yield to maturity or yield to call (if the bond has prepayment provisions); yield to worst may be the same as yield to maturity but never higher.",
+      "groups": ["G9"],
+      "id": "YIELD_ASK"
+    },
+    {
+      "fix_tag": 7708,
+      "name": "Bond Type",
+      "description": "Bond Type",
+      "groups": ["G9"],
+      "id": "BOND_TYPE"
+    },
+    {
+      "fix_tag": 7695,
+      "name": "Break Even",
+      "description": "Break even points",
+      "groups": ["G0"],
+      "id": "PERF_BREAK_EVEN"
+    },
+    {
+      "fix_tag": 7335,
+      "name": "Bull Beta 1Yr",
+      "description": "Measures sensitivity of fund performance relative to upswings in benchmark performance. A fund with a Beta of 1.0 has tended to experience up movements of roughly the same magnitude as the benchmark and a beta of 1.2 suggest that the up movement of the fund is 1.2 times that of the benchmark. Higher Bull Beta means better ability to ride the upswings in the market represented by the benchmark. Confidence in Bull Beta must be qualified by an R-squared that approaches 1.",
+      "groups": ["G50"],
+      "id": "BULL_BETA_1YR"
+    },
+    {
+      "fix_tag": 7274,
+      "name": "CSR Strategy Score",
+      "description": "CSR strategy category score reflects a company's practices to communicate that it integrates the economic (financial), social and environmental dimensions into its day-to-day decision-making processes.",
+      "groups": ["G45"],
+      "id": "ESG_CSR_STRATEGY_SCORE"
+    },
+    {
+      "fix_tag": 7581,
+      "name": "Calculated Average Quality",
+      "description": "The weighted average of quality \"points,\" from 10 (highest) to 1 (lowest). A higher number means greater protection against the possibility of default by an issuer.",
+      "groups": ["G51"],
+      "id": "CALC_AVG_QUALITY"
+    },
+    {
+      "fix_tag": 7281,
+      "name": "Category",
+      "description": "Displays a more detailed level of description within the industry under which the underlying company can be categorized.",
+      "groups": ["G-3"],
+      "id": "CATEGORY"
+    },
+    {
+      "fix_tag": 82,
+      "name": "Change",
+      "description": "The difference between the last price and the close on the previous trading day.",
+      "groups": ["G4"],
+      "id": "CHANGE"
+    },
+    {
+      "fix_tag": 83,
+      "name": "Change %",
+      "description": "The difference between the last price and the close on the previous trading day.",
+      "groups": ["G4"],
+      "id": "PCT_CHANGE"
+    },
+    {
+      "fix_tag": 7771,
+      "name": "Change Since Open",
+      "description": "The difference between the last price and the open price.",
+      "groups": ["G4"],
+      "id": "REAL_CHANGE_SINCE_OPEN"
+    },
+    {
+      "fix_tag": 7682,
+      "name": "Change Since Open %",
+      "description": "The difference between the last price and the open price.",
+      "groups": ["G4"],
+      "id": "CHANGE_SINCE_OPEN"
+    },
+    {
+      "fix_tag": 7411,
+      "name": "Classification",
+      "description": "Classification of a division, it is used to identify US listings (e.g. USSTK)",
+      "groups": ["G51"],
+      "id": "CLASSIFICATION"
+    },
+    {
+      "fix_tag": 7419,
+      "name": "Closed",
+      "description": "Closed to New Investors - Fund is closed to investors who are not currently shareholders.",
+      "groups": ["G51"],
+      "id": "CLOSED"
+    },
+    {
+      "fix_tag": 7420,
+      "name": "Closed for New Investment",
+      "description": "Whether or not fund is 'closed for new investment'",
+      "groups": ["G51"],
+      "id": "CLSD_NEW_INV"
+    },
+    {
+      "fix_tag": 7421,
+      "name": "Closed for New Money",
+      "description": "Whether or not fund is 'closed for new money'",
+      "groups": ["G51"],
+      "id": "CLSD_NEW_MONEY"
+    },
+    {
+      "fix_tag": 7612,
+      "name": "Closing Impl. Vol. %",
+      "description": "The implied volatility of the option on closing price",
+      "groups": ["G8"],
+      "id": "CLOSING_IMPL_VOL_PCT"
+    },
+    {
+      "fix_tag": 7336,
+      "name": "CoVariance 1Yr",
+      "description": "Covariance is the co-movement in the variance between two variables. It is an important measure in the theory of correlation as the linear correlation (or Pearson Product Moment) coefficient is the covariance standardized. The output figure is multiplied by 10000 for presentation purposes.",
+      "groups": ["G50"],
+      "id": "COVAR_1YR"
+    },
+    {
+      "fix_tag": 7277,
+      "name": "Community Score",
+      "description": "Community category score measures the company's commitment towards being a good citizen, protecting public health and respecting business ethics.",
+      "groups": ["G45"],
+      "id": "ESG_COMMUNITY_SCORE"
+    },
+    {
+      "fix_tag": 7567,
+      "name": "Composite Z-Score Latest",
+      "description": "The Composite Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "COMP_ZSCORE"
+    },
+    {
+      "fix_tag": 7372,
+      "name": "Corporate Governance Score",
+      "description": "The Corporate Governance pillar score is the weighted sum of the Management, Shareholders and CSR Strategy category scores.",
+      "groups": ["G46"],
+      "id": "ESG_CORPORATE_GOVERNANCE_PILLAR_SCORE"
+    },
+    {
+      "fix_tag": 7504,
+      "name": "Correlation 1Yr",
+      "description": "Correlation, measured by the correlation coefficient, is the strength of the relationship between two quantities, such as the returns of two portfolios. If one increases as the other increases, a positive correlation exists. If one decreases as the other increases, a negative correlation exists. The range of values for the correlation coefficient is -1 to +1 inclusive. A 0 value indicates that no correlation exists. A value of +1 represents a perfect positive correlation and -1 represents a perfect negative correlation. There is a close relationship between the R-Squared and correlation coefficient.",
+      "groups": ["G50"],
+      "id": "CORREL_1YR"
+    },
+    {
+      "fix_tag": 7292,
+      "name": "Cost Basis",
+      "description": "Your current position in this security multiplied by average price and multiplier",
+      "groups": ["G2"],
+      "id": "COST_BASIS"
+    },
+    {
+      "fix_tag": 78,
+      "name": "Daily P&L",
+      "description": "Your profit or loss for the day since prior Close Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "DAILY_PL"
+    },
+    {
+      "fix_tag": 7242,
+      "name": "Days to Last Trading Day",
+      "description": "The number of calendar days until last trading day for contract.",
+      "groups": ["G-3"],
+      "id": "DAYS_TO_LTD"
+    },
+    {
+      "fix_tag": 7705,
+      "name": "Debt Class",
+      "description": "Debt Class",
+      "groups": ["G9"],
+      "id": "DEBT_CLASS"
+    },
+    {
+      "fix_tag": 7308,
+      "name": "Delta",
+      "description": "The ratio of the change in the price of the option to the corresponding change in the price of the underlying",
+      "groups": ["G10"],
+      "id": "DELTA"
+    },
+    {
+      "fix_tag": 7394,
+      "name": "Developed Market Exposure",
+      "description": "Percentage of portfolio allocated to Developed Markets (as defined by MSCI) For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "DEVELOPED_MARKET_EXPOSURE"
+    },
+    {
+      "fix_tag": 7487,
+      "name": "Distribution Yield 1Yr Value",
+      "description": "The rate of return based on the most recent income dividend. The yield is calculated as the most recent monthly dividend distribution multiplied by 12 (or 4 if the fund distributes dividends quarterly) and divided by the latest NAV or market price.",
+      "groups": ["G51"],
+      "id": "DIST_YLD_1YR"
+    },
+    {
+      "fix_tag": 7286,
+      "name": "Dividend Amount",
+      "description": "Displays the amount of the next dividend",
+      "groups": ["G14"],
+      "id": "DIV_AMT"
+    },
+    {
+      "fix_tag": 7288,
+      "name": "Dividend Date",
+      "description": "Displays the ex-date of the dividend",
+      "groups": ["G14"],
+      "id": "DIV_DATE"
+    },
+    {
+      "fix_tag": 7592,
+      "name": "Dividend Payout Ratio",
+      "description": "The dividend payout ratio represents the percentage of earnings paid out as dividends. It is calculated by dividing the current annual dividends per share by trailing twelve-month earnings per share. A weighted average is then calculated by summing the products of the portfolio % value and the annual dividend payout ratio.",
+      "groups": ["G51"],
+      "id": "PAYOUT_RATIO"
+    },
+    {
+      "fix_tag": 7593,
+      "name": "Dividend Payout Ratio 5yr",
+      "description": "The weighted average of the five-year average ratio of annual dividends per share to trailing twelve-month earnings per share.",
+      "groups": ["G51"],
+      "id": "PAYOUT_RATIO_5YR"
+    },
+    {
+      "fix_tag": 7594,
+      "name": "Dividend Per Share 1Yr",
+      "description": "The weighted average of change between dividends (per share) paid from one year to the next.",
+      "groups": ["G51"],
+      "id": "DPS_1YR"
+    },
+    {
+      "fix_tag": 7595,
+      "name": "Dividend Per Share 3Yr",
+      "description": "The weighted average of change between dividends (per share) paid over a three year period.",
+      "groups": ["G51"],
+      "id": "DPS_3YR"
+    },
+    {
+      "fix_tag": 7287,
+      "name": "Dividend Yield %",
+      "description": "This value is the total of the expected dividend payments over the next twelve months per share divided by the Current Price and is expressed as a percentage. For derivatives, this displays the total of the expected dividend payments over the expiry date.",
+      "groups": ["G14"],
+      "id": "DIV_YIELD"
+    },
+    {
+      "fix_tag": 7597,
+      "name": "Dividend Yield Weighted Average",
+      "description": "The Dividend Yield ratio for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G48"],
+      "id": "DIV_YIELD_WGT_AVG"
+    },
+    {
+      "fix_tag": 7573,
+      "name": "Dividend Yield Z-Score Latest",
+      "description": "The Dividend Yield Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "YIELD_ZSCORE"
+    },
+    {
+      "fix_tag": 7671,
+      "name": "Dividends",
+      "description": "This value is the total of the expected dividend payments over the next twelve months per share.",
+      "groups": ["G14"],
+      "id": "DIVIDENDS"
+    },
+    {
+      "fix_tag": 7672,
+      "name": "Dividends TTM",
+      "description": "This value is the total of the expected dividend payments over the last twelve months per share.",
+      "groups": ["G14"],
+      "id": "DIVIDENDS_TTM"
+    },
+    {
+      "fix_tag": 7505,
+      "name": "Downside Deviation 1Yr",
+      "description": "Downside Deviation is a measure of downside risk in fund performance relative to benchmark performance. It is calculated as the square root of downside variance, which is the average of squared sub-period relative returns on the downside over a given period. Downside refers to sub-periods with fund returns less than benchmark returns. Higher downside deviation means higher risk on the downside relative to benchmark.",
+      "groups": ["G50"],
+      "id": "DOWN_DEV_1YR"
+    },
+    {
+      "fix_tag": 7598,
+      "name": "EBIT to Interest",
+      "description": "The earnings before interest and taxes (EBIT) to interest ratio, also known as the interest coverage ratio, measures a company's ability to pay interest.",
+      "groups": ["G50"],
+      "id": "EBIT_2_INT"
+    },
+    {
+      "fix_tag": 7675,
+      "name": "EMA(100)",
+      "description": "Exponential moving average (N = 100)",
+      "groups": ["G40"],
+      "id": "EMA_100"
+    },
+    {
+      "fix_tag": 7677,
+      "name": "EMA(20)",
+      "description": "Exponential moving average (N = 20)",
+      "groups": ["G40"],
+      "id": "EMA_20"
+    },
+    {
+      "fix_tag": 7674,
+      "name": "EMA(200)",
+      "description": "Exponential moving average (N = 200)",
+      "groups": ["G40"],
+      "id": "EMA_200"
+    },
+    {
+      "fix_tag": 7676,
+      "name": "EMA(50)",
+      "description": "Exponential moving average (N = 50)",
+      "groups": ["G40"],
+      "id": "EMA_50"
+    },
+    {
+      "fix_tag": 7327,
+      "name": "EPS Growth 1yr",
+      "description": "The weighted average of the percent increase or decrease of current annual earnings over the prior year.",
+      "groups": ["G50"],
+      "id": "EPS_GRWTH_1YR"
+    },
+    {
+      "fix_tag": 7328,
+      "name": "EPS Growth 3yr",
+      "description": "The weighted average of the compound annual growth of earnings per share over the past three years.",
+      "groups": ["G50"],
+      "id": "EPS_GRWTH_3YR"
+    },
+    {
+      "fix_tag": 7329,
+      "name": "EPS Growth 5yr",
+      "description": "The weighted average compound annual growth of earnings per share over the past five years.",
+      "groups": ["G50"],
+      "id": "EPS_GRWTH_5YR"
+    },
+    {
+      "fix_tag": 7264,
+      "name": "ESG Combined Score",
+      "description": "ESG Combined Score is an overall company score based on the reported information in the environmental, social and corporate governance pillars (ESG Score) with an ESG Controversies overlay.",
+      "groups": ["G44"],
+      "id": "ESG_COMBINED_SCORE"
+    },
+    {
+      "fix_tag": 7275,
+      "name": "ESG Controversies Score",
+      "description": "ESG controversies category score measures a company's exposure to environmental, social and governance controversies and negative events reflected in global media.",
+      "groups": ["G45"],
+      "id": "ESG_CONTROVERSIES_SCORE"
+    },
+    {
+      "fix_tag": 7276,
+      "name": "ESG Score",
+      "description": "ESG Score is an overall company score based on the self-reported information in the environmental, social and corporate governance pillars.",
+      "groups": ["G44"],
+      "id": "ESG_SCORE"
+    },
+    {
+      "fix_tag": 7578,
+      "name": "Effective Maturity",
+      "description": "The dollar weighted average maturity, weighted by market value, calculated to first call or effective life.",
+      "groups": ["G51"],
+      "id": "EFF_MATURITY"
+    },
+    {
+      "fix_tag": 7426,
+      "name": "Eligible Countries",
+      "description": "Contains a comma separated list of eligible countries",
+      "groups": ["G51"],
+      "id": "ELIG_COUNTRIES"
+    },
+    {
+      "fix_tag": 7395,
+      "name": "Emerging Market Exposure",
+      "description": "Percentage of portfolio allocated to Emerging Markets (as defined by MSCI) For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "EMERGING_MARKET_EXPOSURE"
+    },
+    {
+      "fix_tag": 7266,
+      "name": "Emissions Score",
+      "description": "Emission category score measures a company's commitment and effectiveness towards reducing environmental emission in the production and operational processes.",
+      "groups": ["G45"],
+      "id": "ESG_EMISSIONS_SCORE"
+    },
+    {
+      "fix_tag": 7267,
+      "name": "Environmental Innovation Score",
+      "description": "Environmental innovation category score reflects a company's capacity to reduce the environmental costs and burdens for its customers, and thereby creating new market opportunities through new environmental technologies and processes or eco-designed products.",
+      "groups": ["G45"],
+      "id": "ESG_ENV_INNOVATION_SCORE"
+    },
+    {
+      "fix_tag": 7370,
+      "name": "Environmental Score",
+      "description": "The Environmental pillar score is the weighted sum of the Resource Use, Emissions and Environmental Innovation category scores.",
+      "groups": ["G46"],
+      "id": "ESG_ENVIRONMENTAL_PILLAR_SCORE"
+    },
+    {
+      "fix_tag": 7423,
+      "name": "Exchange Sell Eligible",
+      "description": "It determines the eligibility of exchanges between share classes within the same fund family. 'T' means that the customer can exchange FROM this CUSIP. Other value is 'F'.",
+      "groups": ["G51"],
+      "id": "EXCH_SELL_ELIG"
+    },
+    {
+      "fix_tag": 7637,
+      "name": "Fee rate",
+      "description": "Interest rate charged on borrowed shares",
+      "groups": ["G33"],
+      "id": "FEE_RATE"
+    },
+    {
+      "fix_tag": 7390,
+      "name": "Five Year EPS Growth",
+      "description": "5 year EPS growth as a compound annual growth rate For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "FIVE_YR_EPS_GROWTH_FIELD"
+    },
+    {
+      "fix_tag": 7647,
+      "name": "Ford Research Rating",
+      "description": "Displays Ford Research Rating provider value",
+      "groups": ["G17"],
+      "id": "FORDRESEARCH_RATING"
+    },
+    {
+      "fix_tag": 7396,
+      "name": "Forward Dividend Yield",
+      "description": "Twelve-months forward dividend yield For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "FWD_DIVIDEND_YIELD"
+    },
+    {
+      "fix_tag": 7389,
+      "name": "Forward P/E",
+      "description": "Stocks Current price / twelve-month EPS Forecast ETFs Last closing price / twelve-month EPS Forecast For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6", "G15"],
+      "id": "FORWARD P_E"
+    },
+    {
+      "fix_tag": 7397,
+      "name": "Forward Price/Cash Flow",
+      "description": "Twelve-months forward price-to-cash flow ratio For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "FWD_PRICE_CF"
+    },
+    {
+      "fix_tag": 7410,
+      "name": "Fund Category",
+      "description": "Fund Category",
+      "groups": ["G48"],
+      "id": "FUND_CATEG"
+    },
+    {
+      "fix_tag": 7408,
+      "name": "Fund Family",
+      "description": "Mutual Fund Family",
+      "groups": ["G48"],
+      "id": "FUND_FAMILY"
+    },
+    {
+      "fix_tag": 7425,
+      "name": "Fund Geo Focus",
+      "description": "Fund Geo Focus",
+      "groups": ["G48"],
+      "id": "FD_GEO_FOC"
+    },
+    {
+      "fix_tag": 7424,
+      "name": "Fund Market Capital Focus",
+      "description": "Fund Market Capital Focus",
+      "groups": ["G48"],
+      "id": "FD_MKT_CAP_FOCUS"
+    },
+    {
+      "fix_tag": 7422,
+      "name": "Fund Status",
+      "description": "Fund Status",
+      "groups": ["G48"],
+      "id": "FUND_STATUS"
+    },
+    {
+      "fix_tag": 7413,
+      "name": "Fund Type",
+      "description": "Fund Type",
+      "groups": ["G48"],
+      "id": "FUND_TYPE"
+    },
+    {
+      "fix_tag": 7697,
+      "name": "Futures Open Interest",
+      "description": "Total number of outstanding futures contracts.",
+      "groups": ["G7"],
+      "id": "FUTURES_OPEN_INTEREST"
+    },
+    {
+      "fix_tag": 7309,
+      "name": "Gamma",
+      "description": "The rate of change for delta with respect to the underlying asset's price",
+      "groups": ["G10"],
+      "id": "GAMMA"
+    },
+    {
+      "fix_tag": 70,
+      "name": "High",
+      "description": "High price for the day",
+      "groups": ["G5"],
+      "id": "HIGH"
+    },
+    {
+      "fix_tag": 7087,
+      "name": "Hist. Vol. %",
+      "description": "30-day real-time historical volatility",
+      "groups": ["G4"],
+      "id": "HISTORICAL_VOL_PERCENT"
+    },
+    {
+      "fix_tag": 7088,
+      "name": "Hist. Vol. Close %",
+      "description": "Shows the historical volatility based on previous close price",
+      "groups": ["G4", "G8"],
+      "id": "HISTORIC_VOL_CLOSE_PCT"
+    },
+    {
+      "fix_tag": 7269,
+      "name": "Human Rights Score",
+      "description": "Human rights category score measures a company's effectiveness towards respecting the fundamental human rights conventions.",
+      "groups": ["G45"],
+      "id": "ESG_HUMAN_RIGHTS_SCORE"
+    },
+    {
+      "fix_tag": 7633,
+      "name": "Implied Vol. %",
+      "description": "The implied volatility of the option.",
+      "groups": ["G8"],
+      "id": "IMPLIED_VOL_PERCENT"
+    },
+    {
+      "fix_tag": 7084,
+      "name": "Implied Vol./Hist. Vol %",
+      "description": "The ratio of the implied volatility over the historical volatility, expressed as a percentage",
+      "groups": ["G8"],
+      "id": "IMPLIED_VOL_HIST_VOLUME_PERC"
+    },
+    {
+      "fix_tag": 7722,
+      "name": "In The Money",
+      "description": "Current in-the-money value for an option contract",
+      "groups": ["G8"],
+      "id": "IN_THE_MONEY"
+    },
+    {
+      "fix_tag": 7280,
+      "name": "Industry",
+      "description": "Displays the type of industry under which the underlying company can be categorized.",
+      "groups": ["G-3"],
+      "id": "INDUSTRY"
+    },
+    {
+      "fix_tag": 7506,
+      "name": "Information Ratio 1Yr",
+      "description": "A measure of risk-adjusted alpha or the alpha per unit of active risk. The Information Ratio is a straightforward way to evaluate the return a fund manager achieves, given the risk they take on. It is basically a measure of excess return over a determined benchmark realized for each unit of active risk assumed (measured by the tracking error). A higher Information Ratio indicates a higher rate of excess return for a given level of risk assumed.",
+      "groups": ["G50"],
+      "id": "INFO_RATIO_1YR"
+    },
+    {
+      "fix_tag": 7430,
+      "name": "Initial Minimum IRA Purchase",
+      "description": "Initial Minimum IRA Purchase",
+      "groups": ["G51"],
+      "id": "INIT_MIN_IRA_PURCH"
+    },
+    {
+      "fix_tag": 7428,
+      "name": "Initial Minimum Wrap Purchase",
+      "description": "Initial Minimum Wrap Purchase",
+      "groups": ["G51"],
+      "id": "INIT_MIN_WRP_PURCH"
+    },
+    {
+      "fix_tag": 55,
+      "movable": false,
+      "removable": false,
+      "name": "Instrument",
+      "description": "Enter the contract symbol or class as it is defined by the exchange on which it's trading.",
+      "groups": ["G-3"],
+      "id": "INSTRUMENT"
+    },
+    {
+      "fix_tag": 7664,
+      "name": "Intermediate Term Event Score",
+      "description": "Recognia's proprietary score of the event on a scale of 0 to 5. Events are assigned a score upon their confirmation \u2013 the value is assigned differently depending on the type of event. For example, for classic patterns, the value depends on how symmetrical the pattern is and how closely it matches the textbook definition. For indicator and oscillator events, the value is based on the amount of penetration.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_INT_TERM_EVENT_SCORE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7665,
+      "name": "Intermediate Term Event Trade Type",
+      "description": "Potential trading opportunity type based on the event. Possible values are: Long; Short; Undefined This data is provided for information purposes only and is not intended as a recommendation to buy or sell securities",
+      "groups": ["G41"],
+      "id": "RECOGNIA_INT_TERM_TRADE_TYPE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7661,
+      "name": "Intermediate Term Technical Event Class",
+      "description": "The class for the event. Technical events® are placed into one of four classes: Classic Patterns, such as Double Top, Flag, Head and Shoulders Top, etc.; Short-term Patterns, such as Shooting Star, Engulfing Line, Hammer, etc.; Indicator, such as double and triple moving average crossovers; Oscillator, such MACD, RSI, Fast Stochastic, etc.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_INT_TERM_TECH_EVENT_CLASS",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7662,
+      "name": "Intermediate Term Technical Event Date",
+      "description": "The date the event formed. All dates are of the form: YYYY-MM-DD",
+      "groups": ["G41"],
+      "id": "RECOGNIA_INT_TERM_TECH_EVENT_DATE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7663,
+      "name": "Intermediate Term Technical Event Name",
+      "description": "Name of the Technical Event® pattern or indicator identified by Recognia®. See our website for the full list of patterns identified by Recognia®.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_INT_TERM_TECH_EVENT_NAME",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7715,
+      "name": "Issue Date",
+      "description": "Issue Date",
+      "groups": ["G9"],
+      "id": "ISSUE_DATE"
+    },
+    {
+      "fix_tag": 7326,
+      "name": "LT Debt / Shareholders Equity",
+      "description": "The weighted average of the most recent quarter's long-term debt divided by the most recent quarter common shareholder's equity.",
+      "groups": ["G50"],
+      "id": "LT_DEBT_2_SE"
+    },
+    {
+      "fix_tag": 31,
+      "name": "Last",
+      "description": "The last price at which the contract traded. \"C\" identifies this price as the previous day's closing price. \"H\" means that the trading is halted.",
+      "groups": ["G4"],
+      "id": "LAST"
+    },
+    {
+      "fix_tag": 7058,
+      "name": "Last Exch",
+      "description": "Displays the exchange(s) offering the SMART price. A=AMEX, C=CBOE, I=ISE, X=PHLX, N=PSE, B=BOX, Q=NASDAQOM, Z=BATS, W=CBOE2, T=NASDAQBX, M=MIAX, H=GEMINI, E=EDGX, J=MERCURY",
+      "groups": ["G4"],
+      "id": "LAST_EXCH_CODES"
+    },
+    {
+      "fix_tag": 7059,
+      "name": "Last Size",
+      "description": "The number of units traded at the last price",
+      "groups": ["G4"],
+      "id": "LAST_SIZE"
+    },
+    {
+      "fix_tag": 7714,
+      "name": "Last Trading Date",
+      "description": "Last Trading Date",
+      "groups": ["G9"],
+      "id": "LAST_TRADING_DATE"
+    },
+    {
+      "fix_tag": 7698,
+      "name": "Last Yield",
+      "description": "Implied yield of the bond if it is purchased at the current last price. Last yield is calculated using the Last price on all possible call dates. It is assumed that prepayment occurs if the bond has call or put provisions and the issuer can offer a lower coupon rate based on current market rates. The yield to worst will be the lowest of yield to maturity or yield to call (if the bond has prepayment provisions); yield to worst may be the same as yield to maturity but never higher.",
+      "groups": ["G9"],
+      "id": "LAST_YIELD"
+    },
+    {
+      "fix_tag": 7398,
+      "name": "Leverage",
+      "description": "Debt divided by Common Equity For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "ALTAVISTA_LEVERAGE"
+    },
+    {
+      "fix_tag": 7483,
+      "name": "Lipper Leader Consistent Return Score 10Yr",
+      "description": "The Lipper Rating for Consistent Return identifies a fund that has provided relatively superior consistency and risk-adjusted returns when compared to a group of similar funds. Funds which achieve high ratings for Consistent Return may be the best fit for investors who value a fund's year-to-year consistency relative to other funds in a particular peer group.",
+      "groups": ["G49"],
+      "id": "LDR_CONSIS_RET_SCR_10YR"
+    },
+    {
+      "fix_tag": 7473,
+      "name": "Lipper Leader Consistent Return Score 3Yr",
+      "description": "The Lipper Rating for Consistent Return identifies a fund that has provided relatively superior consistency and risk-adjusted returns when compared to a group of similar funds. Funds which achieve high ratings for Consistent Return may be the best fit for investors who value a fund's year-to-year consistency relative to other funds in a particular peer group.",
+      "groups": ["G49"],
+      "id": "LDR_CONSIS_RET_SCR_3YR"
+    },
+    {
+      "fix_tag": 7478,
+      "name": "Lipper Leader Consistent Return Score 5Yr",
+      "description": "The Lipper Rating for Consistent Return identifies a fund that has provided relatively superior consistency and risk-adjusted returns when compared to a group of similar funds. Funds which achieve high ratings for Consistent Return may be the best fit for investors who value a fund's year-to-year consistency relative to other funds in a particular peer group.",
+      "groups": ["G49"],
+      "id": "LDR_CONSIS_RET_SCR_5YR"
+    },
+    {
+      "fix_tag": 7468,
+      "name": "Lipper Leader Consistent Return Score Overall",
+      "description": "The Lipper Rating for Consistent Return identifies a fund that has provided relatively superior consistency and risk-adjusted returns when compared to a group of similar funds. Funds which achieve high ratings for Consistent Return may be the best fit for investors who value a fund's year-to-year consistency relative to other funds in a particular peer group.",
+      "groups": ["G49"],
+      "id": "LDR_CONSIS_RET_SCR_ALL"
+    },
+    {
+      "fix_tag": 7486,
+      "name": "Lipper Leader Expense Score 10Yr",
+      "description": "The Lipper Rating for Expense identifies a fund that has successfully managed to keep its expenses low relative to its peers and within its load structure.",
+      "groups": ["G49"],
+      "id": "LDR_EXP_SCR_10YR"
+    },
+    {
+      "fix_tag": 7476,
+      "name": "Lipper Leader Expense Score 3Yr",
+      "description": "The Lipper Rating for Expense identifies a fund that has successfully managed to keep its expenses low relative to its peers and within its load structure.",
+      "groups": ["G49"],
+      "id": "LDR_EXP_SCR_3YR"
+    },
+    {
+      "fix_tag": 7481,
+      "name": "Lipper Leader Expense Score 5Yr",
+      "description": "The Lipper Rating for Expense identifies a fund that has successfully managed to keep its expenses low relative to its peers and within its load structure.",
+      "groups": ["G49"],
+      "id": "LDR_EXP_SCR_5YR"
+    },
+    {
+      "fix_tag": 7471,
+      "name": "Lipper Leader Expense Score Overall",
+      "description": "The Lipper Rating for Expense identifies a fund that has successfully managed to keep its expenses low relative to its peers and within its load structure.",
+      "groups": ["G49"],
+      "id": "LDR_EXP_SCR_ALL"
+    },
+    {
+      "fix_tag": 7484,
+      "name": "Lipper Leader Preservation Score 10Yr",
+      "description": "The Lipper Rating for Preservation is a fund that has demonstrates a superior ability to preserve capital in a variety of markets when compared with other funds in its asset class.",
+      "groups": ["G49"],
+      "id": "LDR_PRESERV_SCR_10YR"
+    },
+    {
+      "fix_tag": 7474,
+      "name": "Lipper Leader Preservation Score 3Yr",
+      "description": "The Lipper Rating for Preservation is a fund that has demonstrates a superior ability to preserve capital in a variety of markets when compared with other funds in its asset class.",
+      "groups": ["G49"],
+      "id": "LDR_PRESERV_SCR_3YR"
+    },
+    {
+      "fix_tag": 7479,
+      "name": "Lipper Leader Preservation Score 5Yr",
+      "description": "The Lipper Rating for Preservation is a fund that has demonstrates a superior ability to preserve capital in a variety of markets when compared with other funds in its asset class.",
+      "groups": ["G49"],
+      "id": "LDR_PRESERV_SCR_5YR"
+    },
+    {
+      "fix_tag": 7469,
+      "name": "Lipper Leader Preservation Score Overall",
+      "description": "The Lipper Rating for Preservation is a fund that has demonstrates a superior ability to preserve capital in a variety of markets when compared with other funds in its asset class.",
+      "groups": ["G49"],
+      "id": "LDR_PRESERV_SCR_ALL"
+    },
+    {
+      "fix_tag": 7485,
+      "name": "Lipper Leader Tax Efficiency Score 10Yr",
+      "description": "The Lipper Ratings for Tax Efficiency identifies a fund that has been successful at deferring taxes over the measurement period relative to similar funds.",
+      "groups": ["G49"],
+      "id": "LDR_TAX_EFF_SCR_10YR"
+    },
+    {
+      "fix_tag": 7475,
+      "name": "Lipper Leader Tax Efficiency Score 3Yr",
+      "description": "The Lipper Ratings for Tax Efficiency identifies a fund that has been successful at deferring taxes over the measurement period relative to similar funds.",
+      "groups": ["G49"],
+      "id": "LDR_TAX_EFF_SCR_3YR"
+    },
+    {
+      "fix_tag": 7480,
+      "name": "Lipper Leader Tax Efficiency Score 5Yr",
+      "description": "The Lipper Ratings for Tax Efficiency identifies a fund that has been successful at deferring taxes over the measurement period relative to similar funds.",
+      "groups": ["G49"],
+      "id": "LDR_TAX_EFF_SCR_5YR"
+    },
+    {
+      "fix_tag": 7470,
+      "name": "Lipper Leader Tax Efficiency Score Overall",
+      "description": "The Lipper Ratings for Tax Efficiency identifies a fund that has been successful at deferring taxes over the measurement period relative to similar funds.",
+      "groups": ["G49"],
+      "id": "LDR_TAX_EFF_SCR_ALL"
+    },
+    {
+      "fix_tag": 7482,
+      "name": "Lipper Leader Total Return Score 10Yr",
+      "description": "The Lipper Rating for Total Return denotes a fund that has provided superior total returns (income from dividends and interest as well as capital appreciation) when compared to a group of similar funds. The Lipper Rating for Total Return may be the best fit for investors who want the best historical return, without looking at risk. This measure alone may not be suitable for investors who want to avoid downside risk. For more risk-averse investors, the Total Return ratings can be used with Preservation and/or Consistent Return ratings to make an appropriate selection that balances the risk and return.",
+      "groups": ["G49"],
+      "id": "LDR_TOT_RET_SCR_10YR"
+    },
+    {
+      "fix_tag": 7472,
+      "name": "Lipper Leader Total Return Score 3Yr",
+      "description": "The Lipper Rating for Total Return denotes a fund that has provided superior total returns (income from dividends and interest as well as capital appreciation) when compared to a group of similar funds. The Lipper Rating for Total Return may be the best fit for investors who want the best historical return, without looking at risk. This measure alone may not be suitable for investors who want to avoid downside risk. For more risk-averse investors, the Total Return ratings can be used with Preservation and/or Consistent Return ratings to make an appropriate selection that balances the risk and return.",
+      "groups": ["G49"],
+      "id": "LDR_TOT_RET_SCR_3YR"
+    },
+    {
+      "fix_tag": 7477,
+      "name": "Lipper Leader Total Return Score 5Yr",
+      "description": "The Lipper Rating for Total Return denotes a fund that has provided superior total returns (income from dividends and interest as well as capital appreciation) when compared to a group of similar funds. The Lipper Rating for Total Return may be the best fit for investors who want the best historical return, without looking at risk. This measure alone may not be suitable for investors who want to avoid downside risk. For more risk-averse investors, the Total Return ratings can be used with Preservation and/or Consistent Return ratings to make an appropriate selection that balances the risk and return.",
+      "groups": ["G49"],
+      "id": "LDR_TOT_RET_SCR_5YR"
+    },
+    {
+      "fix_tag": 7467,
+      "name": "Lipper Leader Total Return Score Overall",
+      "description": "The Lipper Rating for Total Return denotes a fund that has provided superior total returns (income from dividends and interest as well as capital appreciation) when compared to a group of similar funds. The Lipper Rating for Total Return may be the best fit for investors who want the best historical return, without looking at risk. This measure alone may not be suitable for investors who want to avoid downside risk. For more risk-averse investors, the Total Return ratings can be used with Preservation and/or Consistent Return ratings to make an appropriate selection that balances the risk and return.",
+      "groups": ["G49"],
+      "id": "LDR_TOT_RET_SCR_ALL"
+    },
+    {
+      "fix_tag": 7693,
+      "name": "Liquidate Last",
+      "description": "Last Liquidation yes or no tag (set through right click on line)",
+      "groups": ["G2"],
+      "id": "LIQUIDATE_LAST"
+    },
+    {
+      "fix_tag": 7432,
+      "name": "Load Type",
+      "description": "The primary sales charge structure of a fund share class: No Load, Front-End Load, Back-End Load, Level Load, and Institutional Load. Currently applies to US funds only.",
+      "groups": ["G48"],
+      "id": "LOAD_TYPE"
+    },
+    {
+      "fix_tag": 7659,
+      "name": "Long Term Event Score",
+      "description": "Recognia's proprietary score of the event on a scale of 0 to 5. Events are assigned a score upon their confirmation \u2013 the value is assigned differently depending on the type of event. For example, for classic patterns, the value depends on how symmetrical the pattern is and how closely it matches the textbook definition. For indicator and oscillator events, the value is based on the amount of penetration.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_LONG_TERM_EVENT_SCORE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7660,
+      "name": "Long Term Event Trade Type",
+      "description": "Potential trading opportunity type based on the event. Possible values are: Long; Short; Undefined This data is provided for information purposes only and is not intended as a recommendation to buy or sell securities",
+      "groups": ["G41"],
+      "id": "RECOGNIA_LONG_TERM_TRADE_TYPE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7399,
+      "name": "Long Term Growth",
+      "description": "Consensus forecast for long-term EPS growth For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "LONG_TERM_GROWTH"
+    },
+    {
+      "fix_tag": 7656,
+      "name": "Long Term Technical Event Class",
+      "description": "The class for the event. Technical events® are placed into one of four classes: Classic Patterns, such as Double Top, Flag, Head and Shoulders Top, etc.; Short-term Patterns, such as Shooting Star, Engulfing Line, Hammer, etc.; Indicator, such as double and triple moving average crossovers; Oscillator, such MACD, RSI, Fast Stochastic, etc.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_LONG_TERM_TECH_EVENT_CLASS",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7657,
+      "name": "Long Term Technical Event Date",
+      "description": "The date the event formed. All dates are of the form: YYYY-MM-DD",
+      "groups": ["G41"],
+      "id": "RECOGNIA_LONG_TERM_TECH_EVENT_DATE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7658,
+      "name": "Long Term Technical Event Name",
+      "description": "Name of the Technical Event® pattern or indicator identified by Recognia®. See our website for the full list of patterns identified by Recognia®.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_LONG_TERM_TECH_EVENT_NAME",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 71,
+      "name": "Low",
+      "description": "Low price for the day",
+      "groups": ["G5"],
+      "id": "LOW"
+    },
+    {
+      "fix_tag": 7434,
+      "name": "Management Fee",
+      "description": "Management Fee for mutual fund",
+      "groups": ["G51"],
+      "id": "MGMT_FEE"
+    },
+    {
+      "fix_tag": 7272,
+      "name": "Management Score",
+      "description": "Management category score measures a company's commitment and effectiveness towards following best practice corporate governance principles.",
+      "groups": ["G45"],
+      "id": "ESG_MANAGEMENT_SCORE"
+    },
+    {
+      "fix_tag": 7635,
+      "name": "Mark",
+      "description": "The mark price is; the ask price if ask price is less than last price; the bid price if bid price is more than last price; otherwise it's equal to last price.",
+      "groups": ["G4"],
+      "id": "MARK_PRICE"
+    },
+    {
+      "fix_tag": 7289,
+      "name": "Market Cap",
+      "description": "This value is calculated by multiplying the current Price by the current number of Shares Outstanding.",
+      "groups": ["G15"],
+      "id": "MKT_CAP"
+    },
+    {
+      "fix_tag": 7599,
+      "name": "Market Capitalisation Avg Latest",
+      "description": "The weighted average market capitalization of the latest portfolio.",
+      "groups": ["G50"],
+      "id": "MKT_CAP_AVG"
+    },
+    {
+      "fix_tag": 73,
+      "name": "Market Value",
+      "description": "The current market value of your position in the security. Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "MARKET_VALUE"
+    },
+    {
+      "fix_tag": 7652,
+      "name": "MarketGrader Rating",
+      "description": "Displays MarketGrader Rating provider value",
+      "groups": ["G17"],
+      "id": "MARKETGRADER_RATING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=829"
+    },
+    {
+      "fix_tag": 7509,
+      "name": "Max Drawdown 1Yr",
+      "description": "This figure represents the worst investment period for which the figure is being calculated.",
+      "groups": ["G50"],
+      "id": "MAX_DRAW_1YR"
+    },
+    {
+      "fix_tag": 7507,
+      "name": "Max Gain 1Yr",
+      "description": "This figure represents the highest positive performance in any single monthly period over the entire period of investment for which the figure is being calculated.",
+      "groups": ["G50"],
+      "id": "MAX_GAIN_1YR"
+    },
+    {
+      "fix_tag": 7508,
+      "name": "Max Loss 1Yr",
+      "description": "This figure represents the highest negative performance in any single monthly period over the entire period of investment for which the figure is being calculated.",
+      "groups": ["G50"],
+      "id": "MAX_LOSS_1YR"
+    },
+    {
+      "fix_tag": 7726,
+      "name": "Maximum Loss",
+      "description": "Max potential loss",
+      "groups": ["G0"],
+      "id": "PERF_MAX_LOSS"
+    },
+    {
+      "fix_tag": 7694,
+      "name": "Maximum Return",
+      "description": "Max potential gain",
+      "groups": ["G0"],
+      "id": "PERF_MAX_RETURN"
+    },
+    {
+      "fix_tag": 7629,
+      "name": "Mid",
+      "description": "The midpoint between the current bid price and ask price.",
+      "groups": ["G4"],
+      "id": "MID"
+    },
+    {
+      "fix_tag": 7349,
+      "name": "Minimum Initial Purchase",
+      "description": "Minimum Initial Purchase",
+      "groups": ["G48"],
+      "id": "MIN_INIT_PUR"
+    },
+    {
+      "fix_tag": 7655,
+      "name": "Morningstar Rating",
+      "description": "Displays Morningstar Rating provider value",
+      "groups": ["G17"],
+      "id": "MORNINGSTAR_RATING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=645&serviceID2=646"
+    },
+    {
+      "fix_tag": 7538,
+      "name": "Multiplier",
+      "description": "Multiplier",
+      "groups": ["G-3"],
+      "id": "MULTIPLIER"
+    },
+    {
+      "fix_tag": 7654,
+      "name": "New Constructs Rating",
+      "description": "Displays New Constructs Rating provider value",
+      "groups": ["G17"],
+      "id": "NEW_CONSTRUCTS_RATING"
+    },
+    {
+      "fix_tag": 7437,
+      "name": "No Transaction Fees funds at IBKR",
+      "description": "No Transaction Fees funds at IBKR",
+      "groups": ["G51"],
+      "id": "NO_TX_FEES_FUNDS"
+    },
+    {
+      "fix_tag": 7577,
+      "name": "Nominal Maturity",
+      "description": "The dollar weighted average maturity, weighted by market value, calculated to nominal (stated) maturity.",
+      "groups": ["G51"],
+      "id": "NOM_MATURITY"
+    },
+    {
+      "fix_tag": 7591,
+      "name": "Number of Securities",
+      "description": "Number of Securities in Portfolio",
+      "groups": ["G51"],
+      "id": "NUM_OF_SEC"
+    },
+    {
+      "fix_tag": 7418,
+      "name": "Objective Type",
+      "description": "Objective Type",
+      "groups": ["G51"],
+      "id": "OBJ_TYPE"
+    },
+    {
+      "fix_tag": 7402,
+      "name": "One Month EPS Change",
+      "description": "Change in EPS estimates over the past 1 month For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "MONTH_EPS_CHANGE"
+    },
+    {
+      "fix_tag": 7295,
+      "name": "Open",
+      "description": "Today's opening price.",
+      "groups": ["G4"],
+      "id": "OPEN"
+    },
+    {
+      "fix_tag": 7605,
+      "name": "Operating Cash Flow Growth Rate 3yr",
+      "description": "This is the total cash from operating activities as reported on the cash flow statement over the past 12 months. The 3 year growth rate will be calculated as a compound average growth rate and expressed as a percentage.",
+      "groups": ["G50"],
+      "id": "OP_CASH_FLOW_GRWTH_RATE_3YR"
+    },
+    {
+      "fix_tag": 7613,
+      "name": "Opt. Imp. Vol. Change",
+      "description": "The absolute change in implied volatility between the current value and the value calculated using yesterday's closing price.",
+      "groups": ["G8"],
+      "id": "OPT_IMPL_VOL_CHANGE"
+    },
+    {
+      "fix_tag": 7608,
+      "name": "Opt. Implied Volatility %",
+      "description": "Option Implied Volatility",
+      "groups": ["G8"],
+      "id": "OPT_IMPL_VOL_PCT"
+    },
+    {
+      "fix_tag": 7089,
+      "name": "Opt. Volume",
+      "description": "Option Volume",
+      "groups": ["G8"],
+      "id": "OPTION_VOLUME"
+    },
+    {
+      "fix_tag": 7607,
+      "name": "Opt. Volume Change %",
+      "description": "Today's option volume as a percentage of the average option volume.",
+      "groups": ["G8"],
+      "id": "OPT_VOL_CHANGE_PCT"
+    },
+    {
+      "fix_tag": 7081,
+      "name": "Optimal Action",
+      "description": "Current projected optimal action for the selected option contract",
+      "groups": ["G10022"],
+      "id": "OPTIMAL_ACTION"
+    },
+    {
+      "fix_tag": 7638,
+      "name": "Option Open Interest",
+      "description": "Option Open Interest",
+      "groups": ["G8"],
+      "id": "OPTION_OPEN_INTEREST"
+    },
+    {
+      "fix_tag": 7704,
+      "name": "Organization Type",
+      "description": "Organization Type",
+      "groups": ["G9"],
+      "id": "ORGANIZATION_TYPE"
+    },
+    {
+      "fix_tag": 7290,
+      "name": "P/E",
+      "description": "This ratio is calculated by dividing the current Price by the sum of the Diluted Earnings Per Share from continuing operations BEFORE Extraordinary Items and Accounting Changes over the last four interim periods.",
+      "groups": ["G15"],
+      "id": "PE"
+    },
+    {
+      "fix_tag": 7400,
+      "name": "Payout",
+      "description": "Dividends divided by EPS For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "ALTAVISTA_PAYOUT"
+    },
+    {
+      "fix_tag": 7488,
+      "name": "Percentage Growth Cumulative Value",
+      "description": "A simple percentage measurement of the increase in a fund's total value between two specific time periods.",
+      "groups": ["G51"],
+      "id": "GRWTH_CUM"
+    },
+    {
+      "fix_tag": 7640,
+      "name": "Portfolio Delta",
+      "description": "This position delta captures both the direction and the magnitude of the portfolio's sensitivity to an underlying by representing the degree and direction of change in the option price, based on a change in the price of the underlying. This value is calculated as (delta * position).",
+      "groups": ["G10"],
+      "id": "PORTFOLIO_DELTA"
+    },
+    {
+      "fix_tag": 7641,
+      "name": "Portfolio Gamma",
+      "description": "Gamma helps you assess directional risk by defining the speed at which the option's directional changes will occur, i.e. the rate of change of delta. This value is calculated as (gamma * position).",
+      "groups": ["G10"],
+      "id": "PORTFOLIO_GAMMA"
+    },
+    {
+      "fix_tag": 7642,
+      "name": "Portfolio Theta",
+      "description": "Theta represents the portfolio's sensitivity to the passage of time by indicating the rate at which the market value of your portfolio will change with time. This metric calculation is based on the assumption that all other variables remain unchanged, including the underlying price, implied volatility and interest rate. This value is calculated as (theta * position).",
+      "groups": ["G10"],
+      "id": "PORTFOLIO_THETA"
+    },
+    {
+      "fix_tag": 7643,
+      "name": "Portfolio Vega",
+      "description": "Vega represents the portfolio's sensitivity to changes in implied volatility of the underlyings, and shows the change in the price of an option relative to a change in the implied volatility of the underlying. Generally long option positions benefit from rising (and suffer from declining) implied volatilities, while short option positions experience the opposite - they benefit from declining (and suffer from rising) implied volatilities. This value is calculated as (vega * position).",
+      "groups": ["G10"],
+      "id": "PORTFOLIO_VEGA"
+    },
+    {
+      "fix_tag": 76,
+      "removable": false,
+      "name": "Position",
+      "description": "The current aggregate position for the selected account or group",
+      "groups": ["G2"],
+      "id": "POSITION"
+    },
+    {
+      "fix_tag": 7510,
+      "name": "Positive Periods 1Yr",
+      "description": "Number of monthly returns that were positive over a selected period, represented as a percentage.",
+      "groups": ["G50"],
+      "id": "POS_PERIODS_1YR"
+    },
+    {
+      "fix_tag": 7570,
+      "name": "Price to Book Z-Score Latest",
+      "description": "The Price/Book Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "PB_ZSCORE"
+    },
+    {
+      "fix_tag": 7563,
+      "name": "Price to Cash",
+      "description": "The price/cash flow ratio is the latest closing price divided by trailing twelve-month cash flow per share. The weighted average is then calculated by summing the products of portfolio % value and Price/Cash Flow Ratio.",
+      "groups": ["G50"],
+      "id": "PRICE_2_CASH"
+    },
+    {
+      "fix_tag": 7596,
+      "name": "Price to Dividend",
+      "description": "The price/dividends ratio is the latest closing price divided by the sum of the latest 12 months' dividends per share. The weighted average is then calculated by summing the products of portfolio % value and Price/Dividend Ratio.",
+      "groups": ["G51"],
+      "id": "PRICE_2_DIV"
+    },
+    {
+      "fix_tag": 7569,
+      "name": "Price to Earnings Z-Score Latest",
+      "description": "The Price/Earnings Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "PE_ZSCORE"
+    },
+    {
+      "fix_tag": 7331,
+      "name": "Price/Book",
+      "description": "The price to book ratio is the latest closing price divided by the book value per share. This ratio describes how much you are paying for what would remain of a company if it liquidated. The weighted average is then calculated by summing the products of portfolio % value and P/B ratio.",
+      "groups": ["G50"],
+      "id": "PRICE_2_BOOK"
+    },
+    {
+      "fix_tag": 7322,
+      "name": "Price/Book Ratio Latest",
+      "description": "The Price/Book ratio for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "PRICE_2_BOOK_LATEST"
+    },
+    {
+      "fix_tag": 7679,
+      "name": "Price/EMA(100)",
+      "description": "Price to Exponential moving average (N = 100) ratio - 1, displayed in percents",
+      "groups": ["G40"],
+      "id": "PRICE_VS_EMA100"
+    },
+    {
+      "fix_tag": 7681,
+      "name": "Price/EMA(20)",
+      "description": "Price to Exponential moving average (N = 20) ratio - 1, displayed in percents",
+      "groups": ["G40"],
+      "id": "PRICE_VS_EMA20"
+    },
+    {
+      "fix_tag": 7678,
+      "name": "Price/EMA(200)",
+      "description": "Price to Exponential moving average (N = 200) ratio - 1, displayed in percents",
+      "groups": ["G40"],
+      "id": "PRICE_VS_EMA200"
+    },
+    {
+      "fix_tag": 7724,
+      "name": "Price/EMA(50)",
+      "description": "Price to Exponential moving average (N = 50) ratio - 1, displayed in percents",
+      "groups": ["G40"],
+      "id": "PRICE_VS_EMA50"
+    },
+    {
+      "fix_tag": 7332,
+      "name": "Price/Earnings",
+      "description": "The price/earnings ratio is the latest closing price divided by the latest 12 months' earnings per share. The weighted average is then calculated by summing the products of portfolio % value and capped P/E ratio as shown in the following example.",
+      "groups": ["G50"],
+      "id": "PRICE_2_EARNINGS"
+    },
+    {
+      "fix_tag": 7627,
+      "name": "Price/Earnings Ratio Latest",
+      "description": "The Price/Earnings ratio for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "PRICE_2_EARNINGS_LATEST"
+    },
+    {
+      "fix_tag": 7330,
+      "name": "Price/Sales",
+      "description": "The price to sales ratio is the latest closing price divided by trailing twelve-month sales per share. The weighted average is then calculated by summing the products of portfolio % value and P/S ratio.",
+      "groups": ["G50"],
+      "id": "PRICE_2_SALES"
+    },
+    {
+      "fix_tag": 7323,
+      "name": "Price/Sales Ratio Latest",
+      "description": "The Price/Sales ratio for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "PRICE_2_SALES_LATEST"
+    },
+    {
+      "fix_tag": 7568,
+      "name": "Price/Sales Z-Score Latest",
+      "description": "The Price/Sales Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "PS_ZSCORE"
+    },
+    {
+      "fix_tag": 7296,
+      "name": "Prior Close",
+      "description": "Yesterday's closing price.",
+      "groups": ["G4"],
+      "id": "CLOSE"
+    },
+    {
+      "fix_tag": 7727,
+      "name": "Probability of Max Loss",
+      "description": "Customer implied probability of maximum potential loss",
+      "groups": ["G0"],
+      "id": "PERF_MAX_LOSS_PROB"
+    },
+    {
+      "fix_tag": 7725,
+      "name": "Probability of Max Return",
+      "description": "Customer implied probability of maximum potential gain",
+      "groups": ["G0"],
+      "id": "PERF_MAX_RETURN_PROB"
+    },
+    {
+      "fix_tag": 7271,
+      "name": "Product Responsibility Score",
+      "description": "Product responsibility category score reflects a company's capacity to produce quality goods and services integrating the customer's health and safety, integrity and data privacy.",
+      "groups": ["G45"],
+      "id": "ESG_PRODUCT_RESPONSIBILITY_SCORE"
+    },
+    {
+      "fix_tag": 7703,
+      "name": "Profit Probability",
+      "description": "Customer implied probability of any gain",
+      "groups": ["G0"],
+      "id": "PERF_PROFIT_PROBABILITY"
+    },
+    {
+      "fix_tag": 7494,
+      "name": "Projected Yield Value",
+      "description": "The Projected Yield provides the percentage of income earned as a proportion of the total return performance over a specified user-defined period. Where necessary the accounting units are standardized over the period to the current base currency of the fund and adjusted for splits, factors, and/or other events. The user of a Lipper product may configure projected yield to calculate in days, weeks, months, or years and the yield can be adjusted with a variety of taxation and currency options.",
+      "groups": ["G48"],
+      "id": "PROJ_YIELD"
+    },
+    {
+      "fix_tag": 7085,
+      "name": "Put/Call Interest",
+      "description": "Put option open interest/call option open interest for the trading day.",
+      "groups": ["G8"],
+      "id": "PUT_CALL_INTEREST"
+    },
+    {
+      "fix_tag": 7285,
+      "name": "Put/Call Volume",
+      "description": "Put option volume/call option volume for the trading day.",
+      "groups": ["G8"],
+      "id": "PUT_CALL_VOLUME"
+    },
+    {
+      "fix_tag": 7511,
+      "name": "R-Squared 1Yr",
+      "description": "R-Squared is a measure that indicates the extent that fluctuations in portfolio returns correlate with those of the benchmark, which could be either the general market or a benchmark portfolio. A completely diversified security will be perfectly correlated with the market, and will have an R-squared of 100%. For example, an R-Squared of 0.75 implies that 75% of the fluctuation in a portfolio's return is explained by the fluctuation in the benchmark. R-Squared is also used as a measure of how reliable, predictable, and valid the alpha and beta are. For simple regression, R-Squared is the square of the correlation coefficient between the portfolio and the benchmark.",
+      "groups": ["G50"],
+      "id": "RSQ_1YR"
+    },
+    {
+      "fix_tag": 7496,
+      "name": "R-Squared Adjusted 1Yr",
+      "description": "Adjusted R-Squared is an adjustment to regular R-Squared to account for the number of variables in the equation. It most cases, as the number of variables rise, the adjusted R-Squared begins to decline. In Lipper IM, the difference between R-Squared and Adjusted R-Squared is normally small because there is only one explanatory variable used in the regression.",
+      "groups": ["G50"],
+      "id": "RSQ_ADJ_1YR"
+    },
+    {
+      "fix_tag": 7706,
+      "name": "Ratings",
+      "description": "Ratings issued for bond contract.",
+      "groups": ["G9"],
+      "id": "BOND_RATING"
+    },
+    {
+      "fix_tag": 79,
+      "name": "Realized P&L",
+      "description": "Realized profit or loss.",
+      "groups": ["G2"],
+      "id": "REALIZED_PL"
+    },
+    {
+      "fix_tag": 7688,
+      "name": "Recent Analyst Meeting",
+      "description": "The date and time of the most recent analyst meeting.",
+      "groups": ["G27"],
+      "id": "RECENT_ANALYST_MEETING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7689,
+      "name": "Recent Earnings",
+      "description": "The date and time of the most recent earnings/earnings call event.",
+      "groups": ["G27"],
+      "id": "RECENT_EARNINGS",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7690,
+      "name": "Recent Misc Event",
+      "description": "The date and time of the most recent shareholder meeting, presentation or other event.",
+      "groups": ["G27"],
+      "id": "RECENT_MISC_EVENT",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7564,
+      "name": "Relative Strength",
+      "description": "The measure of the price trend of the equity securities in the portfolio as compared to the S&P 500 Index.",
+      "groups": ["G50"],
+      "id": "REL_STRENGTH"
+    },
+    {
+      "fix_tag": 7265,
+      "name": "Resource Use Score",
+      "description": "Resource use category score reflects a company's performance and capacity to reduce the use of materials, energy or water, and to find more eco-efficient solutions by improving supply chain management.",
+      "groups": ["G45"],
+      "id": "ESG_RESOURCE_USE_SCORE"
+    },
+    {
+      "fix_tag": 7584,
+      "name": "Return Risk Ratio 1Yr",
+      "description": "This figure is a measurement of a fund's average return over the whole of a specified time period divided by the fund's Standard Deviation. Funds that have heavy fluctuations in their performance over a set time period will have higher Standard Deviation (volatility) and hence a lower Return/Risk Ratio than funds with a similar total investment return but a more steady pattern of growth.",
+      "groups": ["G50"],
+      "id": "RET_RISK_RATIO_1YR"
+    },
+    {
+      "fix_tag": 7552,
+      "name": "Return on Assets 1Yr",
+      "description": "It is calculated by dividing the latest trailing twelve-month net income by total assets from the most recent quarter. A weighted average is derived by summing the products of portfolio % value and return on assets.",
+      "groups": ["G50"],
+      "id": "ROA_1YR"
+    },
+    {
+      "fix_tag": 7333,
+      "name": "Return on Assets 3Yr",
+      "description": "It is calculated by determining the three-year average ratio of trailing twelve-month net income to total assets. A weighted average is derived by summing the products of portfolio % value and three year average return on assets.",
+      "groups": ["G50"],
+      "id": "ROA_3YR"
+    },
+    {
+      "fix_tag": 7565,
+      "name": "Return on Capital",
+      "description": "It is calculated by dividing earnings before interest and taxes by (capital employed plus short-term loans minus intangible assets.). A weighted average is derived by summing the products of the portfolio percentage value for the return on capital.",
+      "groups": ["G50"],
+      "id": "RET_ON_CAPITAL"
+    },
+    {
+      "fix_tag": 7566,
+      "name": "Return on Capital 3Yr",
+      "description": "The weighted average of the three-year average ratio of earnings before interest and taxes to (capital employed + short-term loans - intangible assets).",
+      "groups": ["G50"],
+      "id": "RET_ON_CAPITAL_3YR"
+    },
+    {
+      "fix_tag": 7553,
+      "name": "Return on Equity 1Yr",
+      "description": "Return on Equity 1Yr",
+      "groups": ["G50"],
+      "id": "ROE_1YR"
+    },
+    {
+      "fix_tag": 7554,
+      "name": "Return on Equity 3Yr",
+      "description": "It is calculated by determining the three-year average ratio of trailing twelve-month net income to common stockholder equity. A weighted average is derived by summing the products of the portfolio % value and the three-year average return on equity.",
+      "groups": ["G50"],
+      "id": "ROE_3YR"
+    },
+    {
+      "fix_tag": 7324,
+      "name": "Return on Equity Weighted Average Latest",
+      "description": "The Return on Equity ratio for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "ROE_WGT_AVG_LATEST"
+    },
+    {
+      "fix_tag": 7574,
+      "name": "Return on Equity Z-Score Latest",
+      "description": "The Return on Equity Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "ROE_ZSCORE"
+    },
+    {
+      "fix_tag": 7555,
+      "name": "Return on Investment 1Yr",
+      "description": "This value is the annual Income after Taxes divided by the average Total Long Term Debt, Other Long Term Liabilities, and Shareholders Equity, expressed as a percentage. A weighted average is derived by summing the products of the portfolio % value and the return on investment.",
+      "groups": ["G50"],
+      "id": "ROI_1YR"
+    },
+    {
+      "fix_tag": 7556,
+      "name": "Return on Investment 3Yr",
+      "description": "This value is the simple average of each of the past three annual return on investments. A weighted average is derived by summing the products of the portfolio % value and the return on investment.",
+      "groups": ["G50"],
+      "id": "ROI_3YR"
+    },
+    {
+      "fix_tag": 7716,
+      "name": "Return/Risk",
+      "description": "Risk reward ratio",
+      "groups": ["G0"],
+      "id": "PERF_RISK_RETURN"
+    },
+    {
+      "fix_tag": 7648,
+      "name": "SADIF Analytics Rating",
+      "description": "Displays SADIF Analytics Rating provider value",
+      "groups": ["G17"],
+      "id": "SADIF_RATING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=812&serviceID2=826"
+    },
+    {
+      "fix_tag": 7352,
+      "name": "SEC Yield 7-Day",
+      "description": "SEC Yield is the return on an investor's capital investment covered by the fund's filings with the SEC. It is collected from fund management companies on a monthly basis and the end dates are based on the 7-day period for money markets. See also SEC Yield 7-Day End Date.",
+      "groups": ["G51"],
+      "id": "SEC_YIELD_7D"
+    },
+    {
+      "fix_tag": 7353,
+      "name": "SEC Yield 7-Day End Date",
+      "description": "SEC Yield 7-Day End Date",
+      "groups": ["G51"],
+      "id": "SEC_YIELD_7D_DATE"
+    },
+    {
+      "fix_tag": 7571,
+      "name": "SPS Growth Z-Score Latest",
+      "description": "The 3 Year Sales per Share Growth Z-Score for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "SPS_GRWTH_ZSCORE"
+    },
+    {
+      "fix_tag": 7696,
+      "name": "SPX Delta",
+      "description": "Beta Weighted Delta is calculated using the formula: Delta x dollar adjusted beta, where adjusted beta is adjusted by the ratio of close prices",
+      "groups": ["G0"],
+      "id": "RISK_INDEX_DELTA"
+    },
+    {
+      "fix_tag": 7611,
+      "name": "Sales Growth 1Yr",
+      "description": "One year sales growth measures the percent increase or decrease of current sales over the prior year. It is calculated by dividing current sales by last year?s sales per share, subtracting one, and multiplying by 100. A weighted average is derived by summing the products of portfolio % value and capped one-year sales growth. All sales growth rates over 100 or less than -50 are reverted to 100 and -50 respectively.",
+      "groups": ["G50"],
+      "id": "SALES_GRWTH_1YR"
+    },
+    {
+      "fix_tag": 7618,
+      "name": "Sales Growth 3Yr",
+      "description": "Three-year sales growth measures the compound annual growth rate of sales over the past three years. It is calculated by dividing current sales (ending value) by sales from three years ago (beginning value). Then raise the result to the power of 1/3, subtract one, and multiply by 100. A weighted average is derived by summing the products of portfolio % value and capped three-year sales growth. All sales growth rates over 100 or less than -50 are reverted to 100 and -50 respectively.",
+      "groups": ["G50"],
+      "id": "SALES_GRWTH_3YR"
+    },
+    {
+      "fix_tag": 7619,
+      "name": "Sales Growth 5Yr",
+      "description": "The weighted average of change in the latest annual sales versus the preceding five year's annual sales.",
+      "groups": ["G50"],
+      "id": "SALES_GRWTH_5YR"
+    },
+    {
+      "fix_tag": 7558,
+      "name": "Sales Per Share Growth 1 Year",
+      "description": "The one-year sales-per-share growth value for each individual security is multiplied by the ratio o f the security?s market value in the portfolio to the total market value of the equity holdings of the portfolio. The sum of the resulting values is the dollar-weighted average one-year sales-per-share growth value for the equity holdings of the portfolio. Values greater than 100 are replaced with a value of 100. Values less than -50 are replaced with a value of -50.",
+      "groups": ["G50"],
+      "id": "SPS_GRWTH_1YR"
+    },
+    {
+      "fix_tag": 7559,
+      "name": "Sales Per Share Growth 3 Year",
+      "description": "The weighted average of per share growth over a three year period for the latest portfolio.",
+      "groups": ["G50"],
+      "id": "SPS_GRWTH_3YR"
+    },
+    {
+      "fix_tag": 7325,
+      "name": "Sales Per Share Growth 3Yr Latest",
+      "description": "The 3 Year Sales per Share Growth ratio for the latest portfolio from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "SPS_GRWTH_3YR_LATEST"
+    },
+    {
+      "fix_tag": 7557,
+      "name": "Sales to Total Assets",
+      "description": "The sales to total asset ratio, also known as the asset turnover, measures the amount of sales generated for dollar of assets. A weighted average is derived by summing the products of the portfolio % value and the sales to total assets ratio.",
+      "groups": ["G50"],
+      "id": "SALES_2_TOTAL_ASSETS"
+    },
+    {
+      "fix_tag": 7412,
+      "name": "Scheme",
+      "description": "Scheme",
+      "groups": ["G48"],
+      "id": "SCHEME"
+    },
+    {
+      "fix_tag": 7514,
+      "name": "Semi Deviation 1Yr",
+      "description": "Semi Deviation is a measure of the investment risk on the lower half. It is calculated as the square root of semi variance, which is the simple average of sub-period squared deviations on the lower half over a given period. Lower half refers to sub-periods with returns less than the average return. Higher Semi Deviation means higher risk on the lower half.",
+      "groups": ["G50"],
+      "id": "SEMI_DEV_1YR"
+    },
+    {
+      "fix_tag": 7515,
+      "name": "Semi Variance 1Yr",
+      "description": "The Semi Variance considers returns that fall below the average return for the data set as opposed to returns that fall below a determined minimum acceptable return (MAR). For example, if the average return were 10%, then the Semi Variance would measure the variation of returns that fall below 10%.",
+      "groups": ["G50"],
+      "id": "SEMI_VAR_1YR"
+    },
+    {
+      "fix_tag": 7273,
+      "name": "Shareholders Score",
+      "description": "Shareholders category score measures a company's effectiveness towards equal treatment of shareholders and the use of anti-takeover devices.",
+      "groups": ["G45"],
+      "id": "ESG_SHAREHOLDERS_SCORE"
+    },
+    {
+      "fix_tag": 7516,
+      "name": "Sharpe Ratio 1Yr",
+      "description": "A measure of the reward-to-volatility trade off developed by William F. Sharpe, the Sharpe Ratio is also known as the Reward to Volatility Ratio. The Sharpe Ratio is calculated as the average excess return over the volatility of excess return. The excess return is the portfolio return in excess of the benchmark return. The volatility of the excess return is measured by the Standard Deviation of the excess return. The underlying assumption is that a fund manager always has the possibility to invest in a risk free asset; therefore, the return of the risk free asset is deducted from the total return. This net return is then divided by the total risk. The higher the Sharpe Ratio, the better the portfolio?s risk adjusted performance.",
+      "groups": ["G50"],
+      "id": "SHARPE_1YR"
+    },
+    {
+      "fix_tag": 7401,
+      "name": "Short Interest Ratio",
+      "description": "Shows the ratio of shares shorted to the overall float For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "SHORT_INTEREST"
+    },
+    {
+      "fix_tag": 7669,
+      "name": "Short Term Event Score",
+      "description": "Recognia's proprietary score of the event on a scale of 0 to 5. Events are assigned a score upon their confirmation \u2013 the value is assigned differently depending on the type of event. For example, for classic patterns, the value depends on how symmetrical the pattern is and how closely it matches the textbook definition. For indicator and oscillator events, the value is based on the amount of penetration.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_SHORT_TERM_EVENT_SCORE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7670,
+      "name": "Short Term Event Trade Type",
+      "description": "Potential trading opportunity type based on the event. Possible values are: Long; Short; Undefined This data is provided for information purposes only and is not intended as a recommendation to buy or sell securities",
+      "groups": ["G41"],
+      "id": "RECOGNIA_SHORT_TERM_TRADE_TYPE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7433,
+      "name": "Short Term Redemption",
+      "description": "Indicates whether STR fees are applicable",
+      "groups": ["G48"],
+      "id": "SHRT_TRM_REDEMP"
+    },
+    {
+      "fix_tag": 7666,
+      "name": "Short Term Technical Event Class",
+      "description": "The class for the event. Technical events® are placed into one of four classes: Classic Patterns, such as Double Top, Flag, Head and Shoulders Top, etc.; Short-term Patterns, such as Shooting Star, Engulfing Line, Hammer, etc.; Indicator, such as double and triple moving average crossovers; Oscillator, such MACD, RSI, Fast Stochastic, etc.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_SHORT_TERM_TECH_EVENT_CLASS",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7667,
+      "name": "Short Term Technical Event Date",
+      "description": "The date the event formed. All dates are of the form: YYYY-MM-DD",
+      "groups": ["G41"],
+      "id": "RECOGNIA_SHORT_TERM_TECH_EVENT_DATE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7668,
+      "name": "Short Term Technical Event Name",
+      "description": "Name of the Technical Event® pattern or indicator identified by Recognia®. See our website for the full list of patterns identified by Recognia®.",
+      "groups": ["G41"],
+      "id": "RECOGNIA_SHORT_TERM_TECH_EVENT_NAME",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=840"
+    },
+    {
+      "fix_tag": 7644,
+      "name": "Shortable",
+      "description": "Describes the level of difficulty with which the security can be sold short.",
+      "groups": ["G33"],
+      "id": "SHORTABLE"
+    },
+    {
+      "fix_tag": 7636,
+      "name": "Shortable Shares",
+      "description": "Number of shares available for shorting.",
+      "groups": ["G33"],
+      "id": "SHORTABLE_SHARES"
+    },
+    {
+      "fix_tag": 7371,
+      "name": "Social Score",
+      "description": "The Social pillar score is the weighted sum of the Workforce, Human Rights, Community and Product Responsibility category scores.",
+      "groups": ["G46"],
+      "id": "ESG_SOCIAL_PILLAR_SCORE"
+    },
+    {
+      "fix_tag": 7517,
+      "name": "Sortino Ratio 1Yr",
+      "description": "The Sortino Ratio is a measure of fund performance relative to risk-free rate return adjusted for downside risk. It is calculated as the average relative return divided by the Downside Deviation over a given period. The Sortino Ratio is similar to the Sharpe Ratio, except that instead of using Standard Deviation at the denominator, it uses Downside Deviation in order to differentiate between \"good\" and \"bad\" volatility in the Sharpe Ratio. Higher Sortino Ratio means better fund performance relative to risk-free rate performance adjusted for downside risk. Sortino ratio is based on log returns and can be presented on an annualized basis. The sub-period can be measured in trade days, weeks, or months, where appropriate. The number of trade days, weeks, and months per year is 252, 52, and 12 respectively.",
+      "groups": ["G50"],
+      "id": "SORTINO_1YR"
+    },
+    {
+      "fix_tag": 7728,
+      "name": "Spread",
+      "description": "The difference between the current ask price and bid price.",
+      "groups": ["G4"],
+      "id": "SPREAD"
+    },
+    {
+      "fix_tag": 7518,
+      "name": "Standard Deviation 1Yr",
+      "description": "Standard Deviation is a measure of risk. Specifically, it measures the variability of actual returns from their expected (average) values and the dispersion of these variations over time. A higher value for Standard Deviation indicates a wider dispersion of these variations from their mean (average) value and hence would be associated with a higher degree of risk because the predictability of returns is much less certain. Standard Deviation is closely related to Variance because it is the square root of Variance.",
+      "groups": ["G50"],
+      "id": "STD_DEV_1YR"
+    },
+    {
+      "fix_tag": 7707,
+      "name": "State code",
+      "description": "State code",
+      "groups": ["G9"],
+      "id": "STATE_CODE"
+    },
+    {
+      "fix_tag": 7461,
+      "name": "Strategy Actively Managed ETFs",
+      "description": "An exchange-traded fund that does not intend to replicate or track an index, but has a portfolio manager with discretion to choose securities for the fund's portfolio.",
+      "groups": ["G49"],
+      "id": "STRAT_ACTIVLY_MNG_ETF"
+    },
+    {
+      "fix_tag": 7463,
+      "name": "Strategy Alternative Energy",
+      "description": "Funds which predominantly invest in companies engaged in renewable energy or clean energy utilities, industrial, and technologies.",
+      "groups": ["G49"],
+      "id": "STRAT_ALT_ENRGY"
+    },
+    {
+      "fix_tag": 7442,
+      "name": "Strategy Bond Domestic Issued",
+      "description": "Fund only invests in bonds issued in the domicile of the fund.",
+      "groups": ["G49"],
+      "id": "STRAT_BOND_DOM_ISS"
+    },
+    {
+      "fix_tag": 7446,
+      "name": "Strategy Ethical",
+      "description": "A fund which has adopted investment policies that are sensitive to ethical and social concerns, and bases its investment selections on criteria such as environmental issues, religious beliefs, inclusive employee policies, etc.",
+      "groups": ["G49"],
+      "id": "STRAT_ETHICAL"
+    },
+    {
+      "fix_tag": 7455,
+      "name": "Strategy Fd of Fds-Blended",
+      "description": "A fund which invests 80% of more of its assets in a combination of mutual funds managed by an affiliated advisor and managed by an unaffiliated advisor.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_BLENDED"
+    },
+    {
+      "fix_tag": 7456,
+      "name": "Strategy Fund of ETFs",
+      "description": "Fund of ETFs identifies a fund which invests 80% of more of its assets in an exchange traded funds or notes.",
+      "groups": ["G49"],
+      "id": "STRAT_FUND_OF_ETFS"
+    },
+    {
+      "fix_tag": 7451,
+      "name": "Strategy Fund of Fund Affiliated",
+      "description": "A fund which invests 80% or more of its assets in mutual funds managed by an affiliated advisor. Typically, the fund will have a very low or no advisory fee.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_AFFILIATED"
+    },
+    {
+      "fix_tag": 7450,
+      "name": "Strategy Fund of Fund Unaffiliated",
+      "description": "A fund which invests 80% of more of its assets in mutual funds not managed by an affiliated advisor. Typically, the fund will have an adv fee comparable to actively managed fds with the same inv obj.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_UNAFFILIATED"
+    },
+    {
+      "fix_tag": 7457,
+      "name": "Strategy Fund of Funds",
+      "description": "A fund whose investment objective and policies are to invest in other mutual funds.",
+      "groups": ["G49"],
+      "id": "STRAT_FD_OF_FDS"
+    },
+    {
+      "fix_tag": 7452,
+      "name": "Strategy Fund of Funds Active",
+      "description": "A Fund of Funds with an active management strategy where the underlying funds are evaluated and reallocated as securities markets and economic conditions fluctuate, typically to outperform the market.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_ACTIVE"
+    },
+    {
+      "fix_tag": 7440,
+      "name": "Strategy Fund of Funds External",
+      "description": "An attribute indicating if a fund invests in other funds outside of its own fund family.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_EXTERNAL"
+    },
+    {
+      "fix_tag": 7439,
+      "name": "Strategy Fund of Funds Internal",
+      "description": "An attribute indicating if a fund invests in other funds within its own fund family.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_INTERNAL"
+    },
+    {
+      "fix_tag": 7453,
+      "name": "Strategy Fund of Funds Passive",
+      "description": "A Fund of Funds with a management strategy that involves minimal input by the portfolio manager and relies on predetermined fund allocation percentages to achieve acceptable performance levels.",
+      "groups": ["G49"],
+      "id": "STRAT_FOF_PASSIVE"
+    },
+    {
+      "fix_tag": 7454,
+      "name": "Strategy Fund of Hedge Funds",
+      "description": "A fund of hedge funds is an investment fund that uses an investment strategy of holding a portfolio of hedge funds rather than investing directly in stock shares, bonds or other securities.",
+      "groups": ["G49"],
+      "id": "STRAT_FD_OF_HEDGE_FDS"
+    },
+    {
+      "fix_tag": 7466,
+      "name": "Strategy Fund of REITs",
+      "description": "Mutual funds that invest primarily in equities of listed real estate investment trusts (REITs).",
+      "groups": ["G49"],
+      "id": "STRAT_FD_OF_REITS"
+    },
+    {
+      "fix_tag": 7462,
+      "name": "Strategy Green",
+      "description": "A fund whose main screening criteria/investment strategy is based solely on environmentally friendly investments.",
+      "groups": ["G49"],
+      "id": "STRAT_GREEN"
+    },
+    {
+      "fix_tag": 7443,
+      "name": "Strategy Hedged",
+      "description": "The flag indicates funds or sub-share classes systematically using a currency or any other market/interest rate hedging strategy.",
+      "groups": ["G49"],
+      "id": "STRAT_HEDGED"
+    },
+    {
+      "fix_tag": 7460,
+      "name": "Strategy Index Replication Method",
+      "description": "Method the fund uses to reproduce the return of the underlying reference index.",
+      "groups": ["G49"],
+      "id": "STRAT_INDX_REPL_METHOD"
+    },
+    {
+      "fix_tag": 7441,
+      "name": "Strategy Index Tracking",
+      "description": "Fund aims to replicate the performance of a particular Index.",
+      "groups": ["G49"],
+      "id": "STRAT_INDEX_TRK"
+    },
+    {
+      "fix_tag": 7459,
+      "name": "Strategy Interval Hybrid",
+      "description": "Hybrid mutual fund structure falls between an open-end and a closed-end fund. Allows investors to purchase shares daily but permits funds to set longer intervals between redemption's.",
+      "groups": ["G49"],
+      "id": "STRAT_INTRVL_HYBRID"
+    },
+    {
+      "fix_tag": 7449,
+      "name": "Strategy Islamic",
+      "description": "An attribute indicating a fund whose investments are made in accordance with Islamic Law (also known as Shariah guidelines (also spelled as Syariah). Investments are prohibited in companies producing, distributing, or selling alcohol, tobacco, pork, gold, silver, armaments or pornographic products; operations of gambling casinos or producers of gambling equipment; operations of movie theatres; financial institutions (including banks, insurance companies and brokerage firms); investment companies that invest in restricted companies. Other restrictions apply and may be amended by the Syariah Advisory Panel.",
+      "groups": ["G49"],
+      "id": "STRAT_ISLAMIC"
+    },
+    {
+      "fix_tag": 7444,
+      "name": "Strategy Leveraged",
+      "description": "Fund borrows money/investment based on anticipated future returns.",
+      "groups": ["G49"],
+      "id": "STRAT_LEVERAGED"
+    },
+    {
+      "fix_tag": 7464,
+      "name": "Strategy Managed Volatility",
+      "description": "Funds that by prospectus language utilize a managed volatility strategy within their primary investment strategy, including but not limited to risk parity, minimum volatility and fundamental.",
+      "groups": ["G49"],
+      "id": "STRAT_MANAGED_VOL"
+    },
+    {
+      "fix_tag": 7448,
+      "name": "Strategy Manager of Manager Funds",
+      "description": "The fund management company splits the portfolio into separate portions and directly assigns these to different asset managers outside of their fund group. The splits are typically by geography and/or asset class. Manager of Manager funds contract out the assets to separate asset managers whereas a fund of fund simply buys and sells other funds.",
+      "groups": ["G49"],
+      "id": "STRAT_MGR_OF_MGR_FD"
+    },
+    {
+      "fix_tag": 7445,
+      "name": "Strategy Net 100",
+      "description": "Net 100 funds combine long and short stock selection to invest in a diversified portfolio of equities with a target net exposure of 100% long. Typical strategies vary between 110% long and 10% short to 160% long and 60% short. (Typical 130/30, 120/20, 135/35).",
+      "groups": ["G49"],
+      "id": "STRAT_NET_100"
+    },
+    {
+      "fix_tag": 7458,
+      "name": "Strategy Social Criteria",
+      "description": "A fund which has adopted investment policies that are sensitive to ethical and social concerns, and bases its investment selections on criteria such as environmental issues, religious beliefs, inclusive employee policies, etc.",
+      "groups": ["G49"],
+      "id": "STRAT_SOCIAL_CRIT"
+    },
+    {
+      "fix_tag": 7447,
+      "name": "Strategy Total Return",
+      "description": "A flag that indicates if the fund strives to deliver positive returns in both rising and falling markets.",
+      "groups": ["G49"],
+      "id": "STRAT_TOTAL_RETURN"
+    },
+    {
+      "fix_tag": 7465,
+      "name": "Strategy Water",
+      "description": "Funds which predominantly invest in companies engaged in water related businesses, generally some combination of water industrials, water utilities and water materials and often benchmarking a commercial water companies index.",
+      "groups": ["G49"],
+      "id": "STRAT_WATER"
+    },
+    {
+      "fix_tag": 7431,
+      "name": "Subsequent Minimum IRA Purchase",
+      "description": "Subsequent Minimum IRA Purchase",
+      "groups": ["G51"],
+      "id": "SUB_MIN_IRA_PURCH"
+    },
+    {
+      "fix_tag": 7427,
+      "name": "Subsequent Minimum Purchase",
+      "description": "Subsequent Minimum Purchase",
+      "groups": ["G51"],
+      "id": "SUBSEQ_MIN_PUR"
+    },
+    {
+      "fix_tag": 7429,
+      "name": "Subsequent Minimum Wrap Purchase",
+      "description": "Subsequent Minimum Wrap Purchase",
+      "groups": ["G51"],
+      "id": "SUBSEQ_MIN_WRP_PUR"
+    },
+    {
+      "fix_tag": 7513,
+      "name": "Synthetic Risk and Reward Indicator 1Yr",
+      "description": "The synthetic risk and reward indicator will correspond to an integer number designed to rank the fund over a scale from 1 to 7, according to its increasing level of volatility.",
+      "groups": ["G50"],
+      "id": "SRRI_1YR"
+    },
+    {
+      "fix_tag": 7649,
+      "name": "TheStreet Rating",
+      "description": "Displays TheStreet Rating provider value",
+      "groups": ["G17"],
+      "id": "THESTREET_RATING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=809"
+    },
+    {
+      "fix_tag": 7310,
+      "name": "Theta",
+      "description": "A measure of the rate of decline the value of an option due to the passage of time",
+      "groups": ["G10"],
+      "id": "THETA"
+    },
+    {
+      "fix_tag": 7403,
+      "name": "Three Month EPS Change",
+      "description": "Change in EPS estimates over the past 3 month For more AltaVista ETF Research information, right-click on an ETF, select Analytical Tools or Analysis and then select ETF tear sheet .",
+      "groups": ["G6"],
+      "id": "THREE_MONTH_EPS_CHANGE"
+    },
+    {
+      "fix_tag": 7631,
+      "name": "Time Value (%)",
+      "description": "The option premium in excess of its intrinsic value. In general, the time value decreases as the option's expiration date gets closer. This value is calculated as (current bid - intrinsic value). Percent = Time value as a percentage of the underlying price, annualized.",
+      "groups": ["G8"],
+      "id": "TIME_VALUE_PCT"
+    },
+    {
+      "fix_tag": 7560,
+      "name": "Total Assets / Total Equity",
+      "description": "This ratio, also known as the equity multiplier, is the ratio of total assets to stockholder equity. This ratio measures a company's assets per dollar of shareholder equity. The weighted average is then calculated by summing the products of portfolio % value and equity multiplier ratio.",
+      "groups": ["G50"],
+      "id": "TOT_ASSETS_2_TOT_EQ"
+    },
+    {
+      "fix_tag": 7080,
+      "name": "Total Benefits",
+      "description": "Shows the estimated amount by which you could benefit through early exercise or closeout.",
+      "groups": ["G10022"],
+      "id": "TOTAL_BENEFITS"
+    },
+    {
+      "fix_tag": 7561,
+      "name": "Total Debt / Total Capital",
+      "description": "The total debt to total capital ratio measures the relationship between the amount of debt a firm has and the total capital of the firm. It is calculated by dividing the most recent quarter's total liabilities by the most recent quarter total capital.",
+      "groups": ["G50"],
+      "id": "TOT_DEBT_2_TOT_CAP"
+    },
+    {
+      "fix_tag": 7562,
+      "name": "Total Debt / Total Equity",
+      "description": "It is calculated by dividing the most recent quarter total debt by the most recent quarter shareholder's equity. The weighted average is then calculated by summing the products of portfolio % value and debt/equity ratio.",
+      "groups": ["G50"],
+      "id": "TOT_DEBT_2_TOT_EQ"
+    },
+    {
+      "fix_tag": 7435,
+      "name": "Total Expense Ratio",
+      "description": "The total cost associated with managing and operating a fund for a fiscal period, expressed as a percentage. It is calculated by dividing the total expenses net of waivers and subsidies by the fund's average net assets at a share class level.",
+      "groups": ["G48"],
+      "id": "TOT_EXP_RATIO"
+    },
+    {
+      "fix_tag": 7414,
+      "name": "Total Net Assets",
+      "description": "Total Net Assets",
+      "groups": ["G51"],
+      "id": "TOT_NET_ASST"
+    },
+    {
+      "fix_tag": 7438,
+      "name": "Total Net Expenses",
+      "description": "Total Net Expenses paid by the fund, expressed as a percentage of the fund's assets.",
+      "groups": ["G51"],
+      "id": "TOT_NET_EXP"
+    },
+    {
+      "fix_tag": 7519,
+      "name": "Tracking Error 1Yr",
+      "description": "Also referred to as active risk, the Tracking Error measures the standard deviation of the excess returns of a fund from those of its benchmark. It is the Standard Deviation of the difference between the returns of the fund and benchmark (excess returns), and not the standard deviation of each fund's unique returns. The lower the Tracking Error of a fund, the more the fund resembles its benchmark or the market regarding risk and return characteristics. This can be attained through a more \"passive strategy\" by investing broadly according to the market.",
+      "groups": ["G50"],
+      "id": "TRACKING_ERR_1YR"
+    },
+    {
+      "fix_tag": 7534,
+      "name": "Trading Currency",
+      "description": "Displays trading currency from the contract.",
+      "groups": ["G-3"],
+      "id": "CURRENCY"
+    },
+    {
+      "fix_tag": 7585,
+      "name": "Treynor Ratio 1Yr",
+      "description": "A measure of risk-adjusted performance developed by Jack L. Treynor, the Treynor Ratio is also known as the reward-to-variability ratio. It is calculated by dividing the excess return of a portfolio above the risk-free rate by its beta coefficient. Since Beta is a measure of the benchmark specific risks, the Treynor Ratio measures the excess return per unit of benchmark specific risk. In contrast, the Sharpe Ratio is based on total risk (the standard deviation of the portfolio). The higher the Treynor Ratio, the better the performance under analysis. The output figure is multiplied by 100 for presentation purposes.",
+      "groups": ["G50"],
+      "id": "TREYNOR_1YR"
+    },
+    {
+      "fix_tag": 7634,
+      "name": "Underlying Price",
+      "description": "For derivatives, displays the current price of the underlying. For example, for stock options this column displays the current stock price.",
+      "groups": ["G4", "G8"],
+      "id": "UNDERLYING_PRICE"
+    },
+    {
+      "fix_tag": 77,
+      "name": "Unrealized P&L",
+      "description": "Unrealized profit or loss. Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "UNREALIZED_PL"
+    },
+    {
+      "fix_tag": 80,
+      "name": "Unrealized P&L %",
+      "description": "Unrealized profit or loss. Daily P&L is calculated with realtime market data (even when delayed data is displayed in other columns).",
+      "groups": ["G2"],
+      "id": "UNREALIZED_PL_PCT"
+    },
+    {
+      "fix_tag": 7685,
+      "name": "Upcoming Analyst Meeting ",
+      "description": "The date and time of the next scheduled analyst meeting.",
+      "groups": ["G27"],
+      "id": "UPCOMING_ANALYST_MEETING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7686,
+      "name": "Upcoming Earnings",
+      "description": "The date and time of the next scheduled earnings/earnings call event.",
+      "groups": ["G27"],
+      "id": "UPCOMING_EARNINGS",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7683,
+      "name": "Upcoming Event",
+      "description": "Shows the next major company event.",
+      "groups": ["G27"],
+      "id": "UPCOMING_EVENT",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7684,
+      "name": "Upcoming Event Date",
+      "description": "The date of the next major company event.",
+      "groups": ["G27"],
+      "id": "UPCOMING_EVENT_DATE",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7687,
+      "name": "Upcoming Misc Event",
+      "description": "The date and time of the next shareholder meeting, presentation or other event.",
+      "groups": ["G27"],
+      "id": "UPCOMING_MISC_EVENT",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=510&serviceID2=509"
+    },
+    {
+      "fix_tag": 7083,
+      "name": "VWAP",
+      "description": "Volume-Weighted Average Price",
+      "groups": ["G4"],
+      "id": "VWAP"
+    },
+    {
+      "fix_tag": 7651,
+      "name": "Validea Rating",
+      "description": "Displays Validea Rating provider value",
+      "groups": ["G17"],
+      "id": "VALIDEA_RATING",
+      "SSO": "sso://action=TA_MARKET_DATA&service=AM.LOGIN&webaccess=true&&serviceID1=813"
+    },
+    {
+      "fix_tag": 7646,
+      "name": "ValuEngine Rating",
+      "description": "Displays ValuEngine Rating provider value",
+      "groups": ["G17"],
+      "id": "VALUENGINE_RATING"
+    },
+    {
+      "fix_tag": 7586,
+      "name": "Value At Risk Normal 1Yr",
+      "description": "From the historical returns Lipper IM calculates the mean and standard deviation for the period and then supposes asymmetric normality to estimate the Value At Risk (VaR) at a chosen confidence level.",
+      "groups": ["G50"],
+      "id": "VAR_NORMAL_1YR"
+    },
+    {
+      "fix_tag": 7587,
+      "name": "Value At Risk Normal End Tail Loss 1Yr",
+      "description": "From the historical returns Lipper IM calculates the mean and standard deviation for the period and then supposes asymmetric normality to estimate the average tail loss beyond normal Value At Risk (VaR) at the chosen confidence level.",
+      "groups": ["G50"],
+      "id": "VAR_NORMAL_ETL_1YR"
+    },
+    {
+      "fix_tag": 7588,
+      "name": "Value At Risk Quantile 1Yr",
+      "description": "This measure is sometimes known as Conditional VaR, Car, or Expected Shortfall. Quantile ETL is useful to assess the extent of any outlying losses incurred over the period chosen but not reflected in the Quantile VaR.",
+      "groups": ["G50"],
+      "id": "VAR_QUANTILE_1YR"
+    },
+    {
+      "fix_tag": 7589,
+      "name": "Value At Risk Quantile End Tail Loss 1Yr",
+      "description": "This is an estimation of the Value at Risk by ordering the historical return series from low to high. The confidence level chosen then selects a corresponding 'k' and 'k+1' values generated from the count of sub-period returns.",
+      "groups": ["G50"],
+      "id": "VAR_QUANTILE_ETL_1YR"
+    },
+    {
+      "fix_tag": 7590,
+      "name": "Variance 1Yr",
+      "description": "Variance is the sum of the squares of the deviation from the mean; it is the expected value (the probability weighted average) of squared deviations from a random variable?s expected value. In other words, Variance is a measure of dispersion. With respect to returns, it measures the volatility of returns by computing the average squared deviations of returns from the average (expected) return value. Variance is a number greater than or equal to 0 because it is the sum of squared terms. If Variance is 0, there is no dispersion or risk. In Lipper IM, the Variance or dispersion computed is the sum of the square differences between the observation (or return in this case) and the mean.",
+      "groups": ["G50"],
+      "id": "VARIANCE_1YR"
+    },
+    {
+      "fix_tag": 7311,
+      "name": "Vega",
+      "description": "The amount that the price of an option changes compared to a 1% change in volatility",
+      "groups": ["G10"],
+      "id": "VEGA"
+    },
+    {
+      "fix_tag": 87,
+      "name": "Volume",
+      "description": "Volume for the day",
+      "groups": ["G5"],
+      "id": "VOLUME"
+    },
+    {
+      "fix_tag": 7576,
+      "name": "Weighted Average YTM",
+      "description": "Shows the weighted average of the yield to maturity for each of the ETF's debt holdings",
+      "groups": ["G48"],
+      "id": "YIELD_TO_MATURITY"
+    },
+    {
+      "fix_tag": 7575,
+      "name": "Weighted Final Composite Z-Score",
+      "description": "The fund weighted average Composite Z-Score for the classification portfolios from Lipper's Holdings Based Classification model.",
+      "groups": ["G50"],
+      "id": "WGT_FIN_COMP_ZSCORE"
+    },
+    {
+      "fix_tag": 7268,
+      "name": "Workforce Score",
+      "description": "Workforce category score measures a company's effectiveness towards job satisfaction, healthy and safe workplace, maintaining diversity and equal opportunities, and development opportunities for its workforce.",
+      "groups": ["G45"],
+      "id": "ESG_WORKFORCE_SCORE"
+    },
+    {
+      "fix_tag": 7493,
+      "name": "Yield 1Yr",
+      "description": "Rate of return based on the income distributions in the past 12 months, as calculated by Lipper, or yield provided by the fund manager.",
+      "groups": ["G48"],
+      "id": "YIELD_1YR"
+    },
+    {
+      "fix_tag": 7645,
+      "name": "Zacks Rating",
+      "description": "Displays Zacks Rating provider value",
+      "groups": ["G17"],
+      "id": "ZACKS_RATING"
+    }
+  ]
+}

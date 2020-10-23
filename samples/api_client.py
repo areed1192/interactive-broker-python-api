@@ -4,7 +4,8 @@ from ibw.client import IBClient
 # Create a new session of the IB Web API.
 ib_client = IBClient(
     username="PAPER_USERNAME",
-    account="PAPER_ACCOUNT_ACCOUNT_NUMBER"
+    account="PAPER_ACCOUNT_ACCOUNT_NUMBER",
+    is_server_running=True
 )
 
 # create a new session
@@ -52,67 +53,9 @@ aapl_current_prices = ib_client.market_data(
 pprint(aapl_current_prices)
 pprint('')
 
-# Grab the quarterly income statement
-aapl_income_statement = ib_client.fundamentals_financials(
-    conid='265598',
-    financial_statement='income',
-    period='quarter'
-)
-pprint(aapl_income_statement)
-pprint('')
-
-# Grab the annual income statement
-aapl_balance_sheet = ib_client.fundamentals_financials(
-    conid='265598',
-    financial_statement='balance',
-    period='annual'
-)
-pprint(aapl_balance_sheet)
-pprint('')
-
-# Grab Key Ratios for Apple.
-aapl_key_ratios = ib_client.fundamentals_key_ratios(conid='265598')
-pprint(aapl_key_ratios)
-pprint('')
-
-# Grab Dividends for Apple.
-aapl_dividends = ib_client.fundamentals_dividends(conid='265598')
-pprint(aapl_dividends)
-pprint('')
-
-# Grab ESG (Environmental, Social, and Governance) for Apple.
-aapl_esg = ib_client.fundamentals_esg(conid='265598')
-pprint(aapl_esg)
-pprint('')
-
 # search for a symbol
 search_symbol_result = ib_client.symbol_search(symbol='AAPL')
 pprint(search_symbol_result)
-pprint('')
-
-# Grab the news
-aapl_news = ib_client.data_news(conid='265598')
-pprint(aapl_news)
-pprint('')
-
-# Grab the analyst ratings for Apple
-aapl_analyst_ratings = ib_client.data_ratings(conid='265598')
-pprint(aapl_analyst_ratings)
-pprint('')
-
-# Grab Ownership details for Apple
-aapl_ownership = ib_client.data_ownership(conid='265598')
-pprint(aapl_ownership)
-pprint('')
-
-# Grab Comeptitor Details For Apple
-aapl_competitors = ib_client.data_competitors(conid='265598')
-pprint(aapl_competitors)
-pprint('')
-
-# Grab Analyst Forecast for Apple
-aapl_analyst_forecast = ib_client.data_analyst_forecast(conid='265598')
-pprint(aapl_analyst_forecast)
 pprint('')
 
 # grab live orders
@@ -127,19 +70,19 @@ pprint('')
 
 # Do a Futures Search
 futures_search = ib_client.futures_search(symbols=['ES'])
-pprint.pprint(futures_search)
+pprint(futures_search)
 pprint('')
 
 # Grab Portfolio Accounts
 portfolio_accounts = ib_client.portfolio_accounts()
-pprint.pprint(portfolio_accounts)
+pprint(portfolio_accounts)
 pprint('')
 
 # Grab Account Info
 portfolio_account_info = ib_client.portfolio_account_info(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
 )
-pprint.pprint(portfolio_account_info)
+pprint(portfolio_account_info)
 pprint('')
 
 # Grab the Positions in the portfolio.
@@ -147,7 +90,7 @@ portfolio_positions = ib_client.portfolio_account_positions(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER",
     page_id=0
 )
-pprint.pprint(portfolio_positions)
+pprint(portfolio_positions)
 pprint('')
 
 # Grab the Specific Postion in a Portfolio.
@@ -155,56 +98,56 @@ portfolio_position = ib_client.portfolio_account_position(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER",
     conid=272093
 )
-pprint.pprint(portfolio_position)
+pprint(portfolio_position)
 pprint('')
 
 # Grab a Summary of the Portfolio.
 portfolio_summary = ib_client.portfolio_account_summary(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
 )
-pprint.pprint(portfolio_summary)
+pprint(portfolio_summary)
 pprint('')
 
 # Grab the Portfolio Ledger.
 portfolio_ledger = ib_client.portfolio_account_ledger(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
 )
-pprint.pprint(portfolio_ledger)
+pprint(portfolio_ledger)
 pprint('')
 
 # Grab the portfolio Allocation.
 portfolio_allocation = ib_client.portfolio_account_allocation(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER"
 )
-pprint.pprint(portfolio_allocation)
+pprint(portfolio_allocation)
 pprint('')
 
 # Grab Portfolio Allocations.
 portfolio_allocations = ib_client.portfolio_accounts_allocation(
     account_ids="PAPER_ACCOUNT_ACCOUNT_NUMBER"
 )
-pprint.pprint(portfolio_allocations)
+pprint(portfolio_allocations)
 pprint('')
 
 # Grab Customer Info.
 customer_info = ib_client.customer_info()
-pprint.pprint(customer_info)
+pprint(customer_info)
 pprint('')
 
 # Get the number of Unread messages.
 unread_messages = ib_client.get_unread_messages()
 unread_for_bn = unread_messages['BN']
-pprint.pprint(unread_messages)
+pprint(unread_messages)
 pprint('')
 
 # Grab the Subscriptions Codes.
 subscriptions = ib_client.get_subscriptions()
-pprint.pprint(subscriptions)
+pprint(subscriptions)
 pprint('')
 
 # Grab the Delivery Options for a Subscription.
 subscriptions_delivery = ib_client.subscriptions_delivery_options()
-pprint.pprint(subscriptions_delivery)
+pprint(subscriptions_delivery)
 pprint('')
 
 # Grab a Discaimer for a specific Subscription.
@@ -212,7 +155,7 @@ sub_code = 'M8'
 subscriptions_disclaimer = ib_client.subscriptions_disclaimer(
     type_code=sub_code
 )
-pprint.pprint(subscriptions_disclaimer)
+pprint(subscriptions_disclaimer)
 pprint('')
 
 # Define a Mutual Fund Contract ID.
@@ -222,7 +165,7 @@ mutual_fund_conid = '10753238'
 mutual_fund_fees = ib_client.mutual_funds_portfolios_and_fees(
     conid=mutual_fund_conid
 )
-pprint.pprint(mutual_fund_fees)
+pprint(mutual_fund_fees)
 pprint('')
 
 # Possible Values for Performance.
@@ -235,5 +178,5 @@ mutual_fund_ratings = ib_client.mutual_funds_performance(
     yield_period='6M',
     statistic_period='6M'
 )
-pprint.pprint(mutual_fund_ratings)
+pprint(mutual_fund_ratings)
 pprint('')

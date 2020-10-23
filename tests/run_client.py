@@ -16,7 +16,8 @@ paper_username = config.get('main', 'PAPER_USERNAME')
 # Create a new session of the IB Web API.
 ib_client = IBClient(
     username=paper_username,
-    account=paper_account
+    account=paper_account,
+    is_server_running=True
 )
 
 # create a new session
@@ -27,13 +28,13 @@ account_data = ib_client.portfolio_accounts()
 pprint(account_data)
 pprint('')
 
-# grab account portfolios
-account_positions = ib_client.portfolio_account_positions(
-    account_id=paper_account,
-    page_id=0
-)
-pprint(account_positions)
-pprint('')
+# # grab account portfolios
+# account_positions = ib_client.portfolio_account_positions(
+#     account_id=paper_account,
+#     page_id=0
+# )
+# pprint(account_positions)
+# pprint('')
 
 # # grab account PNL
 # account_pnl = ib_client.server_account_pnl()
@@ -64,28 +65,28 @@ pprint('')
 # pprint(aapl_current_prices)
 # pprint('')
 
-# # Grab the quarterly income statement
-# aapl_income_statement = ib_client.fundamentals_financials(
-#     conid='265598',
-#     financial_statement='income',
-#     period='quarter'
-# )
-# pprint(aapl_income_statement)
-# pprint('')
+# Grab the quarterly income statement
+aapl_income_statement = ib_client.fundamentals_financials(
+    conid='265598',
+    financial_statement='income',
+    period='quarter'
+)
+pprint(aapl_income_statement)
+pprint('')
 
-# # Grab the annual income statement
-# aapl_balance_sheet = ib_client.fundamentals_financials(
-#     conid='265598',
-#     financial_statement='balance',
-#     period='annual'
-# )
-# pprint(aapl_balance_sheet)
-# pprint('')
+# Grab the annual income statement
+aapl_balance_sheet = ib_client.fundamentals_financials(
+    conid='265598',
+    financial_statement='balance',
+    period='annual'
+)
+pprint(aapl_balance_sheet)
+pprint('')
 
-# # Grab Key Ratios for Apple.
-# aapl_key_ratios = ib_client.fundamentals_key_ratios(conid='265598')
-# pprint(aapl_key_ratios)
-# pprint('')
+# Grab Key Ratios for Apple.
+aapl_key_ratios = ib_client.fundamentals_key_ratios(conid='265598')
+pprint(aapl_key_ratios)
+pprint('')
 
 # # Grab Dividends for Apple.
 # aapl_dividends = ib_client.fundamentals_dividends(conid='265598')

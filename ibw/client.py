@@ -9,6 +9,7 @@ import certifi
 import logging
 import pathlib
 import requests
+import textwrap
 import subprocess
 
 from typing import Union
@@ -36,10 +37,10 @@ logging.basicConfig(
     level=logging.DEBUG
 )
 
+
 class IBClient():
 
-    def __init__(self, username: str, account: str, client_gateway_path: str = None) -> None:
-        
+    def __init__(self, username: str, account: str, client_gateway_path: str = None, is_server_running: bool = True) -> None:
         """Initalizes a new instance of the IBClient Object.
 
         Arguments:
@@ -74,12 +75,15 @@ class IBClient():
         self._operating_system = sys.platform
         self.session_state_path: pathlib.Path = pathlib.Path(__file__).parent.joinpath('server_session.json').resolve()
         self.authenticated = False
+        self._is_server_running = is_server_running
 
         # Define URL Components
         ib_gateway_host = r"https://localhost"
         ib_gateway_port = r"5000"
         self.ib_gateway_path = ib_gateway_host + ":" + ib_gateway_port
-        self.backup_gateway_path = r"https://cdcdyn.interactivebrokers.com/portal.proxy"     
+        self.backup_gateway_path = r"https://cdcdyn.interactivebrokers.com/portal.proxy"
+        self.login_gateway_path = self.ib_gateway_path + "/sso/Login?forwardTo=22&RL=1&ip2loc=on"
+
 
         if client_gateway_path is None:
 
@@ -93,51 +97,35 @@ class IBClient():
                 print("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
                 print("Downloading the Client Portal file...")
                 self.client_portal_client.download_and_extract()
-        
+                        
         else:
+
             self.client_portal_folder = client_gateway_path
 
-        # Log the initial Info.
-        logging.info('''
-        Operating System: {op_sys}
-        Session State Path: {state_path}
-        Client Portal Folder: {client_path}
-        '''.format(
-            op_sys=self._operating_system,
-            state_path=self.session_state_path,
-            client_path=self.client_portal_folder
+        if not self._is_server_running:
+
+            # Load the Server State.
+            self.server_process = self._server_state(action='load')
+
+            # Log the initial Info.
+            logging.info(textwrap.dedent('''
+            =================
+            Initialize Client:
+            =================
+            Server Process: {serv_proc}
+            Operating System: {op_sys}
+            Session State Path: {state_path}
+            Client Portal Folder: {client_path}
+            ''').format(
+                    serv_proc=self.server_process,
+                    op_sys=self._operating_system,
+                    state_path=self.session_state_path,
+                    client_path=self.client_portal_folder
+                )
             )
-        )
+        else:
+            self.server_process = None
 
-        # Load the Server State.
-        self.server_process = self._server_state(action='load')        
-
-        # Log the response.
-        logging.debug('''
-            Server Prcoess Init: {serv_proc}
-            '''.format(serv_proc=self.server_process)
-        )
-
-        # Log the initial Info.
-        logging.info('''
-        Operating System: {op_sys}
-        Session State Path: {state_path}
-        Client Portal Folder: {client_path}
-        '''.format(
-            op_sys=self._operating_system,
-            state_path=self.session_state_path,
-            client_path=self.client_portal_folder
-            )
-        )
-
-        # Load the Server State.
-        self.server_process = self._server_state(action='load')        
-
-        # Log the response.
-        logging.debug('''
-            Server Prcoess Init: {serv_proc}
-            '''.format(serv_proc=self.server_process)
-        )
 
     def create_session(self, set_server=True) -> bool:
         """Creates a new session.
@@ -160,16 +148,13 @@ class IBClient():
         ----
         bool -- True if the session was created, False if wasn't created.
         """
-          
-        # Log the process ID.
-        logging.info('Server Process: {serv_proc}'.format(serv_proc=self.server_process))
 
         # first let's check if the server is running, if it's not then we can start up.
-        if self.server_process is None:
-            
+        if self.server_process is None and not self._is_server_running:
+
             # If it's None we need to connect first.
             if set_server:
-                self.connect(start_server=True)
+                self.connect(start_server=True, check_user_input=True)
             else:
                 self.connect(start_server=True, check_user_input=False)
                 return True
@@ -178,65 +163,97 @@ class IBClient():
             if self._set_server():
                 return True
 
-
-        # more than likely it's running let's try and see if we can authenticate.
+        # Try and authenticate.
         auth_response = self.is_authenticated()
 
-        if 'authenticated' in auth_response.keys() and auth_response['authenticated'] == True:
+        # Log the initial Info.
+        logging.info(textwrap.dedent('''
+        =================
+        Create Session:
+        =================
+        Auth Response: {auth_resp}
+        ''').format(
+                auth_resp=auth_response,
+            )
+        )
 
-            if self._set_server():
-                self.authenticated = True
-                return True
-
+        # Finally make sure we are authenticated.
+        if 'authenticated' in auth_response.keys() and auth_response['authenticated'] and self._set_server():
+            self.authenticated = True
+            return True
         else:
-
-            # in this case don't connect, but prompt the user to log in again.
+            # In this case don't connect, but prompt the user to log in again.
             self.connect(start_server=False)
-
+            
             if self._set_server():
                 self.authenticated = True
                 return True
 
     def _set_server(self) -> bool:
         """Sets the server info for the session.
-        
+
         Sets the Server for the session, and if the server cannot be set then
         script will halt. Otherwise will return True to continue on in the script.
-        
+
         Returns:
         ----
         bool -- True if the server was set, False if wasn't
         """
-
-        server_update_content = self.update_server_account(account_id = self.account, check = False)
-        server_account_content = self.server_accounts()
-
         success = '\nNew session has been created and authenticated. Requests will not be limited.\n'.upper()
         failure = '\nCould not create a new session that was authenticated, exiting script.\n'.upper()
 
-        # Log the response.
-        logging.debug('''
-            Server Update Response: {auth_resp}
-            Server Response: {serv_resp}
-            '''.format(
-                auth_resp=server_update_content,
-                serv_resp=server_account_content
-            )
-        )
+        # Grab the Server accounts.
+        server_account_content = self.server_accounts()
 
-        # TO DO: Add check market hours here and then check for a mutual fund.
-        if 'accounts' in self.server_accounts():
-            print(success)
-            return True
-        if server_account_content is not None and 'set' in server_update_content.keys() and server_update_content['set'] == True:
-            print(success)
-            return True
-        elif ('message' in server_update_content.keys()) and (server_update_content['message'] == 'Account already set'):
-            print(success)
-            return True
+        # Try to do the quick way.
+        if (server_account_content and 'accounts' in server_account_content):
+            accounts = server_account_content['accounts']
+            if self.account in accounts:
+
+                # Log the response.
+                logging.debug(textwrap.dedent('''
+                =================
+                Set Server:
+                =================
+                Server Response: {serv_resp}
+                ''').format(
+                        serv_resp=server_account_content
+                    )
+                )
+
+                print(success)
+                return True
         else:
-            print(failure)
-            sys.exit()
+
+            # Update the Server.
+            server_update_content = self.update_server_account(
+                account_id=self.account,
+                check=False
+            )
+
+            # Grab the accounts.
+            server_account_content = self.server_accounts()
+
+            # Log the response.
+            logging.debug(textwrap.dedent('''
+            =================
+            Set Server:
+            =================
+            Server Response: {serv_resp}
+            Server Update Response: {auth_resp}
+            ''').format(
+                    auth_resp=server_update_content,
+                    serv_resp=server_account_content
+                )
+            )
+
+            # TO DO: Add check market hours here and then check for a mutual fund.
+            if (server_account_content and 'accounts' in server_account_content) or (server_update_content and 'message' in server_update_content):
+                print(success)
+                return True
+            else:
+                print(failure)
+                sys.exit()
 
     def _server_state(self, action: str = 'save') -> Union[None, int]:
         """Determines the server state.
@@ -261,10 +278,13 @@ class IBClient():
         file_exists = self.session_state_path.exists()
 
         # Log the response.
-        logging.debug('''
-            Server State: {state}
-            State File: {exist}
-            '''.format(
+        logging.debug(textwrap.dedent('''
+        =================
+        Server State:
+        =================
+        Server State: {state}
+        State File: {exist}
+        ''').format(
                 state=action,
                 exist=file_exists
             )
@@ -274,11 +294,20 @@ class IBClient():
 
             # Save the State.
             with open(self.session_state_path, 'w') as server_file:
-                json.dump(obj={'server_process_id': self.server_process}, fp=server_file)
+                json.dump(
+                    obj={'server_process_id': self.server_process},
+                    fp=server_file
+                )
 
         # If we are loading check the file exists first.
         elif action == 'load' and file_exists:
-            
+
+            try:
+                self.is_authenticated(check=True)
+                check_proc_id = False
+            except:
+                check_proc_id = True
+
             # Load it.
             with open(self.session_state_path, 'r') as server_file:
                 server_state = json.load(fp=server_file)
@@ -287,7 +316,10 @@ class IBClient():
             proc_id = server_state['server_process_id']
 
             # If it's running return the process ID.
-            is_running = self._check_if_server_running(process_id=proc_id)
+            if check_proc_id:
+                is_running = self._check_if_server_running(process_id=proc_id)
+            else:
+                is_running = True
 
             if is_running:
                 return proc_id
@@ -296,28 +328,39 @@ class IBClient():
         elif action == 'delete' and file_exists:
             self.session_state_path.unlink()
 
-
     def _check_if_server_running(self, process_id: str) -> bool:
+        """Used to see if the Clientportal Gateway is running.
+
+        Arguments:
+        ----
+        process_id (str): The process ID of the clientportal.
+
+        Returns:
+        ----
+        bool: `True` if running, `False` otherwise.
+        """
 
         if self._operating_system == 'win32':
-        
+
             # See if the Process is running.
             with os.popen('tasklist') as task_list:
-                
+
                 # Grab each task.
-                for process in task_list.read().splitlines()[4:]:                    
+                for process in task_list.read().splitlines()[4:]:
 
                     if str(process_id) in process:
 
                         # Log the response.
-                        logging.debug('''
-                            Process ID Found: {process}
-                            '''.format(
+                        logging.debug(textwrap.dedent('''
+                            =================
+                            Server Process:
+                            =================
+                            Process ID: {process}
+                            ''').format(
                                 process=process
                             )
                         )
 
-                        process_details = process.split()
                         return True
 
         else:
@@ -327,7 +370,7 @@ class IBClient():
                 return True
             except OSError:
                 return False
- 
+
     def _check_authentication_user_input(self) -> bool:
         """Used to check the authentication of the Server.
 
@@ -335,20 +378,23 @@ class IBClient():
         ----
         bool: `True` if authenticated, `False` otherwise.
         """
-        
-        logging.debug('Running Client Folder at: {file_path}'.format(file_path=self.client_portal_folder))
 
         max_retries = 0
-
         while (max_retries > 4 or self.authenticated == False):
+            
+            # Grab the User Request.
+            user_input = input(
+                'Would you like to make an authenticated request (Yes/No)? '
+            ).upper()
 
-            user_input = input('Would you like to make an authenticated request (Yes/No)? ').upper()
-
+            # If no, close the session.
             if user_input == 'NO':
                 self.close_session()
+            # Else try and see if we are authenticated.
             else:
-                auth_response = self.is_authenticated()
-            
+                auth_response = self.is_authenticated(check=True)
+
+            # Log the Auth Response.
             logging.debug('Check User Auth Inital: {auth_resp}'.format(
                     auth_resp=auth_response
                 )
@@ -372,7 +418,7 @@ class IBClient():
                     if 'accounts' in serv_resp:
                         self.authenticated = True
 
-                        #  Log the response.
+                        # Log the response.
                         logging.debug('Had to do Server Account Request: {auth_resp}'.format(
                                 auth_resp=serv_resp
                             )
@@ -390,36 +436,51 @@ class IBClient():
                         reauth_resp=reauth_resp
                     )
                 )
-            
+
             max_retries += 1
-        
+
         return self.authenticated
 
     def _check_authentication_non_input(self) -> bool:
+        """Runs the authentication protocol but without user input.
 
-        auth_response = self.is_authenticated()
+        Returns:
+        ----
+        bool: `True` if authenticated, `False` otherwise.
+        """
 
+        # Grab the auth response.
+        auth_response = self.is_authenticated(check=True)
+
+        # Log the Auth response.
+        logging.debug('Check Non-User Auth Inital: {auth_resp}'.format(
+                auth_resp=auth_response
+            )
+        )
+
+        # Fail early, status code means we can't authenticate.
         if 'statusCode' in auth_response:
             print("Session isn't connected, closing script.")
             self.close_session()
 
-        elif 'authenticated' in auth_response and auth_response['authenticated']:
+        # Grab the Auth Response Flag.
+        auth_response_value = auth_response.get('authenticated', None)
+
+        # If it it's True we are good.
+        if auth_response_value:
             self.authenticated = True
 
-        elif 'authenticated' in auth_response and not auth_response['authenticated']:
+        # If not, try and reauthenticate.
+        elif not auth_response_value:
 
+            # Validate the session first.
             self.validate()
-            self.reauthenticate()
-            
-            if self.reauthenticate().get('message','Null') == 'triggered':
-                self.authenticated = True
-            else:
-                self.authenticated = False    
 
-        elif auth_response.get('authenticated','Null') in (False, 'Null') and auth_response.get('connected','Null') in (False, 'Null'):
-            
-            self.validate()
-            if self.reauthenticate() == True:
+            # Then reauthenticate the session.
+            reauth_response = self.reauthenticate()
+
+            # See if it was triggered.
+            if 'message' in reauth_response:
                 self.authenticated = True
             else:
                 self.authenticated = False
@@ -430,7 +491,7 @@ class IBClient():
         Returns:
         ----
         str: The Server Process ID.
-        """        
+        """
 
         # windows will use the command line application.
         if self._operating_system == 'win32':
@@ -443,7 +504,10 @@ class IBClient():
 
         # mac will use the terminal.
         elif self._operating_system == 'darwin':
-            IB_WEB_API_PROC = ["open", "-F", "-a", "Terminal", r"bin/run.sh", r"root/conf.yaml"]
+            IB_WEB_API_PROC = [
+                "open", "-F", "-a",
+                "Terminal", r"bin/run.sh", r"root/conf.yaml"
+            ]
             self.server_process = subprocess.Popen(
                 args=IB_WEB_API_PROC,
                 cwd=self.client_portal_folder
@@ -466,25 +530,30 @@ class IBClient():
         ----
         bool -- `True` if it was connected.
         """
-        
-        logging.debug('Running Client Folder at: {file_path}'.format(file_path=self.client_portal_folder))
+
+        logging.debug('Running Client Folder at: {file_path}'.format(
+            file_path=self.client_portal_folder))
 
         # If needed, start the server and save the State.
         if start_server:
-            server_state = self._start_server()
+            self._start_server()
             self._server_state(action='save')
 
         # Display prompt if needed.
         if check_user_input:
 
-            print("""{}
+            print(textwrap.dedent("""{lin_brk}
             The Interactive Broker server is currently starting up, so we can authenticate your session.
-                STEP 1: GO TO THE FOLLOWING URL: {}
+                STEP 1: GO TO THE FOLLOWING URL: {url}
                 STEP 2: LOGIN TO YOUR account WITH YOUR username AND PASSWORD.
                 STEP 3: WHEN YOU SEE `Client login succeeds` RETURN BACK TO THE TERMINAL AND TYPE `YES` TO CHECK IF THE SESSION IS AUTHENTICATED.
-                SERVER IS RUNNING ON PROCESS ID: {}
-            {}
-            """.format('-'*80, self.ib_gateway_path + "/sso/Login?forwardTo=22&RL=1&ip2loc=on", self.server_process, '-'*80)
+                SERVER IS RUNNING ON PROCESS ID: {proc_id}
+            {lin_brk}""".format(
+                        lin_brk='-'*80,
+                        url=self.login_gateway_path,
+                        proc_id=self.server_process
+                    )
+                )
             )
 
             # Check the auth status
@@ -501,20 +570,27 @@ class IBClient():
 
         print('\nCLOSING SERVER AND EXITING SCRIPT.')
 
-        # kill the process.
-        return_code = subprocess.call("TASKKILL /F /PID {} /T".format(self.server_process), creationflags=subprocess.DETACHED_PROCESS)
+        # Define the process.
+        process = "TASKKILL /F /PID {proc_id} /T".format(
+            proc_id=self.server_process
+        )
 
-        # delete the state
-        self._server_state(action ='delete')
+        # Kill the process.
+        subprocess.call(process, creationflags=subprocess.DETACHED_PROCESS)
+
+        # Delete the state
+        self._server_state(action='delete')
 
         # and exit.
         sys.exit()
 
     def _headers(self, mode: str = 'json') -> Dict:
-        """ 
-            Returns a dictionary of default HTTP headers for calls to TD Ameritrade API,
-            in the headers we defined the Authorization and access token.
-        
+        """Builds the headers.
+
+        Returns a dictionary of default HTTP headers for calls to Interactive 
+        Brokers API, in the headers we defined the Authorization and access 
+        token.
+
         Arguments:
         ----
         mode {str} -- Defines the content-type for the headers dictionary.
@@ -526,12 +602,17 @@ class IBClient():
         """
 
         if mode == 'json':
-            headers = {'Content-Type':'application/json'}
+            headers = {
+                'Content-Type': 'application/json'
+            }
         elif mode == 'form':
-            headers = {'Content-Type':'application/x-www-form-urlencoded'}
+            headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        elif mode == 'none':
+            headers = None
 
         return headers
-
 
     def _build_url(self, endpoint: str) -> str:
         """Builds a url for a request.
@@ -546,10 +627,14 @@ class IBClient():
         """
 
         # otherwise build the URL
-        return urllib.parse.unquote(urllib.parse.urljoin(self.ib_gateway_path, self.api_version) + r'portal/' + endpoint)
+        return urllib.parse.unquote(
+            urllib.parse.urljoin(
+                self.ib_gateway_path,
+                self.api_version
+            ) + r'portal/' + endpoint
+        )
 
-
-    def _make_request(self, endpoint: str, req_type: str, params: Dict = None) -> Dict:
+    def _make_request(self, endpoint: str, req_type: str, headers: str = 'json', params: dict = None, data: dict = None, json: dict = None) -> Dict:
         """Handles the request to the client.
 
         Handles all the requests made by the client and correctly organizes
@@ -566,69 +651,62 @@ class IBClient():
         params {dict} -- Any arguments that are to be sent along in the request. That
             could be parameters of a 'GET' request, or a data payload of a
             'POST' request.
-        
+
         Returns:
         ----
         {Dict} -- A response dictionary.
 
         """
+        # First build the url.
+        url = self._build_url(endpoint=endpoint)
 
-        # first build the url
-        url = self._build_url(endpoint = endpoint)
+        # Define the headers.
+        headers = self._headers(mode=headers)
 
-        # Scenario 1: POST with a payload.
-        if req_type == 'POST'and params is not None:
-
-            # make sure it's a JSON String
-            headers = self._headers(mode = 'json')
-
-            # grab the response.
-            response = requests.post(url, headers = headers, json=params, verify = False)
-
-        # SCENARIO 2: POST without a payload.
-        elif req_type == 'POST'and params is None:
-
-            # grab the response.
-            response = requests.post(url, headers = self._headers(mode = 'json'), verify = False)
-
-        # SCENARIO 3: GET without parameters.
-        elif req_type == 'GET' and params is None:
-
-            # grab the response.
-            response = requests.get(url, headers = self._headers(mode = 'json'), verify = False)
-
-         # SCENARIO 3: GET with parameters.
-        elif req_type == 'GET' and params is not None:
-
-            # grab the response.
-            response = requests.get(url, headers = self._headers(mode = 'json'), params = params, verify = False)
+        # Make the request.
+        if req_type == 'POST':
+            response = requests.post(url=url, headers=headers, params=params, json=json, verify=False)
+        elif req_type == 'GET':
+            response = requests.get(url=url, headers=headers, params=params, json=json, verify=False)
+        elif req_type == 'DELETE':
+            response = requests.delete(url=url, headers=headers, params=params, json=json, verify=False)
 
         # grab the status code
         status_code = response.status_code
 
         # grab the response headers.
         response_headers = response.headers
-
+        
         # Check to see if it was successful
         if response.ok:
 
             if response_headers.get('Content-Type','null') == 'application/json;charset=utf-8':
-                return response.json()
+                data = response.json()
             else:
-                return response.json()
+                data = response.json()
+
+            # Log it.
+            logging.debug('''
+            Response Text: {resp_text}
+            Response URL: {resp_url}
+            Response Code: {resp_code}
+            Response JSON: {resp_json}
+            Response Headers: {resp_headers}
+            '''.format(
+                    resp_text=response.text,
+                    resp_url=response.url,
+                    resp_code=status_code,
+                    resp_json=data,
+                    resp_headers=response_headers
+                )
+            )
+
+            return data
 
         # if it was a bad request print it out.
         elif not response.ok and url != 'https://localhost:5000/v1/portal/iserver/account':
-
-            print('')
-            print('-'*80)
-            print("BAD REQUEST - STATUS CODE: {}".format(status_code))
-            print("RESPONSE URL: {}".format(response.url))
-            print("RESPONSE HEADERS: {}".format(response.headers))
-            print("RESPONSE TEXT: {}".format(response.text))
-            print('-'*80)
-            print('')
-
+            print(url)
+            raise requests.HTTPError()
 
     def _prepare_arguments_list(self, parameter_list: List[str]) -> str:
         """Prepares the arguments for the request.
@@ -645,7 +723,7 @@ class IBClient():
         Usage:
         ----
             >>> SessionObject._prepare_arguments_list(parameter_list=['MSFT','SQ'])
-        
+
         Returns:
         ----
         {str} -- The joined list.
@@ -665,17 +743,18 @@ class IBClient():
         SESSION ENDPOINTS
     """
 
-
     def validate(self) -> Dict:
         """Validates the current session for the SSO user."""
 
         # define request components
         endpoint = r'sso/validate'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def tickle(self) -> Dict:
         """Keeps the session open.
@@ -688,67 +767,93 @@ class IBClient():
         # define request components
         endpoint = r'tickle'
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def logout(self) -> Dict:
         """Logs the session out.
 
-        Logs the user out of the gateway session. Any further activity requires 
-        re-authentication.
+        Overview:
+        ----
+        Logs the user out of the gateway session. Any further 
+        activity requires re-authentication.
+
+        Returns:
+        ----
+        (dict): A logout response.
         """
 
-        # https://cdcdyn.interactivebrokers.com/portal.proxy/v1/portal/logout
-        # https://cdcdyn.interactivebrokers.com/portal.proxy/v1/ibcust/logout
-        # https://cdcdyn.interactivebrokers.com/sso/Logout?RL=1
-
-        # define request components
+        # Define request components.
         endpoint = r'logout'
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def reauthenticate(self) -> Dict:
         """Reauthenticates an existing session.
 
-        Provides a way to reauthenticate to the Brokerage system as long as there 
-        is a valid SSO session, see /sso/validate.
+        Overview:
+        ----
+        Provides a way to reauthenticate to the Brokerage 
+        system as long as there is a valid SSO session, 
+        see /sso/validate.
+
+        Returns:
+        ----
+        (dict): A reauthentication response.        
         """
 
-        # define request components
+        # Define request components.
         endpoint = r'iserver/reauthenticate'
         req_type = 'POST'
 
-        # this is special, I don't want the JSON content right away.
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
-        
+        # Make the request.
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
+
         return content
 
-    def is_authenticated(self) -> Dict:
+    def is_authenticated(self, check: bool = False) -> Dict:
         """Checks if session is authenticated.
 
+        Overview:
+        ----
         Current Authentication status to the Brokerage system. Market Data and 
         Trading is not possible if not authenticated, e.g. authenticated 
         shows `False`.
+
+        Returns:
+        ----
+        (dict): A dictionary with an authentication flag.   
         """
 
         # define request components
         endpoint = 'iserver/auth/status'
-        req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+
+        if not check:
+            req_type = 'POST'
+        else:
+            req_type = 'GET'
+
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            headers='none'
+        )
 
         return content
 
-
-    """
-        FUNDAMENTAL DATA ENDPOINTS
-    """
-
-    def fundamentals_summary(self, conid: str) -> Dict:
+    def _fundamentals_summary(self, conid: str) -> Dict:
         """Grabs a financial summary of a company.
 
         Return a financial summary for specific Contract ID. The financial summary
@@ -766,29 +871,34 @@ class IBClient():
         # define request components
         endpoint = 'iserver/fundamentals/{}/summary'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
-    def fundamentals_financials(self, conid: str, financial_statement: str, period: str = 'annual') -> Dict:
-        """
-            Return a financial summary for specific Contract ID. The financial summary
-            includes key ratios and descriptive components of the Contract ID.
+    def _fundamentals_financials(self, conid: str, financial_statement: str, period: str = 'annual') -> Dict:
+        """Grabs fundamental financial data.
 
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
+        Overview:
+        ----
+        Return a financial summary for specific Contract ID. The financial summary
+        includes key ratios and descriptive components of the Contract ID.
 
-            NAME: financial_statement
-            DESC: The specific financial statement you wish to request for the Contract ID. Possible
-                  values are ['balance','cash','income']
-            TYPE: String
+        Arguments:
+        ----
+        conid (str): The contract ID.
 
-            NAME: period
-            DESC: The specific period you wish to see. Possible values are ['annual','quarter']
-            TYPE: String
+        financial_statement (str): The specific financial statement you wish to request 
+            for the Contract ID. Possible values are ['balance','cash','income']
 
-            RTYPE: Dictionary
+        period (str, optional): The specific period you wish to see. 
+            Possible values are ['annual','quarter']. Defaults to 'annual'.
+
+        Returns:
+        ----
+        Dict: Financial data for the specified contract ID.
         """
 
         # define the period
@@ -799,18 +909,70 @@ class IBClient():
 
         # Build the arguments.
         params = {
-            'type':financial_statement,
-            'annual':period
+            'type': financial_statement,
+            'annual': period
         }
 
         # define request components
-        endpoint = 'fundamentals/financials/{}'.format(conid)
+        endpoint = 'tws.proxy/fundamentals/financials/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-    def fundamentals_key_ratios(self, conid: str) -> Dict:
+    def _fundamentals_key_ratios(self, conid: str) -> Dict:
+        """Returns analyst ratings for a specific conid.
+
+            NAME: conid
+            DESC: The contract ID.
+            TYPE: String
+        """
+
+        # Build the arguments.
+        params = {
+            'widgets': 'key_ratios'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
+
+        return content
+
+    def _fundamentals_dividends(self, conid: str) -> Dict:
+        """Returns analyst ratings for a specific conid.
+
+        NAME: conid
+        DESC: The contract ID.
+        TYPE: String
+        """
+
+        # Build the arguments.
+        params = {
+            'widgets': 'dividends'
+        }
+
+        # define request components
+        endpoint = 'fundamentals/landing/{}'.format(conid)
+        req_type = 'GET'
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
+
+        return content
+
+    def _fundamentals_esg(self, conid: str) -> Dict:
         """
             Returns analyst ratings for a specific conid.
 
@@ -822,65 +984,21 @@ class IBClient():
 
         # Build the arguments.
         params = {
-            'widgets':'key_ratios'
+            'widgets': 'esg'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-    def fundamentals_dividends(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
-
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
-        """
-
-        # Build the arguments.
-        params = {
-            'widgets':'dividends'
-        }
-
-        # define request components
-        endpoint = 'fundamentals/landing/{}'.format(conid)
-        req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
-
-        return content
-
-    def fundamentals_esg(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
-
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
-        """
-
-        # Build the arguments.
-        params = {
-            'widgets':'esg'
-        }
-
-        # define request components
-        endpoint = 'fundamentals/landing/{}'.format(conid)
-        req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
-
-        return content
-
-    """
-        DATA ENDPOINTS
-    """
-
-    def data_news(self, conid: str) -> Dict:
+    def _data_news(self, conid: str) -> Dict:
         """
             Return a financial summary for specific Contract ID. The financial summary
             includes key ratios and descriptive components of the Contract ID.
@@ -888,129 +1006,142 @@ class IBClient():
             NAME: conid
             DESC: The contract ID.
             TYPE: String
-
         """
 
         # Build the arguments.
         params = {
-            'widgets':'news',
-            'lang':'en'
+            'widgets': 'news',
+            'lang': 'en'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-    def data_ratings(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
+    def _data_ratings(self, conid: str) -> Dict:
+        """Returns analyst ratings for a specific conid.
 
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
+        NAME: conid
+        DESC: The contract ID.
+        TYPE: String
         """
 
         # Build the arguments.
         params = {
-            'widgets':'ratings'
+            'widgets': 'ratings'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
     def _data_events(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
+        """Returns analyst ratings for a specific conid.
 
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
+        NAME: conid
+        DESC: The contract ID.
+        TYPE: String
         """
 
         # Build the arguments.
         params = {
-            'widgets':'ratings'
+            'widgets': 'ratings'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-    def data_ownership(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
+    def _data_ownership(self, conid: str) -> Dict:
+        """Returns analyst ratings for a specific conid.
 
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
+        NAME: conid
+        DESC: The contract ID.
+        TYPE: String
         """
 
         # Build the arguments.
         params = {
-            'widgets':'ownership'
+            'widgets': 'ownership'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-    def data_competitors(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
+    def _data_competitors(self, conid: str) -> Dict:
+        """Returns analyst ratings for a specific conid.
 
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
+        NAME: conid
+        DESC: The contract ID.
+        TYPE: String
         """
 
         # Build the arguments.
         params = {
-            'widgets':'competitors'
+            'widgets': 'competitors'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-    def data_analyst_forecast(self, conid: str) -> Dict:
-        """
-            Returns analyst ratings for a specific conid.
+    def _data_analyst_forecast(self, conid: str) -> Dict:
+        """Returns analyst ratings for a specific conid.
 
-            NAME: conid
-            DESC: The contract ID.
-            TYPE: String
-
+        NAME: conid
+        DESC: The contract ID.
+        TYPE: String
         """
 
         # Build the arguments.
         params = {
-            'widgets':'analyst_forecast'
+            'widgets': 'analyst_forecast'
         }
 
         # define request components
         endpoint = 'fundamentals/landing/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
@@ -1035,7 +1166,6 @@ class IBClient():
             NAME: fields
             DESC: List of fields you wish to retrieve for each quote.
             TYPE: List<String>
-
         """
 
         # define request components
@@ -1043,7 +1173,7 @@ class IBClient():
         req_type = 'GET'
 
         # join the two list arguments so they are both a single string.
-        conids_joined = self._prepare_arguments_list(parameter_list = conids)
+        conids_joined = self._prepare_arguments_list(parameter_list=conids)
 
         if fields is not None:
             fields_joined = ",".join(str(n) for n in fields)
@@ -1053,17 +1183,21 @@ class IBClient():
         # define the parameters
         if since is None:
             params = {
-                'conids':conids_joined,
-                'fields':fields_joined
+                'conids': conids_joined,
+                'fields': fields_joined
             }
         else:
             params = {
-                'conids':conids_joined,
-                'since':since,
-                'fields':fields_joined
+                'conids': conids_joined,
+                'since': since,
+                'fields': fields_joined
             }
 
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
@@ -1086,44 +1220,42 @@ class IBClient():
             DESC: Specifies granularity of data. For example, if bar = '1h' the data will be at an hourly level.
                   Possible values are ['5min','1h','1w']
             TYPE: String
-
         """
 
         # define request components
         endpoint = 'iserver/marketdata/history'
         req_type = 'GET'
         params = {
-            'conid':conid,
-            'period':period,
-            'bar':bar
+            'conid': conid,
+            'period': period,
+            'bar': bar
         }
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = params)
+
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
 
-
-    """
-        SERVER ACCOUNTS ENDPOINTS
-    """
-
-
     def server_accounts(self):
         """
-
             Returns a list of accounts the user has trading access to, their
             respective aliases and the currently selected account. Note this
             endpoint must be called before modifying an order or querying
             open orders.
-
         """
 
         # define request components
         endpoint = 'iserver/accounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def update_server_account(self, account_id: str, check: bool = False) -> Dict:
         """
@@ -1136,14 +1268,13 @@ class IBClient():
             DESC: The account ID you wish to set for the API Session. This will be used to
                   grab historical data and make orders.
             TYPE: String
-
         """
 
         # define request components
         endpoint = 'iserver/account'
         req_type = 'POST'
         params = {
-            'acctId':account_id
+            'acctId': account_id
         }
 
         content = self._make_request(
@@ -1154,35 +1285,40 @@ class IBClient():
 
         return content
 
-
     def server_account_pnl(self):
         """
-            Returns an object containing PnLfor the selected account and its models 
-            (if any).
+        Returns an object containing PnLfor the selected account and its models 
+        (if any).
         """
 
         # define request components
         endpoint = 'iserver/account/pnl/partitioned'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
-    """
-        CONTRACT ENDPOINTS
-    """
-
     def symbol_search(self, symbol: str) -> Dict:
         """
-            Performs a symbol search for a given symbol and returns information related to the
-            symbol including the contract id.
+            Performs a symbol search for a given symbol and returns 
+            information related to the symbol including the contract id.
         """
 
         # define the request components
         endpoint = 'iserver/secdef/search'
         req_type = 'POST'
-        payload = {'symbol':symbol}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params= payload)
+        payload = {
+            'symbol': symbol
+        }
+
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=payload
+        )
 
         return content
 
@@ -1198,9 +1334,12 @@ class IBClient():
         """
 
         # define the request components
-        endpoint = '/iserver/contract/{conid}/info'.format(conid = conid)
+        endpoint = '/iserver/contract/{conid}/info'.format(conid=conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
@@ -1215,13 +1354,18 @@ class IBClient():
             RTYPE: Dictionary
         """
 
-        # define the request components
+        # Define the request components.
         endpoint = '/trsrv/secdef'
         req_type = 'POST'
         payload = {
-            'conids':conids
-            }
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+            'conids': conids
+        }
+
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=payload
+        )
 
         return content
 
@@ -1239,11 +1383,18 @@ class IBClient():
         # define the request components
         endpoint = '/trsrv/futures'
         req_type = 'GET'
-        payload = {'symbols':"{}".format(','.join(symbols))}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+        params = {
+            'symbols': '{}'.format(','.join(symbols))
+        }
 
-        return content        
-        
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
+
+        return content
+
     def symbols_search_list(self, symbols: List[str]) -> Dict:
         """
             Returns a list of non-expired future contracts for given symbol(s).
@@ -1258,15 +1409,14 @@ class IBClient():
         # define the request components
         endpoint = '/trsrv/stocks'
         req_type = 'GET'
-        payload = {'symbols':'{}'.format(','.join(symbols))}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+        params = {'symbols': '{}'.format(','.join(symbols))}
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
-        return content     
-
-    """
-        PORTFOLIO ACCOUNTS ENDPOINTS
-    """
-
+        return content
 
     def portfolio_accounts(self):
         """
@@ -1281,10 +1431,12 @@ class IBClient():
         # define request components
         endpoint = 'portfolio/accounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def portfolio_sub_accounts(self):
         """
@@ -1298,10 +1450,12 @@ class IBClient():
         # define request components
         endpoint = r'​portfolio/subaccounts'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def portfolio_account_info(self, account_id: str) -> Dict:
         """
@@ -1313,16 +1467,17 @@ class IBClient():
             NAME: account_id
             DESC: The account ID you wish to return info for.
             TYPE: String
-
         """
 
         # define request components
         endpoint = r'portfolio/{}/meta'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def portfolio_account_summary(self, account_id: str) -> Dict:
         """
@@ -1334,16 +1489,14 @@ class IBClient():
             NAME: account_id
             DESC: The account ID you wish to return info for.
             TYPE: String
-
         """
 
         # define request components
         endpoint = r'portfolio/{}/summary'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(endpoint=endpoint, req_type=req_type)
 
         return content
-
 
     def portfolio_account_ledger(self, account_id: str) -> Dict:
         """
@@ -1355,16 +1508,17 @@ class IBClient():
             NAME: account_id
             DESC: The account ID you wish to return info for.
             TYPE: String
-
         """
 
         # define request components
         endpoint = r'portfolio/{}/ledger'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def portfolio_account_allocation(self, account_id: str) -> Dict:
         """
@@ -1375,16 +1529,17 @@ class IBClient():
             NAME: account_id
             DESC: The account ID you wish to return info for.
             TYPE: String
-
         """
 
         # define request components
         endpoint = r'portfolio/{}/allocation'.format(account_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def portfolio_accounts_allocation(self, account_ids: List[str]) -> Dict:
         """
@@ -1395,17 +1550,19 @@ class IBClient():
             NAME: account_ids
             DESC: A list of Account IDs you wish to return alloacation info for.
             TYPE: List<String>
-
         """
 
         # define request components
         endpoint = r'portfolio/allocation'
         req_type = 'POST'
         payload = account_ids
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=payload
+        )
 
         return content
-
 
     def portfolio_account_positions(self, account_id: str, page_id: int = 0) -> Dict:
         """
@@ -1422,20 +1579,18 @@ class IBClient():
                   default value is `0`.
             TYPE: String
 
-
             ADDITIONAL ARGUMENTS NEED TO BE ADDED!!!!!
         """
 
         # define request components
         endpoint = r'portfolio/{}/positions/{}'.format(account_id, page_id)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
-    #
-    #   RENAME THIS
-    #
 
     def portfolio_account_position(self, account_id: str, conid: str) -> Dict:
         """
@@ -1451,19 +1606,17 @@ class IBClient():
             NAME: conid
             DESC: The contract ID you wish to find matching positions for.
             TYPE: String
-
         """
 
-        # define request components
+        # Define request components.
         endpoint = r'portfolio/{}/position/{}'.format(account_id, conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
-    #
-    #   GET MORE DETAILS ON THIS
-    #
 
     def portfolio_positions_invalidate(self, account_id: str) -> Dict:
         """
@@ -1472,16 +1625,17 @@ class IBClient():
             NAME: account_id
             DESC: The account ID you wish to return positions for.
             TYPE: String
-
         """
-        
-        # define request components
+
+        # Define request components.
         endpoint = r'portfolio/{}/positions/invalidate'.format(account_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def portfolio_positions(self, conid: str) -> Dict:
         """
@@ -1495,18 +1649,15 @@ class IBClient():
             TYPE: String          
         """
 
-        # define request components
+        # Define request components.
         endpoint = r'portfolio/positions/{}'.format(conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
-
-    """
-        TRADES ENDPOINTS
-    """
-
 
     def trades(self):
         """
@@ -1514,18 +1665,15 @@ class IBClient():
             six previous days.
         """
 
-         # define request components
+        # define request components
         endpoint = r'iserver/account/trades'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
-
-    """
-        ORDERS ENDPOINTS
-    """
-
 
     def get_live_orders(self):
         """
@@ -1534,16 +1682,17 @@ class IBClient():
             other is orders. Orders is the list of orders (cancelled, filled, submitted) 
             with activity in the current day. Notifications contains information about 
             execute orders as they happen, see status field.
-
         """
 
         # define request components
         endpoint = r'iserver/account/orders'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
-
 
     def place_order(self, account_id: str, order: dict) -> Dict:
         """
@@ -1559,7 +1708,6 @@ class IBClient():
             NAME: order
             DESC: Either an IBOrder object or a dictionary with the specified payload.
             TYPE: IBOrder or Dict
-
         """
 
         if type(order) is dict:
@@ -1570,10 +1718,13 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/order'.format(account_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=order
+        )
 
         return content
-
 
     def place_orders(self, account_id: str, orders: List[Dict]) -> Dict:
         """
@@ -1587,7 +1738,6 @@ class IBClient():
             NAME: orders
             DESC: Either a list of IBOrder objects or a list of dictionaries with the specified payload.
             TYPE: List<IBOrder Object> or List<Dictionary>
-
         """
 
         # EXTENDED THIS
@@ -1599,7 +1749,11 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/orders'.format(account_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = orders)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=orders
+        )
 
         return content
 
@@ -1615,7 +1769,6 @@ class IBClient():
             NAME: order
             DESC: Either an IBOrder object or a dictionary with the specified payload.
             TYPE: IBOrder or Dict
-
         """
 
         if type(order) is dict:
@@ -1626,13 +1779,16 @@ class IBClient():
         # define request components
         endpoint = r'iserver/account/{}/order/whatif'.format(account_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=order
+        )
 
         return content
 
-
     def place_order_reply(self, reply_id: str = None, reply: str = None):
-        '''
+        """
             An extension of the `place_order` endpoint but allows for a list of orders. Those orders may be
             either a list of dictionary objects or a list of IBOrder objects.
 
@@ -1643,8 +1799,7 @@ class IBClient():
             NAME: orders
             DESC: Either a list of IBOrder objects or a list of dictionaries with the specified payload.
             TYPE: List<IBOrder Object> or List<Dictionary>
-
-        '''
+        """
 
         # define request components
         endpoint = r'iserver/reply/{}'.format(reply_id)
@@ -1653,7 +1808,11 @@ class IBClient():
             'confirmed': reply
         }
 
-        content = self._make_request(endpoint=endpoint, req_type=req_type, json=reply)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=reply
+        )
 
         return content
 
@@ -1673,7 +1832,6 @@ class IBClient():
             NAME: order
             DESC: Either an IBOrder object or a dictionary with the specified payload.
             TYPE: IBOrder or Dict
-
         """
 
         if type(order) is dict:
@@ -1682,78 +1840,80 @@ class IBClient():
             order = order.create_order()
 
         # define request components
-        endpoint = r'iserver/account/{}/order/{}'.format(account_id, customer_order_id)
+        endpoint = r'iserver/account/{}/order/{}'.format(
+            account_id, customer_order_id)
         req_type = 'POST'
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = order)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=order
+        )
 
         return content
-
 
     def delete_order(self, account_id: str, customer_order_id: str) -> Dict:
+        """Deletes the order specified by the customer order ID.
+
+        NAME: account_id
+        DESC: The account ID you wish to place an order for.
+        TYPE: String
+
+        NAME: customer_order_id
+        DESC: The customer order ID for the order you wish to DELETE.
+        TYPE: String
         """
-            Deletes the order specified by the customer order ID.
 
-            NAME: account_id
-            DESC: The account ID you wish to place an order for.
-            TYPE: String
-
-            NAME: customer_order_id
-            DESC: The customer order ID for the order you wish to DELETE.
-            TYPE: String
-
-        """
         # define request components
-        endpoint = r'iserver/account/{}/order/{}'.format(account_id, customer_order_id)
+        endpoint = r'iserver/account/{}/order/{}'.format(
+            account_id, customer_order_id)
         req_type = 'DELETE'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
-
-    """
-        ORDERS ENDPOINTS
-    """
-
-
     def get_scanners(self):
-        """
-            Returns an object contains four lists contain all parameters for scanners.
+        """Returns an object contains four lists contain all parameters for scanners.
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
         # define request components
         endpoint = r'iserver/scanner/params'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
     def run_scanner(self, instrument: str, scanner_type: str, location: str, size: str = '25', filters: List[dict] = None) -> Dict:
-        """
-            Run a scanner to get a list of contracts.
+        """Run a scanner to get a list of contracts.
 
-            NAME: instrument
-            DESC: The type of financial instrument you want to scan for.
-            TYPE: String
+        NAME: instrument
+        DESC: The type of financial instrument you want to scan for.
+        TYPE: String
 
-            NAME: scanner_type
-            DESC: The Type of scanner you wish to run, defined by the scanner code.
-            TYPE: String
+        NAME: scanner_type
+        DESC: The Type of scanner you wish to run, defined by the scanner code.
+        TYPE: String
 
-            NAME: location
-            DESC: The geographic location you wish to run the scan. For example (STK.US.MAJOR)
-            TYPE: String
+        NAME: location
+        DESC: The geographic location you wish to run the scan. For example (STK.US.MAJOR)
+        TYPE: String
 
-            NAME: size
-            DESC: The number of results to return back. Defaults to 25.
-            TYPE: String
+        NAME: size
+        DESC: The number of results to return back. Defaults to 25.
+        TYPE: String
 
-            NAME: filters
-            DESC: A list of dictionaries where the key is the filter you wish to set and the value is the value you want set
-                  for that filter.
-            TYPE: List<Dictionaries>
+        NAME: filters
+        DESC: A list of dictionaries where the key is the filter you wish to set and the value is the value you want set
+            for that filter.
+        TYPE: List<Dictionaries>
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
@@ -1762,184 +1922,208 @@ class IBClient():
         payload = {
             "instrument": instrument,
             "type": scanner_type,
-            "filter":filters,
+            "filter": filters,
             "location": location,
             "size": size
         }
-        print(payload)
 
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=payload
+        )
 
         return content
 
-    def customer_info(self):
-        """
-            Returns Applicant Id with all owner related entities     
+    def customer_info(self) -> Dict:
+        """Returns Applicant Id with all owner related entities     
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'ibcust/entity/info'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
-    def get_unread_messages(self):
-        """
-            Returns the unread messages associated with the account.
+    def get_unread_messages(self) -> Dict:
+        """Returns the unread messages associated with the account.
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'fyi/unreadnumber'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
-    def get_subscriptions(self):
-        """
-            Return the current choices of subscriptions, we can toggle the option.
+    def get_subscriptions(self) -> Dict:
+        """Return the current choices of subscriptions, we can toggle the option.
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'fyi/settings'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
     def change_subscriptions_status(self, type_code: str, enable: bool = True) -> Dict:
-        """
-            Turns the subscription on or off.
+        """Turns the subscription on or off.
 
-            NAME: type_code
-            DESC: The subscription code you wish to change the status for.
-            TYPE: String
+        NAME: type_code
+        DESC: The subscription code you wish to change the status for.
+        TYPE: String
 
-            NAME: enable
-            DESC: True if you want the subscription turned on, False if you want it turned of.
-            TYPE: Boolean
+        NAME: enable
+        DESC: True if you want the subscription turned on, False if you want it turned of.
+        TYPE: Boolean
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'fyi/settings/{}'
         req_type = 'POST'
         payload = {'enable': enable}
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            json=payload
+        )
 
         return content
 
     def subscriptions_disclaimer(self, type_code: str) -> Dict:
-        """
-            Returns the disclaimer for the specified subscription.
+        """Returns the disclaimer for the specified subscription.
 
-            NAME: type_code
-            DESC: The subscription code you wish to change the status for.
-            TYPE: String
+        NAME: type_code
+        DESC: The subscription code you wish to change the status for.
+        TYPE: String
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'fyi/disclaimer/{}'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
     def mark_subscriptions_disclaimer(self, type_code: str) -> Dict:
-        """
-            Sets the specified disclaimer to read.
+        """Sets the specified disclaimer to read.
 
-            NAME: type_code
-            DESC: The subscription code you wish to change the status for.
-            TYPE: String
+        NAME: type_code
+        DESC: The subscription code you wish to change the status for.
+        TYPE: String
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'fyi/disclaimer/{}'
         req_type = 'PUT'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
     def subscriptions_delivery_options(self):
-        """
-            Options for sending fyis to email and other devices.
+        """Options for sending fyis to email and other devices.
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
         endpoint = r'fyi/deliveryoptions'
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
     def mutual_funds_portfolios_and_fees(self, conid: str) -> Dict:
-        """
-            Grab the Fees and objectives for a specified mutual fund.
+        """Grab the Fees and objectives for a specified mutual fund.
 
-            NAME: conid
-            DESC: The Contract ID for the mutual fund.
-            TYPE: String
+        NAME: conid
+        DESC: The Contract ID for the mutual fund.
+        TYPE: String
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
-        endpoint = r'fundamentals/mf_profile_and_fees/{mutual_fund_id}'.format(mutual_fund_id = conid)
+        endpoint = r'fundamentals/mf_profile_and_fees/{mutual_fund_id}'.format(
+            mutual_fund_id=conid)
         req_type = 'GET'
-        content = self._make_request(endpoint = endpoint, req_type = req_type)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type
+        )
 
         return content
 
     def mutual_funds_performance(self, conid: str, risk_period: str, yield_period: str, statistic_period: str) -> Dict:
-        """
-            Grab the Lip Rating for a specified mutual fund.
+        """Grab the Lip Rating for a specified mutual fund.
 
-            NAME: conid
-            DESC: The Contract ID for the mutual fund.
-            TYPE: String
+        NAME: conid
+        DESC: The Contract ID for the mutual fund.
+        TYPE: String
 
-            NAME: yield_period
-            DESC: The Period threshold for yield information
-                  possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
-            TYPE: String
+        NAME: yield_period
+        DESC: The Period threshold for yield information
+                possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
+        TYPE: String
 
-            NAME: risk_period
-            DESC: The Period threshold for risk information
-                  possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
-            TYPE: String
+        NAME: risk_period
+        DESC: The Period threshold for risk information
+                possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
+        TYPE: String
 
-            NAME: statistic_period
-            DESC: The Period threshold for statistic information
-                  possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
-            TYPE: String
+        NAME: statistic_period
+        DESC: The Period threshold for statistic information
+                possible values: ['6M', '1Y', '3Y', '5Y', '10Y']
+        TYPE: String
 
-            RTYPE Dictionary
+        RTYPE Dictionary
         """
 
         # define request components
-        endpoint = r'fundamentals/mf_performance/{mutual_fund_id}'.format(mutual_fund_id = conid)
+        endpoint = r'fundamentals/mf_performance/{mutual_fund_id}'.format(
+            mutual_fund_id=conid)
         req_type = 'GET'
-        payload = {
-            'risk_period':None,
-            'yield_period':None,
-            'statistic_period':None
+        params = {
+            'risk_period': None,
+            'yield_period': None,
+            'statistic_period': None
         }
-        content = self._make_request(endpoint = endpoint, req_type = req_type, params = payload)
+        content = self._make_request(
+            endpoint=endpoint,
+            req_type=req_type,
+            params=params
+        )
 
         return content
-

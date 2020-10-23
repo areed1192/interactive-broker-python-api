@@ -82,6 +82,7 @@ config.add_section('main')
 # Set the values for the `main` section.
 config.set('main', 'REGULAR_ACCOUNT', 'YOUR_ACCOUNT_NUMBER')
 config.set('main', 'REGULAR_USERNAME', 'YOUR_ACCOUNT_USERNAME')
+
 config.set('main', 'PAPER_ACCOUNT', 'YOUR_ACCOUNT_NUMBER')
 config.set('main', 'PAPER_USERNAME', 'YOUR_ACCOUNT_USERNAME')
 
@@ -108,7 +109,11 @@ REGULAR_ACCOUNT = 'MY_ACCOUNT_NUMBER'
 REGULAR_USERNAME = 'MY_ACCOUNT_USERNAME'
 
 # Create a new session of the IB Web API.
-ib_client = IBClient(username=REGULAR_USERNAME, account=REGULAR_ACCOUNT)
+ib_client = IBClient(
+    username=REGULAR_USERNAME,
+    account=REGULAR_ACCOUNT,
+    is_server_running=True
+)
 
 # create a new session.
 ib_client.create_session()
