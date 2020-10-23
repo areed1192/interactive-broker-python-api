@@ -255,6 +255,21 @@ class IBClient():
                 print(failure)
                 sys.exit()
 
+        # # TO DO: Add check market hours here and then check for a mutual fund.
+        # news = self.data_news(conid='265598')
+        # if news and 'news' in news:
+        #     print(success)
+        #     return True
+        # if server_account_content is not None and 'set' in server_update_content.keys() and server_update_content['set'] == True:
+        #     print(success)
+        #     return True
+        # elif ('message' in server_update_content.keys()) and (server_update_content['message'] == 'Account already set'):
+        #     print(success)
+        #     return True
+        # else:
+        #     print(failure)
+        #     sys.exit()
+
     def _server_state(self, action: str = 'save') -> Union[None, int]:
         """Determines the server state.
 
