@@ -93,7 +93,7 @@ class IBClient():
             ).resolve()
 
             # See if it exists.
-            if not self.client_portal_folder.exists():
+            if not self.client_portal_folder.exists() and not self._is_server_running:
                 print("The Client Portal Gateway doesn't exist. You need to download it before using the Library.")
                 print("Downloading the Client Portal file...")
                 self.client_portal_client.download_and_extract()
