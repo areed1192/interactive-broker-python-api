@@ -1,0 +1,28 @@
+{
+  "orders": [
+    {
+      "conid": null,
+      "secType": null,
+      "cOID": null,
+      "orderType": "STOP_LIMIT",
+      "outsideRTH": false,
+      "price": null,
+      "side": "BUY",
+      "tif": "DAY",
+      "quantity": null,
+      "auxPrice": null,
+      "useAdaptive": false,
+      "isClose": false
+    },
+    {
+      "conid": null,
+      "secType": null,
+      "parentId": null,
+      "orderType": "STP",
+      "price": null,
+      "side": "SELL",
+      "quantity": 1,
+      "tif": "DAY"
+    }
+  ]
+}

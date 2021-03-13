@@ -1,0 +1,18 @@
+{
+  "acctId": null,
+  "conid": 76792991,
+  "secType": "76792991:STK",
+  "cOID": "99385477",
+  "orderType": "STOP_LIMIT",
+  "listingExchange": "SMART",
+  "outsideRTH": false,
+  "price": 617.33,
+  "side": "BUY",
+  "ticker": "TSLA",
+  "tif": "DAY",
+  "referrer": "QuickTrade",
+  "auxPrice": 617.35,
+  "quantity": 10,
+  "useAdaptive": false,
+  "isClose": false
+}

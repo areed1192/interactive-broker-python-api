@@ -21,6 +21,7 @@ account_positions = ib_client.portfolio_account_positions(
     account_id="PAPER_ACCOUNT_ACCOUNT_NUMBER",
     page_id=0
 )
+
 pprint(account_positions)
 pprint('')
 

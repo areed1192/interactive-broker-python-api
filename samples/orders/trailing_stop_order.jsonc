@@ -1,0 +1,12 @@
+{
+  "acctId": null,
+  "conid": 76792991,
+  "secType": "76792991:STK",
+  "cOID": "99385499",
+  "orderType": "TRAIL",
+  "side": "SELL",
+  "ticker": "TSLA",
+  "tif": "DAY",
+  "trailingPercent": 0.1,
+  "quantity": 10
+}
