@@ -1,0 +1,44 @@
+{{! Numpy Docstring Template }}
+{{summaryPlaceholder}}
+
+{{extendedSummaryPlaceholder}}
+
+{{#parametersExist}}
+### Arguments
+----
+{{#args}}
+{{var}} : {{typePlaceholder}}
+    - {{descriptionPlaceholder}}
+{{/args}}
+{{#kwargs}}
+{{var}} : {{typePlaceholder}}, optional
+    - {{descriptionPlaceholder}}, by default {{&default}}
+{{/kwargs}}
+{{/parametersExist}}
+
+{{#returnsExist}}
+### Returns
+----
+{{#returns}}
+{{typePlaceholder}}
+    - {{descriptionPlaceholder}}
+{{/returns}}
+{{/returnsExist}}
+
+{{#yieldsExist}}
+### Yields
+----
+{{#yields}}
+{{typePlaceholder}}
+    - {{descriptionPlaceholder}}
+{{/yields}}
+{{/yieldsExist}}
+
+{{#exceptionsExist}}
+### Raises
+----
+{{#exceptions}}
+{{type}}
+    - {{descriptionPlaceholder}}
+{{/exceptions}}
+{{/exceptionsExist}}
