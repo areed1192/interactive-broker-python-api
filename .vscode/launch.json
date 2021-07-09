@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug: Authentication Service",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/samples/use_auth.py",
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+  

@@ -7,7 +7,7 @@ with open(file="README.md", mode="r") as fh:
 
 setup(
 
-    name='',
+    name='ibc-api',
 
     # Define Author Info.
     author='Alex Reed',
@@ -22,14 +22,16 @@ setup(
     long_description_content_type="text/markdown",
 
     # Define repo location.
-    url='',
+    url='https://github.com/areed1192/interactive-brokers-api',
 
     # Define dependencies.
-    install_requires=[],
+    install_requires=[
+        'requests==2.24.0'
+    ],
 
     # Specify folder content.
     packages=find_namespace_packages(
-        include=[]
+        include=['ibc']
     ),
 
     # Define the python version.

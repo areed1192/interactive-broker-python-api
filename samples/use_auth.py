@@ -1,3 +1,4 @@
+from pprint import pprint
 from configparser import ConfigParser
 from ibc.client import InteractiveBrokersClient
 
@@ -17,7 +18,26 @@ ibc_client = InteractiveBrokersClient(
     password=account_password
 )
 
-# Ensure the portal files are set up.
-ibc_client.client_portal.setup()
+# Grab the Auth Service.
+auth_service = ibc_client.authentication
 
-ibc_client.authentication.login()
+# Login
+auth_service.login()
+
+pprint(
+    auth_service.is_authenticated()
+)
+
+pprint(
+    auth_service.sso_validate()
+)
+
+pprint(
+    auth_service.reauthenticate()
+)
+
+pprint(
+    auth_service.update_server_account(
+        account_id=ibc_client._account_number
+    )
+)
