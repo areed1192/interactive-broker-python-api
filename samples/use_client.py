@@ -20,4 +20,5 @@ ibc_client = InteractiveBrokersClient(
 # Ensure the portal files are set up.
 ibc_client.client_portal.setup()
 
+# Log the user in to the Client Portal Gateway.
 ibc_client.authentication.login()

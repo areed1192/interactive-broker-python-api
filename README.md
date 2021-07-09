@@ -1,13 +1,31 @@
-# Template Repo
+# Unofficial Interactive Brokers API
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Setup](#setup)
+- [What's in the API](#whats-in-the-api)
+- [Requirements](#requirements)
 - [Usage](#usage)
+- [Documentation & Resources](#documentation-and-resources)
 - [Support These Projects](#support-these-projects)
 
 ## Overview
+
+The unofficial Python API client library for Interactive Broker Client Portal Web API allows individuals with Interactive Broker accounts to manage trades, pull historical and real-time data, manage their accounts, create and modify orders all using the Python programming language.
+
+Interactive Broker offers multiple APIs for their clients. If you would like to learn more about their API offerings click on the links below:
+
+- Trade Workstation API, please refer to the [official documentation](http://interactivebrokers.github.io/tws-api/)
+- Client Portal API, please refer to the [official documentation](https://interactivebrokers.github.io/cpwebapi/)
+- Third Party API, plesfe refer to the [official documentation](https://www.interactivebrokers.com/webtradingapi/)
+
+## Requirements
+
+The following requirements must be met to use this API:
+
+- A Interactive Broker account, you'll need your account password and account number to use the API.
+- [Java 8](https://developers.redhat.com/products/openjdk/download) update 192 or higher installed (gateway is compatible with higher Java versions including OpenJDK 11).
+- Download the [Beta Client Portal Gateway](https://www.interactivebrokers.com/en/index.php?f=45185)
 
 ## Setup
 
@@ -47,7 +65,7 @@ pip install .
 This will install all the dependencies listed in the `setup.py` file. Once done
 you can use the library wherever you want.
 
-**Setup - PyPi Install:**
+<!-- **Setup - PyPi Install:**
 
 To **install** the library, run the following command from the terminal.
 
@@ -61,14 +79,54 @@ To **upgrade** the library, run the following command from the terminal.
 
 ```console
 pip install --upgrade federal-register
-```
+``` -->
+
+## Documentation and Resources
+
+- [Getting Started](https://interactivebrokers.github.io/cpwebapi/index.html#login)
+- [Endpoints](https://interactivebrokers.com/api/doc.html)
+- [Websockets](https://interactivebrokers.github.io/cpwebapi/RealtimeSubscription.html)
 
 ## Usage
 
-Here is a simple example of using the `place_holder` library.
+Here is a simple example of using the `ibc-api` library.
 
 ```python
+from pprint import pprint
+from configparser import ConfigParser
+from ibc.client import InteractiveBrokersClient
 
+# Initialize the Parser.
+config = ConfigParser()
+
+# Read the file.
+config.read('config/config.ini')
+
+# Get the specified credentials.
+account_number = config.get('interactive_brokers_paper', 'paper_account')
+account_password = config.get('interactive_brokers_paper', 'paper_password')
+
+# Initialize the client.
+ibc_client = InteractiveBrokersClient(
+    account_number=account_number,
+    password=account_password
+)
+
+# Grab the Auth Service.
+auth_service = ibc_client.authentication
+
+# Login
+auth_service.login()
+
+# check if we are authenticated.
+pprint(
+    auth_service.is_authenticated()
+)
+
+# Validate the current session.
+pprint(
+    auth_service.sso_validate()
+)
 ```
 
 ## Support These Projects
@@ -80,6 +138,3 @@ pay monthly fees.
 
 **YouTube:**
 If you'd like to watch more of my content, feel free to visit my YouTube channel [Sigma Coding](https://www.youtube.com/c/SigmaCoding).
-
-<!-- **Hire Me:**
-If you have a project, you think I can help you with feel free to reach out at [coding.sigma@gmail.com](mailto:coding.sigma@gmail.com?subject=[GitHub]%20Project%20Proposal) or fill out the [contract request form](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAa__aAmF1hURFg5ODdaVTg1TldFVUhDVjJHWlRWRzhZRy4u) -->

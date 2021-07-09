@@ -40,6 +40,17 @@ class InteractiveBrokersClient():
         pass
 
     @property
+    def account_number(self) -> str:
+        """The User's Interactive Brokers Account Number.
+
+        ### Returns
+        ----
+        str:
+            The account number.
+        """
+        return self._account_number
+
+    @property
     def client_portal(self) -> ClientPortalGateway:
         """Initializes the `ClientPortalGateway` object.
 

@@ -24,20 +24,24 @@ auth_service = ibc_client.authentication
 # Login
 auth_service.login()
 
+# check if we are authenticated.
 pprint(
     auth_service.is_authenticated()
 )
 
+# Validate the current session.
 pprint(
     auth_service.sso_validate()
 )
 
+# Reauthenticate the session.
 pprint(
     auth_service.reauthenticate()
 )
 
+# Set the account for the server.
 pprint(
     auth_service.update_server_account(
-        account_id=ibc_client._account_number
+        account_id=ibc_client.account_number
     )
 )
