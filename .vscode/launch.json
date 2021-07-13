@@ -7,6 +7,20 @@
         "request": "launch",
         "program": "${workspaceFolder}/samples/use_auth.py",
         "console": "integratedTerminal"
+      },
+      {
+        "name": "Debug: Accounts Service",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/samples/use_accounts.py",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Debug: Market Data Service",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/samples/use_market_data.py",
+        "console": "integratedTerminal"
       }
     ]
   }

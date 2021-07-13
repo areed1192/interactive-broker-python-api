@@ -6,6 +6,7 @@ import urllib3
 
 from typing import Dict
 from urllib3.exceptions import InsecureRequestWarning
+from fake_useragent import UserAgent
 
 urllib3.disable_warnings(category=InsecureRequestWarning)
 
@@ -67,8 +68,8 @@ class InteractiveBrokersSession():
 
         # Fake the headers.
         headers = {
-            "Authorization": "Bearer {access_token}".format(access_token=self.client.td_credentials.access_token),
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "User-Agent": UserAgent().edge
         }
 
         return headers
@@ -95,9 +96,8 @@ class InteractiveBrokersSession():
         self,
         method: str,
         endpoint: str,
-        params: dict = {},
-        data: dict = {},
-        json_payload: dict = {}
+        params: dict = None,
+        json_payload: dict = None
     ) -> Dict:
         """Handles all the requests in the library.
 
@@ -135,18 +135,30 @@ class InteractiveBrokersSession():
 
         # Build the URL.
         url = self.build_url(endpoint=endpoint)
+        headers = self.build_headers()
 
+        logging.info(
+            msg="------------------------"
+        )
+
+        logging.info(
+            msg=f"JSON Payload: {json_payload}"
+        )
+
+        logging.info(
+            msg=f"Request Method: {method}"
+        )
 
         # Make the request.
         if method == 'post':
-            response = requests.post(url=url, params=params, json=json_payload, verify=False)
+            response = requests.post(url=url, params=params, json=json_payload, verify=False, headers=headers)
         elif method == 'get':
-            response = requests.get(url=url, params=params, json=json_payload, verify=False)
+            response = requests.get(url=url, params=params, json=json_payload, verify=False, headers=headers)
         elif method == 'delete':
-            response = requests.delete(url=url, params=params, json=json_payload, verify=False)
+            response = requests.delete(url=url, params=params, json=json_payload, verify=False, headers=headers)
 
         logging.info(
-            "URL: {url}".format(url=url)
+            msg="URL: {url}".format(url=url)
         )
 
         logging.info(
@@ -163,6 +175,7 @@ class InteractiveBrokersSession():
             return response.json()
 
         elif len(response.content) > 0 and response.ok:
+
             return {
                 'message': 'response successful',
                 'status_code': response.status_code
@@ -170,13 +183,16 @@ class InteractiveBrokersSession():
 
         elif not response.ok and endpoint =='/api/iserver/account':
             return response.json()
-            
+
         elif not response.ok:
 
             if len(response.content) == 0:
                 response_data = ''
             else:
-                response_data = response.json()
+                try:
+                    response_data = response.json()
+                except:
+                    response_data = {'content': response.text}
 
             # Define the error dict.
             error_dict = {
