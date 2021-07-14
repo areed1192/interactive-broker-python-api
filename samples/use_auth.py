@@ -24,6 +24,10 @@ auth_service = ibc_client.authentication
 # Login
 auth_service.login()
 
+# Wait for the user to login.
+while not auth_service.authenticated:
+    auth_service.check_auth()
+
 # check if we are authenticated.
 pprint(
     auth_service.is_authenticated()

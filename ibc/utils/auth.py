@@ -1,4 +1,5 @@
 import csv
+import requests
 import subprocess
 import webbrowser
 from ibc.session import InteractiveBrokersSession
@@ -18,7 +19,7 @@ class InteractiveBrokersAuthentication():
 
         self.client: InteractiveBrokersClient = ib_client
         self.session: InteractiveBrokersSession = ib_session
-        self._is_authenticated = False
+        self.authenticated = False
         self.server_process_id = None
 
     def login(self, _use_selenium: bool = False) -> dict:
@@ -226,3 +227,18 @@ class InteractiveBrokersAuthentication():
         )
 
         return content
+    
+    def check_auth(self)-> None:
+        """Checks the authentication of the user to see
+        if they've logged in.
+        """
+
+        print("Checking authentication status...")    
+
+        try:
+            response = self.is_authenticated()
+            if response['authenticated'] == True:
+                self.authenticated = True
+                return
+        except:
+            return

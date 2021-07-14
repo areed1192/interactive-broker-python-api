@@ -2,6 +2,7 @@
 from pprint import pprint
 from configparser import ConfigParser
 from ibc.client import InteractiveBrokersClient
+from ibc.utils.enums import BarTypes
 
 # Initialize the Parser.
 config = ConfigParser()
@@ -28,5 +29,13 @@ market_data_services = ibc_client.market_data
 pprint(
     market_data_services.snapshot(
         contract_ids=['265598']
+    )
+)
+
+pprint(
+    market_data_services.market_history(
+        contract_id='265598',
+        period='5d',
+        bar=BarTypes.FiveMinute
     )
 )
