@@ -8,7 +8,7 @@ from ibc.rest.market_data import MarketData
 from ibc.rest.pnl import PnL
 from ibc.rest.alert import Alerts
 from ibc.rest.contract import Contracts
-
+from ibc.rest.scanner import Scanners
 
 class InteractiveBrokersClient():
 
@@ -281,3 +281,24 @@ class InteractiveBrokersClient():
         """
 
         return Contracts(ib_client=self, ib_session=self._session)
+
+    @property
+    def scanners(self) -> Scanners:
+        """Initializes the `Scanners` object.
+
+        ### Returns
+        ----
+        Scanners:
+            Used to create market scanners.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> scanners_services = ibc_client.scanners
+        """
+
+        return Scanners(ib_client=self, ib_session=self._session)

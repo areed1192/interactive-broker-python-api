@@ -8,8 +8,11 @@ class Customer():
 
         ### Parameters
         ----
-        client : object
-            The `InteractiveBrokersCustomer` Python Client.
+        ib_client : object
+            The `InteractiveBrokersClient` Python Client.
+
+        ib_session : InteractiveBrokersSession
+            The IB session handler.
         """
 
         from ibc.client import InteractiveBrokersClient
