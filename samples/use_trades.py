@@ -28,43 +28,10 @@ auth_service.login()
 while not auth_service.authenticated:
     auth_service.check_auth()
 
-# Grab the `Scanners` Service.
-scanners_service = ibc_client.scanners
+# Grab the `Trades` Service.
+trades_service = ibc_client.trades
 
-# Grab the different scanners.
+# Get the trades for the last week.
 pprint(
-    scanners_service.scanners()
-)
-
-# Define a scanner.
-scanner = {
-    "instrument": "STK",
-    "type": "NOT_YET_TRADED_TODAY",
-    "filter": [
-        {
-            "code": "priceAbove",
-            "value": 50
-        },
-        {
-            "code": "priceBelow",
-            "value": 70
-        },
-        {
-            "code": "volumeAbove",
-            "value": None
-        },
-        {
-            "code": "volumeBelow",
-            "value": None
-        }
-    ],
-    "location": "STK.US.MAJOR",
-    "size": "25"
-}
-
-# Run that scanner.
-pprint(
-    scanners_service.run_scanner(
-        scanner=scanner
-    )
+    trades_service.get_trades()
 )

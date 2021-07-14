@@ -9,6 +9,8 @@ from ibc.rest.pnl import PnL
 from ibc.rest.alert import Alerts
 from ibc.rest.contract import Contracts
 from ibc.rest.scanner import Scanners
+from ibc.rest.trades import Trades
+
 
 class InteractiveBrokersClient():
 
@@ -302,3 +304,24 @@ class InteractiveBrokersClient():
         """
 
         return Scanners(ib_client=self, ib_session=self._session)
+
+    @property
+    def trades(self) -> Trades:
+        """Initializes the `Trades` object.
+
+        ### Returns
+        ----
+        Trades:
+            Used to create market Trades.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> trades_services = ibc_client.trades
+        """
+
+        return Trades(ib_client=self, ib_session=self._session)

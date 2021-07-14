@@ -31,6 +31,11 @@ class Scanners():
         ----
         dict: 
             A collection of `Scanner` resources.
+
+        ### Usage
+        ----
+            >>> scanners_service = ibc_client.scanners
+            >>> scanners_service.scanners()
         """
 
         content = self.session.make_request(
@@ -52,6 +57,36 @@ class Scanners():
         ----
         dict: 
             A collection of `contract` resources.
+
+        ### Usage
+        ----
+            >>> scanners_service = ibc_client.scanners
+            >>> scanners_service.run_scanner(
+                scanner={
+                    "instrument": "STK",
+                    "type": "NOT_YET_TRADED_TODAY",
+                    "filter": [
+                        {
+                            "code": "priceAbove",
+                            "value": 50
+                        },
+                        {
+                            "code": "priceBelow",
+                            "value": 70
+                        },
+                        {
+                            "code": "volumeAbove",
+                            "value": None
+                        },
+                        {
+                            "code": "volumeBelow",
+                            "value": None
+                        }
+                    ],
+                    "location": "STK.US.MAJOR",
+                    "size": "25"
+                }
+            )
         """
 
         content = self.session.make_request(
