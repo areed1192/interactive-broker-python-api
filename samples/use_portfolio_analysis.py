@@ -19,7 +19,7 @@ ibc_client = InteractiveBrokersClient(
     password=account_password
 )
 
-# Grab the Portfolio Analysis Service.
+# Grab the `PortfolioAnalysis` Service.
 ib_portfolio_analysis = ibc_client.portfolio_analysis
 
 # Grab our account summary.

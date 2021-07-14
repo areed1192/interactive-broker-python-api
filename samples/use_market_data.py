@@ -23,7 +23,7 @@ ibc_client = InteractiveBrokersClient(
 # Login first.
 ibc_client.authentication.login()
 
-# Grab the Market Data Service.
+# Grab the `MarketData` Service.
 market_data_services = ibc_client.market_data
 
 # Grab a Quote Snapshot.

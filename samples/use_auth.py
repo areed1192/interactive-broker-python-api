@@ -18,7 +18,7 @@ ibc_client = InteractiveBrokersClient(
     password=account_password
 )
 
-# Grab the Auth Service.
+# Grab the `Authentication` Service.
 auth_service = ibc_client.authentication
 
 # Login

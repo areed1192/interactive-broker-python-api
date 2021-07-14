@@ -21,7 +21,7 @@ ibc_client = InteractiveBrokersClient(
 # Login first.
 ibc_client.authentication.login()
 
-# Grab the Accounts Service.
+# Grab the `Accounts` Service.
 accounts_services = ibc_client.accounts
 
 # Grab the User's Accounts.

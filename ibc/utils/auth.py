@@ -4,6 +4,7 @@ import subprocess
 import webbrowser
 from ibc.session import InteractiveBrokersSession
 
+
 class InteractiveBrokersAuthentication():
 
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
@@ -11,9 +12,12 @@ class InteractiveBrokersAuthentication():
 
         ### Parameters
         ----
-        client : object
+        ib_client : object
             The `InteractiveBrokersClient` Python Client.
-        """        
+
+        ib_session : InteractiveBrokersSession
+            The IB session handler.
+        """
 
         from ibc.client import InteractiveBrokersClient
 
@@ -25,7 +29,7 @@ class InteractiveBrokersAuthentication():
     def login(self, _use_selenium: bool = False) -> dict:
         """Logs the user in to the Client Portal Gateway.
 
-        ### Arguments:
+        ### Parameters
         ----
         _use_selenium (bool, optional, Default=False):
             If set to `True` will use Selenium to pass through your username and password
@@ -33,12 +37,12 @@ class InteractiveBrokersAuthentication():
             it will default to `False`. If set to `False` user will be redirected to the
             login form where the user will need to provide their credentials.
 
-        ### Returns:
+        ### Returns
         ----
         dict: 
             The process resource with the process ID of the client portal
             gateway.
-        """        
+        """
 
         is_running_response = self._is_already_running()
 
@@ -71,7 +75,7 @@ class InteractiveBrokersAuthentication():
     def _is_already_running(self) -> dict:
         """Checks whether the gateway is already running.
 
-        ### Returns:
+        ### Returns
         ----
         dict:
             A response containing the process ID of the gateway
@@ -110,14 +114,14 @@ class InteractiveBrokersAuthentication():
             }
 
     def close_gateway(self, pid: int = None) -> str:
-        """[summary]
+        """Closes down the Client Portal Gateway.
 
-        ### Arguments:
+        ### Parameters
         ----
-        pid (int, optional, Default=None): 
+        pid : int (optional, Default=None)
             If you'd like you can manually close the process.
 
-        ### Returns:
+        ### Returns
         ----
         str:
             A message will be return if the termination process
@@ -125,7 +129,7 @@ class InteractiveBrokersAuthentication():
         """
 
         if pid is None:
-            pid = self.server_process_id      
+            pid = self.server_process_id
 
         content = subprocess.run(
             args=['Taskkill', '/F', '/PID', str(pid)],
@@ -137,13 +141,13 @@ class InteractiveBrokersAuthentication():
     def is_authenticated(self, check: bool = False) -> dict:
         """Checks if session is authenticated.
 
-        ### Overview:
+        ### Overview
         ----
         Current Authentication status to the Brokerage system. Market Data and 
         Trading is not possible if not authenticated, e.g. authenticated 
         shows `False`.
 
-        ### Returns:
+        ### Returns
         ----
         dict:
             A dictionary with an authentication flag.   
@@ -160,23 +164,23 @@ class InteractiveBrokersAuthentication():
     def update_server_account(self, account_id: str) -> dict:
         """Sets the account for the session.
 
-        ### Overview:
+        ### Overview
         ----
         If an user has multiple accounts, and user wants to get orders, trades, 
         etc. of an account other than currently selected account, then user 
         can update the currently selected account using this API and then can 
         fetch required information for the newly updated account.
 
-        ### Arguments:
+        ### Parameters
         ----
-        account_id (str):
+        account_id : str
             The account ID you wish to set for the API Session. This will be used to
             grab historical data and make orders.
-        
-        ### Returns:
+
+        ### Returns
         ----
         dict:
-            A server account resource.
+            A `ServerAccount` resource.
         """
 
         payload = {
@@ -194,11 +198,11 @@ class InteractiveBrokersAuthentication():
 
     def sso_validate(self) -> dict:
         """Validates the current session for the SSO user.
-        
-        ### Returns:
+
+        ### Returns
         ----
-        dict:
-            A Validation resource.
+        dict :
+            A `Validation` resource.
         """
 
         # Make the request.
@@ -213,11 +217,11 @@ class InteractiveBrokersAuthentication():
         """When using the CP Gateway, this endpoint provides a way to
         reauthenticate to the Brokerage system as long as there is a
         valid SSO session, see /sso/validate.
-        
-        ### Returns:
+
+        ### Returns
         ----
-        dict:
-            A authentication resource.
+        dict :
+            An `Authentication` resource.
         """
 
         # Make the request.
@@ -227,13 +231,13 @@ class InteractiveBrokersAuthentication():
         )
 
         return content
-    
-    def check_auth(self)-> None:
+
+    def check_auth(self) -> None:
         """Checks the authentication of the user to see
         if they've logged in.
         """
 
-        print("Checking authentication status...")    
+        print("Checking authentication status...")
 
         try:
             response = self.is_authenticated()

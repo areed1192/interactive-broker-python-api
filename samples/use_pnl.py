@@ -28,7 +28,7 @@ auth_service.login()
 while not auth_service.authenticated:
     auth_service.check_auth()
 
-# Grab the Pnl Service.
+# Grab the `Pnl` Service.
 pnl_service = ibc_client.pnl
 
 # Grab the Pnl for the selected server account.

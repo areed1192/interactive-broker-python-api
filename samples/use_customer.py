@@ -21,7 +21,7 @@ ibc_client = InteractiveBrokersClient(
 # Login to a new session.
 ibc_client.authentication.login()
 
-# Grab the Customer Service.
+# Grab the `Customer` Service.
 ib_customer_service = ibc_client.customers
 
 # Grab customer entity info.

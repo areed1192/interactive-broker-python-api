@@ -28,7 +28,7 @@ auth_service.login()
 while not auth_service.authenticated:
     auth_service.check_auth()
 
-# Grab the Alerts Service.
+# Grab the `Alerts` Service.
 alerts_service = ibc_client.alerts
 
 # Grab the Available alerts for our account.

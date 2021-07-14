@@ -11,7 +11,7 @@ config.read('config/config.ini')
 account_number = config.get('interactive_brokers_paper', 'paper_account')
 account_password = config.get('interactive_brokers_paper', 'paper_password')
 
-# Initialize the client.
+# Initialize the `InteractiveBrokersClient` object.
 ibc_client = InteractiveBrokersClient(
     account_number=account_number,
     password=account_password

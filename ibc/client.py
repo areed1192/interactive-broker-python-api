@@ -1,24 +1,25 @@
-from ibc.utils.gateway import ClientPortalGateway
-from ibc.session import InteractiveBrokersSession
-from ibc.utils.auth import InteractiveBrokersAuthentication
-from ibc.rest.customer import Customer
-from ibc.rest.portfolio_analysis import PortfolioAnalysis
 from ibc.rest.accounts import Accounts
-from ibc.rest.market_data import MarketData
-from ibc.rest.pnl import PnL
 from ibc.rest.alert import Alerts
 from ibc.rest.contract import Contracts
+from ibc.rest.customer import Customer
+from ibc.rest.market_data import MarketData
+from ibc.rest.orders import Orders
+from ibc.rest.pnl import PnL
+from ibc.rest.portfolio import PortfolioAccounts
+from ibc.rest.portfolio_analysis import PortfolioAnalysis
 from ibc.rest.scanner import Scanners
 from ibc.rest.trades import Trades
-from ibc.rest.portfolio import PortfolioAccounts
-from ibc.rest.orders import Orders
+from ibc.session import InteractiveBrokersSession
+from ibc.utils.auth import InteractiveBrokersAuthentication
+from ibc.utils.gateway import ClientPortalGateway
+
 
 class InteractiveBrokersClient():
 
     def __init__(self, account_number: str, password: str) -> None:
         """Initializes the `InteractiveBrokersClient` object.
 
-        ### Arguments
+        ### Parameters
         ----
         account_number (str):
             The User's account number they wish to use during the
@@ -76,7 +77,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        ClientPortalGateway:
+        `ClientPortalGateway`:
             The Interactive Brokers Client Portal Gateway, which is used
             to download the required files needed to access the API.
 
@@ -97,7 +98,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        InteractiveBrokersSession:
+        `InteractiveBrokersSession`:
             Handles all the requests made during your session with
             the Interactive Brokers API.
 
@@ -119,7 +120,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        InteractiveBrokersAuthentication:
+        `InteractiveBrokersAuthentication`:
             Handles authenticating the User so that they can make
             requests to the Interactive Brokers API.
 
@@ -141,7 +142,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Customer:
+        `Customer`:
             Used to grab customer information.
 
         ### Usage
@@ -162,7 +163,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        PortfolioAnalysis:
+        `PortfolioAnalysis`:
             Used to interact with the Portfolio Analysis
             service.
 
@@ -184,7 +185,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Accounts:
+        `Accounts`:
             Used to interact with the Accounts
             service.
 
@@ -206,7 +207,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        MarketData:
+        `MarketData`:
             Used to market quotes and historical prices.
 
         ### Usage
@@ -227,7 +228,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        PnL:
+        `PnL`:
             Used to grab Account PNL information.
 
         ### Usage
@@ -248,7 +249,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Alerts:
+        `Alerts`:
             Used to grab, update, and delete Alerts
             associated with your account.
 
@@ -270,7 +271,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Contracts:
+        `Contracts`:
             Used to search for contract information.
 
         ### Usage
@@ -291,8 +292,9 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Scanners:
-            Used to create market scanners.
+        `Scanners`:
+            Used to create market scanners that can
+            be used to filter instruments.
 
         ### Usage
         ----
@@ -312,8 +314,9 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Trades:
-            Used to create market Trades.
+        `Trades`:
+            Used to query active trades on your
+            account.
 
         ### Usage
         ----
@@ -333,7 +336,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        PortfolioAccounts:
+        `PortfolioAccounts`:
             Used to query portfolio account information
             including ledger data, allocation, and positions.
 
@@ -355,7 +358,7 @@ class InteractiveBrokersClient():
 
         ### Returns
         ----
-        Orders:
+        `Orders`:
             Used to query, create, update, and delete
             orders with Interactive Brokers.
 

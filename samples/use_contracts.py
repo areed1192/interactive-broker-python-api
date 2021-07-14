@@ -28,7 +28,7 @@ auth_service.login()
 while not auth_service.authenticated:
     auth_service.check_auth()
 
-# Grab the Contracts Service.
+# Grab the `Contracts` Service.
 contracts_service = ibc_client.contracts
 
 # Grab the info for a specific contract.
