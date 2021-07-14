@@ -84,6 +84,13 @@
       "request": "launch",
       "program": "${workspaceFolder}/samples/use_trades.py",
       "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Data Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_trades.py",
+      "console": "integratedTerminal"
     }
   ]
 }

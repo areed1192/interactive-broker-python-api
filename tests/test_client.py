@@ -16,6 +16,7 @@ from ibc.rest.scanner import Scanners
 from ibc.rest.trades import Trades
 from ibc.rest.portfolio import PortfolioAccounts
 from ibc.rest.orders import Orders
+from ibc.rest.data import Data
 
 
 class InteractiveBrokersClientTest(TestCase):
@@ -55,7 +56,7 @@ class InteractiveBrokersClientTest(TestCase):
         """Create an instance and make sure it's a `InteractiveBrokerSession`."""
 
         self.assertIsInstance(
-            self.ibc_client.session,
+            self.ibc_client._session,
             InteractiveBrokersSession
         )
 
@@ -153,6 +154,14 @@ class InteractiveBrokersClientTest(TestCase):
         self.assertIsInstance(
             self.ibc_client.orders,
             Orders
+        )
+
+    def test_creates_instance_of_data(self):
+        """Create an instance and make sure it's a `Data`client."""
+
+        self.assertIsInstance(
+            self.ibc_client.data_services,
+            Data
         )
 
     def tearDown(self) -> None:

@@ -12,6 +12,7 @@ from ibc.rest.trades import Trades
 from ibc.session import InteractiveBrokersSession
 from ibc.utils.auth import InteractiveBrokersAuthentication
 from ibc.utils.gateway import ClientPortalGateway
+from ibc.rest.data import Data
 
 
 class InteractiveBrokersClient():
@@ -373,3 +374,25 @@ class InteractiveBrokersClient():
         """
 
         return Orders(ib_client=self, ib_session=self._session)
+
+    @property
+    def data_services(self) -> Data:
+        """Initializes the `Data` object.
+
+        ### Returns
+        ----
+        `Data`:
+            Used to query different kinds of data
+            for instruments.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> data_service = ibc_client.data_services
+        """
+
+        return Data(ib_client=self, ib_session=self._session)
