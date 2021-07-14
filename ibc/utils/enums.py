@@ -168,3 +168,55 @@ class BarTypes(Enum):
     OneDay = '1d'
     OneWeek = '1w'
     OneMonth = '1m'
+
+
+class SortDirection(Enum):
+    """Represents the sort directions for the
+    `PortfolioPositions` service.
+
+    ### Usage
+    ----
+        >>> from ibc.enums import SortDirection
+        >>> SortDirection.Ascending.value
+    """
+
+    Ascending = 'a'
+    Descending = 'd'
+
+
+class SortFields(Enum):
+    """Represents the sort fields for the
+    `PortfolioPositions` service.
+
+    ### Usage
+    ----
+        >>> from ibc.enums import SortFields
+        >>> SortFields.MarketPrice.value
+    """
+
+    AccountId = 'acctId'
+    ContractId = 'conid'
+    ContractDescription = 'contractDesc'
+    Position = 'position'
+    MarketPrice = 'mktPrice'
+    MarketValue = 'MktValue'
+    Currency = 'USD'
+    AverageCost = 'avgCost'
+    AveragePrice = 'avgPrice'
+    RealizedPnl = 'realizedPnl'
+    UnrealizedPnl = 'unrealizedPnl'
+    Exchanges = 'exchs'
+    ExpirationDate = 'expiry'
+    PutOrCall = 'putOrCall'
+    Multiplier = 'multiplier'
+    Strike = 'strike'
+    ExerciseStyle = 'exerciseStyle'
+    AssetClass = 'assetClass'
+    Model = 'model'
+    UnderlyingContractId = 'undConid'
+    BaseMarketValue = 'baseMktValue'
+    BaseMarketPrice = 'baseMktPrice'
+    BaseAverageCost = 'BaseAvgCost'
+    BaseAveragePrice = 'BaseAvgPrice'
+    BaseRealizedPnl = 'baseRealizedPnl'
+    BaseUnrealizedPnl = 'baseUnrealizedPnl'

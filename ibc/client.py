@@ -10,6 +10,7 @@ from ibc.rest.alert import Alerts
 from ibc.rest.contract import Contracts
 from ibc.rest.scanner import Scanners
 from ibc.rest.trades import Trades
+from ibc.rest.portfolio import PortfolioAccounts
 
 
 class InteractiveBrokersClient():
@@ -325,3 +326,25 @@ class InteractiveBrokersClient():
         """
 
         return Trades(ib_client=self, ib_session=self._session)
+
+    @property
+    def portfolio_accounts(self) -> PortfolioAccounts:
+        """Initializes the `PortfolioAccounts` object.
+
+        ### Returns
+        ----
+        PortfolioAccounts:
+            Used to query portfolio account information
+            including ledger data, allocation, and positions.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> portfolio_accounts_service = ibc_client.portfolio_accounts
+        """
+
+        return PortfolioAccounts(ib_client=self, ib_session=self._session)
