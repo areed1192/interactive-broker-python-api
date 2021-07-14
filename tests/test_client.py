@@ -9,6 +9,7 @@ from ibc.rest.portfolio_analysis import PortfolioAnalysis
 from ibc.rest.customer import Customer
 from ibc.session import InteractiveBrokersSession
 from ibc.utils.gateway import ClientPortalGateway
+from ibc.rest.pnl import PnL
 
 
 class InteractiveBrokersClientTest(TestCase):
@@ -90,6 +91,14 @@ class InteractiveBrokersClientTest(TestCase):
         self.assertIsInstance(
             self.ibc_client.customers,
             Customer
+        )
+
+    def test_creates_instance_of_pnl(self):
+        """Create an instance and make sure it's a `PNL`client."""
+
+        self.assertIsInstance(
+            self.ibc_client.pnl,
+            PnL
         )
 
     def tearDown(self) -> None:

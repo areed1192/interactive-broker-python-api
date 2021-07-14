@@ -1,7 +1,6 @@
 from pprint import pprint
 from configparser import ConfigParser
 from ibc.client import InteractiveBrokersClient
-from ibc.utils.enums import Frequency
 
 # Initialize the Parser.
 config = ConfigParser()
@@ -19,19 +18,20 @@ ibc_client = InteractiveBrokersClient(
     password=account_password
 )
 
-# Grab the Portfolio Analysis Service.
-ib_portfolio_analysis = ibc_client.portfolio_analysis
+# Initialize the Authentication Service.
+auth_service = ibc_client.authentication
 
-pprint(
-    ib_portfolio_analysis.account_summary(
-        account_ids=[ibc_client.account_number]
-    )
-)
+# Login
+auth_service.login()
 
-# Grab the account performance.
+# Wait for the user to login.
+while not auth_service.authenticated:
+    auth_service.check_auth()
+
+# Grab the Pnl Service.
+pnl_service = ibc_client.pnl
+
+# Grab the Pnl for the selected server account.
 pprint(
-    ib_portfolio_analysis.account_performance(
-        account_ids=[ibc_client.account_number],
-        frequency=Frequency.Quarterly
-    )
+    pnl_service.pnl_server_account()
 )

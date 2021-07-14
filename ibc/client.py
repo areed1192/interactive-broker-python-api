@@ -5,6 +5,7 @@ from ibc.rest.customer import Customer
 from ibc.rest.portfolio_analysis import PortfolioAnalysis
 from ibc.rest.accounts import Accounts
 from ibc.rest.market_data import MarketData
+from ibc.rest.pnl import PnL
 
 
 class InteractiveBrokersClient():
@@ -214,3 +215,24 @@ class InteractiveBrokersClient():
         """
 
         return MarketData(ib_client=self, ib_session=self._session)
+
+    @property
+    def pnl(self) -> PnL:
+        """Initializes the `PnL` object.
+
+        ### Returns
+        ----
+        PnL:
+            Used to grab Account PNL information.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> pnl_services = ibc_client.pnl
+        """
+
+        return PnL(ib_client=self, ib_session=self._session)
