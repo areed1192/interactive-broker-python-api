@@ -1,8 +1,6 @@
 from typing import Union
 from typing import List
 from enum import Enum
-
-from numpy import isin
 from ibc.session import InteractiveBrokersSession
 
 
