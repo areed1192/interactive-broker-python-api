@@ -1,5 +1,3 @@
-import json
-from typing import Union
 from typing import List
 from ibc.session import InteractiveBrokersSession
 

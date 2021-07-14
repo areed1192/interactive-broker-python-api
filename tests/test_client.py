@@ -15,6 +15,7 @@ from ibc.rest.alert import Alerts
 from ibc.rest.scanner import Scanners
 from ibc.rest.trades import Trades
 from ibc.rest.portfolio import PortfolioAccounts
+from ibc.rest.orders import Orders
 
 
 class InteractiveBrokersClientTest(TestCase):
@@ -144,6 +145,14 @@ class InteractiveBrokersClientTest(TestCase):
         self.assertIsInstance(
             self.ibc_client.portfolio_accounts,
             PortfolioAccounts
+        )
+
+    def test_creates_instance_of_orders(self):
+        """Create an instance and make sure it's a `Orders`client."""
+
+        self.assertIsInstance(
+            self.ibc_client.orders,
+            Orders
         )
 
     def tearDown(self) -> None:

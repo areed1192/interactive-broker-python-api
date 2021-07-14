@@ -33,28 +33,3 @@ pprint(
 pprint(
     accounts_services.pnl_server_account()
 )
-
-# Grab the Portfolio Accounts.
-pprint(
-    accounts_services.portfolio_accounts()
-)
-
-# Grab the Portfolio SubAccounts.
-pprint(
-    accounts_services.portfolio_subaccounts()
-)
-
-# Grab the Account metadata.
-pprint(
-    accounts_services.account_metadata(account_id=account_number)
-)
-
-# Grab the Account Summary.
-pprint(
-    accounts_services.account_summary(account_id=account_number)
-)
-
-# Grab the Account Ledger.
-pprint(
-    accounts_services.account_ledger(account_id=account_number)
-)

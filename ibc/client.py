@@ -11,7 +11,7 @@ from ibc.rest.contract import Contracts
 from ibc.rest.scanner import Scanners
 from ibc.rest.trades import Trades
 from ibc.rest.portfolio import PortfolioAccounts
-
+from ibc.rest.orders import Orders
 
 class InteractiveBrokersClient():
 
@@ -348,3 +348,25 @@ class InteractiveBrokersClient():
         """
 
         return PortfolioAccounts(ib_client=self, ib_session=self._session)
+
+    @property
+    def orders(self) -> Orders:
+        """Initializes the `Orders` object.
+
+        ### Returns
+        ----
+        Orders:
+            Used to query, create, update, and delete
+            orders with Interactive Brokers.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> orders_service = ibc_client.orders
+        """
+
+        return Orders(ib_client=self, ib_session=self._session)

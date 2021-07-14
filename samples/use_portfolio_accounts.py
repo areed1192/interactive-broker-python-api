@@ -30,7 +30,7 @@ auth_service.login()
 while not auth_service.authenticated:
     auth_service.check_auth()
 
-# Grab the Accounts Service.
+# Grab the Portfolio Accounts Service.
 portfolio_accounts_services = ibc_client.portfolio_accounts
 
 # Grab the Portfolio Accounts.
