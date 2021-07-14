@@ -1,7 +1,7 @@
 from ibc.utils.gateway import ClientPortalGateway
 from ibc.session import InteractiveBrokersSession
 from ibc.utils.auth import InteractiveBrokersAuthentication
-from ibc.rest.customer import InteractiveBrokersCustomer
+from ibc.rest.customer import Customer
 from ibc.rest.portfolio_analysis import PortfolioAnalysis
 from ibc.rest.accounts import Accounts
 from ibc.rest.market_data import MarketData
@@ -21,6 +21,13 @@ class InteractiveBrokersClient():
 
         password (str):
             The password associated with the account they've chosen.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
         """
 
         self._account_number = account_number
@@ -32,12 +39,10 @@ class InteractiveBrokersClient():
             ib_client=self,
             ib_session=self._session
         )
+
+        # Client portal stuff.
         self._client_portal = ClientPortalGateway()
-
         self._client_portal.setup()
-
-    def __repr__(self):
-        pass
 
     @property
     def account_number(self) -> str:
@@ -47,7 +52,16 @@ class InteractiveBrokersClient():
         ----
         str:
             The account number.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.account_number
         """
+
         return self._account_number
 
     @property
@@ -59,6 +73,15 @@ class InteractiveBrokersClient():
         ClientPortalGateway:
             The Interactive Brokers Client Portal Gateway, which is used
             to download the required files needed to access the API.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> ibc_client_portal = ibc_client.client_portal
         """
 
         return self._client_portal
@@ -71,6 +94,15 @@ class InteractiveBrokersClient():
         InteractiveBrokersSession:
             Handles all the requests made during your session with
             the Interactive Brokers API.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> ibc_session = ibc_client.session
         """
 
         return self._session
@@ -84,21 +116,39 @@ class InteractiveBrokersClient():
         InteractiveBrokersAuthentication:
             Handles authenticating the User so that they can make
             requests to the Interactive Brokers API.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> authentication_service = ibc_client.authentication
         """
 
         return self._auth_service
 
     @property
-    def customers(self) -> InteractiveBrokersCustomer:
-        """Initializes the `InteractiveBrokersCustomer` object.
+    def customers(self) -> Customer:
+        """Initializes the `Customer` object.
 
         ### Returns
         ----
-        InteractiveBrokersCustomer:
+        Customer:
             Used to grab customer information.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> customer_service = ibc_client.customers
         """
 
-        return InteractiveBrokersCustomer(ib_client=self, ib_session=self._session)
+        return Customer(ib_client=self, ib_session=self._session)
 
     @property
     def portfolio_analysis(self) -> PortfolioAnalysis:
@@ -109,6 +159,15 @@ class InteractiveBrokersClient():
         PortfolioAnalysis:
             Used to interact with the Portfolio Analysis
             service.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> portfolio_analysis_service = ibc_client.portfolio_analysis
         """
 
         return PortfolioAnalysis(ib_client=self, ib_session=self._session)
@@ -122,6 +181,15 @@ class InteractiveBrokersClient():
         Accounts:
             Used to interact with the Accounts
             service.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> accounts_services = ibc_client.accounts
         """
 
         return Accounts(ib_client=self, ib_session=self._session)
@@ -134,6 +202,15 @@ class InteractiveBrokersClient():
         ----
         MarketData:
             Used to market quotes and historical prices.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> market_data_services = ibc_client.market_data
         """
 
         return MarketData(ib_client=self, ib_session=self._session)

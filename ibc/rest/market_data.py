@@ -51,6 +51,11 @@ class MarketData():
         ### Returns
         ----
             dict: A `MarketSnapshot` resource.
+
+        ### Usage
+        ----
+            >>> market_data_services = ibc_client.market_data
+            >>> market_data_services.snapshot(contract_ids=['265598'])
         """
 
         new_fields = []
@@ -82,7 +87,13 @@ class MarketData():
 
         return content
 
-    def market_history(self, contract_id: str, period: str, bar: Union[str, Enum] = None, exchange: str = None, outside_regular_trading_hours: bool = True) -> dict:
+    def market_history(
+            self,
+            contract_id: str,
+            period: str, bar: Union[str, Enum] = None,
+            exchange: str = None,
+            outside_regular_trading_hours: bool = True
+        ) -> dict:
         """Get historical market Data for given conid, length of data
         is controlled by 'period' and 'bar'. 
 
@@ -108,6 +119,11 @@ class MarketData():
         ### Returns
         ----
             dict: A collection `Bar` resources.
+        
+        ### Usage
+        ----
+            >>> market_data_services = ibc_client.market_data
+            >>> market_data_services.snapshot(contract_ids=['265598'])
         """
 
         if isinstance(bar, Enum):

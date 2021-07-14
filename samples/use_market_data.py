@@ -26,12 +26,14 @@ ibc_client.authentication.login()
 # Grab the Market Data Service.
 market_data_services = ibc_client.market_data
 
+# Grab a Quote Snapshot.
 pprint(
     market_data_services.snapshot(
         contract_ids=['265598']
     )
 )
 
+# Grab Market History.
 pprint(
     market_data_services.market_history(
         contract_id='265598',
