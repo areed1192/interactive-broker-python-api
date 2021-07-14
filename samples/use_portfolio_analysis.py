@@ -22,16 +22,23 @@ ibc_client = InteractiveBrokersClient(
 # Grab the Portfolio Analysis Service.
 ib_portfolio_analysis = ibc_client.portfolio_analysis
 
-pprint(
-    ib_portfolio_analysis.account_summary(
-        account_ids=[ibc_client.account_number]
-    )
-)
+# pprint(
+#     ib_portfolio_analysis.account_summary(
+#         account_ids=[ibc_client.account_number]
+#     )
+# )
+
+# # Grab the account performance.
+# pprint(
+#     ib_portfolio_analysis.account_performance(
+#         account_ids=[ibc_client.account_number],
+#         frequency=Frequency.Quarterly
+#     )
+# )
 
 # Grab the account performance.
 pprint(
-    ib_portfolio_analysis.account_performance(
-        account_ids=[ibc_client.account_number],
-        frequency=Frequency.Quarterly
+    ib_portfolio_analysis.transactions_history(
+        account_ids=[ibc_client.account_number]
     )
 )
