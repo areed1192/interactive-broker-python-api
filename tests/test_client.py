@@ -10,6 +10,8 @@ from ibc.rest.customer import Customer
 from ibc.session import InteractiveBrokersSession
 from ibc.utils.gateway import ClientPortalGateway
 from ibc.rest.pnl import PnL
+from ibc.rest.contract import Contracts
+from ibc.rest.alert import Alerts
 
 
 class InteractiveBrokersClientTest(TestCase):
@@ -99,6 +101,22 @@ class InteractiveBrokersClientTest(TestCase):
         self.assertIsInstance(
             self.ibc_client.pnl,
             PnL
+        )
+
+    def test_creates_instance_of_contracts(self):
+        """Create an instance and make sure it's a `Contracts`client."""
+
+        self.assertIsInstance(
+            self.ibc_client.contracts,
+            Contracts
+        )
+
+    def test_creates_instance_of_alerts(self):
+        """Create an instance and make sure it's a `Alerts`client."""
+
+        self.assertIsInstance(
+            self.ibc_client.alerts,
+            Alerts
         )
 
     def tearDown(self) -> None:

@@ -7,6 +7,7 @@ from ibc.rest.accounts import Accounts
 from ibc.rest.market_data import MarketData
 from ibc.rest.pnl import PnL
 from ibc.rest.alert import Alerts
+from ibc.rest.contract import Contracts
 
 
 class InteractiveBrokersClient():
@@ -259,3 +260,24 @@ class InteractiveBrokersClient():
         """
 
         return Alerts(ib_client=self, ib_session=self._session)
+
+    @property
+    def contracts(self) -> Contracts:
+        """Initializes the `Contracts` object.
+
+        ### Returns
+        ----
+        Contracts:
+            Used to search for contract information.
+
+        ### Usage
+        ----
+            >>> ibc_client = InteractiveBrokersClient(
+                account_number=account_number,
+                password=account_password
+            )
+            >>> ibc_client.authentication.login()
+            >>> contracts_services = ibc_client.contracts
+        """
+
+        return Contracts(ib_client=self, ib_session=self._session)
