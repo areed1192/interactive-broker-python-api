@@ -1,0 +1,96 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug: Authentication Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_auth.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Accounts Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_accounts.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Market Data Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_market_data.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Alerts Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_alerts.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Contracts Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_contracts.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Customers Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_customers.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Orders Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_orders.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: PnL Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_pnl.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Portfolio Account Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_portfolio_accounts.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Portfolio Analysis Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_portfolio_analysis.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Scanners Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_scanners.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Trades Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_trades.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug: Data Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/samples/use_trades.py",
+      "console": "integratedTerminal"
+    }
+  ]
+}

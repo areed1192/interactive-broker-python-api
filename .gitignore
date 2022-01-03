@@ -128,12 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Add files that I don't want on GitHub.
-.vscode/
-ibw/server_session.json
-.pypirc
-MANIFEST.in
-clientportal.gw/
-clientportal.beta.gw/
-alex/
+# Alex Folder.
+vscode/
 config/
+.resources and notes/
+ibc/resources

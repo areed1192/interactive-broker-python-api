@@ -1,66 +1,71 @@
-from distutils.core import setup
-from setuptools import setup, find_packages
+from setuptools import setup
+from setuptools import find_namespace_packages
 
-with open("README.md", "r") as fh:
+# Open the README file.
+with open(file="README.md", mode="r") as fh:
     long_description = fh.read()
 
 setup(
 
-    # this will be my Library name.
-    name='interactive-broker-python-web-api',
+    name='ibc-api',
 
-    # Want to make sure people know who made it.
+    # Define Author Info.
     author='Alex Reed',
-
-    # also an email they can use to reach out.
     author_email='coding.sigma@gmail.com',
 
-    # I'm in alpha development still, so a compliant version number is a1.
-    # read this as MAJOR VERSION 0, MINOR VERSION 1, MAINTENANCE VERSION 0
-    version='0.1.2',
-    description='A python client library for the Interactive Broker Web API.',
+    # Define Version Info.
+    version='0.1.0',
 
-    # I have a long description but that will just be my README file.
+    # Define descriptions.
+    description='',
     long_description=long_description,
-
-    # want to make sure that I specify the long description as MARKDOWN.
     long_description_content_type="text/markdown",
 
-    # here is the URL you can find the code.
-    url='https://github.com/areed1192/interactive-broker-python-api',
+    # Define repo location.
+    url='https://github.com/areed1192/interactive-brokers-api',
 
-    # there are some dependencies to use the library, so let's list them out.
+    # Define dependencies.
     install_requires=[
-        'certifi>=2019.11.28',
-        'requests>=2.22.0',
-        'urllib3>=1.25.3'
+        'requests==2.24.0',
+        'fake-useragent'
     ],
 
-    # here are the packages I want "build."
-    packages=find_packages(include=['ibw']),
+    # Specify folder content.
+    packages=find_namespace_packages(
+        include=['ibc']
+    ),
 
-    # additional classifiers that give some characteristics about the package.
+    # Define the python version.
+    python_requires='>3.7',
+
+    # Define our classifiers.
     classifiers=[
 
-        # I want people to know it's still early stages.
+        # Phase of development my library is in.
         'Development Status :: 3 - Alpha',
 
-        # My Intended audience is mostly those who understand finance.
+        # Audience this library is intended for.
+        'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
         'Intended Audience :: Financial and Insurance Industry',
 
-        # My License is MIT.
+        # License that guides my library.
         'License :: OSI Approved :: MIT License',
 
-        # I wrote the client in English
+        # Package was written in English.
         'Natural Language :: English',
 
-        # The client should work on all OS.
+        # Operating systems.
         'Operating System :: OS Independent',
 
-        # The client is intendend for PYTHON 3
-        'Programming Language :: Python :: 3'
-    ],
+        # Programming Languages Used..
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
 
-    # you will need python 3.7 to use this libary.
-    python_requires='>3.7'
+        # Topics.
+        'Topic :: Database',
+        'Topic :: Education',
+        'Topic :: Office/Business'
+    ]
+
 )
