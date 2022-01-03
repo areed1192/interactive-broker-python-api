@@ -17,6 +17,13 @@ from ibc.rest.data import Data
 
 class InteractiveBrokersClient():
 
+    """
+    ### Overview
+    ----
+    The main entry point into the different Interactive
+    Brokers REST API services.
+    """
+
     def __init__(self, account_number: str, password: str) -> None:
         """Initializes the `InteractiveBrokersClient` object.
 

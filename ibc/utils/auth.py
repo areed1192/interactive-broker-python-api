@@ -1,11 +1,19 @@
 import csv
-import requests
 import subprocess
 import webbrowser
+from xmlrpc.client import ResponseError
 from ibc.session import InteractiveBrokersSession
 
 
 class InteractiveBrokersAuthentication():
+
+    """
+    ### Overview
+    ----
+    Handles the Authentication Workflow for the REST
+    API. Including opening up webpage and ensuring
+    session is validated.
+    """
 
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `InteractiveBrokersAuthentication` client.
@@ -39,14 +47,14 @@ class InteractiveBrokersAuthentication():
 
         ### Returns
         ----
-        dict: 
+        dict :
             The process resource with the process ID of the client portal
             gateway.
         """
 
         is_running_response = self._is_already_running()
 
-        if not is_running_response['is_running']:
+        if not is_running_response["is_running"]:
             self._startup_gateway()
         else:
             print("Gateway already running, no need to start back up.")
@@ -56,13 +64,15 @@ class InteractiveBrokersAuthentication():
 
         # Starts a new process where the window is called `Interactive Brokers Python API`
         # and runs the bin files.
-        IB_WEB_API_PROC = [
-            "cmd", "/k", "start", "Interactive Brokers Python API", r"bin\run.bat", r"root\conf.yaml"
+        ib_web_api_proc = [
+            "cmd", "/k", "start",
+            "Interactive Brokers Python API",
+            r"bin\run.bat", r"root\conf.yaml"
         ]
 
         # Open in a new window.
         server_process = subprocess.Popen(
-            args=IB_WEB_API_PROC,
+            args=ib_web_api_proc,
             cwd="ibc/resources/clientportal.beta.gw",
             creationflags=subprocess.CREATE_NEW_CONSOLE,
         )
@@ -70,47 +80,48 @@ class InteractiveBrokersAuthentication():
         # Store the process ID just to make sure we kill it.
         self.server_process_id = server_process.pid
 
-        webbrowser.open(url='https://localhost:5000')
+        webbrowser.open(url="https://localhost:5000")
 
     def _is_already_running(self) -> dict:
         """Checks whether the gateway is already running.
 
         ### Returns
         ----
-        dict:
+        dict :
             A response containing the process ID of the gateway
-            if any, or a message saying the process wasn't found.
+            if any, or a message saying the process wasn"t found.
         """
 
-        IB_WEB_CHECK = [
-            'tasklist', '/fi', "WindowTitle eq Interactive Brokers Python API*", '/FO', 'CSV'
+        ib_web_check = [
+            "tasklist", "/fi", "WindowTitle eq Interactive Brokers Python API*", "/FO", "CSV"
         ]
 
-        # Grab the output and make sure it's a string.
+        # Grab the output and make sure it"s a string.
         content = subprocess.run(
-            args=IB_WEB_CHECK,
-            capture_output=True
+            args=ib_web_check,
+            capture_output=True,
+            check=True
         ).stdout.decode()
 
-        if 'INFO:' in content:
+        if "INFO:" in content:
             data = content
         else:
             content = content.splitlines()
-            headers = content[0].replace('"', '').split(',')
+            headers = content[0].replace("'", "").split(",")
             data = content[1:]
             data = list(csv.DictReader(f=data, fieldnames=headers))
 
-        if 'PID' in data[0]:
-            self.server_process_id = data[0]['PID']
+        if "PID" in data[0]:
+            self.server_process_id = data[0]["PID"]
 
             return {
-                'is_running': True,
-                'data': data
+                "is_running": True,
+                "data": data
             }
         else:
             return {
-                'is_running': False,
-                'data': data
+                "is_running": False,
+                "data": data
             }
 
     def close_gateway(self, pid: int = None) -> str:
@@ -119,11 +130,11 @@ class InteractiveBrokersAuthentication():
         ### Parameters
         ----
         pid : int (optional, Default=None)
-            If you'd like you can manually close the process.
+            If you"d like you can manually close the process.
 
         ### Returns
         ----
-        str:
+        str :
             A message will be return if the termination process
             was successful.
         """
@@ -132,31 +143,32 @@ class InteractiveBrokersAuthentication():
             pid = self.server_process_id
 
         content = subprocess.run(
-            args=['Taskkill', '/F', '/PID', str(pid)],
-            capture_output=True
+            args=["Taskkill", "/F", "/PID", str(pid)],
+            capture_output=True,
+            check=True
         )
 
         return content.stdout.decode()
 
-    def is_authenticated(self, check: bool = False) -> dict:
+    def is_authenticated(self) -> dict:
         """Checks if session is authenticated.
 
         ### Overview
         ----
-        Current Authentication status to the Brokerage system. Market Data and 
-        Trading is not possible if not authenticated, e.g. authenticated 
+        Current Authentication status to the Brokerage system. Market Data and
+        Trading is not possible if not authenticated, e.g. authenticated
         shows `False`.
 
         ### Returns
         ----
         dict:
-            A dictionary with an authentication flag.   
+            A dictionary with an authentication flag.
         """
 
         # Make the request.
         content = self.session.make_request(
-            method='post',
-            endpoint='/api/iserver/auth/status'
+            method="post",
+            endpoint="/api/iserver/auth/status"
         )
 
         return content
@@ -166,9 +178,9 @@ class InteractiveBrokersAuthentication():
 
         ### Overview
         ----
-        If an user has multiple accounts, and user wants to get orders, trades, 
-        etc. of an account other than currently selected account, then user 
-        can update the currently selected account using this API and then can 
+        If an user has multiple accounts, and user wants to get orders, trades,
+        etc. of an account other than currently selected account, then user
+        can update the currently selected account using this API and then can
         fetch required information for the newly updated account.
 
         ### Parameters
@@ -179,18 +191,18 @@ class InteractiveBrokersAuthentication():
 
         ### Returns
         ----
-        dict:
+        dict :
             A `ServerAccount` resource.
         """
 
         payload = {
-            'acctId': account_id
+            "acctId": account_id
         }
 
         # Make the request.
         content = self.session.make_request(
-            method='post',
-            endpoint='/api/iserver/account',
+            method="post",
+            endpoint="/api/iserver/account",
             json_payload=payload
         )
 
@@ -207,8 +219,8 @@ class InteractiveBrokersAuthentication():
 
         # Make the request.
         content = self.session.make_request(
-            method='post',
-            endpoint='/api/sso/validate'
+            method="post",
+            endpoint="/api/sso/validate"
         )
 
         return content
@@ -226,23 +238,23 @@ class InteractiveBrokersAuthentication():
 
         # Make the request.
         content = self.session.make_request(
-            method='post',
-            endpoint='/api/iserver/reauthenticate'
+            method="post",
+            endpoint="/api/iserver/reauthenticate"
         )
 
         return content
 
     def check_auth(self) -> None:
         """Checks the authentication of the user to see
-        if they've logged in.
+        if they"ve logged in.
         """
 
         print("Checking authentication status...")
 
         try:
             response = self.is_authenticated()
-            if response['authenticated'] == True:
+            if response["authenticated"] is True:
                 self.authenticated = True
                 return
-        except:
+        except ResponseError:
             return

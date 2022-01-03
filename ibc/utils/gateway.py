@@ -1,11 +1,19 @@
 import io
 import pathlib
 import zipfile
-import requests
 import textwrap
+import requests
 
 
 class ClientPortalGateway():
+
+    """
+    ### Overview
+    ----
+    Handles the setup of the ClientPortal Gateway
+    on the Users System. Including downloading the
+    file and configuring it to run.
+    """
 
     def __init__(self) -> None:
         """Initializes the client portal object. """
@@ -84,7 +92,7 @@ class ClientPortalGateway():
         """Downloads and extracts the client portal object."""
 
         # Make the resource directory if needed.
-        if self._make_resources_directory() == False:
+        if self._make_resources_directory() is False:
             return
 
         # Download it.

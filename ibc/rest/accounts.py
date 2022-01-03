@@ -34,9 +34,9 @@ class Accounts():
 
         ### Returns
         ----
-        dict: 
+        dict :
             A collection of `Account` resources.
-        
+
         ### Usage
         ----
             >>> accounts_services = ibc_client.accounts
@@ -56,7 +56,7 @@ class Accounts():
 
         ### Returns
         ----
-        dict: 
+        dict :
             An `AccountPnL` resource.
 
         ### Usage

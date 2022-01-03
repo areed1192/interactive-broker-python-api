@@ -1,6 +1,11 @@
 {
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
+  // Ignore Module Doc Strings.
+  "python.linting.pylintArgs": [
+    "--disable",
+    "C0114,C0415"
+  ],
   "python.testing.unittestArgs": [
     "-v",
     "-s",
@@ -9,6 +14,5 @@
     "test_*.py"
   ],
   "python.testing.pytestEnabled": false,
-  "python.testing.nosetestsEnabled": false,
   "python.testing.unittestEnabled": true
 }

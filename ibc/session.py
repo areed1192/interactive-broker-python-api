@@ -1,18 +1,24 @@
 import json
-import requests
 import logging
 import pathlib
-import urllib3
-
 from typing import Dict
+
+import requests
+import urllib3
 from urllib3.exceptions import InsecureRequestWarning
 from fake_useragent import UserAgent
 
 urllib3.disable_warnings(category=InsecureRequestWarning)
 
+
 class InteractiveBrokersSession():
 
-    """Serves as the Session for the Interactive Brokers API."""
+    """
+    ### Overview
+    ----
+    Serves as the Session for the Interactive
+    Brokers API.
+    """
 
     def __init__(self, ib_client: object) -> None:
         """Initializes the `InteractiveBrokersSession` client.
@@ -35,15 +41,15 @@ class InteractiveBrokersSession():
         from ibc.client import InteractiveBrokersClient
 
         # We can also add custom formatting to our log messages.
-        log_format = '%(asctime)-15s|%(filename)s|%(message)s'
+        log_format = "%(asctime)-15s|%(filename)s|%(message)s"
 
         self.client: InteractiveBrokersClient = ib_client
 
         self.resource_url = "https://localhost:5000/v1"
 
-        if not pathlib.Path('logs').exists():
-            pathlib.Path('logs').mkdir()
-            pathlib.Path('logs/log_file_custom.log').touch()
+        if not pathlib.Path("logs").exists():
+            pathlib.Path("logs").mkdir()
+            pathlib.Path("logs/log_file_custom.log").touch()
 
         logging.basicConfig(
             filename="logs/log_file_custom.log",
@@ -110,12 +116,12 @@ class InteractiveBrokersSession():
 
         ### Parameters
         ----
-        method : str 
-            The Request method, can be one of the following: 
-            ['get','post','put','delete','patch']
+        method : str
+            The Request method, can be one of the following:
+            ["get","post","put","delete","patch"]
 
         endpoint : str
-            The API URL endpoint, example is 'quotes'
+            The API URL endpoint, example is "quotes"
 
         params : dict (optional, Default={})
             The URL params for the request.
@@ -128,8 +134,8 @@ class InteractiveBrokersSession():
 
         ### Returns
         ----
-        Dict: 
-            A Dictionary object containing the 
+        Dict:
+            A Dictionary object containing the
             JSON values.
         """
 
@@ -150,57 +156,75 @@ class InteractiveBrokersSession():
         )
 
         # Make the request.
-        if method == 'post':
-            response = requests.post(url=url, params=params, json=json_payload, verify=False, headers=headers)
-        elif method == 'get':
-            response = requests.get(url=url, params=params, json=json_payload, verify=False, headers=headers)
-        elif method == 'delete':
-            response = requests.delete(url=url, params=params, json=json_payload, verify=False, headers=headers)
+        if method == "post":
+            response = requests.post(
+                url=url,
+                params=params,
+                json=json_payload,
+                verify=False,
+                headers=headers
+            )
+        elif method == "get":
+            response = requests.get(
+                url=url,
+                params=params,
+                json=json_payload,
+                verify=False,
+                headers=headers
+            )
+        elif method == "delete":
+            response = requests.delete(
+                url=url,
+                params=params,
+                json=json_payload,
+                verify=False,
+                headers=headers
+            )
 
         logging.info(
-            msg="URL: {url}".format(url=url)
+            msg=f"URL: {url}"
         )
 
         logging.info(
-            msg=f'Response Status Code: {response.status_code}'
+            msg=f"Response Status Code: {response.status_code}"
         )
 
         logging.info(
-            msg=f'Response Content: {response.text}'
+            msg=f"Response Content: {response.text}"
         )
 
-        # If it's okay and no details.
+        # If it"s okay and no details.
         if response.ok and len(response.content) > 0:
 
             return response.json()
 
-        elif len(response.content) > 0 and response.ok:
+        if len(response.content) == 0 and response.ok:
 
             return {
-                'message': 'response successful',
-                'status_code': response.status_code
+                "message": "response successful",
+                "status_code": response.status_code
             }
 
-        elif not response.ok and endpoint =='/api/iserver/account':
+        if not response.ok and endpoint == "/api/iserver/account":
             return response.json()
 
-        elif not response.ok:
+        if not response.ok:
 
             if len(response.content) == 0:
-                response_data = ''
+                response_data = ""
             else:
                 try:
                     response_data = response.json()
-                except:
-                    response_data = {'content': response.text}
+                except UnicodeDecodeError:
+                    response_data = {"content": response.text}
 
             # Define the error dict.
             error_dict = {
-                'error_code': response.status_code,
-                'response_url': response.url,
-                'response_body': response_data,
-                'response_request': dict(response.request.headers),
-                'response_method': response.request.method,
+                "error_code": response.status_code,
+                "response_url": response.url,
+                "response_body": response_data,
+                "response_request": dict(response.request.headers),
+                "response_method": response.request.method,
             }
 
             # Log the error.
