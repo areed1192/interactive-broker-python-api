@@ -3,6 +3,13 @@ from ibc.session import InteractiveBrokersSession
 
 class Trades():
 
+    """
+    ### Overview
+    ----
+    Represents the Trades Service which is
+    used to get active trades.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Trades` client.
 

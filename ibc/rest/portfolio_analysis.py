@@ -6,6 +6,14 @@ from ibc.session import InteractiveBrokersSession
 
 class PortfolioAnalysis():
 
+    """
+    ### Overview
+    ----
+    Represents the PortfolioAnalysis Service which is
+    used to get different account performance metrics
+    and transaction information.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `PortfolioAnalysis` client.
 
@@ -85,7 +93,13 @@ class PortfolioAnalysis():
 
         return content
 
-    def transactions_history(self, account_ids: List[str] = None, contract_ids: List[str] = None, currency: str = 'USD', days: int = 90) -> dict:
+    def transactions_history(
+        self,
+        account_ids: List[str] = None,
+        contract_ids: List[str] = None,
+        currency: str = 'USD',
+        days: int = 90
+    ) -> dict:
         """Transaction history for a given number of conids and accounts. Types of transactions
         include dividend payments, buy and sell transactions, transfers.
 

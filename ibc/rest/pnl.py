@@ -3,6 +3,14 @@ from ibc.session import InteractiveBrokersSession
 
 class PnL():
 
+    """
+    ### Overview
+    ----
+    Represents the PNL Service which is
+    used to get PNL information from your
+    accounts related to losses and gains.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `PnL` client.
 
@@ -28,7 +36,7 @@ class PnL():
 
         ### Returns
         ----
-        dict: 
+        dict:
             An `AccountPnL` resource.
         """
 

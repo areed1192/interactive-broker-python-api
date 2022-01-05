@@ -3,6 +3,14 @@ from ibc.session import InteractiveBrokersSession
 
 class Scanners():
 
+    """
+    ### Overview
+    ----
+    Represents the Scanners Service which is
+    used to scanners that will filter differnt
+    instruments that match the criteria specified.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Scanners` client.
 
@@ -26,7 +34,7 @@ class Scanners():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A collection of `Scanner` resources.
 
         ### Usage
@@ -52,7 +60,7 @@ class Scanners():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A collection of `contract` resources.
 
         ### Usage

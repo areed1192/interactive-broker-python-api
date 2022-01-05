@@ -3,6 +3,14 @@ from ibc.session import InteractiveBrokersSession
 
 class Accounts():
 
+    """
+    ### Overview
+    ----
+    Represents the Accounts Service which is
+    used to get account information and pnl
+    account info.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Accounts` client.
 

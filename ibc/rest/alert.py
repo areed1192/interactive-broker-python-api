@@ -3,6 +3,14 @@ from ibc.session import InteractiveBrokersSession
 
 class Alerts():
 
+    """
+    ### Overview
+    ----
+    Represents the Alerts Service which is
+    used to create, delete, and update
+    alerts related to the account session.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Alerts` client.
 
@@ -56,7 +64,7 @@ class Alerts():
         Each login user only has one mobile trading assistant (MTA)
         alert with it's own unique tool id. The tool id cannot be
         changed. When modified a new order Id is generated. MTA alerts
-        can not be created or deleted. If you call delete 
+        can not be created or deleted. If you call delete
         /iserver/account/:accountId/alert/:alertId, it will reset MTA
         to default. See here for more information on MTA alerts.
 
@@ -73,7 +81,7 @@ class Alerts():
 
         content = self.session.make_request(
             method='get',
-            endpoint=f'/api/iserver/account/mta'
+            endpoint='/api/iserver/account/mta'
         )
 
         return content

@@ -4,6 +4,14 @@ from ibc.session import InteractiveBrokersSession
 
 class Contracts():
 
+    """
+    ### Overview
+    ----
+    Represents the Contracts Service which is
+    used to get contract information for futures
+    and other instruments.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Contracts` client.
 
@@ -74,7 +82,7 @@ class Contracts():
 
         content = self.session.make_request(
             method='get',
-            endpoint=f'/api/trsrv/futures',
+            endpoint='/api/trsrv/futures',
             params={
                 'symbols': ','.join(symbols)
             }
@@ -119,7 +127,7 @@ class Contracts():
 
         content = self.session.make_request(
             method='post',
-            endpoint=f'/api/iserver/secdef/search',
+            endpoint='/api/iserver/secdef/search',
             json_payload=payload
         )
 
@@ -130,7 +138,7 @@ class Contracts():
 
         ### Parameters
         ----
-        contract_ids : List[str]
+        contract_ids : List[int]
             A list of Contract IDs.
 
         ### Returns
@@ -152,7 +160,7 @@ class Contracts():
 
         content = self.session.make_request(
             method='post',
-            endpoint=f'/api/trsrv/secdef',
+            endpoint='/api/trsrv/secdef',
             json_payload=payload
         )
 

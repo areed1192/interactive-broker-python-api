@@ -3,6 +3,14 @@ from ibc.session import InteractiveBrokersSession
 
 class Customer():
 
+    """
+    ### Overview
+    ----
+    Represents the Customer Service which is
+    used to get customer information from
+    Interactive Brokers.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `InteractiveBrokersCustomer` client.
 

@@ -38,6 +38,6 @@ pprint(
     market_data_services.market_history(
         contract_id='265598',
         period='5d',
-        bar=BarTypes.FiveMinute
+        bar_type=BarTypes.FiveMinute
     )
 )

@@ -3,6 +3,15 @@ from ibc.session import InteractiveBrokersSession
 
 class Data():
 
+    """
+    ### Overview
+    ----
+    Represents the Data Service which is
+    used to get different financial data
+    ranging from news articles to financial
+    summaries.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Data` client.
 
@@ -36,7 +45,7 @@ class Data():
 
         content = self.session.make_request(
             method='get',
-            endpoint=f'/api/iserver/news/portfolio'
+            endpoint='/api/iserver/news/portfolio'
         )
 
         return content
@@ -57,7 +66,7 @@ class Data():
 
         content = self.session.make_request(
             method='get',
-            endpoint=f'/api/iserver/news/top'
+            endpoint='/api/iserver/news/top'
         )
 
         return content
@@ -78,7 +87,7 @@ class Data():
 
         content = self.session.make_request(
             method='get',
-            endpoint=f'/api/iserver/news/top'
+            endpoint='/api/iserver/news/top'
         )
 
         return content
@@ -99,7 +108,7 @@ class Data():
 
         content = self.session.make_request(
             method='get',
-            endpoint=f'/api/iserver/news/briefing'
+            endpoint='/api/iserver/news/briefing'
         )
 
         return content

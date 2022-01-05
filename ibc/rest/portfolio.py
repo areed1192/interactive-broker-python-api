@@ -6,6 +6,14 @@ from ibc.session import InteractiveBrokersSession
 
 class PortfolioAccounts():
 
+    """
+    ### Overview
+    ----
+    Represents the Portfolio Accounts Service which is
+    used to get account information related specificially
+    to Portfolio accounts.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `PortfolioAccounts` client.
 
@@ -35,12 +43,12 @@ class PortfolioAccounts():
         This endpoint must be called prior to calling other /portfolio
         endpoints for those accounts. For querying a list of accounts
         which the user can trade, see /iserver/accounts. For a list
-        of subaccounts in tiered account structures (e.g. financial 
+        of subaccounts in tiered account structures (e.g. financial
         advisor or ibroker accounts) see /portfolio/subaccounts.
 
         ### Returns
         ----
-        list: 
+        list:
             A collection of `PortfolioAccount` resources.
 
         ### Usage
@@ -72,7 +80,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        list: 
+        list:
             A collection of `PortfolioSubAccount` resources.
 
         ### Usage
@@ -94,13 +102,13 @@ class PortfolioAccounts():
         """Account information related to account Id.
 
         ### Overview
-        --- 
+        ---
         /portfolio/accounts or /portfolio/subaccounts
         must be called prior to this endpoint.
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `AccountInfo` resource.
 
         ### Usage
@@ -125,7 +133,7 @@ class PortfolioAccounts():
         return content
 
     def account_summary(self, account_id: str) -> dict:
-        """Returns information about margin, cash balances 
+        """Returns information about margin, cash balances
         and other information related to specified account.
 
         ### Overview
@@ -135,7 +143,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `AccountSummary` resource.
 
         ### Usage
@@ -165,15 +173,15 @@ class PortfolioAccounts():
         balances hold in other currencies.
 
         ### Overview
-        --- 
+        ---
         `/portfolio/accounts` or `/portfolio/subaccounts`
-        must be called prior to this endpoint. The list of 
+        must be called prior to this endpoint. The list of
         supported currencies is available at:
         https://www.interactivebrokers.com/en/index.php?f=3185
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `AccountLedger` resource.
 
         ### Usage
@@ -198,19 +206,19 @@ class PortfolioAccounts():
         return content
 
     def account_allocation(self, account_id: str) -> dict:
-        """Information about the account’s portfolio 
+        """Information about the account's portfolio
         by Asset Class, Industry and Category.
 
         ### Overview
-        --- 
+        ---
         /portfolio/accounts or /portfolio/subaccounts
-        must be called prior to this endpoint. The list of 
+        must be called prior to this endpoint. The list of
         supported currencies is available at:
         https://www.interactivebrokers.com/en/index.php?f=3185
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `AccountAllocation` resource.
 
         ### Usage
@@ -240,7 +248,7 @@ class PortfolioAccounts():
         returned by /portfolio/accounts
 
         ### Overview
-        --- 
+        ---
         /portfolio/accounts or /portfolio/subaccounts
         must be called prior to this endpoint.
 
@@ -252,7 +260,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A consolidated `AccountAllocation` resource.
 
         ### Usage
@@ -275,7 +283,7 @@ class PortfolioAccounts():
 
         content = self.session.make_request(
             method='post',
-            endpoint=f'/api/portfolio/allocation',
+            endpoint='/api/portfolio/allocation',
             json_payload=payload
         )
 
@@ -294,7 +302,7 @@ class PortfolioAccounts():
         30 positions.
 
         ### Overview
-        --- 
+        ---
         /portfolio/accounts or /portfolio/subaccounts
         must be called prior to this endpoint.
 
@@ -318,7 +326,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A collection of `PortfolioPosition` resources.
 
         ### Usage
@@ -364,11 +372,11 @@ class PortfolioAccounts():
         contract_id: str
     ) -> dict:
         """Returns a list of all positions matching the conid. For portfolio models the
-        conid could be in more than one model, returning an array with the name of 
+        conid could be in more than one model, returning an array with the name of
         model it belongs to.
 
         ### Overview
-        --- 
+        ---
         /portfolio/accounts or /portfolio/subaccounts
         must be called prior to this endpoint.
 
@@ -382,7 +390,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A collection of `PortfolioPosition` resources.
 
         ### Usage
@@ -417,7 +425,7 @@ class PortfolioAccounts():
         it belongs to.
 
         ### Overview
-        --- 
+        ---
         /portfolio/accounts or /portfolio/subaccounts
         must be called prior to this endpoint.
 
@@ -428,7 +436,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A collection of `PortfolioPosition` resources.
 
         ### Usage
@@ -465,7 +473,7 @@ class PortfolioAccounts():
 
         ### Returns
         ----
-        Union[dict, None]: 
+        Union[dict, None]:
             Nothing is returned if successful.
 
         ### Usage

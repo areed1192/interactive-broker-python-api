@@ -6,6 +6,14 @@ from ibc.session import InteractiveBrokersSession
 
 class MarketData():
 
+    """
+    ### Overview
+    ----
+    Represents the MarketData Service which is
+    used to real-time market quotes for different
+    financial insturments.
+    """
+
     def __init__(self, ib_client, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `MarketData` client.
 
@@ -29,13 +37,18 @@ class MarketData():
             print("Calling Accounts Endpoint, so we can pull data.")
             self.client.accounts.accounts()
 
-    def snapshot(self, contract_ids: List[str], since: int = None, fields: Union[str, Enum] = None) -> dict:
-        """Get Market Data for the given conid(s). 
+    def snapshot(
+        self,
+        contract_ids: List[str],
+        since: int = None,
+        fields: Union[str, Enum] = None
+    ) -> dict:
+        """Get Market Data for the given conid(s).
 
         ### Overview
         ----
-        The end-point will return by default bid, ask,  last, change, change pct, close, 
-        listing exchange. The endpoint /iserver/accounts should be called prior to 
+        The end-point will return by default bid, ask,  last, change, change pct, close,
+        listing exchange. The endpoint /iserver/accounts should be called prior to
         /iserver/marketdata/snapshot. To receive all available fields the /snapshot
         endpoint will need to be called several times.
 
@@ -89,14 +102,15 @@ class MarketData():
         return content
 
     def market_history(
-            self,
-            contract_id: str,
-            period: str, bar: Union[str, Enum] = None,
-            exchange: str = None,
-            outside_regular_trading_hours: bool = True
-        ) -> dict:
+        self,
+        contract_id: str,
+        period: str,
+        bar_type: Union[str, Enum] = None,
+        exchange: str = None,
+        outside_regular_trading_hours: bool = True
+    ) -> dict:
         """Get historical market Data for given conid, length of data
-        is controlled by 'period' and 'bar'. 
+        is controlled by 'period' and 'bar'.
 
         ### Parameters
         ----
@@ -120,20 +134,20 @@ class MarketData():
         ### Returns
         ----
             dict: A collection `Bar` resources.
-        
+
         ### Usage
         ----
             >>> market_data_services = ibc_client.market_data
             >>> market_data_services.snapshot(contract_ids=['265598'])
         """
 
-        if isinstance(bar, Enum):
-            bar = bar.value
+        if isinstance(bar_type, Enum):
+            bar_type = bar_type.value
 
         payload = {
             'conid': contract_id,
             'period': period,
-            'bar': bar,
+            'bar': bar_type,
             'exchange': exchange,
             'outsideRth': outside_regular_trading_hours
         }

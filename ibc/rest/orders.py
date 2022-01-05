@@ -4,6 +4,14 @@ from ibc.session import InteractiveBrokersSession
 
 class Orders():
 
+    """
+    ### Overview
+    ----
+    Represents the Orders Service which is
+    used to create, update, delete, and submit
+    trades.
+    """
+
     def __init__(self, ib_client: object, ib_session: InteractiveBrokersSession) -> None:
         """Initializes the `Orders` client.
 
@@ -22,7 +30,7 @@ class Orders():
         self.session: InteractiveBrokersSession = ib_session
 
     def orders(self) -> dict:
-        """The end-point is meant to be used in polling mode, e.g. requesting 
+        """The end-point is meant to be used in polling mode, e.g. requesting
         every x seconds.
 
         ### Overview
@@ -35,7 +43,7 @@ class Orders():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A collection of `Order` resources.
 
         ### Usage
@@ -72,7 +80,7 @@ class Orders():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `Reply` resource or a `Order` resource.
 
         ### Usage
@@ -114,7 +122,7 @@ class Orders():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `Reply` resource or a `Order` resource.
 
         ### Usage
@@ -179,7 +187,7 @@ class Orders():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `Reply` resource or a `Order` resource.
 
         ### Usage
@@ -203,7 +211,7 @@ class Orders():
 
         content = self.session.make_request(
             method='post',
-            endpoint=f'/api/iserver/account/{account_id}/order',
+            endpoint=f'/api/iserver/account/{account_id}/order/{order_id}',
             json_payload=order
         )
 
@@ -223,7 +231,7 @@ class Orders():
 
         ### Returns
         ----
-        Union[list, dict]: 
+        Union[list, dict]:
             A `OrderResponse` resource or a collection of them.
 
         ### Usage
@@ -257,7 +265,7 @@ class Orders():
 
         ### Returns
         ----
-        dict: 
+        dict:
             A `OrderCommission` resource.
 
         ### Usage
@@ -299,7 +307,7 @@ class Orders():
 
         ### Returns
         ----
-        Union[list, dict]: 
+        Union[list, dict]:
             A list when the order is submitted, a dictionary
             with an error message if not confirmed.
 

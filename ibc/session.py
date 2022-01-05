@@ -1,7 +1,6 @@
 import json
 import logging
 import pathlib
-from typing import Dict
 
 import requests
 import urllib3
@@ -58,7 +57,7 @@ class InteractiveBrokersSession():
             format=log_format
         )
 
-    def build_headers(self) -> Dict:
+    def build_headers(self) -> dict:
         """Used to build the headers needed to make the request.
 
         ### Parameters
@@ -104,7 +103,7 @@ class InteractiveBrokersSession():
         endpoint: str,
         params: dict = None,
         json_payload: dict = None
-    ) -> Dict:
+    ) -> dict:
         """Handles all the requests in the library.
 
         ### Overview
@@ -193,13 +192,11 @@ class InteractiveBrokersSession():
             msg=f"Response Content: {response.text}"
         )
 
-        # If it"s okay and no details.
+        # If it's okay and no details.
         if response.ok and len(response.content) > 0:
-
             return response.json()
 
         if len(response.content) == 0 and response.ok:
-
             return {
                 "message": "response successful",
                 "status_code": response.status_code
