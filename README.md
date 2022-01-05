@@ -100,11 +100,11 @@ from ibc.client import InteractiveBrokersClient
 config = ConfigParser()
 
 # Read the file.
-config.read('config/config.ini')
+config.read("config/config.ini")
 
 # Get the specified credentials.
-account_number = config.get('interactive_brokers_paper', 'paper_account')
-account_password = config.get('interactive_brokers_paper', 'paper_password')
+account_number = config.get("interactive_brokers_paper", "paper_account")
+account_password = config.get("interactive_brokers_paper", "paper_password")
 
 # Initialize the client.
 ibc_client = InteractiveBrokersClient(
@@ -133,7 +133,7 @@ pprint(
 
 **Patreon:**
 Help support this project and future projects by donating to my [Patreon Page](https://www.patreon.com/sigmacoding). I'm
-always looking to add more content for individuals like yourself, unfortuantely some of the APIs I would require me to
+always looking to add more content for individuals like yourself, unfortuantely some of the APIs would require me to
 pay monthly fees.
 
 **YouTube:**
